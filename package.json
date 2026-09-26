@@ -1,0 +1,24 @@
+{
+  "name": "paper-learning-workflow-template",
+  "private": true,
+  "license": "MIT",
+  "version": "0.2.0",
+  "description": "Reusable Zotero-linked research workflow for Codex with optional DeepSeek Harness tasks",
+  "scripts": {
+    "setup": "node planning/scripts/setup-local.mjs",
+    "dsh:check": "node features/F-001-deepseek-worker/scripts/dsh-task.mjs --check",
+    "dsh:run": "node features/F-001-deepseek-worker/scripts/dsh-task.mjs",
+    "zotero:list": "node features/F-003-zotero-bridge/scripts/list-collections.mjs",
+    "zotero:check": "node features/F-003-zotero-bridge/scripts/zotero-sync.mjs --check",
+    "zotero:sync": "node features/F-003-zotero-bridge/scripts/zotero-sync.mjs --sync",
+    "zotero:test": "node --test features/F-003-zotero-bridge/tests/*.test.mjs",
+    "literature:render": "node features/F-002-literature-pipeline/scripts/render-translation.mjs",
+    "literature:test": "node --test features/F-002-literature-pipeline/tests/*.test.mjs features/F-003-zotero-bridge/tests/*.test.mjs",
+    "test": "node --test planning/tests/*.test.mjs features/F-002-literature-pipeline/tests/*.test.mjs features/F-003-zotero-bridge/tests/*.test.mjs",
+    "project:new": "node planning/scripts/new-workstream.mjs",
+    "feature:new": "node planning/scripts/new-feature.mjs"
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh": "0.1.7-rc.2"
+  }
+}

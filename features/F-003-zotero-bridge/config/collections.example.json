@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "api_base": "http://127.0.0.1:23119/api",
+  "library": "users/0",
+  "collections": [
+    {
+      "key": "ABCD1234",
+      "name": "Example Research Topic",
+      "workstream": "WS-001",
+      "topic": "example-topic"
+    }
+  ]
+}

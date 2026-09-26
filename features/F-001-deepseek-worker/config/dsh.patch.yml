@@ -1,0 +1,5 @@
+# Project-level model selection for the DSH worker.
+- id: agent-default-model
+  config:
+    provider: deepseek-official
+    model: deepseek-flash
