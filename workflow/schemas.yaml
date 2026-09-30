@@ -1,0 +1,545 @@
+version: 2
+contracts:
+  task:
+    required:
+    - task_id
+    - role
+    - objective
+    - inputs
+    - allowed_paths
+    - context
+    - output_schema
+    - source_refs
+    properties:
+      task_id:
+        type: string
+      role:
+        type: string
+      objective:
+        type: string
+      inputs:
+        type: array
+        items:
+          type: string
+      allowed_paths:
+        type: array
+        items:
+          type: string
+      context:
+        type: object
+      output_schema:
+        type:
+        - string
+        - 'null'
+      source_refs:
+        type: array
+        items:
+          type: string
+    $schema: https://json-schema.org/draft/2020-12/schema
+    title: 任务包契约
+    type: object
+  paper:
+    type: object
+    required:
+    - citekey
+    - title
+    - authors
+    - year
+    - venue
+    - doi
+    - url
+    - language
+    - source_files
+    - paper_role
+    - categories
+    - topic_tags
+    - difficulty
+    - importance
+    - reading_priority
+    - status
+    - translation_status
+    - reading_status
+    - analysis_status
+    - concept_ids
+    - formula_ids
+    - next_action
+    - updated_at
+    - code_links
+    - data_links
+    - generated_by
+    - model_role
+    - prompt_version
+    - source_refs
+    - created_at
+    properties:
+      citekey:
+        type: string
+      title:
+        type: string
+      language:
+        type: string
+      difficulty:
+        type: string
+      importance:
+        type: string
+      reading_priority:
+        type: string
+      next_action:
+        type: string
+      generated_by:
+        type: string
+      model_role:
+        type: string
+      prompt_version:
+        type: string
+      created_at:
+        type: string
+      updated_at:
+        type: string
+      authors:
+        type: array
+        items:
+          type: string
+      source_files:
+        type: array
+        items:
+          type: string
+      categories:
+        type: array
+        items:
+          type: string
+      topic_tags:
+        type: array
+        items:
+          type: string
+      concept_ids:
+        type: array
+        items:
+          type: string
+      formula_ids:
+        type: array
+        items:
+          type: string
+      code_links:
+        type: array
+        items:
+          type: string
+      data_links:
+        type: array
+        items:
+          type: string
+      source_refs:
+        type: array
+        items:
+          type: string
+      venue:
+        type:
+        - string
+        - 'null'
+      doi:
+        type:
+        - string
+        - 'null'
+      url:
+        type:
+        - string
+        - 'null'
+      year:
+        type:
+        - integer
+        - string
+        - 'null'
+      paper_role:
+        type: string
+        enum:
+        - TODO(user)
+        - survey
+        - classic
+        - group-recent
+        - method
+        - benchmark
+        - application
+        - other
+      status:
+        type: string
+        enum:
+        - unread
+        - pre-read
+        - reading
+        - deep-read
+        - synthesized
+      translation_status:
+        type: string
+        enum:
+        - none
+        - partial
+        - complete
+      reading_status:
+        type: string
+        enum:
+        - none
+        - partial
+        - complete
+      analysis_status:
+        type: string
+        enum:
+        - none
+        - partial
+        - complete
+  claim:
+    required:
+    - claim_id
+    - paper_citekey
+    - claim_text
+    - required_resources
+    - available_resources
+    - resource_gaps
+    - route
+    - confidence
+    - validation_criteria
+    - stop_conditions
+    - generated_by
+    - model_role
+    - prompt_version
+    - source_refs
+    - created_at
+    - status
+    properties:
+      generated_by:
+        type: string
+      model_role:
+        type: string
+      prompt_version:
+        type: string
+      source_refs:
+        type: array
+        items:
+          type: string
+      created_at:
+        type:
+        - string
+        - 'null'
+      status:
+        type: string
+        enum:
+        - pending
+        - analyzed
+        - planned
+        - running
+        - blocked
+        - completed
+        - verified
+      claim_id:
+        type: string
+      paper_citekey:
+        type: string
+      claim_text:
+        type: string
+      required_resources:
+        type: object
+      available_resources:
+        type: object
+      resource_gaps:
+        type: array
+      route:
+        type:
+        - string
+        - 'null'
+        enum:
+        - null
+        - online-code
+        - online-simulation
+        - offline-lab
+        - hybrid
+        - observe-only
+        - unreproducible
+      confidence:
+        type:
+        - number
+        - 'null'
+        minimum: 0
+        maximum: 1
+      validation_criteria:
+        type: array
+      stop_conditions:
+        type: array
+    $schema: https://json-schema.org/draft/2020-12/schema
+    title: 复现主张契约
+    type: object
+  analysis:
+    type: object
+    required:
+    - paper
+    - overview
+    - formulas
+    - concepts
+    - extraction
+    - reproduction
+    - generated_by
+    - model_role
+    - prompt_version
+    - source_refs
+    - created_at
+    properties:
+      paper:
+        type: string
+      overview:
+        type: object
+        required:
+        - object
+        - core_problem
+        - why_important
+        - contributions
+        - position
+        - prerequisites
+        properties:
+          object:
+            type: string
+          core_problem:
+            type: string
+          why_important:
+            type: string
+          contributions:
+            type: array
+            items:
+              type: string
+          position:
+            type: string
+          prerequisites:
+            type: array
+            items:
+              type: string
+      formulas:
+        type: array
+        items:
+          type: object
+          required:
+          - id
+          - label
+          - latex
+          - name_zh
+          - plain_meaning
+          - symbols
+          - assumptions
+          - derivation_steps
+          - intuition
+          - special_cases
+          - related_concepts
+          - source_refs
+          - confidence
+          properties:
+            id:
+              type: string
+            label:
+              type: string
+            latex:
+              type: string
+            name_zh:
+              type: string
+            plain_meaning:
+              type: string
+            intuition:
+              type: string
+            assumptions:
+              type: array
+              items:
+                type: string
+            derivation_steps:
+              type: array
+              items:
+                type: string
+            special_cases:
+              type: array
+              items:
+                type: string
+            related_concepts:
+              type: array
+              items:
+                type: string
+            source_refs:
+              type: array
+              items:
+                type: string
+            confidence:
+              type:
+              - number
+              - string
+              - 'null'
+              minimum: 0
+              maximum: 1
+            symbols:
+              type: array
+              items:
+                type: object
+                required:
+                - symbol
+                - meaning
+                - type_or_dimension
+                properties:
+                  symbol:
+                    type: string
+                  meaning:
+                    type: string
+                  type_or_dimension:
+                    type: string
+      concepts:
+        type: array
+        items:
+          type: object
+          required:
+          - id
+          - role
+          - local_meaning
+          - source_refs
+          - understanding_status
+          properties:
+            id:
+              type: string
+            role:
+              type: string
+              enum:
+              - introduced
+              - used
+              - compared
+              - extended
+            local_meaning:
+              type: string
+            source_refs:
+              type: array
+              items:
+                type: string
+            understanding_status:
+              type: string
+      extraction:
+        type: object
+        required:
+        - claims
+        - method
+        - data
+        - baselines
+        - metrics
+        - results
+        - limitations
+        properties:
+          claims:
+            type: array
+          method:
+            type: object
+          data:
+            type: array
+          baselines:
+            type: array
+          metrics:
+            type: array
+          results:
+            type: array
+          limitations:
+            type: array
+          relevance:
+            type: array
+      reproduction:
+        type: object
+        required:
+        - code_url
+        - data_url
+        - candidates
+        - signals
+        properties:
+          code_url:
+            type:
+            - string
+            - 'null'
+          data_url:
+            type:
+            - string
+            - 'null'
+          candidates:
+            type: array
+          signals:
+            type: array
+      source_refs:
+        type: array
+        items:
+          type: string
+      generated_by:
+        type: string
+      model_role:
+        type: string
+      prompt_version:
+        type: string
+      created_at:
+        type: string
+  concept:
+    type: object
+    required:
+    - concept_id
+    - aliases
+    - type
+    - status
+    - first_defined_in
+    - first_seen_year
+    - prerequisites
+    - related
+    - contrasts
+    - papers
+    - generated_by
+    - model_role
+    - prompt_version
+    - source_refs
+    - created_at
+    properties:
+      concept_id:
+        type: string
+      first_defined_in:
+        type: string
+      generated_by:
+        type: string
+      model_role:
+        type: string
+      prompt_version:
+        type: string
+      created_at:
+        type: string
+      aliases:
+        type: array
+        items:
+          type: string
+      prerequisites:
+        type: array
+        items:
+          type: string
+      related:
+        type: array
+        items:
+          type: string
+      contrasts:
+        type: array
+        items:
+          type: string
+      papers:
+        type: array
+        items:
+          type: string
+      source_refs:
+        type: array
+        items:
+          type: string
+      first_seen_year:
+        type:
+        - integer
+        - string
+        - 'null'
+      type:
+        type: string
+        enum:
+        - foundational
+        - classic
+        - current
+        - emerging
+      status:
+        type: string
+        enum:
+        - not-started
+        - learning
+        - understood
+        - needs-review

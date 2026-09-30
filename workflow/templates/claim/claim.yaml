@@ -1,0 +1,27 @@
+generated_by: template
+model_role: reproduction-analyst
+prompt_version: v1
+source_refs: []
+created_at: null
+status: pending
+claim_id: TODO
+paper_citekey: TODO
+claim_text: TODO(user)
+required_resources:
+  code: null
+  data: null
+  compute: null
+  software: null
+  equipment: null
+  consumables: null
+  lab_environment: null
+  skills: null
+  time: null
+  budget: null
+  ethics: null
+available_resources: {}
+resource_gaps: []
+route: null
+confidence: null
+validation_criteria: []
+stop_conditions: []

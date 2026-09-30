@@ -1,0 +1,9 @@
+task_id: TODO
+role: literature-reader
+objective: TODO(user)
+inputs: []
+allowed_paths: []
+context:
+  task_type: literature-extract
+output_schema: null
+source_refs: []

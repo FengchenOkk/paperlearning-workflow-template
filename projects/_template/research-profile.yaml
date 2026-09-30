@@ -1,0 +1,17 @@
+direction: TODO(user)
+goal: TODO(user)
+resources:
+  compute: TODO(user)
+  data: TODO(user)
+  software: TODO(user)
+  lab_access: TODO(user)
+  equipment: TODO(user)
+  budget: TODO(user)
+  time: TODO(user)
+constraints:
+  ethics: TODO(user)
+  privacy: TODO(user)
+preferences:
+  prefer_online: true
+  allow_simulation: true
+  allow_offline_lab: TODO(user)

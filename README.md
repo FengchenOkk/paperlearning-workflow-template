@@ -1,92 +1,65 @@
-# PaperLearning Workflow Template
+# 论文阅读与复现工作流
 
-一个可复用的 Zotero—Codex 科研工作流模板。Zotero 管理论文原件、书目数据、集合和批注；项目管理双语翻译、证据、概念、复现过程和研究综合。DeepSeek Harness（DSH）是可选的外部任务执行器，不影响核心 Zotero 流程。
+组织文献精读与综合、复现可行性分析和实验规划。主模型与子模型可独立选择：沿用当前 Codex 会话、接入支持的 API/CLI，或人工接力；真实实验功能待配置。
 
-公共仓库只包含通用代码、说明、模板和测试。`PROJECT.md`、实际工作流、论文索引、阅读包、研究笔记、结果和个人 Zotero 配置默认由 `.gitignore` 留在本机。
+## 五分钟开始
 
-## 初始化个人实例
-
-```powershell
-git clone <your-repository-url>
-cd PaperLearning
-npm install
-npm run setup
-```
-
-若本机 `npm` 启动器不可用，可直接执行 `node planning/scripts/setup-local.mjs`；其他命令也可按 `package.json` 中的脚本改为直接调用 Node。
-
-`setup` 从公开示例创建本机私有文件，已存在的文件不会被覆盖：
-
-- `PROJECT.md`
-- `planning/BACKLOG.md`、`DECISIONS.md`、`ROADMAP.md`
-- `features/F-003-zotero-bridge/config/collections.local.json`
-
-然后启动 Zotero，列出本机集合并填写 `collections.local.json`：
+在仓库根目录执行（Python 3.11+）：
 
 ```powershell
-npm run zotero:list
-npm run zotero:check
-npm run zotero:sync
+python -m pip install -r requirements.txt
+python tools/wf.py bootstrap
+python tools/wf.py doctor --offline
+python tools/wf.py demo
+python tools/wf.py init my-research --title "我的研究"
+python tools/wf.py new paper my-research first-paper
+python tools/wf.py new concept my-research first-concept
+python tools/wf.py new claim my-research first-paper main-result
+python tools/wf.py validate my-research
 ```
 
-Windows 也可以双击 `sync-zotero.cmd`。详细连接方法见 [F-003 Zotero 关联桥](features/F-003-zotero-bridge/README.md)，精读规则见 [F-002 文献流水线](features/F-002-literature-pipeline/README.md)。
+随后填写项目 `research-profile.yaml`，将论文归档至对应 `source/`，按模板阅读。模型选择只修改 `config/models.local.yaml`；密钥只放环境变量或本地 `.env`。
 
-## 从一篇论文开始
-
-1. 在 Zotero 中保存论文父条目、PDF 和完整元数据，并放入已映射集合。
-2. 运行 Zotero 同步，生成不含 PDF 副本的阅读包。
-3. 让 Codex 按“原文—中文对照翻译 → 证据化精读 → 概念网络 → 终审 → 综合”处理。
-4. 打开阅读包中的 `02-translation.html`，左右对照原文与中文。
-
-## 分工
-
-| 角色 | 负责 |
-| --- | --- |
-| Codex/GPT（主控） | 明确问题与方法、任务拆分、原始来源核验、代码与实验、证据整合、最终结论 |
-| DSH/DeepSeek（任务执行者） | 候选文献线索、给定资料的信息提取、替代假设、独立质疑与遗漏检查 |
-
-DSH 通过项目脚本作为外部进程运行。它只适合边界清楚、可独立检查的任务；Codex/GPT 对研究设计、来源核验、代码验证和最终判断负责。不使用 DSH 时无需配置 DeepSeek API Key。
-
-## 安装与检查
-
-需要 Node.js 和 Zotero 桌面端。核心检查：
+## 常用命令
 
 ```powershell
-npm test
-npm run zotero:list
+python tools/wf.py index my-research
+python tools/wf.py run my-research projects/my-research/00_inbox/first-pass.yaml
+python -m unittest discover -s tests
 ```
 
-可选的 DeepSeek API 密钥可设为当前终端的 `DEEPSEEK_API_KEY`，或保存在被忽略的 `.env`。不要把密钥写入任务文件或提交到仓库。
+运行前将 task.yaml 的 task_id、objective、inputs 和 source_refs 填好；推荐将实际任务包保存在项目 `00_inbox/`，运行时提供相对于仓库的路径。inputs/source_refs 则相对于项目。manual 生成 `.runs/` 的 prompt，人工将模型输出保存为同目录 response.md。
 
-```powershell
-$env:DEEPSEEK_API_KEY = "你的密钥"
-```
+任务包示例见 [文献工作流](workflow/literature.md#最小任务示例)，共用接口与文件规则见 [工作流说明](workflow/README.md)。
 
-## 可选：交给 DSH
+## 模型接入
 
-先在 `features/F-001-deepseek-worker/tasks/` 创建任务文件；该目录默认忽略，因为任务可能包含私有研究材料。配置密钥后运行：
+按 [模型接入手册](workflow/model-setup.md) 配置，仅需准备服务地址、模型名、API Key 三项。主模型用 `orchestrator.profile` 选择，子模型用 `settings.default_subagent_profile` 选择，两者可来自不同服务。
 
-```powershell
-node features/F-001-deepseek-worker/scripts/dsh-task.mjs --task-file features/F-001-deepseek-worker/tasks/<task>.txt
-```
+`model_profiles` 集中保存连接，`api_key_env` 对应本地 `.env` 中自定义的变量名。支持 Chat Completions、Anthropic Messages 和外部 CLI；提供商名称不限，接入方式取决于服务实际协议。旧 `subagent_profiles` 和逐角色完整配置继续兼容。
 
-运行记录保存在被忽略的 `.runtime/runs/`。模型输出只是待核验线索，不是科研证据。
+当前 Codex/GPT＋DeepSeek 用法也保留；DeepSeek 可以读取 `.env` 中的 `ds_apikey`。没有 Key 时保留人工接力。外部调用先普通 `run` 预览，再按授权加 `--execute`；主模型 API 加 `--main`。API 主模型负责文本计划、汇总与审核，本工具未实现它自主读写文件或循环调用子模型。
 
-## 公共与私有边界
+## 安全分享模板
 
-公共模板提交 `features/`、通用脚本、模板、测试、示例配置和说明。默认不提交：
+上传前执行 `python tools/wf.py doctor --offline --share-check`。Git 检查确认 `.env`、`config/models.local.yaml` 没有被追踪；明显密钥扫描只显示路径与行号，不显示匹配内容。无 Git 仓库时报告“忽略规则已声明”，不能当作 Git 追踪检查通过。扫描不覆盖 Git 历史或大文件，不能证明所有私密内容都已脱敏。
 
-- `PROJECT.md` 和规划状态文件；
-- `workstreams/WS-*/`、实际研究材料和正式成果；
-- Zotero 索引、阅读包和本机附件路径；
-- DSH 任务、运行记录、`.env`、PDF 和大型数据。
+分享集必须排除 `.env`、`config/models.local.yaml`、`.runs/`、真实 PDF/原文、实验原始数据、私密目录、临时大文件和个人认证文件。`.gitignore` 已覆盖这些常见路径；新增私密数据放 `private/` 或补充忽略规则。它只影响 Git 未追踪文件，直接压缩/复制不会自动排除文件。只分享模板目录和脱敏示例，不整目录打包研究资料。
 
-发布前仍应人工检查暂存区。完整规则见 [`.gitignore`](.gitignore) 和 [公共模板发布检查](SHARING.md)。通用代码与模板采用 [MIT License](LICENSE)；第三方论文、图表、数据和完整翻译不包含在该授权中。
+若曾误上传 Key，立即到相应服务商后台撤销并重新生成，然后清理公开文件与历史；仅删除文件或添加 .gitignore 不会让已泄露 Key 失效。主模型与子模型的认证均由每个人在本机配置。
 
-## 接入边界
+## 目录导航
 
-- 本项目不修改用户级 `~/.codex/config.toml`，Codex 默认仍由 GPT 驱动。
-- DSH 的工作区是项目目录，拥有其自身的工具能力；涉及未公开资料、外部发送或文件修改时，先明确范围。
-- 论文、DOI、数据和引用都须由 Codex 回到原始来源核验；模型回答本身不是科研证据。
+- `config/`：主模型、子模型和路由配置。
+- `workflow/`：流程、功能地图、角色提示、schema、模板、已下载 ARS。
+- `projects/`：实际研究项目，`_template/` 是创建来源。
+- `tools/`：CLI 和适配器。
+- `tests/`：不访问外部服务的验收测试。
 
-参考：[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)、[DSH headless 模式](https://github.com/deepseek-ai/deepseek-harness/blob/master/packages/bundle/headless/README.md)、[DeepSeek 模型](https://api-docs.deepseek.com/quick_start/pricing/)、[Codex subagents](https://learn.chatgpt.com/docs/agent-configuration/subagents)。
+每个研究方向建立一个 `projects/<direction-slug>/` 项目，按 `00_inbox → 10_literature → 20_reproduction → 30_outputs` 管理；每篇论文一个目录，每个复现 claim 一个目录。
+
+文献综合工作稿按需放 `10_literature/<name>.md`，核验后的交付版本放 `30_outputs/`。文献阅读规范已接入，复现具体功能配置待后续确定，当前结构不依赖研究学科或模型厂商。
+
+## 当前状态
+
+已实现五类目录、模型配置、创建/索引/校验、manual/mock/command/HTTP 适配器与临时 mock 演示。论文采用 meta/translation/reading/analysis 四文件；阅读清单、分类索引、知识网络和概念卡已接入。PDF 解析、联网文献检索、自动写入已核验译文/综述、实际复现与原生模型启动整合待实现。详细边界见 [工作流说明](workflow/README.md)，待确认事项见 [路线图](ROADMAP.md)。

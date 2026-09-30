@@ -1,0 +1,29 @@
+paper: TODO(user)
+overview:
+  object: TODO(user)
+  core_problem: TODO(user)
+  why_important: TODO(user)
+  contributions: []
+  position: TODO(user)
+  prerequisites: []
+formulas: []
+concepts: []
+extraction:
+  claims: []
+  method: {}
+  data: []
+  baselines: []
+  metrics: []
+  results: []
+  limitations: []
+  relevance: []
+reproduction:
+  code_url: TODO(user)
+  data_url: TODO(user)
+  candidates: []
+  signals: []
+generated_by: template
+model_role: literature-reader
+prompt_version: v2
+source_refs: []
+created_at: TODO(user)

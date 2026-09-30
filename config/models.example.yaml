@@ -1,0 +1,66 @@
+# 可分享模板，无密钥。主/子模型可引用同一 model_profiles 配置池。
+# 角色 profile: null 继承全局默认；旧 subagent_profiles/逐角色配置继续兼容。
+orchestrator:
+  adapter: codex
+  model: inherit
+  profile: main
+  auth: external
+  api_key_env: null
+settings:
+  default_subagent_profile: manual
+model_profiles:
+  manual:
+    adapter: manual
+    description: 无 Key，生成 prompt 后由使用者人工执行
+    timeout_seconds: 600
+    max_concurrency: 1
+    privacy: local
+  deepseek:
+    adapter: openai_compatible
+    provider: deepseek
+    base_url: https://api.deepseek.com
+    model: deepseek-flash
+    api_key_env: DEEPSEEK_API_KEY
+    api_key_aliases: [ds_apikey]
+    capabilities: [text, reasoning]
+    timeout_seconds: 900
+    max_concurrency: 1
+    cost_tier: low
+    privacy: external
+    fallback: manual
+    request_options:
+      thinking: {type: enabled}
+      reasoning_effort: high
+      max_tokens: 16384
+  # 其他服务：复制一个 Profile，按服务商协议填写 adapter/base_url/model/api_key_env。
+  # 主模型选择 orchestrator: {profile: my-main}；子模型选择 default_subagent_profile: my-worker。
+  # Anthropic Messages 使用 adapter: anthropic；其他 Chat Completions 服务使用 openai_compatible。
+subagents:
+  literature-reader:
+    enabled: true
+    profile: null
+  reproduction-analyst:
+    enabled: true
+    profile: null
+  verifier:
+    enabled: true
+    profile: null
+  knowledge-builder:
+    enabled: false
+    profile: null
+routing:
+  literature-ingest: literature-reader
+  literature-extract: literature-reader
+  repro-feasibility: reproduction-analyst
+  repro-plan: reproduction-analyst
+  verification: verifier
+  critique: verifier
+  literature-first-pass: literature-reader
+  literature-translate: literature-reader
+  literature-close-read: literature-reader
+  literature-formula: literature-reader
+  literature-context: literature-reader
+  literature-knowledge: knowledge-builder
+fallback:
+  knowledge-builder: literature-reader
+  reproduction-analyst: literature-reader
