@@ -37,6 +37,15 @@ def valid_id(value):
             not any(c in value for c in '/\\#') and 'TODO' not in value)
 
 
+def topic_id(value):
+    """Keep normal topic identities; encode arbitrary labels without changing them."""
+    label = str(value)
+    identifier = label if label.startswith('topic:') else 'topic:' + label
+    if valid_id(identifier):
+        return identifier
+    return 'topic:label-' + hashlib.sha256(label.encode('utf-8')).hexdigest()[:16]
+
+
 def _identity(value, kind, fallback):
     if literature.meaningful(value):
         if not isinstance(value,str):
@@ -382,12 +391,12 @@ def build(root, project, ops, dry_run=False, write=True):
         return result
 
     def topic(value):
-        identifier = canonical(value, 'topic')
+        identifier = canonical(value, 'topic') if str(value).startswith('topic:') else topic_id(value)
         if not valid_id(identifier):
             issues.append('无效 topic ID：'+str(value))
             return identifier
         if not any(isinstance(entry,dict) and entry.get('id')==identifier for entry in registry_records+extra_records):
-            extra_records.append(dict(id=identifier,type='topic',path='project.yaml',label=identifier.split(':',1)[1],links=[]))
+            extra_records.append(dict(id=identifier,type='topic',path='project.yaml',label=str(value).removeprefix('topic:'),links=[]))
         return identifier
 
     # Embedded items retain old short IDs (used by historical schemas), with a
@@ -427,6 +436,14 @@ def build(root, project, ops, dry_run=False, write=True):
             rel = {'introduced':'introduces','used':'uses','compared':'contrasts','extended':'extends'}.get(entry.get('role'),'uses')
             connect(paper,rel,canonical(entry['id'],'concept'),local_evidence(path,f'concepts[{n}]',entry.get('source_refs',[])))
     for identifier, path, data, key in paper_records:
+        # Repair only our previously inferred links, never user identities.
+        for link in values(data,'links'):
+            if isinstance(link,dict) and str(link.get('target','')).startswith('topic:'):
+                label = link['target'].removeprefix('topic:')
+                if (not valid_id(link['target']) and link.get('generated_by') == 'wf-registry'
+                        and link.get('rel') == 'belongs-to-topic'
+                        and label in values(data,'categories') + values(data,'topic_tags')):
+                    link['target'] = topic_id(label)
         for field, kind, rel in [('concept_ids','concept','uses'),('first_principle_ids','principle','uses'),
                                  ('categories','topic','belongs-to-topic'),('topic_tags','topic','belongs-to-topic'),('topic_ids','topic','belongs-to-topic')]:
             for target in values(data,field):

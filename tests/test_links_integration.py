@@ -60,6 +60,25 @@ class LinksIntegrationTests(unittest.TestCase):
             self.assertTrue(any(link['source']==edge['source'] and link['target']==edge['target'] and
                                 link['rel']==edge['type'] for link in index['links']))
 
+    def test_zotero_slash_tag_survives_sync_graph_and_validation(self):
+        payload = self.exporter()
+        payload['items'][0]['tags'] = [{'tag': '/unread'}, {'tag': 'unread'}]
+        self.exporter(payload)
+        with contextlib.redirect_stdout(io.StringIO()):
+            report = zotero.sync(self.root, self.project, wf)
+            graph = wf.graph(self.root, 'research')
+        self.assertFalse(report['errors'])
+        meta = wf.load(self.base / 'papers/MockSurvey2025/meta.yaml')
+        self.assertEqual(meta['topic_tags'], ['/unread', 'unread'])
+        self.assertEqual(meta['zotero']['tags'], ['/unread', 'unread'])
+        index = registry.load_index(self.project)
+        self.assertEqual(index['issues'], [])
+        for node in graph['nodes']:
+            self.assertTrue(registry.valid_id(node['id']))
+            registry.resolve(self.project, node['id'], wf, index=index)
+        with contextlib.redirect_stdout(io.StringIO()):
+            wf.validate(self.root, 'research')
+
     def test_candidates_persist_in_source_and_source_review_wins(self):
         graph,_ = self.graph_fixture()
         edge = next(edge for edge in graph['edges'] if edge['type']=='similar-concept-set')

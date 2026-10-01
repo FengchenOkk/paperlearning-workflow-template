@@ -116,8 +116,9 @@ def _legacy_candidates(library, papers=None, index=None):
              reading_status=meta.get('reading_status'),analysis_status=meta.get('analysis_status'))
         sources.add(file)
         for topic in sorted(set(meta.get('categories',[])+meta.get('topic_tags',[]))):
-            node('topic:'+topic,'topic',topic)
-            add(pid,'topic:'+topic,'belongs-to-topic',proof=[evidence(file,'categories/topic_tags')])
+            identifier = registry.topic_id(topic)
+            node(identifier,'topic',topic)
+            add(pid,identifier,'belongs-to-topic',proof=[evidence(file,'categories/topic_tags')])
         for name in ['translation.md','reading.md']:
             text_file = literature.paper_path(folder,name)
             if text_file.is_file():

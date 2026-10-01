@@ -112,6 +112,34 @@ tasks:
     acceptance: [claims_methods_data_metrics, evidence_traceable, author_claims_separated, limitations_explicit, no_fabrication]
     max_attempts: 3
     context_limits: {max_chars: 30000, max_file_chars: 12000, max_total_bytes: 262144}
+  literature-synthesis:
+    role: literature-reader
+    inputs:
+      - {type: paper.meta, required: true}
+      - {type: paper.reading, required: true}
+      - {type: paper.analysis, required: true}
+      - {type: paper.translation, required: false}
+      - {type: paper.source.text, required: false}
+      - {type: concept, required: false}
+      - {type: research.profile, required: false}
+    outputs:
+      - {type: paper.summary, path: 06_synthesis/summary.md, id_template: 'artifact:<citekey>:summary'}
+    acceptance: [global_position, coherent_full_paper, mechanisms_and_evidence, formulas_explained, representative_literature_verified, knowledge_framework, scope_and_gaps_explicit, evidence_traceable, no_fabrication, manual_content_preserved]
+    max_attempts: 3
+    context_limits: {max_chars: 30000, max_file_chars: 12000, max_total_bytes: 262144}
+  literature-learning-guide:
+    role: knowledge-builder
+    inputs:
+      - {type: paper.meta, required: true}
+      - {type: paper.analysis, required: true}
+      - {type: paper.reading, required: false}
+      - {type: paper.source.text, required: false}
+      - {type: concept, required: false}
+    outputs:
+      - {type: paper.learning-guide, path: 06_synthesis/concept-guide.md, id_template: 'artifact:<citekey>:concept-guide'}
+    acceptance: [foundations_to_paper, frequency_scope_explicit, concepts_and_prerequisites, formulas_and_dimensions, worked_examples, representative_literature_verified, learning_network, evidence_traceable, scope_and_gaps_explicit, no_fabrication, manual_content_preserved]
+    max_attempts: 3
+    context_limits: {max_chars: 30000, max_file_chars: 12000, max_total_bytes: 262144}
   repro-feasibility:
     role: reproduction-analyst
     inputs:

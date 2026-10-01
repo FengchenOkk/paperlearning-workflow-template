@@ -3,6 +3,7 @@
 ## 整体流程
 
 方向画像 → 入库分类 → 全局预读 → 分段翻译/精读 → 公式与概念 → 上下文与知识网络 → 核验综合 → claim 可行性/计划 → 实际复现（后续）→ 正式交付。
+核验综合新增每篇论文的06_synthesis/summary.md与concept-guide.md；原有四核心文件和模型接口保留。[通读与学习手册](study-guide.md)说明study plan/coverage、两项任务合同和按需目录。综合解释来自原文、精读与分析，不能替代原始证据或复制进度状态。
 具体文献字段、编号目录、图谱与迁移见 [literature.md](literature.md)，Zotero 见 [zotero.md](zotero.md)，复现见 [reproduction.md](reproduction.md)。
 
 <!-- wf:task-rules:begin -->
@@ -24,7 +25,7 @@
 - config：主模型意图、子模型与路由，配置模板/本地配置。
 - workflow：流程、角色 prompts、schemas.yaml、内部 layouts、vendor。
 - 00_inbox：未归档资料与实际任务包。
-- 10_literature/papers/<citekey>：meta.yaml 入口；01_source 原文、02_translation 翻译、03_reading 精读、04_analysis 分析、05_notes 临时笔记；四核心文件职责不变。
+- 10_literature/papers/<citekey>：meta.yaml 入口；01_source 原文、02_translation 翻译/分段覆盖、03_reading 精读、04_analysis 分析、05_notes 临时笔记；按需06_synthesis放综合总结与概念指南，四核心文件职责不变。
 - 10_literature/concepts/<slug>.md：全局概念卡；reading-list、matrix、knowledge-map、knowledge-graph.json 是项目级单文件。
 - 文献综合工作稿按需放 10_literature/<name>.md，正式交付在 30_outputs，当前不预建 synthesis/catalog/collections。
 - 20_reproduction/<citekey>--<claim-slug>：claim.yaml、feasibility、plan、online/lab/results，保持原有结构。
@@ -71,4 +72,4 @@ allowed_paths 是协作约定，不提供操作系统沙箱。外部调用/付�
 新增角色只改本地配置与同名 prompt；契约统一扩展 schemas.yaml，任务格式不变。共享复现资源与独立任务目录按真实需要扩展。
 第三方 ARS 保存在 vendor，来源与版本见 [vendor/README.md](vendor/README.md)，不改写、不自动执行其脚本或全流水线。知识图谱在 tools/knowledge.py 生成，Zotero 在 tools/zotero.py 只读获取，CLI 与厂商适配器保持原接口。
 
-工具按职责拆分：wf.py 管 CLI，tasks.py 管任务/评审闭环，registry.py 管稳定身份/机器索引，literature.py 管文献文件/迁移/人类视图，adapters.py 保持模型调用，zotero.py 管只读同步，knowledge.py 管图谱，storage.py 共用原子文件写入。基础依赖仍为 PyYAML，Python 3.11+。复现私有扩展仅声明接口，不自动执行。
+工具按职责拆分：wf.py 管 CLI，tasks.py 管任务/评审闭环，registry.py 管稳定身份/机器索引，literature.py 管文献文件/迁移/人类视图，study.py 管通读交付和分段覆盖，adapters.py 保持模型调用，zotero.py 管只读同步，knowledge.py 管图谱，storage.py 共用原子文件写入。基础依赖仍为 PyYAML，Python 3.11+。复现私有扩展仅声明接口，不自动执行。

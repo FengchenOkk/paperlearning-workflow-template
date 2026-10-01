@@ -31,3 +31,5 @@ python tools/wf.py new paper <research-slug> <citekey>
 每篇论文都会保存到 `10_literature/papers/<citekey>/`，原文、翻译、精读、结构化分析和临时笔记均位于该论文自己的目录中。项目内完整文件清单和用途见生成项目中的 `README.md`。
 
 工作流用于初始化的内部文件定义位于 `workflow/layouts/`，不属于研究数据，也不会作为项目出现在这里。
+
+论文通读成果按需放该篇论文的 `06_synthesis/summary.md` 与 `concept-guide.md`；INDEX.md 提供直接入口，meta仍是唯一进度来源。操作见 [论文通读与概念学习手册](../workflow/study-guide.md)。

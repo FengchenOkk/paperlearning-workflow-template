@@ -36,6 +36,8 @@ python -m unittest discover -s tests
 
 任务包示例见 [文献工作流](workflow/literature.md#最小任务示例)，共用接口与文件规则见 [工作流说明](workflow/README.md)。
 
+想快速读懂一篇论文，先看该论文的 `06_synthesis/summary.md`，再对照 `concept-guide.md` 学习底层原理、概念和公式；全文译文与精读仍在原目录。新增成果的任务规划和逐段覆盖命令见 [论文通读与概念学习手册](workflow/study-guide.md)，项目 INDEX.md 会提供直接入口。
+
 ## 计划、执行和评审
 
 项目 `INDEX.json` 统一解析论文、概念、公式、claim、任务和产物的稳定 ID；`INDEX.md` 保留人类视图。新任务由 [task-contracts.yaml](workflow/task-contracts.yaml) 声明输入/输出 ArtifactRef、职责、验收标准与最多3次子模型尝试；子模型一次返修仍失败时主模型接手，默认另有1次修复，修复草稿仍走单独验收。对象移动不改变 ID，统一 `links` 是关系来源。
@@ -88,4 +90,4 @@ python tools/wf.py task accept my-research verify-paper-id --attempt 1
 
 ## 当前状态
 
-保留五类顶层目录、模型配置与旧命令，新增稳定 ID、机器索引、统一关系、任务契约、最小上下文、结果/评审包和显式接受流程。论文采用 meta.yaml 及 01_source～05_notes 编号目录，四核心文件职责保留；可选只读 Zotero、阅读清单、候选知识图谱、概念卡和复制迁移继续使用。PDF 解析、联网文献检索、实际复现和原生模型启动整合待实现。基础依赖仍只有 PyYAML，测试不访问真实外部服务。详细边界见 [模型分工与闭环手册](workflow/task-orchestration.md)，已有阶段验收见 [升级记录](workflow/upgrade-validation.md)，待确认事项见 [路线图](ROADMAP.md)。
+保留五类顶层目录、模型配置与旧命令，新增稳定 ID、机器索引、统一关系、任务契约、最小上下文、结果/评审包和显式接受流程。论文采用 meta.yaml 及 01_source～05_notes 编号目录，四核心文件职责保留；按需增加 06_synthesis/summary.md（综合总结）与 concept-guide.md（概念学习指南），分段翻译可用 study plan/coverage 管理。可选只读 Zotero、阅读清单、候选知识图谱、概念卡和复制迁移继续使用。内置 PDF 解析、自动联网文献检索、实际复现和原生模型启动整合待实现；执行器可另行提取 PDF、查阅来源并人工核验。基础依赖仍只有 PyYAML，离线测试不访问真实外部服务。详细边界见 [通读与学习手册](workflow/study-guide.md)、[模型分工与闭环手册](workflow/task-orchestration.md)，阶段验收见 [升级记录](workflow/upgrade-validation.md)，待确认事项见 [路线图](ROADMAP.md)。

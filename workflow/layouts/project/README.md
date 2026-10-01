@@ -22,13 +22,17 @@
 │           ├── meta.yaml            # 论文身份、来源、状态和下一步
 │           ├── 01_source/           # 原文、附件和来源链接；原始资料只读
 │           ├── 02_translation/
-│           │   └── translation.md   # 按原文章节和段落追加的翻译
+│           │   ├── translation.md   # 按原文章节和段落追加的翻译
+│           │   └── coverage.yaml    # 按需记录分段范围、源哈希和验收任务
 │           ├── 03_reading/
 │           │   └── reading.md       # 全局定位、逐节精读和证据索引
 │           ├── 04_analysis/
 │           │   └── analysis.yaml    # 公式、概念、主张、方法和复现线索
-│           └── 05_notes/
-│               └── notes.md         # 临时疑问和灵感，不作为正式结论
+│           ├── 05_notes/
+│           │   └── notes.md         # 临时疑问和灵感，不作为正式结论
+│           └── 06_synthesis/         # 按需验收后生成
+│               ├── summary.md       # 连贯的全文综合总结
+│               └── concept-guide.md # 底层原理、概念和公式对照学习
 ├── 20_reproduction/
 │   └── <citekey>--<claim-slug>/      # 一项可检验主张一个目录
 │       ├── claim.yaml                # 主张身份、资源、路线、标准和状态

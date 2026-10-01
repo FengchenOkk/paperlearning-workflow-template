@@ -1,5 +1,19 @@
 version: 3
 contracts:
+  study_delivery:
+    type: object
+    required: [id, type, paper_id, generated_by, model_role, prompt_version, source_refs, created_at, scope, links]
+    properties:
+      id: {type: string}
+      type: {type: string, enum: [artifact]}
+      paper_id: {type: string}
+      generated_by: {type: string}
+      model_role: {type: string}
+      prompt_version: {type: string}
+      created_at: {type: string}
+      source_refs: {type: array, items: {type: string}}
+      scope: {type: string}
+      links: {type: array}
   artifact_ref:
     type: object
     required: [id, type, path, anchor, role, required, hash]

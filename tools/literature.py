@@ -374,6 +374,13 @@ class Library:
                  '- [阅读清单](10_literature/reading-list.md)', '- [对比矩阵](10_literature/matrix.md)',
                  '- [知识网络](10_literature/knowledge-map.md)', '', '## 全部论文', '']
         lines += self.paper_rows(papers.items())
+        lines += ['', '## 论文通读入口', '', '| 论文 | 综合总结 | 概念学习指南 | 全文翻译 | 精读与证据 |', '|---|---|---|---|---|']
+        for key in sorted(papers):
+            folder=self.paper_folder(key)
+            targets=['06_synthesis/summary.md','06_synthesis/concept-guide.md','02_translation/translation.md','03_reading/reading.md']
+            labels=['综合总结','概念指南','全文翻译','精读']
+            cells=[f'[{label}]({(folder/target).relative_to(self.p).as_posix()})' if (folder/target).is_file() else '尚未生成' for target,label in zip(targets,labels)]
+            lines += ['| '+cell(key)+' | '+' | '.join(cells)+' |']
         for field, title in [('categories','category'), ('topic_tags','topic'), ('paper_role','paper_role'), ('status','status')]:
             lines += ['', f'## 按 {title} 分类', '']
             groups = defaultdict(list)
@@ -574,6 +581,19 @@ class Library:
                 cid=self.concept_key_alias(cid)
                 self.ops.slug(cid)
                 if cid not in cards:raise ValueError(f'概念卡不存在：{cid}')
+            try:
+                from . import study
+            except ImportError:
+                import study
+            for kind, (filename, _, _) in study.DELIVERIES.items():
+                path=folder/'06_synthesis'/filename
+                if path.is_file():
+                    study.validate_delivery(self.root,self.p,path,kind,meta['id'],self.ops)
+                    self.check_concept_links(markdown(path)[1],path.parent,cards)
+            if meta['translation_status']=='complete' and (folder/'02_translation/coverage.yaml').exists():
+                result=study.coverage(self.root,self.p,key,self.ops)
+                if not result['structural_coverage']:
+                    raise ValueError('完成翻译覆盖核对未通过：'+'; '.join(result['errors']))
             for name in ['translation.md','reading.md']:
                 path=paper_path(folder,name)
                 info,body=markdown(path)

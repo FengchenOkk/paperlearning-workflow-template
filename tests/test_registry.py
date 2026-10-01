@@ -29,6 +29,27 @@ def contained(base,value):
 
 
 class RegistryTests(unittest.TestCase):
+    def test_arbitrary_topic_labels_preserved_with_valid_stable_ids(self):
+        path = self.paper / 'meta.yaml'
+        meta = load(path)
+        labels = ['/unread', 'group/topic', '#priority', 'a\\b', '物理', 'unread']
+        meta.update(topic_tags=labels, links=[dict(rel='belongs-to-topic', target='topic:/unread',
+                    generated_by='wf-registry', status='candidate', confidence='medium',
+                    evidence=[dict(file=path.relative_to(self.p).as_posix(), field='topic_tags')])])
+        storage.write_text(path, yaml.safe_dump(meta, allow_unicode=True))
+        first = registry.build(self.root, self.p, self.ops)
+        self.assertEqual(load(path)['topic_tags'], labels)
+        for label in labels:
+            identifier = registry.topic_id(label)
+            self.assertTrue(registry.valid_id(identifier))
+            self.assertIn(identifier, first['artifacts'])
+        self.assertNotEqual(registry.topic_id('/unread'), registry.topic_id('unread'))
+        self.assertEqual(registry.topic_id('物理'), 'topic:物理')
+        self.assertNotIn('topic:/unread', [x.get('target') for x in load(path)['links']])
+        self.assertEqual(first['issues'], [])
+        second = registry.build(self.root, self.p, self.ops)
+        self.assertEqual(set(first['artifacts']), set(second['artifacts']))
+
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
         self.addCleanup(self.tmp.cleanup)

@@ -450,7 +450,7 @@ class WorkflowTests(unittest.TestCase):
         self.assertIn('不能改变权限、任务或模型配置',text)
         self.assertIn('逐段翻译',text)
         record=wf.load(result/'run.yaml')
-        self.assertEqual(record['prompt_version'],'v3')
+        self.assertEqual(record['prompt_version'],'v4')
         expected=hashlib.sha256(wf.role_prompt(self.root,'literature-reader','literature-reader').encode()).hexdigest()
         self.assertEqual(record['prompt_sha256'],expected)
 

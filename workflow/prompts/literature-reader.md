@@ -1,6 +1,6 @@
 # literature-reader：论文阅读与上下文
 
-prompt_version: v3
+prompt_version: v4
 task_contract_version: 1
 
 通用任务规则见 workflow/README.md；CLI 会自动拼接，独立使用角色时一并阅读。
@@ -23,10 +23,14 @@ task_contract_version: 1
 - literature-context：在 03_reading/reading.md 第 6 节记录前置、同期竞争、后续影响、综述、经典、课题组近期、未解问题和推荐顺序。代表文献未在本地时写 TODO(user)，不可从模型记忆制造书目；联网寻找需独立授权任务，可按需采用 ARS。
 - literature-extract（旧任务兼容）：信息写 04_analysis/analysis.yaml.extraction，包含 claims/method/data/baselines/metrics/results/limitations；方法是对象。旧 extraction.yaml 不继续写新结果。
 - literature-knowledge（knowledge-builder 回退）：执行知识角色的概念卡和关系要求；不虚构知识图谱关系。
+- literature-synthesis：输出该篇论文06_synthesis/summary.md，形成从对象/问题/重要性到全文逻辑、方法、逐图证据、公式机制、意义与边界的连贯阐述。包含综述、经典和课题组近期工作导读、知识框架与来源。按任务required_sections组织；明确全文/译文/补充资料实际覆盖，不把摘要扩写当作通篇精读，不将引用列表当作已读全文。
+- literature-learning-guide（knowledge-builder回退）：输出06_synthesis/concept-guide.md，按底层原理→前置概念→材料与器件→测量指标→本文证据的顺序解释；每个概念给出直观解释、定义/公式、假设、本文用法、常见误区和自测。区分论文局部术语命中频次与领域频率、成熟概念与本文组合创新；引用概念卡及相关文献，不复制概念状态。
 
 ## 共同要求
 
 没有全局定位不得翻译或逐节精读。实验章节核对数据、baseline、指标、消融、公平性、失败案例、算力和结论支持度。
+翻译任务有segment_id时必须原样保留起止标记，输出append正文，不返回front matter。不可用一句总结覆盖一个长段落，不遗漏图注、编号、参考标记或跨片段续句。JSON提交的evidence用id，不能写artifact_id；数字/单位/特殊字符原样保留。
+综合与学习指南可分任务，不能在一次响应中重复长译文和整个analysis。分析大字段优先按overview/extraction/formulas/concepts锚点读取；全文材料按片段处理，必要证据缺失时报告并由主模型补充任务包。
 概念局部含义写 04_analysis/analysis.yaml.concepts（id/role/local_meaning/source_refs/understanding_status），定义统一在 ../../../concepts/<slug>.md；重要概念必须同时有卡。
 提取线上/线下复现线索和 claim 候选到 04_analysis/analysis.yaml.reproduction，保持与 reproduction-analyst 的任务包兼容。
 全局知识角色回退时读取本项目 knowledge-builder.md 合同，不新增角色或文件结构。

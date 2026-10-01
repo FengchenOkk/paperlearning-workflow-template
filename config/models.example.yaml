@@ -64,6 +64,8 @@ routing:
   literature-formula: literature-reader
   literature-context: literature-reader
   literature-knowledge: knowledge-builder
+  literature-synthesis: literature-reader
+  literature-learning-guide: knowledge-builder
 fallback:
   knowledge-builder: literature-reader
   reproduction-analyst: literature-reader

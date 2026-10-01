@@ -6,14 +6,15 @@ import re
 import uuid
 import yaml
 try:
-    from . import adapters, literature, registry, storage
+    from . import adapters, literature, registry, storage, study
 except ImportError:
-    import adapters, literature, registry, storage
+    import adapters, literature, registry, storage, study
 
 
 TYPE_ALIASES = {
     'paper.meta': 'paper', 'paper.analysis': 'analysis', 'paper.reading': 'reading',
     'paper.translation': 'translation', 'paper.source.text': 'source.text',
+    'paper.summary': 'artifact', 'paper.learning-guide': 'artifact',
     'research.profile': 'research-profile', 'claim.feasibility': 'artifact',
     'claim.plan': 'artifact', 'verification.report': 'artifact', 'critique.report': 'artifact',
 }
@@ -171,7 +172,7 @@ def normalize_task(root, project, task, ops, config=None):
     claim = next((r for r in refs if r['type'] == 'claim'), None)
     paper_id = paper['id'] if paper else context.get('paper_id')
     key = paper_id.partition(':')[2] if paper_id else context.get('paper_citekey')
-    if kind in {'literature-translate', 'literature-close-read'}:
+    if kind in {'literature-translate', 'literature-close-read', 'literature-synthesis', 'literature-learning-guide'}:
         if not paper_id:
             raise ValueError('翻译或精读需 paper 输入')
         analysis = registry.resolve(project, 'analysis:' + key, ops, index=registry.load_index(project))
@@ -210,7 +211,7 @@ def normalize_task(root, project, task, ops, config=None):
         else:
             if supplied and supplied.get('path'):
                 rel = supplied['path']
-            elif '/' not in rel or rel.split('/')[0].startswith(('02_', '03_', '04_')):
+            elif '/' not in rel or (definition['type'].startswith('paper.') and re.fullmatch(r'\d{2}_[\w-]+', rel.split('/')[0])):
                 if definition['type'].startswith('paper.') and paper:
                     rel = (Path(paper['path']).parent / rel).as_posix()
                 elif definition['type'].startswith('claim.') and claim:
@@ -283,6 +284,15 @@ def select_anchor(content, anchor):
             return dump(data[nested[1]][int(nested[2])])
         except (yaml.YAMLError, TypeError, KeyError, IndexError):
             raise ValueError('YAML anchor 不存在：' + anchor) from None
+    # Select ordinary YAML fields without uploading a growing analysis wholesale.
+    if re.fullmatch(r'[a-z][\w-]*(?:\.[a-z][\w-]*|\[\d+\])*', anchor):
+        try:
+            current = yaml.safe_load(content)
+            for component in re.findall(r'[a-z][\w-]*|\[\d+\]', anchor):
+                current = current[int(component[1:-1])] if component.startswith('[') else current[component]
+            return dump(current)
+        except (yaml.YAMLError, TypeError, KeyError, IndexError):
+            pass  # A Markdown heading may have the same spelling.
     line = re.fullmatch(r'(?:L|lines=)(\d+)(?:[-:](\d+))?', anchor)
     if line:
         start, end = int(line[1]), int(line[2] or line[1])
@@ -355,6 +365,9 @@ def context(root, project, task_id, ops):
     use_main = bool(request and request.get('execution_target')=='main')
     manifest = {'schema_version': 1, 'generated_by': 'wf.tasks', 'task_id': task_id, 'task_type': task['task_type'], 'role': 'orchestrator' if use_main else task['role'], 'task_role':task['role'], 'execution_target':'main' if use_main else 'subagent', 'contract': task['contract'], 'contract_hash': task['contract_hash'], 'inputs': receipts, 'outputs_expected': task['outputs'], 'acceptance_criteria': task['acceptance_criteria'], 'limits': limits, 'revision_of': revision_of}
     context_text = '\n'.join(chunks) + '\n'
+    if task.get('constraints', {}).get('require_complete_context') and any(not row['included'] or row['truncated'] for row in receipts):
+        missing = [row['id'] + '#' + str(row.get('anchor') or '*') for row in receipts if not row['included'] or row['truncated']]
+        raise ValueError('本任务要求完整上下文；先缩小anchor或拆分输入，禁止带截断原文调用模型：' + '; '.join(missing))
     if len(context_text) > limits['max_chars'] or len(context_text.encode()) > limits['max_total_bytes']:
         raise ValueError('上下文的元数据/约束已超过限制；精简任务或拆分输入')
     fingerprint = digest((dump(manifest) + context_text).encode())
@@ -398,11 +411,13 @@ def execute_prepared(root, project, folder, ops, config, execute_external=False)
     target = folder / 'attempts' / str(attempt)
     role = 'orchestrator' if use_main else ops.resolve_role(config, task['role'])
     settings = ops.execution_settings(config, role, use_main=use_main)
-    envelope = {'task_id': task_id, 'attempt': attempt, 'status': 'submitted', 'summary': 'TODO(user)', 'created_artifacts': [], 'updated_artifacts': [], 'evidence': [], 'unresolved_issues': [], 'confidence': 'low', 'self_check': {x: 'unknown' for x in task['acceptance_criteria']}}
+    envelope = {'task_id': task_id, 'attempt': attempt, 'status': 'submitted', 'summary': 'TODO(user)', 'created_artifacts': [], 'updated_artifacts': [], 'evidence': [{'id':ref['id'], 'anchor':ref.get('anchor')} for ref in ops.load(directory/'manifest.yaml')['inputs']], 'unresolved_issues': [], 'confidence': 'low', 'self_check': {x: 'unknown' for x in task['acceptance_criteria']}}
     prompt = ops.role_prompt(root, role, task['role']) + '\n\n' + directory.joinpath('context.md').read_text(encoding='utf-8')
     if use_main:
         prompt += '\n\n## 当前职责：主模型接手返修\n按上轮问题与原验收标准直接修复草稿。本次返回 result/artifacts，不是评审决定。不得以自检代替正式验收，资料不足须在 unresolved_issues 说明。\n'
-    prompt += '\n\n## 提交合同\n只返回一个 YAML 对象（可放 YAML 代码块）：result 和 artifacts。artifacts 每项含 id（正式目标ID）、type、content（完整候选文件）、mode（replace/append）；不得执行工具或写正式路径。\n' + dump({'result': envelope, 'artifacts': []})
+    output_format = 'JSON 对象；字符串必须正确转义，不要嵌套YAML或代码块' if task.get('constraints', {}).get('response_format') == 'json' else 'YAML 对象（也接受JSON，可放代码块）'
+    prompt += '\n\n## 提交合同\n只返回一个 ' + output_format + '：result 和 artifacts。artifacts 每项含 id（正式目标ID）、type、content（完整候选文件）、mode（replace/append）；不得执行工具或写正式路径。\n' + dump({'result': envelope, 'artifacts': []})
+    prompt += '\nresult.evidence 每项必须含 id，可直接复制上述真实输入ID；不要写artifact_id或仅file/path。只列实际使用的来源。created_artifacts/updated_artifacts可留空，由执行器登记真实草稿。\n'
     storage.write_text(target / 'prompt.md', prompt)
     ops.save(target / 'manifest.yaml', ops.load(directory / 'manifest.yaml'))
     requested = config['orchestrator'] if use_main else config['subagents'].get(task['role'],{})
@@ -693,7 +708,19 @@ def revise(root, project, task_id, attempt, review_file, ops, execute_external=F
     if selected_ids - {r['target_id'] for r in artifacts} - {r['id'] for r in artifacts}:
         raise ValueError('返修 artifact_id 不在本次输出中')
     relevant = [x for x in artifacts if not selected_ids or x['id'] in selected_ids or x['target_id'] in selected_ids]
-    refs = [dict(id=x['id'], hash=x['hash']) for x in relevant] + requested
+    refs = []
+    for artifact in relevant:
+        file = ops.contained(project, artifact['path'])
+        if task.get('constraints', {}).get('require_complete_context') and file.stat().st_size <= 2_000_000:
+            text = file.read_text(encoding='utf-8-sig')
+            limit = task['context_limits']['max_file_chars']
+            if len(text) > limit:
+                # Reuse the full draft in bounded, disjoint excerpts; never silently truncate a repair.
+                refs += [dict(id=artifact['id'], hash=artifact['hash'], anchor=f'L{start}-{end}')
+                         for start, end in study.split_lines(text, min(limit, 10000))]
+                continue
+        refs.append(dict(id=artifact['id'], hash=artifact['hash']))
+    refs += requested
     folder = run_directory(project, task_id, ops)
     failed_revision = attempt>1 and (folder/'revision-requests'/str(attempt-1)).with_suffix('.yaml').exists()
     takeover = not use_main and (failed_revision or attempt >= task['max_attempts'])
@@ -745,6 +772,15 @@ def accept(root, project, task_id, attempt, ops):
             raise ValueError('正式目标已变化，需重新评审：' + row['target_id'])
         draft = ops.contained(project, row['path']).read_bytes()
         content = old + draft if row['mode'] == 'append' and old is not None else draft
+        if task['task_type'] == 'literature-translate' and task.get('constraints', {}).get('segment_id'):
+            sid = ops.slug(task['constraints']['segment_id'])
+            begin, end = f'<!-- translation:{sid} -->', f'<!-- /translation:{sid} -->'
+            fragment = draft.decode('utf-8-sig')
+            matched = re.search(re.escape(begin) + r'([\s\S]*?)' + re.escape(end), fragment)
+            if fragment.count(begin)!=1 or fragment.count(end)!=1 or not matched or not matched[1].strip():
+                raise ValueError('翻译片段标记缺失、重复或正文为空')
+            if old and (begin in old.decode('utf-8-sig') or end in old.decode('utf-8-sig')):
+                raise ValueError('翻译片段已存在，拒绝重复追加')
         # 核心文本更新不得悄悄丢掉人工正文；要求候选保留旧正文。
         if old and target.suffix == '.md' and row['mode'] == 'replace':
             _, body = literature.markdown(target)
@@ -767,6 +803,10 @@ def accept(root, project, task_id, attempt, ops):
         elif target.suffix == '.md':
             draft_file = ops.contained(project, row['path'])
             proposed, body = literature.markdown(draft_file)
+            if task['task_type'] in {'literature-synthesis','literature-learning-guide'}:
+                kind = 'summary' if task['task_type']=='literature-synthesis' else 'concept-guide'
+                expected_paper = 'paper:' + task['context']['paper_citekey']
+                study.validate_delivery(root, project, draft_file, kind, expected_paper, ops)
             original, _ = literature.markdown(target) if old else ({}, '')
             if proposed.get('id', row['target_id']) != row['target_id']:
                 raise ValueError('Markdown 产物不能变更稳定 ID')

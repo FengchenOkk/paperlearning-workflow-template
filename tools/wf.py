@@ -17,9 +17,9 @@ try:
 except ImportError:
     raise SystemExit('请先执行 python -m pip install -r requirements.txt')
 try:
-    from . import adapters, literature, storage, zotero, knowledge, registry, tasks
+    from . import adapters, literature, storage, zotero, knowledge, registry, tasks, study
 except ImportError:
-    import adapters, literature, storage, zotero, knowledge, registry, tasks
+    import adapters, literature, storage, zotero, knowledge, registry, tasks, study
 
 ROOT = Path(__file__).resolve().parents[1]
 ROUTES = ['online-code', 'online-simulation', 'offline-lab', 'hybrid', 'observe-only', 'unreproducible']
@@ -665,6 +665,11 @@ def main(argv=None):
         if name=='index':cmd.add_argument('--json',action='store_true',help='重建稳定 ID 机器索引（普通 index 也会生成）')
     cmd=sub.add_parser('validate');cmd.add_argument('project',nargs='?');cmd.add_argument('--links',action='store_true');cmd.add_argument('--contracts',action='store_true')
     cmd=sub.add_parser('context');cmd.add_argument('project');cmd.add_argument('task_id')
+    cmd=sub.add_parser('study'); ssub=cmd.add_subparsers(dest='study_action',required=True)
+    for action in ['plan','coverage']:
+        child=ssub.add_parser(action);child.add_argument('project');child.add_argument('citekey')
+        if action=='plan':
+            child.add_argument('--dry-run',action='store_true');child.add_argument('--segment-chars',type=int,default=5500)
     cmd=sub.add_parser('task');tsub=cmd.add_subparsers(dest='task_action',required=True)
     tr=tsub.add_parser('run');tr.add_argument('project');tr.add_argument('task');tr.add_argument('--execute',action='store_true')
     tr=tsub.add_parser('status');tr.add_argument('project');tr.add_argument('task_id',nargs='?')
@@ -708,6 +713,12 @@ def main(argv=None):
             elif not args.contracts:raise ValueError('validate 需要 project 或 --contracts')
         elif args.action == 'context':
             print(tasks.context(ROOT,project(ROOT,args.project),args.task_id,sys.modules[__name__]))
+        elif args.action == 'study':
+            p=project(ROOT,args.project)
+            result=study.plan(ROOT,p,args.citekey,sys.modules[__name__],args.dry_run,args.segment_chars) if args.study_action=='plan' else study.coverage(ROOT,p,args.citekey,sys.modules[__name__])
+            print(yaml.safe_dump(result,allow_unicode=True,sort_keys=False))
+            if args.study_action=='coverage' and not result['structural_coverage']:
+                return 1
         elif args.action == 'task':
             p=project(ROOT,args.project);ops=sys.modules[__name__]
             if args.task_action=='run':print(tasks.execute(ROOT,p,args.task,ops,args.execute))

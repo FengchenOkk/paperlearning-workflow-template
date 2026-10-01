@@ -22,7 +22,10 @@
 │   ├── 02_translation/translation.md
 │   ├── 03_reading/reading.md
 │   ├── 04_analysis/analysis.yaml
-│   └── 05_notes/notes.md
+│   ├── 05_notes/notes.md
+│   └── 06_synthesis/                # 按需，验收后生成
+│       ├── summary.md               # 可通读的全文综合总结
+│       └── concept-guide.md         # 底层原理到本文的概念指南
 ├── concepts/<concept-slug>.md
 ├── reading-list.md
 ├── matrix.md
@@ -37,6 +40,8 @@ citekey 保留安全的 Better BibTeX 键和大小写；目录避免大小写碰
 论文状态 unread/pre-read/reading/deep-read/synthesized；翻译、阅读和分析进度 none/partial/complete，仅写 meta，不在正文重复。meta 新增 first_principle_ids 与 zotero 绑定信息；原 source_files/code_links/data_links 保留。
 
 ## 翻译、精读与结构化分析
+
+两项新增综合任务 literature-synthesis / literature-learning-guide 沿用既有合同与真实评审闭环；06_synthesis只提供阅读和教学视图，不新增进度事实源。完整入门命令、固定章节、逐段coverage.yaml和核验要求见 [论文通读与概念学习手册](study-guide.md)。全局定位后用 `study plan` 生成任务，逐段审核/accept，再用 `study coverage` 核对范围；它不证明翻译科学正确。INDEX.md显示每篇论文的综合、概念、翻译和精读入口。
 
 02_translation/translation.md 必须逐段完整翻译，保留章节、公式、图表编号和引用。首次术语写中文（English），概念链接使用 ../../../concepts/<slug>.md，补充标 [译注]；长论文按章节追加并记录覆盖，不能用摘要代替。
 

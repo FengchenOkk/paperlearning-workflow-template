@@ -24,6 +24,8 @@ class LiteratureUpgradeTests(unittest.TestCase):
             shutil.copyfile(wf.ROOT/rel,self.root/rel)
         (self.root/'tools').mkdir(); (self.root/'tests').mkdir()
         shutil.copyfile(self.root/'config/models.example.yaml',self.root/'config/models.local.yaml')
+        # Offline fixtures must not inherit a user's enabled local Zotero service.
+        shutil.copyfile(self.root/'config/zotero.example.yaml',self.root/'config/zotero.local.yaml')
         with contextlib.redirect_stdout(io.StringIO()):
             wf.bootstrap(self.root)
             wf.init(self.root,'research','测试研究')
