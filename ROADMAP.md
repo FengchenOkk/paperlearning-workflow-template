@@ -2,6 +2,8 @@
 
 ## 模型任务分配与连接闭环（2026-10-01）
 
+- [x] OPS-008：移除 `projects/_template` 和 `.gitkeep` 占位；`projects/` 只保存真实项目，内部初始化定义统一到 `workflow/layouts/`。新项目自带完整文件职责说明，196 项离线测试通过。
+
 - [x] OPS-007：子模型返修失败自动创建主模型修复尝试，原合同/输入/草稿延续；主Profile独立路由，现有会话接力、外部调用需--execute，默认1次主修复仍失败则block。主模型修复仍单独验收，195项测试通过。
 
 - [x] CFG-004：主模型计划/验收，子模型执行；12类任务合同与现有 routing 一致，当前连接与Key保持。
@@ -115,9 +117,9 @@ DeepSeek 当前作为文本子任务模型接入，文件操作、任务编排�
 
 - workflow/schemas/task.schema.json、paper.schema.json、claim.schema.json 合并到 workflow/schemas.yaml；旧路径通过 run 别名兼容。
 - 自有 paper/note.md 内容职责进入 reading.md，paper/extraction.yaml 内容职责进入 analysis.yaml。
-- 空项目模板的 synthesis/README.md 移除，综合工作稿按需在 10_literature/ 创建具名文件。
+- 旧项目骨架中的 synthesis/README.md 已移除，综合工作稿按需在 10_literature/ 创建具名文件。
 - catalog/、collections/、paper-reader/context-builder、templates/concept/、templates/collection/ 在当前仓库本就不存在，没有删除此类真实数据。
-- ARS vendor 原内容和实际研究项目未改写；当前 projects 只有 _template，没有真实论文数据。
+- ARS vendor 原内容和实际研究项目未改写；`projects/` 仅保留项目说明，没有真实论文数据；内部初始化定义统一位于 `workflow/layouts/`。
 
 ## 文献重构验收（上一轮）
 

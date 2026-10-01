@@ -15,7 +15,7 @@ class WorkflowTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
-        for rel in ['config','workflow/templates','workflow/prompts','projects/_template']:
+        for rel in ['config','workflow/layouts','workflow/prompts']:
             shutil.copytree(wf.ROOT / rel, self.root / rel)
         for rel in ['workflow/README.md','workflow/literature.md','workflow/reproduction.md','workflow/schemas.yaml']:
             shutil.copyfile(wf.ROOT / rel, self.root / rel)
@@ -29,7 +29,7 @@ class WorkflowTests(unittest.TestCase):
         wf.init(self.root, 'test-project', '测试项目')
 
     def task(self):
-        task = wf.load(self.root / 'workflow/templates/task.yaml')
+        task = wf.load(self.root / 'workflow/layouts/task.yaml')
         task.update(task_id='test-task', inputs=['research-profile.yaml'], source_refs=['research-profile.yaml'])
         wf.save(self.root / 'task.yaml', task)
         return task
@@ -57,6 +57,17 @@ class WorkflowTests(unittest.TestCase):
         self.assertEqual(wf.load(result/'run.yaml')['status'],'mock')
         self.assertTrue(wf.load(result/'run.yaml')['input_hashes'])
         self.assertIn('占位', (result/'response.md').read_text(encoding='utf-8'))
+
+    def test_generated_project_has_explicit_paper_layout(self):
+        project = self.root/'projects/test-project'
+        self.assertTrue((project/'README.md').is_file())
+        self.assertFalse((self.root/'projects/_template').exists())
+        paper = wf.new_paper(self.root,'test-project','layout-check')
+        self.assertEqual(
+            {path.name for path in paper.iterdir()},
+            {'meta.yaml','01_source','02_translation','03_reading','04_analysis','05_notes'},
+        )
+        self.assertFalse(list(project.rglob('.gitkeep')))
 
     def test_duplicate_creation_preserves_existing(self):
         with self.assertRaises(ValueError): wf.init(self.root,'test-project','覆盖')
@@ -232,7 +243,7 @@ class WorkflowTests(unittest.TestCase):
         self.assertIn('## 时间线',index);self.assertIn('## 按 paper_role 分类',index)
         text=(p/'10_literature/reading-list.md').read_text(encoding='utf-8')
         self.assertIn('2025',text);self.assertIn('survey',text)
-        self.assertEqual(len(list((p/'10_literature/papers').iterdir())),2)  # 论文与 .gitkeep
+        self.assertEqual(len(list((p/'10_literature/papers').iterdir())),1)
         self.assertFalse((p/'10_literature/catalog').exists())
         self.assertFalse((p/'10_literature/collections').exists())
 
@@ -386,10 +397,10 @@ class WorkflowTests(unittest.TestCase):
                 ['bootstrap'], ['doctor','--offline'], ['init','cli-project','--title','命令验收'],
                 ['new','paper','cli-project','cli-paper'], ['new','concept','cli-project','cli-concept'],
                 ['new','claim','cli-project','cli-paper','claim'], ['index','cli-project'], ['validate','cli-project'],
-                ['run','cli-project','workflow/templates/task.yaml']]:
+                ['run','cli-project','workflow/layouts/task.yaml']]:
                 if command[0]=='run':
-                    task=wf.load(self.root/'workflow/templates/task.yaml');task['task_id']='cli-task'
-                    wf.save(self.root/'workflow/templates/task.yaml',task)
+                    task=wf.load(self.root/'workflow/layouts/task.yaml');task['task_id']='cli-task'
+                    wf.save(self.root/'workflow/layouts/task.yaml',task)
                 self.assertEqual(wf.main(command),0,command)
         self.assertFalse((self.root/'projects/cli-project/10_literature/synthesis').exists())
 

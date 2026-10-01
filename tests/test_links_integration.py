@@ -15,7 +15,7 @@ class LinksIntegrationTests(unittest.TestCase):
         temp = tempfile.TemporaryDirectory()
         self.addCleanup(temp.cleanup)
         self.root = Path(temp.name)
-        for rel in ['config','workflow/templates','workflow/prompts','projects/_template']:
+        for rel in ['config','workflow/layouts','workflow/prompts']:
             shutil.copytree(wf.ROOT/rel,self.root/rel)
         for rel in ['workflow/README.md','workflow/literature.md','workflow/reproduction.md','workflow/schemas.yaml',
                     'workflow/task-contracts.yaml','.gitignore','.env.example']:

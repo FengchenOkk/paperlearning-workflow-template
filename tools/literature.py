@@ -195,12 +195,12 @@ class Library:
         for name in ['README.md', 'reading-list.md', 'knowledge-map.md']:
             dest = self.base / name
             if not dest.exists():
-                storage.copy_file(self.root / 'projects/_template/10_literature' / name, dest)
+                storage.copy_file(self.root / 'workflow/layouts/project/10_literature' / name, dest)
 
     def migrate(self):
         """复制迁移：保留旧原件，冲突逐项报告，元数据变更先备份。"""
         self.ensure_project_files()
-        template = self.root / 'workflow/templates/paper'
+        template = self.root / 'workflow/layouts/paper'
         report = {'schema_version': 1, 'generated_by': 'wf', 'generated_at': self.ops.now(),
                   'generated_from': [], 'copied': [], 'generated': [], 'conflicts': [], 'errors': []}
         for folder in sorted((self.base / 'papers').glob('*')):
@@ -350,7 +350,7 @@ class Library:
         if target.exists():
             raise ValueError('概念已存在，不覆盖')
         target.parent.mkdir(exist_ok=True)
-        info, body = markdown(self.root / 'workflow/templates/concept.md')
+        info, body = markdown(self.root / 'workflow/layouts/concept.md')
         info.update(self.ops.provenance('knowledge-builder'), concept_id=concept_id, status='not-started', prompt_version='v2')
         body = body.replace('概念：TODO(user)', '概念：' + concept_id)
         write_markdown(target, info, body)
@@ -411,7 +411,7 @@ class Library:
 
     def reading_list(self, papers):
         path = self.base / 'reading-list.md'
-        info, body = markdown(path if path.exists() else self.root/'projects/_template/10_literature/reading-list.md')
+        info, body = markdown(path if path.exists() else self.root/'workflow/layouts/project/10_literature/reading-list.md')
         notes, topics, order = info.get('reading_notes',{}), info.get('topic_paths',{}), info.get('reading_order',[])
         if not isinstance(notes,dict) or not isinstance(topics,dict) or not isinstance(order,list):
             raise ValueError('阅读清单 reading_notes/topic_paths/reading_order 类型错误')
@@ -519,7 +519,7 @@ class Library:
                         raise ValueError(f'{key} 缺少标准文件夹 {dirname}')
             if not numbered and old:
                 warnings.warn(f'{key} 旧目录兼容读取；运行 migrate 生成编号目录。',UserWarning)
-                checked_meta=dict(self.ops.load(self.root/'workflow/templates/paper/meta.yaml'),**meta)
+                checked_meta=dict(self.ops.load(self.root/'workflow/layouts/paper/meta.yaml'),**meta)
             self.ops.contract(self.root,'paper',checked_meta)
             binding=checked_meta['zotero']
             if binding['library_type'] not in ['user','group','export',TODO,'TODO']:
@@ -536,7 +536,7 @@ class Library:
                 if not resolve_path(self.p,ref,self.ops).is_file():raise ValueError('source_files 文件不存在')
             analysis=self.ops.load(paper_path(folder,'analysis.yaml'))
             if not numbered:
-                defaults=self.ops.load(self.root/'workflow/templates/paper'/PAPER_FILES['analysis.yaml'])
+                defaults=self.ops.load(self.root/'workflow/layouts/paper'/PAPER_FILES['analysis.yaml'])
                 analysis=dict(defaults,**analysis)
             self.ops.contract(self.root,'analysis',analysis)
             if self.paper_key_alias(analysis['paper'])!=key:raise ValueError('analysis.paper 与稳定论文 ID 不一致')

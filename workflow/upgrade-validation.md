@@ -1,5 +1,11 @@
 # 论文功能升级验收记录
 
+## 项目目录精简验收（2026-10-01）
+
+`projects/_template` 已移除，`projects/` 只保存真实研究项目及入口说明。内部初始化文件统一放在 `workflow/layouts/`；项目、论文和 claim 的空目录由工具显式创建，不再使用 `.gitkeep` 占位。每个新项目自带 `README.md`，逐项说明项目文件、单篇论文目录和复现目录的职责。
+
+项目初始化、单篇论文隔离、Zotero/索引、旧论文迁移、任务评审与主模型接管保持原接口。196 项离线测试、`doctor --offline`、任务合同校验和 Git 差异检查通过；未调用真实模型或 Zotero 网络接口，未修改 `.env`、`config/models.local.yaml` 或 `tools/adapters.py`。
+
 ## 模型任务分配优化验收（2026-10-01）
 
 补充：按用户后续要求，子模型一次返修仍失败（或达到子模型尝试上限）时，由 task revise 自动切换主模型修复。沿用原合同、必要草稿和证据，当前 Codex 会话取得接力 prompt，API/CLI 按 orchestrator Profile 和 --execute 调用；主模型默认1次修复仍失败再 block。执行与结果日志及 INDEX.tasks 明确记录 main/main-repair、接管原因、主模型次数；修复后仍需独立评审和 accept。
@@ -17,7 +23,7 @@ config/                       # 模型/Zotero配置，local与Key仍私有
 workflow/
   task-contracts.yaml          # 12类任务的输入、输出与验收标准
   task-orchestration.md        # 分工、示例和CLI手册
-  templates/ prompts/ vendor/
+  layouts/ prompts/ vendor/
 projects/<project>/
   project.yaml research-profile.yaml
   INDEX.md INDEX.json
@@ -45,7 +51,7 @@ projects/<project>/
 tools/ tests/
 ```
 
-目录按需创建。项目 init/index 会生成 INDEX.json；当前仓库只有 _template，没有为用户猜测研究方向或创建真实项目。
+目录按需创建。项目 init/index 会生成 INDEX.json；`projects/` 只含使用说明，没有为用户猜测研究方向或创建真实项目。初始化所需定义集中在 `workflow/layouts/`。
 
 ### ID、连接与合同
 
@@ -114,9 +120,9 @@ workflow/
 ├── literature.md
 ├── zotero.md
 ├── reproduction.md
-└── templates/paper/
+└── layouts/paper/
     ├── meta.yaml
-    ├── 01_source/.gitkeep
+    ├── 01_source/                 # 初始化时由工具创建
     ├── 02_translation/translation.md
     ├── 03_reading/reading.md
     ├── 04_analysis/analysis.yaml

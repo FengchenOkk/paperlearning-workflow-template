@@ -33,7 +33,7 @@ next_action: TODO(user)
 updated_at: TODO(user)
 code_links: []
 data_links: []
-generated_by: template
+generated_by: wf-layout
 model_role: literature-reader
 prompt_version: v2
 source_refs: []

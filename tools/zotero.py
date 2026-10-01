@@ -465,7 +465,7 @@ def sync(root,project,ops,dry_run=False):
                     continue
                 if not cfg['sync']['create_missing_papers']:
                     continue
-                meta = ops.load(root/'workflow/templates/paper/meta.yaml')
+                meta = ops.load(root/'workflow/layouts/paper/meta.yaml')
                 meta.update(citekey=citekey,created_at=ops.now())
                 if not dry_run:
                     ops.new_paper(root,project.name,citekey,refresh=False)

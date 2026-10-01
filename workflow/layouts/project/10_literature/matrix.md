@@ -1,5 +1,5 @@
 ---
-generated_by: template
+generated_by: wf-layout
 model_role: literature-reader
 prompt_version: v1
 source_refs: []

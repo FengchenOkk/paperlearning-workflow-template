@@ -19,7 +19,6 @@ class TaskReviewRegressionTests(unittest.TestCase):
         for name in ('models.example.yaml', 'models.local.yaml'):
             shutil.copyfile(wf.ROOT / 'config/models.example.yaml', self.root / 'config' / name)
         shutil.copytree(wf.ROOT / 'workflow', self.root / 'workflow', ignore=shutil.ignore_patterns('vendor'))
-        shutil.copytree(wf.ROOT / 'projects/_template', self.root / 'projects/_template')
         self.silent = contextlib.redirect_stdout(io.StringIO())
         self.silent.__enter__()
         self.addCleanup(self.silent.__exit__, None, None, None)

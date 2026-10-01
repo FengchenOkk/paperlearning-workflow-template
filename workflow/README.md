@@ -22,7 +22,7 @@
 顶层仅 config/workflow/projects/tools/tests。一个方向一个 projects/<direction-slug>；方向内按 papers 和 claim 分类，不按论文类别建立物理目录。
 
 - config：主模型意图、子模型与路由，配置模板/本地配置。
-- workflow：流程、角色 prompts、schemas.yaml、templates、vendor。
+- workflow：流程、角色 prompts、schemas.yaml、内部 layouts、vendor。
 - 00_inbox：未归档资料与实际任务包。
 - 10_literature/papers/<citekey>：meta.yaml 入口；01_source 原文、02_translation 翻译、03_reading 精读、04_analysis 分析、05_notes 临时笔记；四核心文件职责不变。
 - 10_literature/concepts/<slug>.md：全局概念卡；reading-list、matrix、knowledge-map、knowledge-graph.json 是项目级单文件。

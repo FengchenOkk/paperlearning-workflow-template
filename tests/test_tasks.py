@@ -13,7 +13,7 @@ class TaskTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
-        for rel in ('config', 'workflow', 'projects/_template'):
+        for rel in ('config', 'workflow'):
             shutil.copytree(wf.ROOT / rel, self.root / rel)
         shutil.copyfile(self.root/'config/models.example.yaml', self.root/'config/models.local.yaml')
         self.project = wf.init(self.root, 'unit', 'fixture')

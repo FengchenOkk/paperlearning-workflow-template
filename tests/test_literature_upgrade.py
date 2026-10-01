@@ -18,7 +18,7 @@ class LiteratureUpgradeTests(unittest.TestCase):
         temp = tempfile.TemporaryDirectory()
         self.addCleanup(temp.cleanup)
         self.root = Path(temp.name)
-        for rel in ['config','workflow/templates','workflow/prompts','projects/_template']:
+        for rel in ['config','workflow/layouts','workflow/prompts']:
             shutil.copytree(wf.ROOT/rel,self.root/rel)
         for rel in ['workflow/README.md','workflow/literature.md','workflow/reproduction.md','workflow/schemas.yaml','.gitignore','.env.example']:
             shutil.copyfile(wf.ROOT/rel,self.root/rel)
@@ -90,7 +90,7 @@ class LiteratureUpgradeTests(unittest.TestCase):
         analysis = wf.load(paper/'04_analysis/analysis.yaml')
         analysis['overview'].update(object='对象',core_problem='问题',why_important='重要性',position='位置')
         wf.save(paper/'04_analysis/analysis.yaml',analysis)
-        task = wf.load(self.root/'workflow/templates/task.yaml')
+        task = wf.load(self.root/'workflow/layouts/task.yaml')
         task.update(task_id='legacy-path',inputs=['10_literature/papers/sample/analysis.yaml'],
                     source_refs=['10_literature/papers/sample/analysis.yaml'],context={'task_type':'literature-translate','paper_citekey':'sample'})
         wf.save(self.root/'task.yaml',task)
@@ -311,9 +311,9 @@ class LiteratureUpgradeTests(unittest.TestCase):
 
     def test_repeated_migration_does_not_create_new_backup(self):
         folder=self.base/'papers/old';folder.mkdir();(folder/'source').mkdir()
-        meta=wf.load(self.root/'workflow/templates/paper/meta.yaml');meta['citekey']='old'
+        meta=wf.load(self.root/'workflow/layouts/paper/meta.yaml');meta['citekey']='old'
         meta.pop('zotero');wf.save(folder/'meta.yaml',meta)
-        analysis=wf.load(self.root/'workflow/templates/paper/04_analysis/analysis.yaml');analysis['paper']='old'
+        analysis=wf.load(self.root/'workflow/layouts/paper/04_analysis/analysis.yaml');analysis['paper']='old'
         analysis.pop('first_principles');analysis.pop('review_similarity');wf.save(folder/'analysis.yaml',analysis)
         wf.migrate(self.root,'research')
         before={p.relative_to(self.project/'.runs').as_posix():p.read_bytes() for p in (self.project/'.runs').rglob('*') if p.is_file()}

@@ -268,7 +268,7 @@ def doctor(root, offline=False, share=False):
     extras = [p.name for p in root.iterdir() if p.is_dir() and not p.name.startswith('.') and p.name not in ['config','workflow','projects','tools','tests']]
     if extras:
         raise ValueError('多余顶层目录：' + ', '.join(extras))
-    for rel in ['workflow/README.md', 'workflow/literature.md', 'workflow/reproduction.md', 'workflow/schemas.yaml', 'projects/_template/project.yaml']:
+    for rel in ['workflow/README.md', 'workflow/literature.md', 'workflow/reproduction.md', 'workflow/schemas.yaml', 'workflow/layouts/project/project.yaml']:
         if not (root / rel).is_file():
             raise ValueError(f'缺少文件 {rel}')
     config = models(root)
@@ -309,7 +309,9 @@ def init(root, name, title):
     target = contained(root / 'projects', slug(name))
     if target.exists():
         raise ValueError('项目已存在，不覆盖')
-    storage.copy_tree(root / 'projects/_template', target)
+    storage.copy_tree(root / 'workflow/layouts/project', target)
+    for rel in ['00_inbox', '10_literature/papers', '10_literature/concepts', '30_outputs']:
+        contained(target, rel).mkdir(parents=True, exist_ok=True)
     data = load(target / 'project.yaml')
     data.update(slug=name, id='project:'+name, type='project', links=[], title=title, created_at=now())
     save(target / 'project.yaml', data)
@@ -335,7 +337,8 @@ def new_paper(root, name, key, refresh=True):
     target = contained(p / '10_literature/papers', paper_key(key))
     if target.exists() or any(f.name.casefold()==key.casefold() for f in target.parent.iterdir()):
         raise ValueError('论文已存在，不覆盖')
-    storage.copy_tree(root / 'workflow/templates/paper', target)
+    storage.copy_tree(root / 'workflow/layouts/paper', target)
+    contained(target, '01_source').mkdir(parents=True, exist_ok=True)
     data = load(target / 'meta.yaml')
     data.update(provenance(), citekey=key, id='paper:'+key, type='paper', project_id=load(p/'project.yaml').get('id','project:'+name), links=[], status='unread', updated_at=now(), prompt_version='v2')
     save(target / 'meta.yaml', data)
@@ -372,7 +375,9 @@ def new_claim(root, name, key, claim_slug):
     target = contained(p / '20_reproduction', claim_id)
     if target.exists():
         raise ValueError('claim 已存在，不覆盖')
-    storage.copy_tree(root / 'workflow/templates/claim', target)
+    storage.copy_tree(root / 'workflow/layouts/claim', target)
+    for rel in ['online', 'lab', 'results']:
+        contained(target, rel).mkdir(parents=True, exist_ok=True)
     data = load(target / 'claim.yaml')
     data.update(provenance('reproduction-analyst'), claim_id=claim_id, id='claim:'+key+':'+claim_slug, type='claim', links=[], formula_ids=[], concept_ids=[], paper_citekey=key, paper_id=paper_ref['id'], status='pending')
     save(target / 'claim.yaml', data)
@@ -602,11 +607,10 @@ def demo(root):
         (sandbox/'config').mkdir()
         for name in ['models','zotero']:
             storage.copy_file(root/f'config/{name}.example.yaml',sandbox/f'config/{name}.example.yaml')
-        storage.copy_tree(root/'workflow/templates',sandbox/'workflow/templates')
+        storage.copy_tree(root/'workflow/layouts',sandbox/'workflow/layouts')
         storage.copy_tree(root/'workflow/prompts',sandbox/'workflow/prompts')
         for name in ['README.md','schemas.yaml']:
             storage.copy_file(root/'workflow'/name,sandbox/'workflow'/name)
-        storage.copy_tree(root/'projects/_template',sandbox/'projects/_template')
         init(sandbox,'demo','本地 mock 演示；非真实研究')
         new_paper(sandbox,'demo','demo-paper')
         new_concept(sandbox,'demo','demo-concept')
@@ -634,7 +638,7 @@ def demo(root):
         graph(sandbox,'demo')
         index(sandbox,'demo')
         validate(sandbox,'demo')
-        task=load(root/'workflow/templates/task.yaml')
+        task=load(root/'workflow/layouts/task.yaml')
         task.update(task_id='demo-task',objective='演示空模型流程',inputs=['research-profile.yaml'],source_refs=['research-profile.yaml'])
         save(sandbox/'task.yaml',task)
         config=load(root/'config/models.example.yaml')

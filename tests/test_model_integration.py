@@ -22,7 +22,7 @@ class ModelIntegrationTests(unittest.TestCase):
         (self.root / 'config').mkdir()
         for target in ['models.example.yaml', 'models.local.yaml']:
             shutil.copyfile(wf.ROOT / 'config/models.example.yaml', self.root / 'config' / target)
-        for rel in ['workflow/templates', 'workflow/prompts', 'projects/_template']:
+        for rel in ['workflow/layouts', 'workflow/prompts']:
             shutil.copytree(wf.ROOT / rel, self.root / rel)
         for rel in ['workflow/README.md', 'workflow/schemas.yaml']:
             shutil.copyfile(wf.ROOT / rel, self.root / rel)
@@ -38,7 +38,7 @@ class ModelIntegrationTests(unittest.TestCase):
         self.no_network.start()
         self.addCleanup(self.no_network.stop)
         wf.init(self.root, 'model-project', '模型接口测试')
-        task = wf.load(self.root / 'workflow/templates/task.yaml')
+        task = wf.load(self.root / 'workflow/layouts/task.yaml')
         task.update(task_id='model-test', objective='核对研究方向画像，输出草稿',
                     inputs=['research-profile.yaml'], source_refs=['research-profile.yaml'])
         wf.save(self.root / 'task.yaml', task)

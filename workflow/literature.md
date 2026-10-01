@@ -18,8 +18,7 @@
 ├── papers/<citekey>/
 │   ├── meta.yaml
 │   ├── 01_source/
-│   │   ├── .gitkeep
-│   │   └── source-links.yaml          # Zotero 同步时生成
+│   │   └── source-links.yaml          # Zotero 同步时按需生成
 │   ├── 02_translation/translation.md
 │   ├── 03_reading/reading.md
 │   ├── 04_analysis/analysis.yaml

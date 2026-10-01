@@ -322,7 +322,7 @@ class RegistryLiteratureMoveTests(unittest.TestCase):
         temporary=tempfile.TemporaryDirectory()
         self.addCleanup(temporary.cleanup)
         self.root=Path(temporary.name)
-        for rel in ['config','workflow','projects/_template']:
+        for rel in ['config','workflow']:
             # Vendored research material is irrelevant to these offline cases.
             shutil.copytree(wf.ROOT/rel,self.root/rel,ignore=shutil.ignore_patterns('vendor'))
         for rel in ['.gitignore','.env.example']:

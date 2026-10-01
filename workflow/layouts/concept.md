@@ -13,7 +13,7 @@ prerequisites: []
 related: []
 contrasts: []
 papers: []
-generated_by: template
+generated_by: wf-layout
 model_role: knowledge-builder
 prompt_version: v2
 source_refs: []

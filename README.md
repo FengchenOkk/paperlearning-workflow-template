@@ -18,7 +18,7 @@ python tools/wf.py new claim my-research first-paper main-result
 python tools/wf.py validate my-research
 ```
 
-随后填写项目 `research-profile.yaml`，将论文归档至对应 `01_source/`，按模板阅读。模型选择只修改 `config/models.local.yaml`；密钥只放环境变量或本地 `.env`。
+随后填写项目 `research-profile.yaml`，将论文归档至对应 `01_source/`，按项目内 `README.md` 的文件职责进行阅读。模型选择只修改 `config/models.local.yaml`；密钥只放环境变量或本地 `.env`。
 
 ## 常用命令
 
@@ -70,19 +70,19 @@ python tools/wf.py task accept my-research verify-paper-id --attempt 1
 
 上传前执行 `python tools/wf.py doctor --offline --share-check`。Git 检查确认 `.env`、`config/models.local.yaml`、`config/zotero.local.yaml` 没有被追踪；明显密钥扫描只显示路径与行号，不显示匹配内容。无 Git 仓库时报告“忽略规则已声明”，不能当作 Git 追踪检查通过。扫描不覆盖 Git 历史或大文件，不能证明所有私密内容都已脱敏。
 
-分享集必须排除 `.env`、`config/models.local.yaml`、`config/zotero.local.yaml`、`.runs/`、真实 PDF/原文、实验原始数据、私密目录、临时大文件和个人认证文件。`.gitignore` 已覆盖这些常见路径；新增私密数据放 `private/` 或补充忽略规则。它只影响 Git 未追踪文件，直接压缩/复制不会自动排除文件。只分享模板目录和脱敏示例，不整目录打包研究资料。
+分享集必须排除 `.env`、`config/models.local.yaml`、`config/zotero.local.yaml`、`.runs/`、真实 PDF/原文、实验原始数据、私密目录、临时大文件和个人认证文件。`.gitignore` 已覆盖这些常见路径；新增私密数据放 `private/` 或补充忽略规则。它只影响 Git 未追踪文件，直接压缩/复制不会自动排除文件。只分享工作流代码和脱敏示例，不整目录打包研究资料。
 
 若曾误上传 Key，立即到相应服务商后台撤销并重新生成，然后清理公开文件与历史；仅删除文件或添加 .gitignore 不会让已泄露 Key 失效。主模型与子模型的认证均由每个人在本机配置。
 
 ## 目录导航
 
 - `config/`：主模型、子模型、路由与可选 Zotero 配置。
-- `workflow/`：流程、功能地图、角色提示、schema、模板、已下载 ARS。
-- `projects/`：实际研究项目，`_template/` 是创建来源。
+- `workflow/`：流程、功能地图、角色提示、schema、内部目录定义和已下载 ARS。
+- `projects/`：只保存实际研究项目；目录及文件用途见 [projects/README.md](projects/README.md)。
 - `tools/`：CLI 和适配器。
 - `tests/`：不访问外部服务的验收测试。
 
-每个研究方向建立一个 `projects/<direction-slug>/` 项目，按 `00_inbox → 10_literature → 20_reproduction → 30_outputs` 管理；每篇论文一个目录，每个复现 claim 一个目录。
+每个研究方向建立一个 `projects/<direction-slug>/` 项目，按 `00_inbox → 10_literature → 20_reproduction → 30_outputs` 管理；每篇论文一个独立目录，每个复现 claim 一个独立目录。工具内部使用的文件定义集中在 `workflow/layouts/`，不会作为真实项目出现。
 
 文献综合工作稿按需放 `10_literature/<name>.md`，核验后的交付版本放 `30_outputs/`。文献阅读规范已接入，复现具体功能配置待后续确定，当前结构不依赖研究学科或模型厂商。
 
