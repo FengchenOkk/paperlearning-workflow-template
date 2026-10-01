@@ -1,0 +1,178 @@
+version: 1
+# 连接/模型由 models 配置决定；这里仅定义任务职责和可验收的产物。
+# path 是默认目标模板，执行时由 INDEX.json/ArtifactRef 解析，不作为连接主键。
+# 正式目标不在执行阶段写入；子模型提交 .runs 中的草稿，accept 后才应用。
+settings:
+  context_limits:
+    max_chars: 30000
+    max_file_chars: 12000
+    max_total_bytes: 262144
+  review_max_chars: 16000
+  result_status: submitted
+  require_explicit_accept: true
+  main_repair_max_attempts: 1
+tasks:
+  literature-ingest:
+    role: literature-reader
+    inputs:
+      - {type: paper.meta, required: true}
+      - {type: paper.source.text, required: false}
+      - {type: research.profile, required: false}
+    outputs:
+      - {type: paper.meta, path: meta.yaml, id_template: 'paper:<citekey>'}
+    acceptance: [stable_identity, metadata_traceable, source_refs, manual_content_preserved]
+    max_attempts: 3
+    context_limits: {max_chars: 30000, max_file_chars: 12000, max_total_bytes: 262144}
+  literature-first-pass:
+    role: literature-reader
+    inputs:
+      - {type: paper.meta, required: true}
+      - {type: paper.source.text, required: true}
+      - {type: research.profile, required: false}
+    outputs:
+      - {type: paper.reading, path: 03_reading/reading.md, id_template: 'reading:<citekey>'}
+      - {type: paper.analysis, path: 04_analysis/analysis.yaml, id_template: 'analysis:<citekey>'}
+    acceptance: [global_position, paper_logic_map, prerequisites_identified, evidence_traceable, no_fabrication]
+    max_attempts: 3
+    context_limits: {max_chars: 30000, max_file_chars: 12000, max_total_bytes: 262144}
+  literature-translate:
+    role: literature-reader
+    inputs:
+      - {type: paper.meta, required: true}
+      - {type: paper.source.text, required: true}
+      - {type: paper.analysis, required: false}
+      - {type: paper.reading, required: false}
+      - {type: paper.translation, required: false}
+      - {type: concept, required: false}
+    outputs:
+      - {type: paper.translation, path: 02_translation/translation.md, id_template: 'translation:<citekey>'}
+    acceptance: [global_position_confirmed, full_sections, terminology_consistency, source_refs, no_omissions, manual_content_preserved]
+    max_attempts: 3
+    context_limits: {max_chars: 30000, max_file_chars: 12000, max_total_bytes: 262144}
+  literature-close-read:
+    role: literature-reader
+    inputs:
+      - {type: paper.meta, required: true}
+      - {type: paper.source.text, required: true}
+      - {type: paper.translation, required: false}
+      - {type: paper.analysis, required: false}
+      - {type: paper.reading, required: false}
+      - {type: research.profile, required: false}
+    outputs:
+      - {type: paper.reading, path: 03_reading/reading.md, id_template: 'reading:<citekey>'}
+    acceptance: [global_position_confirmed, required_sections, evidence_traceable, no_fabrication, unresolved_issues_explicit]
+    max_attempts: 3
+    context_limits: {max_chars: 30000, max_file_chars: 12000, max_total_bytes: 262144}
+  literature-formula:
+    role: literature-reader
+    inputs:
+      - {type: paper.meta, required: true}
+      - {type: paper.source.text, required: true}
+      - {type: paper.analysis, required: false}
+      - {type: concept, required: false}
+    outputs:
+      - {type: paper.analysis, path: 04_analysis/analysis.yaml, id_template: 'analysis:<citekey>'}
+    acceptance: [stable_formula_ids, source_refs, symbols_and_dimensions, assumptions_and_boundaries, derivation_uncertainty_explicit]
+    max_attempts: 3
+    context_limits: {max_chars: 30000, max_file_chars: 12000, max_total_bytes: 262144}
+  literature-context:
+    role: literature-reader
+    inputs:
+      - {type: paper.meta, required: true}
+      - {type: paper.reading, required: true}
+      - {type: paper.source.text, required: false}
+      - {type: paper.analysis, required: false}
+      - {type: research.profile, required: false}
+    outputs:
+      - {type: paper.reading, path: 03_reading/reading.md, id_template: 'reading:<citekey>'}
+    acceptance: [literature_context, references_traceable, evidence_traceable, unavailable_references_explicit, no_fabrication]
+    max_attempts: 3
+    context_limits: {max_chars: 30000, max_file_chars: 12000, max_total_bytes: 262144}
+  literature-knowledge:
+    role: knowledge-builder
+    inputs:
+      - {type: paper.meta, required: true}
+      - {type: paper.analysis, required: true}
+      - {type: paper.reading, required: false}
+      - {type: concept, required: false}
+    outputs:
+      - {type: concept, path: '10_literature/concepts/<concept-slug>.md', id_template: 'concept:<concept-slug>'}
+      - {type: paper.analysis, path: 04_analysis/analysis.yaml, id_template: 'analysis:<citekey>'}
+    acceptance: [stable_concept_ids, single_definition, evidence_traceable, links_resolvable, automatic_links_candidate, manual_content_preserved]
+    max_attempts: 3
+    context_limits: {max_chars: 30000, max_file_chars: 12000, max_total_bytes: 262144}
+  literature-extract:
+    role: literature-reader
+    inputs:
+      - {type: paper.meta, required: true}
+      - {type: paper.source.text, required: true}
+      - {type: paper.analysis, required: false}
+    outputs:
+      - {type: paper.analysis, path: 04_analysis/analysis.yaml, id_template: 'analysis:<citekey>'}
+    acceptance: [claims_methods_data_metrics, evidence_traceable, author_claims_separated, limitations_explicit, no_fabrication]
+    max_attempts: 3
+    context_limits: {max_chars: 30000, max_file_chars: 12000, max_total_bytes: 262144}
+  repro-feasibility:
+    role: reproduction-analyst
+    inputs:
+      - {type: claim, required: true}
+      - {type: research.profile, required: true}
+      - {type: paper.analysis, required: false}
+      - {type: paper.reading, required: false}
+      - {type: formula, required: false}
+      - {type: principle, required: false}
+      - {type: concept, required: false}
+    outputs:
+      - {type: claim.feasibility, path: feasibility.md, id_template: 'artifact:<task-id>:feasibility'}
+    acceptance: [claim_traceable, resource_gaps_explicit, route_supported, feasibility_limits, no_experiment_claims]
+    max_attempts: 3
+    context_limits: {max_chars: 30000, max_file_chars: 12000, max_total_bytes: 262144}
+  repro-plan:
+    role: reproduction-analyst
+    inputs:
+      - {type: claim, required: true}
+      - {type: research.profile, required: true}
+      - {type: claim.feasibility, required: false}
+      - {type: paper.analysis, required: false}
+      - {type: formula, required: false}
+      - {type: principle, required: false}
+      - {type: concept, required: false}
+    outputs:
+      - {type: claim.plan, path: plan.md, id_template: 'artifact:<task-id>:plan'}
+    acceptance: [claim_traceable, dependencies_and_milestones, validation_metrics, stop_conditions, authorized_scope, no_experiment_claims]
+    max_attempts: 3
+    context_limits: {max_chars: 30000, max_file_chars: 12000, max_total_bytes: 262144}
+  verification:
+    role: verifier
+    inputs:
+      - {type: paper.meta, required: false}
+      - {type: paper.source.text, required: false}
+      - {type: paper.translation, required: false}
+      - {type: paper.reading, required: false}
+      - {type: paper.analysis, required: false}
+      - {type: concept, required: false}
+      - {type: formula, required: false}
+      - {type: principle, required: false}
+      - {type: claim, required: false}
+      - {type: claim.feasibility, required: false}
+      - {type: claim.plan, required: false}
+      - {type: artifact, required: false}
+    outputs:
+      - {type: verification.report, path: '30_outputs/<task-id>-verification.md', id_template: 'artifact:<task-id>:verification'}
+    acceptance: [evidence_traceable, supported_unsupported_unknown, criterion_mapped_issues, structural_vs_scientific_checks, no_self_acceptance]
+    max_attempts: 3
+    context_limits: {max_chars: 30000, max_file_chars: 12000, max_total_bytes: 262144}
+  critique:
+    role: verifier
+    inputs:
+      - {type: paper.meta, required: false}
+      - {type: paper.source.text, required: false}
+      - {type: paper.reading, required: false}
+      - {type: paper.analysis, required: false}
+      - {type: claim, required: false}
+      - {type: artifact, required: false}
+    outputs:
+      - {type: critique.report, path: '30_outputs/<task-id>-critique.md', id_template: 'artifact:<task-id>:critique'}
+    acceptance: [evidence_traceable, criterion_mapped_issues, actionable_changes, uncertainty_explicit, no_self_acceptance]
+    max_attempts: 3
+    context_limits: {max_chars: 30000, max_file_chars: 12000, max_total_bytes: 262144}

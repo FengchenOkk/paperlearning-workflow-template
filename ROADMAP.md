@@ -1,5 +1,35 @@
 # 路线图
 
+## 模型任务分配与连接闭环（2026-10-01）
+
+- [x] OPS-007：子模型返修失败自动创建主模型修复尝试，原合同/输入/草稿延续；主Profile独立路由，现有会话接力、外部调用需--execute，默认1次主修复仍失败则block。主模型修复仍单独验收，195项测试通过。
+
+- [x] CFG-004：主模型计划/验收，子模型执行；12类任务合同与现有 routing 一致，当前连接与Key保持。
+- [x] OPS-005：稳定ID、ArtifactRef、可重建INDEX.json、哈希检测、最小上下文和评审包；旧目录/路径/字段继续兼容。
+- [x] OPS-006：结果草稿登记、显式main评审、accept正式应用与连接视图更新；失败回滚、子模型最多3次尝试及主模型接手修复、未改草稿沿用。
+- [x] ZOT-002 / GRAPH-002：别名优先入库，topic关系，统一源links；图谱端点/证据经机器索引解析，人工区保留。
+- [x] REP-004 接口：claim/公式/原理/概念可通过ArtifactRef接入通用结果与评审流程；专业执行仍待配置。
+- [x] 188项离线测试通过，合同/分享检查及mock演示通过；保护文件哈希一致。
+- [ ] TODO(user)：指定真实项目、研究画像和首篇论文进行科学内容验收。
+- [ ] TODO(user)：小规模真实API连接与任务成本验证。
+- [ ] TODO(user)：后续配置私有复现执行。
+
+使用见 [任务分工手册](workflow/task-orchestration.md)，结构和验证见 [验收记录](workflow/upgrade-validation.md)。以下为此前阶段历史记录。
+
+## Zotero 与论文知识图谱升级（2026-10-01）
+
+- [x] LIT-005：meta.yaml 入口与 01_source～05_notes 编号目录；复制迁移、冲突报告、原件保留和旧任务路径兼容。
+- [x] ZOT-001：可选只读 local/web/export，Better BibTeX/CSL 导入，DOI/item key 去重，人工内容保护与附件引用。
+- [x] GRAPH-001：离线知识图谱、第一性原理与综述候选聚类、Jaccard/IDF、前置顺序、桥梁论文与缺口；证据/置信度和核验过期记录。
+- [x] OPS-004：原子写入、dry-run 不写文件、损坏条目继续扫描、Zotero 本地配置忽略及分享检查。
+- [x] REP-003 接口：project.yaml 私有扩展声明、通用读写接口；不执行专业复现。
+- [x] 110 项离线测试、doctor --offline --share-check、mock/fixture demo、Git diff 检查通过；用户 .env、models.local.yaml 和模型适配器哈希保持。
+- [ ] TODO(user)：选择真实 Zotero 模式/库/集合并验证连接。
+- [ ] TODO(user)：后续重新规划 GPT/DeepSeek 分工；本轮保持模型配置。
+- [ ] TODO(user)：提供首篇真实论文与研究画像进行科学内容验收。
+
+详情见 [升级验收](workflow/upgrade-validation.md)；接入见 [Zotero 手册](workflow/zotero.md)。以下为此前阶段历史记录。
+
 ## 主/子模型通用 API 接入（2026-10-01）
 
 - [x] CFG-003：共享 model_profiles 管理主/子连接，可独立选择提供商、模型、接口与自定义密钥变量；旧 subagent_profiles/逐角色配置保留兼容，本地配置不改写。

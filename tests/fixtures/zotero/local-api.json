@@ -1,0 +1,4 @@
+[
+  {"key":"LOCAL001","version":5,"data":{"key":"LOCAL001","itemType":"journalArticle","title":"MOCK local API article","date":"2024","DOI":"https://doi.org/10.0000/local","extra":"Citation Key: LocalPaper2024","creators":[{"creatorType":"author","firstName":"Local","lastName":"Author"}],"collections":["LOCALCOL"],"tags":[{"tag":"local-topic"}]}},
+  {"key":"LOCALPDF","version":2,"data":{"itemType":"attachment","parentItem":"LOCAL001","path":"missing-local.pdf","filename":"mock.pdf"}}
+]

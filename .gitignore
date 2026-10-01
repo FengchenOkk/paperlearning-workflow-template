@@ -2,6 +2,8 @@
 .env.*
 !.env.example
 config/models.local.yaml
+config/zotero.local.yaml
+config/*.local.yaml
 **/.runs/
 __pycache__/
 *.pyc
@@ -14,6 +16,8 @@ __pycache__/
 *.parquet
 projects/**/source/*
 !projects/**/source/.gitkeep
+projects/**/01_source/*
+!projects/**/01_source/.gitkeep
 projects/**/lab/raw-data/
 projects/**/online/data/
 **/private/

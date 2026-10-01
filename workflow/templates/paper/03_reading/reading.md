@@ -22,7 +22,7 @@ TODO(user)：分节记录目的、假设、方法、证据和结论；区分原�
 
 ## 4. 方法与公式
 
-TODO(user)：解释方法流程，引用 analysis.yaml.formulas 的公式 ID；说明假设、直觉、特例和失效条件。
+TODO(user)：解释方法流程，引用 ../04_analysis/analysis.yaml 中的公式 ID；说明假设、直觉、特例和失效条件。
 
 ## 5. 实验设计与结果
 

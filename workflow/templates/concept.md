@@ -3,6 +3,10 @@ concept_id: TODO(user)
 aliases: []
 type: foundational
 status: not-started
+is_first_principle: false
+canonical_statement: TODO(user)
+extends: []
+replaces: []
 first_defined_in: TODO(user)
 first_seen_year: TODO(user)
 prerequisites: []

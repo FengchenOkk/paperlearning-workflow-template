@@ -1,6 +1,8 @@
 # 模型接入手册
 
-主模型负责计划、汇总与核验，子模型负责阅读、分析等任务。两者可以使用不同厂商，也可以共用一个连接。需要 API 接入时，准备服务商提供的 **API 地址、模型名、API Key**，再按下列步骤操作。
+主模型是 commander-reviewer，负责计划、必要综合与最终验收；子模型是 primary-executor，按 literature-reader 等职责完成契约任务。两者可以使用不同厂商，也可以共用一个连接。模型连接与任务职责分离，重新分工不需要替换 API Key。需要 API 接入时，准备服务商提供的 **API 地址、模型名、API Key**，再按下列步骤操作。
+
+子模型返修后仍未通过时，由主模型接手修复。接管沿用 orchestrator Profile 与最小返修包；现有 Codex 会话读取接力 prompt，API/CLI 通过 task revise --execute 调用。主模型修复默认1次（task-contracts.yaml 的 settings.main_repair_max_attempts），修复后仍单独审核，不更改连接或密钥。
 
 ## 1. 生成本地配置
 
@@ -71,6 +73,8 @@ WORKER_MODEL_KEY=填入子模型密钥
 
 子角色保持 `profile: null` 就跟随全局默认；需要单独核验模型时设置 `subagents.verifier.profile: my-verifier`，并添加对应 Profile。旧版逐角色显式 adapter/连接字段仍优先；要改用 Profile，删除该角色的旧连接字段，保留 enabled/profile 等角色设置。不要把密钥直接写入 YAML。
 
+`orchestrator.responsibility: commander-reviewer` 和 `settings.execution_responsibility: primary-executor` 声明分工；它们不改变当前 Codex 模型，也不替代 routing。`settings.task_contracts` 声明任务契约位置；上下文与尝试限制以契约为准。local 未写新声明字段仍兼容默认值，不自动覆盖用户连接；路由 role 与 workflow/task-contracts.yaml 必须一致。详细流程见 [模型分工与任务闭环](task-orchestration.md)。
+
 ## 3. 按服务协议选择 adapter
 
 | 服务实际协议 | adapter | base_url 示例与认证 |
@@ -112,7 +116,25 @@ python tools/wf.py run my-research projects/my-research/00_inbox/task.yaml --mai
 python tools/wf.py run my-research projects/my-research/00_inbox/task.yaml --main --execute
 ```
 
-将项目名和路径换成实际任务。结果位于 `.runs/<run>/`，查看 prompt.md、response.md 与 run.yaml。`--main` 不启动新的 Codex 会话，也不自动赋予 API 模型文件工具或循环调度能力；采用当前 Codex 时，在会话里完成主模型工作。缺 Key、无效配置或外部失败会保留 prompt 转人工接力，并记录原因；人工模式将输出保存为 response.md 后还需核验、补记完成情况。
+以上为保留的旧 `run` 接口。将项目名和路径换成实际任务，结果位于 `.runs/<run>/`，查看 prompt.md、response.md 与 run.yaml。`--main` 不启动新的 Codex 会话，也不自动赋予 API 模型文件工具或循环调度能力；采用当前 Codex 时，在会话里完成主模型工作。缺 Key、无效配置或外部失败会保留 prompt 转人工接力，并记录原因；人工模式将输出保存为 response.md 后还需核验、补记完成情况。
+
+### 新任务优先使用契约闭环
+
+先生成 INDEX.json，从中选择输入 ID，填写 ArtifactRef 格式的新任务包；再预览并按授权执行：
+
+```powershell
+python tools/wf.py index my-research --json
+python tools/wf.py validate --contracts
+python tools/wf.py task run my-research projects/my-research/00_inbox/verify-paper-id.yaml
+python tools/wf.py task run my-research projects/my-research/00_inbox/verify-paper-id.yaml --execute
+python tools/wf.py task review my-research verify-paper-id --attempt 1
+```
+
+子模型只接收受控 context，结构化结果为 `result` 与 `artifacts`，执行器先保存到 `.runs/<task-id>/attempts/<n>`；manual 整理真实模型输出后使用 `task submit ... --result <file>`，仅保存 response.md 不算提交。
+
+主模型通过 `.runs/<task-id>/reviews/<n>` 的小型评审包验收并按需抽查原文。当前 Codex/GPT 在已有会话中审核，将真实评审文件交 `task review ... --review <file>`；主 API/CLI 评审用 `task review ... --execute --evidence <refs.yaml>`，连接自动来自 orchestrator，不需要 `--main`。refs.yaml 只选择必要 ArtifactRef ID/anchor 片段，执行器按限额展开；API 不因路径引用获得自主读文件能力，无证据不能 accept。执行器管理文件与调度。
+
+完成真实审核并登记 reviews/<n>.yaml 后，才能运行 `task accept my-research verify-paper-id --attempt <n>`；需要返修使用 `task revise ... --review <review.yaml>`。缺 Key 的 manual 同样走结果提交和评审，不能把生成 prompt、mock 或自检当正式完成。可复制任务包、result/review 字段和所有 CLI 见 [模型分工与闭环手册](task-orchestration.md)。
 
 ## 分享前
 

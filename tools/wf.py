@@ -17,9 +17,9 @@ try:
 except ImportError:
     raise SystemExit('请先执行 python -m pip install -r requirements.txt')
 try:
-    from . import adapters, literature
+    from . import adapters, literature, storage, zotero, knowledge, registry, tasks
 except ImportError:
-    import adapters, literature
+    import adapters, literature, storage, zotero, knowledge, registry, tasks
 
 ROOT = Path(__file__).resolve().parents[1]
 ROUTES = ['online-code', 'online-simulation', 'offline-lab', 'hybrid', 'observe-only', 'unreproducible']
@@ -36,11 +36,17 @@ def load(path):
     return data
 
 def save(path, data):
-    Path(path).write_text(yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding='utf-8')
+    storage.write_text(path,yaml.safe_dump(data, allow_unicode=True, sort_keys=False))
 
 def slug(value):
     if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', value):
         raise ValueError('标识符应使用小写字母、数字与单个连字符')
+    return value
+
+def paper_key(value):
+    # Better BibTeX 的大小写和下划线须原样保留；禁止跨平台不安全文件名。
+    if not isinstance(value,str) or not re.fullmatch(r'\w[\w.-]{0,159}',value) or value.endswith('.') or value.split('.')[0].upper() in {'CON','PRN','AUX','NUL',*[f'COM{i}' for i in range(1,10)],*[f'LPT{i}' for i in range(1,10)]}:
+        raise ValueError('citekey 必须为安全的字母、数字、点、下划线或连字符文件名')
     return value
 
 def contained(base, value):
@@ -59,9 +65,9 @@ def project(root, name):
 def bootstrap(root):
     for name in ['config','workflow','projects','tools','tests']:
         (root/name).mkdir(parents=True,exist_ok=True)
-    for source, dest in [('config/models.example.yaml', 'config/models.local.yaml'), ('.env.example', '.env')]:
+    for source, dest in [('config/models.example.yaml', 'config/models.local.yaml'), ('config/zotero.example.yaml','config/zotero.local.yaml'), ('.env.example', '.env')]:
         if not (root / dest).exists():
-            shutil.copyfile(root / source, root / dest)
+            storage.copy_file(root / source, root / dest)
     print('Python 3.11+ 与 PyYAML 可用；目录、配置已准备，已有文件保留，未读取密钥。')
     print('主模型：保留已有 agent 会话，或用 orchestrator.profile 选择 API/CLI Profile。')
     print('子模型：default_subagent_profile 选择独立 Profile；Key 放 .env，变量名与 api_key_env 对应。')
@@ -99,6 +105,8 @@ def normalize_models(root,config):
     defaults = load(root / 'config/models.example.yaml')
     settings=config.setdefault('settings',{})
     if not isinstance(settings,dict):raise ValueError('settings 必须为对象')
+    for key, value in defaults.get('settings',{}).items():
+        settings.setdefault(key,copy.deepcopy(value))
     settings.setdefault('default_subagent_profile','manual')
     if not isinstance(settings['default_subagent_profile'],str):raise ValueError('默认 Profile 必须为字符串')
     profiles=copy.deepcopy(defaults['model_profiles'])
@@ -212,7 +220,7 @@ def share_check(root,scan=False):
     issues=[]
     rules=(root/'.gitignore').read_text(encoding='utf-8-sig').splitlines() if (root/'.gitignore').exists() else []
     print('分享检查：')
-    for rel in ['.env','config/models.local.yaml']:
+    for rel in ['.env','config/models.local.yaml','config/zotero.local.yaml']:
         ignored=git('check-ignore','--no-index','--',rel) if repo else None
         if rel in tracked:status='存在风险：已被 Git 追踪';issues.append(rel)
         elif ignored:status='已忽略、未追踪'
@@ -221,11 +229,13 @@ def share_check(root,scan=False):
         print('  '+rel+': '+status)
     if repo and listed is None:issues.append('无法检查 Git 追踪状态')
     if scan:
-        private=lambda rel: rel in {'.env','config/models.local.yaml','auth.json'} or any(x in Path(rel).parts for x in {'.runs','source','private','raw-data','data','tmp','cache'}) or Path(rel).suffix.lower() in {'.pdf','.pem','.key','.csv','.h5','.hdf5','.pt','.pth','.ckpt','.parquet','.npy','.npz','.pkl','.pickle','.zip','.safetensors'}
+        private=lambda rel: rel in {'.env','config/models.local.yaml','config/zotero.local.yaml','auth.json'} or Path(rel).name.endswith('.local.yaml') or (Path(rel).name.startswith('.env.') and Path(rel).name!='.env.example') or any(x in Path(rel).parts for x in {'.runs','source','01_source','private','raw-data','data','tmp','cache'}) or Path(rel).suffix.lower() in {'.pdf','.pem','.key','.csv','.h5','.hdf5','.pt','.pth','.ckpt','.parquet','.npy','.npz','.pkl','.pickle','.zip','.safetensors'}
         unsafe=[rel for rel in tracked if rel and private(rel) and Path(rel).name!='.gitkeep']
         issues.extend(unsafe)
         for rel in sorted(unsafe):print('  已追踪私有资料：'+rel)
-        pattern=re.compile(r'\bsk-(?:proj-)?[A-Za-z0-9_-]{20,}\b|\bAKIA[A-Z0-9]{16}\b')
+        pattern=re.compile(r'\bsk-(?:proj-)?[A-Za-z0-9_-]{20,}\b|\bAKIA[A-Z0-9]{16}\b|'
+            r'(?i:\b(?:[A-Z0-9_]*API_KEY|access_token|authorization)[\"\']?\s*[:=]\s*'
+            r'(?:\"[A-Za-z0-9_-]{24,}\"|\'[A-Za-z0-9_-]{24,}\'|[A-Za-z0-9_-]{24,}(?=\s*(?:$|#))))')
         skipped=0;hits=0;fixtures=0
         for path in root.rglob('*'):
             if not path.is_file() or path.is_symlink():continue
@@ -285,6 +295,12 @@ def doctor(root, offline=False, share=False):
         print('  '+str(name)+': base_url='+ (str(profile.get('base_url')) if valid else '[配置无效，地址已隐藏]')+'，model='+str(profile.get('model')))
         print('    api_key_env: '+(str(profile.get('api_key_env')) if valid else '[配置无效，变量名已隐藏]')+'；环境变量：'+('已设置' if valid and adapters.key_value(candidate) else '未设置'))
     print('  建议：没有 Key 时继续使用 manual 即可；填写密钥不会自动启用未选择的 Profile。')
+    if (root/'config/zotero.example.yaml').is_file():
+        try:
+            zconfig=zotero.config(root,sys.modules[__name__])
+            print(f'Zotero：enabled={zconfig["enabled"]}；mode={zconfig["mode"]}；只读、可选（本检查不联网）。')
+        except (ValueError,OSError):
+            print('Zotero 配置未就绪；请检查 zotero.local.yaml，手动工作流仍可用，本检查不联网。')
     safe=share_check(root,scan=share)
     if share and not safe:raise ValueError('分享检查发现风险；请按报告排除文件或撤销泄露密钥')
     print('检查完成：未访问网络。缺 Codex 或 Key 不阻止 manual；主模型配置不修改当前会话。')
@@ -293,9 +309,9 @@ def init(root, name, title):
     target = contained(root / 'projects', slug(name))
     if target.exists():
         raise ValueError('项目已存在，不覆盖')
-    shutil.copytree(root / 'projects/_template', target)
+    storage.copy_tree(root / 'projects/_template', target)
     data = load(target / 'project.yaml')
-    data.update(slug=name, title=title, created_at=now())
+    data.update(slug=name, id='project:'+name, type='project', links=[], title=title, created_at=now())
     save(target / 'project.yaml', data)
     stamp_markdown(target / '10_literature/matrix.md', 'literature-reader')
     index(root, name)
@@ -314,24 +330,27 @@ def stamp_markdown(path, role):
             info['prompt_version'] = 'v2'
         literature.write_markdown(path, info, body)
 
-def new_paper(root, name, key):
+def new_paper(root, name, key, refresh=True):
     p = project(root, name)
-    target = contained(p / '10_literature/papers', slug(key))
-    if target.exists():
+    target = contained(p / '10_literature/papers', paper_key(key))
+    if target.exists() or any(f.name.casefold()==key.casefold() for f in target.parent.iterdir()):
         raise ValueError('论文已存在，不覆盖')
-    shutil.copytree(root / 'workflow/templates/paper', target)
+    storage.copy_tree(root / 'workflow/templates/paper', target)
     data = load(target / 'meta.yaml')
-    data.update(provenance(), citekey=key, status='unread', updated_at=now(), prompt_version='v2')
+    data.update(provenance(), citekey=key, id='paper:'+key, type='paper', project_id=load(p/'project.yaml').get('id','project:'+name), links=[], status='unread', updated_at=now(), prompt_version='v2')
     save(target / 'meta.yaml', data)
-    data = load(target / 'analysis.yaml')
-    data.update(provenance('literature-reader'), paper=key, prompt_version='v2')
+    analysis_path = target/literature.PAPER_FILES['analysis.yaml']
+    data = load(analysis_path)
+    data.update(provenance('literature-reader'), paper=key, id='analysis:'+key, type='analysis', paper_id='paper:'+key, links=[], prompt_version='v2')
     data.pop('status', None)
-    save(target / 'analysis.yaml', data)
+    save(analysis_path, data)
     for filename in ['reading.md','translation.md']:
-        stamp_markdown(target / filename, 'literature-reader')
-        text = (target / filename).read_text(encoding='utf-8').replace('：TODO(user)', '：'+key, 1)
-        (target / filename).write_text(text, encoding='utf-8')
-    index(root, name)
+        path=target/literature.PAPER_FILES[filename]
+        stamp_markdown(path, 'literature-reader')
+        text = path.read_text(encoding='utf-8').replace('：TODO(user)', '：'+key, 1)
+        storage.write_text(path,text)
+    if refresh:
+        index(root, name)
     return target
 
 def new_concept(root, name, concept_id):
@@ -344,30 +363,50 @@ def new_concept(root, name, concept_id):
 
 def new_claim(root, name, key, claim_slug):
     p = project(root, name)
-    if not (p / '10_literature/papers' / slug(key) / 'meta.yaml').is_file():
+    machine=registry.build(root,p,sys.modules[__name__])
+    try:paper_ref=registry.resolve(p,'paper:'+paper_key(key),sys.modules[__name__],index=machine)
+    except ValueError:
         raise ValueError('请先创建关联论文')
+    key=paper_ref['id'].partition(':')[2]
     claim_id = key + '--' + slug(claim_slug)
     target = contained(p / '20_reproduction', claim_id)
     if target.exists():
         raise ValueError('claim 已存在，不覆盖')
-    shutil.copytree(root / 'workflow/templates/claim', target)
+    storage.copy_tree(root / 'workflow/templates/claim', target)
     data = load(target / 'claim.yaml')
-    data.update(provenance('reproduction-analyst'), claim_id=claim_id, paper_citekey=key, status='pending')
+    data.update(provenance('reproduction-analyst'), claim_id=claim_id, id='claim:'+key+':'+claim_slug, type='claim', links=[], formula_ids=[], concept_ids=[], paper_citekey=key, paper_id=paper_ref['id'], status='pending')
     save(target / 'claim.yaml', data)
     for filename in ['feasibility.md', 'plan.md']:
         stamp_markdown(target / filename, 'reproduction-analyst')
     index(root, name)
     return target
 
-def index(root, name):
-    literature.Library(root, project(root, name), sys.modules[__name__]).index()
+def index(root, name, dry_run=False):
+    literature.Library(root, project(root, name), sys.modules[__name__],dry_run).index()
+    return registry.build(root,project(root,name),sys.modules[__name__],dry_run=dry_run)
+
+def migrate(root,name,dry_run=False):
+    report=literature.Library(root,project(root,name),sys.modules[__name__],dry_run).migrate()
+    if not report['generated_from'] and not report['errors']:
+        print('未发现需要迁移的旧论文；已有编号文件保留。')
+    return report
+
+def graph(root,name,dry_run=False):
+    library=literature.Library(root,project(root,name),sys.modules[__name__],dry_run)
+    return knowledge.generate(library)
 
 def contract(root, kind, data):
+    if kind=='analysis' and isinstance(data,dict):
+        data=copy.deepcopy(data)
+        for item in data.get('formulas',[]):
+            if isinstance(item,dict) and 'plain_meaning' not in item and 'meaning' in item:
+                item['plain_meaning']=item['meaning']
     schema = load(root / 'workflow/schemas.yaml')['contracts'][kind]
     def check(rules, value, path):
         types = rules.get('type', [])
         types = [types] if isinstance(types, str) else types
         matches = {'string': isinstance(value,str), 'array': isinstance(value,list), 'object': isinstance(value,dict),
+                   'boolean': isinstance(value,bool),
                    'null': value is None, 'number': isinstance(value,(int,float)) and not isinstance(value,bool),
                    'integer': isinstance(value,int) and not isinstance(value,bool)}
         if types and not any(matches.get(t,False) for t in types):raise ValueError(f'{path} 类型错误')
@@ -390,7 +429,7 @@ def refs(p, data):
         if not isinstance(sources, list) or not all(isinstance(ref,str) for ref in sources):
             raise ValueError('source_refs 必须为字符串列表')
         for ref in sources:
-            path = contained(p, ref.split('#', 1)[0])
+            path = literature.resolve_path(p, ref.split('#', 1)[0],sys.modules[__name__])
             if not path.is_file():
                 raise ValueError(f'来源文件不存在：{ref}')
         for key, value in data.items():
@@ -404,6 +443,10 @@ def validate(root, name):
         if not (p / rel).exists():
             raise ValueError(f'缺少 {rel}')
     data = load(p / 'project.yaml')
+    zotero.project_options(p,sys.modules[__name__])
+    reproduction=data.get('reproduction',{'profile':'generic','private_extension':'TODO(user)','extension_data':{}})
+    if not isinstance(reproduction,dict) or not isinstance(reproduction.get('profile'),str) or not isinstance(reproduction.get('extension_data'),dict):
+        raise ValueError('reproduction 私有扩展接口格式错误')
     for key in ['slug','title','stage','current_claim','next_action','created_at']:
         if key not in data:
             raise ValueError(f'project 缺少 {key}')
@@ -416,26 +459,37 @@ def validate(root, name):
         if not isinstance(profile[section], dict) or any(k not in profile[section] for k in keys):
             raise ValueError(f'研究画像 {section} 字段不完整')
     literature.Library(root,p,sys.modules[__name__]).validate()
+    machine=registry.build(root,p,sys.modules[__name__],write=False)
     for file in p.rglob('*.yaml'):
         if '.runs' in file.parts:
             continue
-        item = yaml.safe_load(file.read_text(encoding='utf-8-sig'))
+        try:
+            item = yaml.safe_load(file.read_text(encoding='utf-8-sig'))
+        except yaml.YAMLError:
+            raise ValueError('YAML 格式错误：'+file.relative_to(p).as_posix()+'；原始内容已隐藏') from None
         refs(p, item)
         if file.name == 'claim.yaml':
             contract(root, 'claim', item)
-            if item['claim_id'] != file.parent.name or not (p / '10_literature/papers' / slug(item['paper_citekey']) / 'meta.yaml').exists():
-                raise ValueError('claim 标识或关联论文错误')
+            paper_ref=item.get('paper_id') or 'paper:'+paper_key(item['paper_citekey'])
+            try:registry.resolve(p,paper_ref,sys.modules[__name__],index=machine)
+            except ValueError:raise ValueError('claim 关联论文错误') from None
+            if not item.get('id') and item['claim_id'] != file.parent.name:raise ValueError('claim 标识错误')
             for rel in ['feasibility.md','plan.md','online','lab','results']:
                 if not (file.parent / rel).exists():
                     raise ValueError(f'claim 缺少 {rel}')
     if data['current_claim'] is not None:
         if not (contained(p / '20_reproduction', data['current_claim']) / 'claim.yaml').exists():
-            raise ValueError('current_claim 不存在')
+            try:ref=registry.resolve(p,data['current_claim'],sys.modules[__name__],index=machine)
+            except ValueError:raise ValueError('current_claim 不存在') from None
+            if ref['type']!='claim':raise ValueError('current_claim 未指向claim')
     print('项目校验通过；TODO 与空来源表示待补充，不代表证据已验证。')
 
 def run(root, name, task_path, execute_external=False, config_override=None, use_main=False):
     p = project(root, name)
     task = load(contained(root, task_path))
+    if task.get('inputs') and all(isinstance(x,dict) for x in task['inputs']):
+        if use_main:raise ValueError('ArtifactRef 新任务由子模型执行；主模型请使用 task review')
+        return tasks.execute(root,p,task_path,sys.modules[__name__],execute_external,config_override)
     contract(root, 'task', task)
     slug(task['task_id'])
     config = normalize_models(root,config_override) if config_override is not None else models(root)
@@ -449,20 +503,20 @@ def run(root, name, task_path, execute_external=False, config_override=None, use
     role = 'orchestrator' if use_main else resolve_role(config, requested_role)
     if role != requested_role and not use_main:
         print(f'角色回退：{requested_role} → {role}')
-    paper_key = task.get('context',{}).get('paper_citekey') or task.get('context',{}).get('citekey')
-    if not paper_key:
+    paper_citekey = task.get('context',{}).get('paper_citekey') or task.get('context',{}).get('citekey')
+    if not paper_citekey:
         keys = {rel.split('/')[2] for rel in task['inputs'] if rel.startswith('10_literature/papers/') and len(rel.split('/'))>3}
-        if len(keys)==1:paper_key=next(iter(keys))
+        if len(keys)==1:paper_citekey=next(iter(keys))
     if task_type in ['literature-translate','literature-close-read']:
-        if not paper_key:raise ValueError('翻译或精读需 context.paper_citekey 或唯一论文输入')
-        file=contained(p / '10_literature/papers',slug(paper_key)) / 'analysis.yaml'
+        if not paper_citekey:raise ValueError('翻译或精读需 context.paper_citekey 或唯一论文输入')
+        file=literature.paper_path(contained(p / '10_literature/papers',paper_key(paper_citekey)),'analysis.yaml')
         if not file.exists():raise ValueError('请先完成全局预读')
         overview=load(file).get('overview',{})
         if not all(literature.meaningful(overview.get(k)) for k in ['object','core_problem','why_important','position']):
             raise ValueError('没有完整全局定位，不得开始翻译或逐节精读')
     refs(p, task)
     for rel in task['inputs']:
-        if not contained(p, rel).exists():
+        if not literature.resolve_path(p,rel,sys.modules[__name__]).exists():
             raise ValueError('输入不存在')
     for rel in task['allowed_paths']:
         contained(p, rel)
@@ -483,7 +537,7 @@ def run(root, name, task_path, execute_external=False, config_override=None, use
         prompt += '\n## 输出契约（不代表已验证响应）\n```yaml\n' + yaml.safe_dump(load(schema_path)['contracts'][kind],allow_unicode=True,sort_keys=False)+'```\n'
     receipts = {}
     for rel in task['inputs']:
-        file = contained(p, rel)
+        file = literature.resolve_path(p,rel,sys.modules[__name__])
         if file.is_file():
             content = file.read_bytes()
             receipts[rel] = hashlib.sha256(content).hexdigest()
@@ -500,7 +554,7 @@ def run(root, name, task_path, execute_external=False, config_override=None, use
     run_dir = p / '.runs' / (datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ') + '-' + task['task_id'])
     run_dir.mkdir(parents=True)
     save(run_dir / 'task.yaml', task)
-    (run_dir / 'prompt.md').write_text(prompt, encoding='utf-8')
+    storage.write_text(run_dir / 'prompt.md',prompt)
     record = provenance(role)
     prompt_version=re.search(r'^prompt_version:\s*(\S+)',prompt_text,re.M)
     if prompt_version:record['prompt_version']=prompt_version.group(1)
@@ -519,7 +573,7 @@ def run(root, name, task_path, execute_external=False, config_override=None, use
         status, response = adapters.execute(settings, prompt, p, execute_external)
         record['status'] = status
         if response is not None:
-            (run_dir / 'response.md').write_text(response, encoding='utf-8')
+            storage.write_text(run_dir / 'response.md',response)
     except Exception as error:
         record['error_type'] = type(error).__name__
         if settings['adapter'] in {'command','openai_compatible','anthropic'}:
@@ -534,8 +588,8 @@ def run(root, name, task_path, execute_external=False, config_override=None, use
         record['finished_at'] = now()
         save(run_dir / 'run.yaml', record)
         # 时间更新不宣称内容已完成；进度由主模型核验后写入 meta。
-        if paper_key:
-            meta_path=contained(p / '10_literature/papers',slug(paper_key))/'meta.yaml'
+        if paper_citekey:
+            meta_path=contained(p / '10_literature/papers',paper_key(paper_citekey))/'meta.yaml'
             if meta_path.exists():
                 meta=load(meta_path);meta['updated_at']=now();save(meta_path,meta)
         index(root,name)
@@ -546,27 +600,50 @@ def demo(root):
     with tempfile.TemporaryDirectory(prefix='paper-workflow-') as temp:
         sandbox = Path(temp)
         (sandbox/'config').mkdir()
-        shutil.copyfile(root/'config/models.example.yaml',sandbox/'config/models.example.yaml')
-        shutil.copytree(root / 'workflow/templates', sandbox / 'workflow/templates')
-        shutil.copytree(root / 'workflow/prompts', sandbox / 'workflow/prompts')
-        shutil.copyfile(root / 'workflow/README.md', sandbox / 'workflow/README.md')
-        shutil.copyfile(root / 'workflow/schemas.yaml', sandbox / 'workflow/schemas.yaml')
-        shutil.copytree(root / 'projects/_template', sandbox / 'projects/_template')
-        init(sandbox, 'demo', '占位演示')
-        new_paper(sandbox, 'demo', 'demo-paper')
-        new_concept(sandbox, 'demo', 'demo-concept')
-        new_claim(sandbox, 'demo', 'demo-paper', 'main-claim')
-        index(sandbox, 'demo')
-        validate(sandbox, 'demo')
-        task = load(root / 'workflow/templates/task.yaml')
-        task.update(task_id='demo-task', objective='演示空流程', inputs=['research-profile.yaml'], source_refs=['research-profile.yaml'])
-        save(sandbox / 'task.yaml', task)
-        config = load(root / 'config/models.example.yaml')
-        config['subagents'][task['role']]['adapter'] = 'mock'
-        result = run(sandbox, 'demo', 'task.yaml', config_override=config)
-        if load(result / 'run.yaml')['status'] != 'mock':
+        for name in ['models','zotero']:
+            storage.copy_file(root/f'config/{name}.example.yaml',sandbox/f'config/{name}.example.yaml')
+        storage.copy_tree(root/'workflow/templates',sandbox/'workflow/templates')
+        storage.copy_tree(root/'workflow/prompts',sandbox/'workflow/prompts')
+        for name in ['README.md','schemas.yaml']:
+            storage.copy_file(root/'workflow'/name,sandbox/'workflow'/name)
+        storage.copy_tree(root/'projects/_template',sandbox/'projects/_template')
+        init(sandbox,'demo','本地 mock 演示；非真实研究')
+        new_paper(sandbox,'demo','demo-paper')
+        new_concept(sandbox,'demo','demo-concept')
+        new_claim(sandbox,'demo','demo-paper','main-claim')
+        project_path=project(sandbox,'demo')
+        export=project_path/'00_inbox/zotero-demo.json'
+        storage.copy_file(root/'tests/fixtures/zotero/better-bibtex.json',export)
+        zconfig=load(sandbox/'config/zotero.example.yaml')
+        zconfig['zotero'].update(enabled=True,mode='export')
+        zconfig['zotero']['export']['path']=str(export)
+        save(sandbox/'config/zotero.local.yaml',zconfig)
+        report=zotero.sync(sandbox,project_path,sys.modules[__name__])
+        if len(report['created'])!=2 or report['errors']:
+            raise ValueError('Zotero fixture 演示失败')
+        for key in report['created']:
+            folder=project_path/'10_literature/papers'/key
+            meta=load(folder/'meta.yaml');meta.update(paper_role='survey',concept_ids=['demo-concept'])
+            save(folder/'meta.yaml',meta)
+            analysis=load(folder/'04_analysis/analysis.yaml')
+            analysis['first_principles']=[dict(id='demo-principle',statement='MOCK：仅演示关联，不是科学原理。',
+                 concept_ids=['demo-concept'],source_refs=['00_inbox/zotero-demo.json'])]
+            analysis['review_similarity']=dict(core_problem='mock workflow example',method_summary='mock local fixture',
+                                               key_concepts=['demo-concept'])
+            save(folder/'04_analysis/analysis.yaml',analysis)
+        graph(sandbox,'demo')
+        index(sandbox,'demo')
+        validate(sandbox,'demo')
+        task=load(root/'workflow/templates/task.yaml')
+        task.update(task_id='demo-task',objective='演示空模型流程',inputs=['research-profile.yaml'],source_refs=['research-profile.yaml'])
+        save(sandbox/'task.yaml',task)
+        config=load(root/'config/models.example.yaml')
+        config['subagents'][task['role']]['adapter']='mock'
+        result=run(sandbox,'demo','task.yaml',config_override=config)
+        if load(result/'run.yaml')['status']!='mock':
             raise ValueError('演示失败')
-    print('完整 mock 演示通过；临时目录已清理，未污染 projects。')
+    print('完整 mock 演示通过：创建论文 → Zotero 导出同步 → 知识图谱 → validate → mock 任务；'
+          '未联网、未调用真实模型，临时目录已清理。')
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description='论文阅读与复现工作流')
@@ -578,8 +655,25 @@ def main(argv=None):
     for kind in ['paper','claim','concept']:
         child = children.add_parser(kind); child.add_argument('project'); child.add_argument('citekey')
         if kind == 'claim': child.add_argument('claim_slug')
-    for name in ['index','validate']:
+    for name in ['index','migrate','graph']:
         cmd = sub.add_parser(name); cmd.add_argument('project')
+        cmd.add_argument('--dry-run',action='store_true')
+        if name=='index':cmd.add_argument('--json',action='store_true',help='重建稳定 ID 机器索引（普通 index 也会生成）')
+    cmd=sub.add_parser('validate');cmd.add_argument('project',nargs='?');cmd.add_argument('--links',action='store_true');cmd.add_argument('--contracts',action='store_true')
+    cmd=sub.add_parser('context');cmd.add_argument('project');cmd.add_argument('task_id')
+    cmd=sub.add_parser('task');tsub=cmd.add_subparsers(dest='task_action',required=True)
+    tr=tsub.add_parser('run');tr.add_argument('project');tr.add_argument('task');tr.add_argument('--execute',action='store_true')
+    tr=tsub.add_parser('status');tr.add_argument('project');tr.add_argument('task_id',nargs='?')
+    for action in ['submit','review','accept','revise']:
+        tr=tsub.add_parser(action);tr.add_argument('project');tr.add_argument('task_id');tr.add_argument('--attempt',required=True,type=int)
+        if action=='submit':tr.add_argument('--result',required=True)
+        if action in ['review','revise']:tr.add_argument('--review',required=action=='revise')
+        if action=='review':tr.add_argument('--execute',action='store_true');tr.add_argument('--evidence',help='按需抽查 YAML refs ArtifactRef 片段，不全量上传论文')
+        if action=='revise':tr.add_argument('--execute',action='store_true',help='授权返修失败后的主 API/CLI 修复调用；已有会话/manual生成接力包')
+    z = sub.add_parser('zotero'); zsub=z.add_subparsers(dest='zotero_action',required=True)
+    zsub.add_parser('doctor')
+    zs=zsub.add_parser('status');zs.add_argument('project')
+    zs=zsub.add_parser('sync');zs.add_argument('project');policy=zs.add_mutually_exclusive_group();policy.add_argument('--dry-run',action='store_const',const=True,default=None);policy.add_argument('--apply',dest='dry_run',action='store_const',const=False)
     cmd = sub.add_parser('run'); cmd.add_argument('project'); cmd.add_argument('task'); cmd.add_argument('--execute', action='store_true', help='明确授权命令或网络调用；默认 dry-run');cmd.add_argument('--main',action='store_true',help='用已配置的主模型执行同一任务包；默认使用子模型')
     sub.add_parser('demo')
     args = parser.parse_args(argv)
@@ -591,8 +685,33 @@ def main(argv=None):
             if args.kind == 'paper': new_paper(ROOT, args.project, args.citekey)
             elif args.kind == 'concept': new_concept(ROOT, args.project, args.citekey)
             else: new_claim(ROOT, args.project, args.citekey, args.claim_slug)
-        elif args.action == 'index': index(ROOT, args.project)
-        elif args.action == 'validate': validate(ROOT, args.project)
+        elif args.action == 'index': index(ROOT, args.project,args.dry_run)
+        elif args.action == 'migrate': migrate(ROOT,args.project,args.dry_run)
+        elif args.action == 'graph': graph(ROOT,args.project,args.dry_run)
+        elif args.action == 'zotero':
+            if args.zotero_action=='sync':zotero.sync(ROOT,project(ROOT,args.project),sys.modules[__name__],args.dry_run)
+            else:zotero.status(ROOT,project(ROOT,args.project) if args.zotero_action=='status' else None,sys.modules[__name__],args.zotero_action=='doctor')
+        elif args.action == 'validate':
+            if args.contracts:
+                tasks.contracts(ROOT,sys.modules[__name__]);print('任务合同与 routing 校验通过。')
+            if args.project:
+                if args.links:
+                    machine=registry.build(ROOT,project(ROOT,args.project),sys.modules[__name__],write=False)
+                    issues=sorted(set(machine.get('issues',[])+registry.validate(machine,project(ROOT,args.project),sys.modules[__name__])))
+                    if issues:raise ValueError('连接校验失败：\n'+'\n'.join(issues))
+                    print('稳定 ID 与连接校验通过。')
+                else:validate(ROOT,args.project)
+            elif not args.contracts:raise ValueError('validate 需要 project 或 --contracts')
+        elif args.action == 'context':
+            print(tasks.context(ROOT,project(ROOT,args.project),args.task_id,sys.modules[__name__]))
+        elif args.action == 'task':
+            p=project(ROOT,args.project);ops=sys.modules[__name__]
+            if args.task_action=='run':print(tasks.execute(ROOT,p,args.task,ops,args.execute))
+            elif args.task_action=='status':print(yaml.safe_dump(tasks.statuses(p,args.task_id,ops),allow_unicode=True,sort_keys=False))
+            elif args.task_action=='submit':print(tasks.submit(ROOT,p,args.task_id,args.attempt,load(contained(ROOT,args.result)),ops)['status'])
+            elif args.task_action=='review':print(tasks.review(ROOT,p,args.task_id,args.attempt,ops,args.review,args.execute,evidence_file=args.evidence))
+            elif args.task_action=='accept':print(tasks.accept(ROOT,p,args.task_id,args.attempt,ops)['status'])
+            elif args.task_action=='revise':print(tasks.revise(ROOT,p,args.task_id,args.attempt,args.review,ops,args.execute))
         elif args.action == 'run': run(ROOT, args.project, args.task, args.execute,use_main=args.main)
         elif args.action == 'demo': demo(ROOT)
     except (ValueError, OSError, yaml.YAMLError, KeyError) as error:

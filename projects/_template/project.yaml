@@ -4,3 +4,12 @@ stage: intake
 current_claim: null
 next_action: 补充研究画像并归档第一篇论文
 created_at: null
+zotero:
+  collections: []
+  category_map: {}
+  tag_filter: []
+  ignore_tags: []
+reproduction:
+  profile: generic
+  private_extension: TODO(user)
+  extension_data: {}

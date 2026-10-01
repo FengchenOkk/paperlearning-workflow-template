@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "itemType": "journalArticle",
+      "itemKey": "MOCK0001",
+      "citationKey": "MockSurvey2025",
+      "title": "MOCK survey: example research workflow",
+      "creators": [{"firstName": "Example", "lastName": "Author", "creatorType": "author"}],
+      "date": "2025-01-01",
+      "DOI": "10.0000/mock-one",
+      "tags": [{"tag": "mock-topic"}],
+      "collections": ["MOCKCOLL"],
+      "attachments": [{"path": "missing-mock-paper.pdf"}]
+    },
+    {
+      "itemType": "journalArticle",
+      "itemKey": "MOCK0002",
+      "citationKey": "MockSurvey2026",
+      "title": "MOCK survey: second example",
+      "creators": [{"name": "Another Example Author", "creatorType": "author"}],
+      "date": "2026",
+      "DOI": "10.0000/mock-two",
+      "tags": [{"tag": "mock-topic"}],
+      "collections": ["MOCKCOLL"]
+    }
+  ],
+  "collections": {"MOCKCOLL": {"key": "MOCKCOLL", "name": "Mock collection", "items": ["MOCK0001", "MOCK0002"]}}
+}

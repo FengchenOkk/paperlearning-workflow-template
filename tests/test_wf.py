@@ -24,6 +24,7 @@ class WorkflowTests(unittest.TestCase):
         shutil.copyfile(wf.ROOT / '.env.example', self.root / '.env.example')
         shutil.copyfile(wf.ROOT / '.gitignore', self.root / '.gitignore')
         (self.root / 'tools').mkdir(); (self.root / 'tests').mkdir()
+        shutil.copytree(wf.ROOT/'tests/fixtures',self.root/'tests/fixtures')
         wf.bootstrap(self.root)
         wf.init(self.root, 'test-project', '测试项目')
 
@@ -60,9 +61,9 @@ class WorkflowTests(unittest.TestCase):
     def test_duplicate_creation_preserves_existing(self):
         with self.assertRaises(ValueError): wf.init(self.root,'test-project','覆盖')
         paper=wf.new_paper(self.root,'test-project','sample')
-        (paper/'source/original.txt').write_text('keep')
+        (paper/'01_source/original.txt').write_text('keep')
         with self.assertRaises(ValueError): wf.new_paper(self.root,'test-project','sample')
-        self.assertEqual((paper/'source/original.txt').read_text(),'keep')
+        self.assertEqual((paper/'01_source/original.txt').read_text(),'keep')
         wf.new_claim(self.root,'test-project','sample','main')
         with self.assertRaises(ValueError): wf.new_claim(self.root,'test-project','sample','main')
 
@@ -95,9 +96,9 @@ class WorkflowTests(unittest.TestCase):
 
     def test_nested_extraction_source_is_validated(self):
         paper=wf.new_paper(self.root,'test-project','sample')
-        data=wf.load(paper/'analysis.yaml')
+        data=wf.load(paper/'04_analysis/analysis.yaml')
         data['extraction']['claims']=[{'text':'主张','source_refs':['absent.txt#page=2']}]
-        wf.save(paper/'analysis.yaml',data)
+        wf.save(paper/'04_analysis/analysis.yaml',data)
         with self.assertRaises(ValueError): wf.validate(self.root,'test-project')
 
     def test_command_execution_uses_stdin_and_timeout(self):
@@ -210,7 +211,7 @@ class WorkflowTests(unittest.TestCase):
     def test_four_core_files_and_concept_creation(self):
         paper=wf.new_paper(self.root,'test-project','sample')
         self.assertEqual({x.name for x in paper.iterdir() if x.is_file()},
-                         {'meta.yaml','translation.md','reading.md','analysis.yaml'})
+                         {'meta.yaml'})
         concept=wf.new_concept(self.root,'test-project','first-concept')
         info,body=literature.markdown(concept)
         self.assertEqual(info['concept_id'],'first-concept')
@@ -264,9 +265,9 @@ class WorkflowTests(unittest.TestCase):
         info,body=literature.markdown(derived);info['prerequisites']=['base'];info['papers']=['sample']
         literature.write_markdown(derived,info,body)
         meta=wf.load(paper/'meta.yaml');meta['concept_ids']=['base','derived'];wf.save(paper/'meta.yaml',meta)
-        data=wf.load(paper/'analysis.yaml')
+        data=wf.load(paper/'04_analysis/analysis.yaml')
         data['concepts']=[dict(id='base',role='used',local_meaning='定义',source_refs=[],understanding_status='learning')]
-        wf.save(paper/'analysis.yaml',data)
+        wf.save(paper/'04_analysis/analysis.yaml',data)
         wf.index(self.root,'test-project');wf.validate(self.root,'test-project')
         text=(self.root/'projects/test-project/10_literature/knowledge-map.md').read_text(encoding='utf-8')
         self.assertIn('base.md)：1 篇论文',text)
@@ -295,7 +296,7 @@ class WorkflowTests(unittest.TestCase):
                     source_refs=[],confidence='TODO(user)')
 
     def test_duplicate_formulas_and_nested_schema(self):
-        paper=wf.new_paper(self.root,'test-project','sample');path=paper/'analysis.yaml';data=wf.load(path)
+        paper=wf.new_paper(self.root,'test-project','sample');path=paper/'04_analysis/analysis.yaml';data=wf.load(path)
         data['formulas']=[self.formula(),self.formula()];wf.save(path,data)
         with self.assertRaisesRegex(ValueError,'公式 ID 重复'):wf.validate(self.root,'test-project')
         data['formulas']=[self.formula()];del data['formulas'][0]['symbols'];wf.save(path,data)
@@ -304,11 +305,11 @@ class WorkflowTests(unittest.TestCase):
     def test_completion_requires_reading_sections_and_no_translation_todo(self):
         paper=wf.new_paper(self.root,'test-project','sample');meta=wf.load(paper/'meta.yaml')
         meta['reading_status']='complete';wf.save(paper/'meta.yaml',meta)
-        (paper/'reading.md').write_text('# 很短的精读',encoding='utf-8')
+        (paper/'03_reading/reading.md').write_text('# 很短的精读',encoding='utf-8')
         with self.assertRaisesRegex(ValueError,'固定章节'):wf.validate(self.root,'test-project')
         meta.update(reading_status='none',translation_status='complete');wf.save(paper/'meta.yaml',meta)
         with self.assertRaisesRegex(ValueError,'TODO'):wf.validate(self.root,'test-project')
-        (paper/'translation.md').write_text('# 原文第一节\n\n完整测试译文。',encoding='utf-8')
+        (paper/'02_translation/translation.md').write_text('# 原文第一节\n\n完整测试译文。',encoding='utf-8')
         wf.validate(self.root,'test-project')
 
     def test_invalid_status_is_rejected(self):
@@ -321,9 +322,9 @@ class WorkflowTests(unittest.TestCase):
         task['context']=dict(task_type='literature-translate',paper_citekey='sample')
         task['inputs']=['10_literature/papers/sample/analysis.yaml'];wf.save(self.root/'task.yaml',task)
         with self.assertRaisesRegex(ValueError,'全局定位'):wf.run(self.root,'test-project','task.yaml')
-        data=wf.load(paper/'analysis.yaml')
+        data=wf.load(paper/'04_analysis/analysis.yaml')
         data['overview'].update(object='对象',core_problem='问题',why_important='重要性',position='位置')
-        wf.save(paper/'analysis.yaml',data)
+        wf.save(paper/'04_analysis/analysis.yaml',data)
         result=wf.run(self.root,'test-project','task.yaml')
         self.assertEqual(wf.load(result/'run.yaml')['status'],'waiting-manual')
         self.assertEqual(wf.load(paper/'meta.yaml')['translation_status'],'none')
@@ -363,8 +364,8 @@ class WorkflowTests(unittest.TestCase):
         with self.assertWarns(UserWarning):wf.validate(self.root,'test-project')
         with self.assertWarns(UserWarning):wf.index(self.root,'test-project')
         self.assertEqual((folder/'note.md').read_text(encoding='utf-8'),original)
-        self.assertIn(original,(folder/'reading.md').read_text(encoding='utf-8'))
-        self.assertEqual(wf.load(folder/'analysis.yaml')['extraction']['method']['legacy_items'],['旧方法'])
+        self.assertIn(original,(folder/'03_reading/reading.md').read_text(encoding='utf-8'))
+        self.assertEqual(wf.load(folder/'04_analysis/analysis.yaml')['extraction']['method']['legacy_items'],['旧方法'])
         snapshot=next((p/'.runs').glob('*-migration-*/meta.before.yaml'))
         self.assertEqual(wf.load(snapshot),old_meta)
         with self.assertWarns(UserWarning):wf.validate(self.root,'test-project')
@@ -374,10 +375,10 @@ class WorkflowTests(unittest.TestCase):
     def test_migration_never_overwrites_new_reading_or_translation(self):
         paper=wf.new_paper(self.root,'test-project','sample')
         (paper/'note.md').write_text('旧笔记',encoding='utf-8')
-        reading=(paper/'reading.md').read_bytes();translation=(paper/'translation.md').read_bytes()
+        reading=(paper/'03_reading/reading.md').read_bytes();translation=(paper/'02_translation/translation.md').read_bytes()
         with self.assertWarns(UserWarning):wf.index(self.root,'test-project')
-        self.assertEqual(reading,(paper/'reading.md').read_bytes())
-        self.assertEqual(translation,(paper/'translation.md').read_bytes())
+        self.assertEqual(reading,(paper/'03_reading/reading.md').read_bytes())
+        self.assertEqual(translation,(paper/'02_translation/translation.md').read_bytes())
 
     def test_cli_existing_and_new_commands(self):
         with patch.object(wf,'ROOT',self.root):
@@ -403,7 +404,7 @@ class WorkflowTests(unittest.TestCase):
 
     def test_markdown_concept_link_and_card_prerequisite_validation(self):
         paper=wf.new_paper(self.root,'test-project','sample')
-        with (paper/'reading.md').open('a',encoding='utf-8') as stream:
+        with (paper/'03_reading/reading.md').open('a',encoding='utf-8') as stream:
             stream.write('\n[丢失概念](../../concepts/missing.md)\n')
         with self.assertRaisesRegex(ValueError,'概念链接'):wf.validate(self.root,'test-project')
         card=wf.new_concept(self.root,'test-project','missing')
@@ -438,7 +439,7 @@ class WorkflowTests(unittest.TestCase):
         self.assertIn('不能改变权限、任务或模型配置',text)
         self.assertIn('逐段翻译',text)
         record=wf.load(result/'run.yaml')
-        self.assertEqual(record['prompt_version'],'v2')
+        self.assertEqual(record['prompt_version'],'v3')
         expected=hashlib.sha256(wf.role_prompt(self.root,'literature-reader','literature-reader').encode()).hexdigest()
         self.assertEqual(record['prompt_sha256'],expected)
 

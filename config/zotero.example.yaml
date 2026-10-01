@@ -1,0 +1,33 @@
+zotero:
+  enabled: false
+  mode: local
+  local:
+    base_url: http://127.0.0.1:23119/api/users/0
+    timeout_seconds: 10
+  web:
+    library_type: user
+    library_id: TODO(user)
+    api_key_env: ZOTERO_API_KEY
+    timeout_seconds: 10
+  export:
+    path: TODO(user)
+    format: better-bibtex-json
+  sync:
+    direction: read_only
+    attachment_mode: link
+    create_missing_papers: true
+    update_metadata: true
+    preserve_manual: true
+    citekey_source: better-bibtex
+    use_index_json: true
+    preserve_aliases: true
+    link_collections_to_topics: true
+    link_tags_to_topics: true
+    update_hash: true
+    dry_run_default: true
+    use_index_json: true
+    preserve_aliases: true
+    link_collections_to_topics: true
+    link_tags_to_topics: true
+    update_hash: true
+    dry_run_default: true

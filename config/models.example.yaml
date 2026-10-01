@@ -1,6 +1,7 @@
 # 可分享模板，无密钥。主/子模型可引用同一 model_profiles 配置池。
 # 角色 profile: null 继承全局默认；旧 subagent_profiles/逐角色配置继续兼容。
 orchestrator:
+  responsibility: commander-reviewer
   adapter: codex
   model: inherit
   profile: main
@@ -8,6 +9,8 @@ orchestrator:
   api_key_env: null
 settings:
   default_subagent_profile: manual
+  task_contracts: workflow/task-contracts.yaml
+  execution_responsibility: primary-executor
 model_profiles:
   manual:
     adapter: manual

@@ -1,5 +1,55 @@
-version: 2
+version: 3
 contracts:
+  artifact_ref:
+    type: object
+    required: [id, type, path, anchor, role, required, hash]
+    properties:
+      id: {type: string}
+      type: {type: string}
+      path: {type: string}
+      anchor: {type: [string, 'null']}
+      role: {type: string, enum: [input, output]}
+      required: {type: boolean}
+      hash: {type: [string, 'null']}
+  link:
+    type: object
+    required: [rel, target, evidence, confidence, status]
+    properties:
+      rel: {type: string}
+      target: {type: string}
+      evidence: {type: array}
+      confidence: {type: string, enum: [high, medium, low]}
+      status: {type: string, enum: [candidate, verified]}
+      weight: {type: number, minimum: 0, maximum: 1}
+  task_result:
+    type: object
+    required: [task_id, attempt, status, summary, created_artifacts, updated_artifacts, evidence, unresolved_issues, confidence, self_check]
+    properties:
+      task_id: {type: string}
+      attempt: {type: integer, minimum: 1}
+      status: {type: string, enum: [submitted]}
+      summary: {type: string}
+      created_artifacts: {type: array}
+      updated_artifacts: {type: array}
+      evidence: {type: array}
+      unresolved_issues: {type: array}
+      confidence: {type: string, enum: [high, medium, low]}
+      self_check: {type: object}
+  task_review:
+    type: object
+    required: [task_id, attempt, reviewer, decision, passed_criteria, failed_criteria, issues, required_changes, evidence_checks, next_action, reason]
+    properties:
+      task_id: {type: string}
+      attempt: {type: integer, minimum: 1}
+      reviewer: {type: string, enum: [main]}
+      decision: {type: string, enum: [accept, revise, reject, block, escalate]}
+      passed_criteria: {type: array}
+      failed_criteria: {type: array}
+      issues: {type: array}
+      required_changes: {type: array}
+      evidence_checks: {type: array}
+      next_action: {type: string}
+      reason: {type: string}
   task:
     required:
     - task_id
@@ -20,7 +70,7 @@ contracts:
       inputs:
         type: array
         items:
-          type: string
+          type: [string, object]
       allowed_paths:
         type: array
         items:
@@ -71,6 +121,8 @@ contracts:
     - prompt_version
     - source_refs
     - created_at
+    - first_principle_ids
+    - zotero
     properties:
       citekey:
         type: string
@@ -186,6 +238,47 @@ contracts:
         - none
         - partial
         - complete
+      first_principle_ids:
+        type: array
+        items:
+          type: string
+      zotero:
+        type: object
+        required:
+        - library_type
+        - library_id
+        - item_key
+        - collection_keys
+        - tags
+        - attachment_paths
+        - version
+        - synced_at
+        properties:
+          library_type:
+            type: string
+          library_id:
+            type: string
+          item_key:
+            type: string
+          synced_at:
+            type: string
+          collection_keys:
+            type: array
+            items:
+              type: string
+          tags:
+            type: array
+            items:
+              type: string
+          attachment_paths:
+            type: array
+            items:
+              type: string
+          version:
+            type:
+            - integer
+            - string
+            - 'null'
   claim:
     required:
     - claim_id
@@ -280,6 +373,8 @@ contracts:
     - prompt_version
     - source_refs
     - created_at
+    - first_principles
+    - review_similarity
     properties:
       paper:
         type: string
@@ -382,6 +477,8 @@ contracts:
                     type: string
                   type_or_dimension:
                     type: string
+            meaning:
+              type: string
       concepts:
         type: array
         items:
@@ -469,6 +566,42 @@ contracts:
         type: string
       created_at:
         type: string
+      first_principles:
+        type: array
+        items:
+          type: object
+          required:
+          - id
+          - statement
+          - source_refs
+          properties:
+            id:
+              type: string
+            statement:
+              type: string
+            source_refs:
+              type: array
+              items:
+                type: string
+            concept_ids:
+              type: array
+              items:
+                type: string
+      review_similarity:
+        type: object
+        required:
+        - core_problem
+        - method_summary
+        - key_concepts
+        properties:
+          core_problem:
+            type: string
+          method_summary:
+            type: string
+          key_concepts:
+            type: array
+            items:
+              type: string
   concept:
     type: object
     required:
@@ -487,6 +620,8 @@ contracts:
     - prompt_version
     - source_refs
     - created_at
+    - is_first_principle
+    - canonical_statement
     properties:
       concept_id:
         type: string
@@ -543,3 +678,15 @@ contracts:
         - learning
         - understood
         - needs-review
+      is_first_principle:
+        type: boolean
+      canonical_statement:
+        type: string
+      extends:
+        type: array
+        items:
+          type: string
+      replaces:
+        type: array
+        items:
+          type: string

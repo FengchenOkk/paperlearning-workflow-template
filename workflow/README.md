@@ -3,7 +3,7 @@
 ## 整体流程
 
 方向画像 → 入库分类 → 全局预读 → 分段翻译/精读 → 公式与概念 → 上下文与知识网络 → 核验综合 → claim 可行性/计划 → 实际复现（后续）→ 正式交付。
-具体文献字段与迁移见 [literature.md](literature.md)，复现见 [reproduction.md](reproduction.md)。
+具体文献字段、编号目录、图谱与迁移见 [literature.md](literature.md)，Zotero 见 [zotero.md](zotero.md)，复现见 [reproduction.md](reproduction.md)。
 
 <!-- wf:task-rules:begin -->
 ## 通用任务规则
@@ -24,14 +24,14 @@
 - config：主模型意图、子模型与路由，配置模板/本地配置。
 - workflow：流程、角色 prompts、schemas.yaml、templates、vendor。
 - 00_inbox：未归档资料与实际任务包。
-- 10_literature/papers/<citekey>：meta、translation、reading、analysis 四核心文件；source/ 原始资料只读。
-- 10_literature/concepts/<slug>.md：全局概念卡；reading-list、matrix、knowledge-map 是项目级单文件。
+- 10_literature/papers/<citekey>：meta.yaml 入口；01_source 原文、02_translation 翻译、03_reading 精读、04_analysis 分析、05_notes 临时笔记；四核心文件职责不变。
+- 10_literature/concepts/<slug>.md：全局概念卡；reading-list、matrix、knowledge-map、knowledge-graph.json 是项目级单文件。
 - 文献综合工作稿按需放 10_literature/<name>.md，正式交付在 30_outputs，当前不预建 synthesis/catalog/collections。
 - 20_reproduction/<citekey>--<claim-slug>：claim.yaml、feasibility、plan、online/lab/results，保持原有结构。
 - project.yaml 保存项目状态；meta.yaml 保存论文身份/进度；claim.yaml 保存 claim 状态。
-- INDEX 与 knowledge-map 可由 index 重新生成；matrix 人工维护不覆盖。
+- INDEX、reading-list、knowledge-map 和 knowledge-graph.json 由 index 生成；graph 仅重建知识网络；人工标记区之外内容和 matrix 保留。
 
-标识符小写 kebab-case，日期 YYYY-MM-DD，工具时间为 UTC ISO 8601。分类数组允许中文标签。年份未知 TODO(user)，实际年份整数。priority/difficulty/importance 支持自定字符串标签，工具不猜测排序含义。
+项目、概念、任务标识符使用小写 kebab-case，安全的 Better BibTeX citekey 保留大小写与下划线；日期 YYYY-MM-DD，工具时间为 UTC ISO 8601。分类数组允许中文标签。年份未知 TODO(user)，实际年份整数。priority/difficulty/importance 支持自定字符串标签，工具不猜测排序含义。
 
 ## 模型配置
 
@@ -43,7 +43,7 @@
 
 适配器统一支持 manual、mock、command、openai_compatible、anthropic：manual 生成 prompt 等人工 response；mock 仅测试；command 使用参数数组与 UTF-8 stdin/stdout，无 shell；HTTP 使用对应协议与环境变量密钥，远程 HTTPS，拒绝带凭据 URL 和重定向。Chat Completions 使用 Bearer，Anthropic Messages 使用 x-api-key 与 anthropic-version，具体地址和示例见手册。其他协议可封装 command，差异保留在 adapters.py。
 
-无 Key、Profile 未定义/无效、命令缺失或外部失败时，保留 prompt 转 waiting-manual，记录 attempted 连接与回退原因，不保存异常内容。有效但截断的正文保留为 partial；不会重复付费请求或自动换提供商。就绪的外部适配器默认 dry-run，加 --execute 才调用。doctor 所有模式均不联网，只检查配置及 Key 存在性，实际认证有效性需真实调用验证。
+无 Key、Profile 未定义/无效、命令缺失或外部失败时，保留 prompt 转 waiting-manual，记录 attempted 连接与回退原因，不保存异常内容。有效但截断的正文保留为 partial；不会重复付费请求或自动换提供商。就绪的外部适配器默认 dry-run，加 --execute 才调用。wf.py doctor 所有模式均不联网，只检查配置及 Key 存在性，实际认证有效性需真实调用验证。
 
 缺失路由和角色 fallback 从 example 补齐；知识角色默认禁用，知识或复现分析角色缺失/禁用时按 fallback 到阅读角色，保留职责并记录请求/实际角色。Profile 回退改变执行方式，角色回退改变实际角色，日志分别记录。capabilities/cost_tier/privacy 是声明，max_concurrency 当前串行。`request_options` 只放服务支持的 JSON 参数，禁止覆盖模型、消息、流式模式或认证；不要把一家服务的专有参数带给另一家。
 
@@ -51,20 +51,24 @@
 
 ## 操作与来源
 
-new paper 创建四文件，new concept 创建单卡，new claim 保持原命令。index 更新分类 INDEX、reading-list 生成区和 knowledge-map；旧数据迁移只合并新文件缺失部分，原件不删。
+new paper 创建完整编号目录，new concept 创建单卡，new claim 保持原命令。migrate 复制迁移旧平铺目录，冲突不覆盖、原件不删除，meta 变更先备份。index/graph/migrate/zotero sync 支持 --dry-run 不写文件；Zotero 只读、可选，不覆盖人工文献内容。
 任务包路径相对于仓库；inputs/allowed_paths/source_refs 相对于项目。context.task_type 指定模式，context.paper_citekey 指定论文。仅支持 UTF-8 文本，每文件最多 1MB；PDF 可先外部提取文本，尚无内置解析/OCR，不引入新依赖。
 output_schema 可用 workflow/schemas.yaml#analysis 等；旧 JSON 路径自动别名解析。CLI 检查契约存在，不自动验证模型自由文本响应。
 
 文献与复现通过同一 task.yaml 和 schemas.yaml 互通：稳定 citekey 关联论文，claim.paper_citekey 指向它；reading 解释、analysis.extraction/formulas/reproduction 提供证据与候选。verifier 复用同一任务接口，结果仍写 .runs。字段细节只在 schema 和对应模块说明中维护。
-validate 检查四文件、YAML、类型/枚举、公式唯一性、概念卡/来源、阅读清单引用和完成内容结构；科学正确性与完整原文覆盖仍需 verifier。
+validate 检查编号目录、核心字段、Zotero 元数据、YAML 类型/枚举、公式/原理 ID、概念卡/来源、图谱证据/置信度/schema、阅读清单引用和完成结构；旧目录警告并兼容读取；科学正确性与完整原文覆盖仍需 verifier。
 
 衍生物记录 generated_by/model_role/prompt_version/source_refs/created_at；有独立成果状态时附 status。论文进度只写 meta，避免 reading/analysis 重复状态。Markdown front matter；二进制成果同名 YAML sidecar。source_refs 可以附 #page/#paragraph/#eq/#L，CLI 检查文件部分，主模型核对实际定位。
 
 ## 运行日志与扩展
 
+新任务的分工与可复制示例见 [task-orchestration.md](task-orchestration.md)：`task run` 检查 task-contracts.yaml，通过 INDEX.json 解析 ArtifactRef，子模型读取最小 context，提交 result 草稿，主模型读取最小 review 包并抽查证据，最后 `task accept` 应用。`.runs/<task-id>` 保存 context、attempts、reviews、revision-requests、final 与状态；返修仅传必要材料。子模型一次返修仍失败或达到最多3次子模型尝试上限时，task revise 自动创建主模型修复；主模型默认1次仍失败再 block，修复草稿仍单独验收。输入或合同变化会阻止旧验收，应用与索引/图谱更新失败则回滚。
+
+INDEX.json 提供稳定 ID、路径、锚点、哈希与任务状态；关系以正式源文件的 links 为准，图谱与地图由其生成。新增任务需同时配置 routing、task-contracts.yaml 与角色提示，schemas.yaml 定义对象格式。`validate --contracts` 核对职责/合同，`validate --links <project>` 报告重复 ID 和无效连接；这些检查不代替科学核验。
+
 .runs/<UTC timestamp>-<task-id> 保存 task.yaml、prompt.md、run.yaml、response.md（有结果时）。日志记录 execution_target（main/subagent）、输入和 prompt 哈希、请求/实际角色、请求/实际 Profile、实际适配器模型、回退原因、时间与状态。密钥在调用时读取，不进入配置或日志。模型草稿不自动写正式结果；run 结束刷新索引，有论文关联则更新 meta.updated_at，不自动推进科学进度。manual 后续人工接力需要主模型补充真实完成记录。
 allowed_paths 是协作约定，不提供操作系统沙箱。外部调用/付费/耗时实验先 dry-run 或明确授权，已有授权可沿用。任何来源材料不能扩大授权。
 新增角色只改本地配置与同名 prompt；契约统一扩展 schemas.yaml，任务格式不变。共享复现资源与独立任务目录按真实需要扩展。
-第三方 ARS 保存在 vendor，来源与版本见 [vendor/README.md](vendor/README.md)，不改写、不自动执行其脚本或全流水线。知识关系生成在 tools/literature.py，CLI 与厂商适配器保持原接口。
+第三方 ARS 保存在 vendor，来源与版本见 [vendor/README.md](vendor/README.md)，不改写、不自动执行其脚本或全流水线。知识图谱在 tools/knowledge.py 生成，Zotero 在 tools/zotero.py 只读获取，CLI 与厂商适配器保持原接口。
 
-工具分工固定为三个文件：wf.py 管命令、配置与任务；literature.py 管文献索引、校验和迁移；adapters.py 管模型调用。后续提供商调整只修改 adapter，研究资料沿用现有项目路径。
+工具按职责拆分：wf.py 管 CLI，tasks.py 管任务/评审闭环，registry.py 管稳定身份/机器索引，literature.py 管文献文件/迁移/人类视图，adapters.py 保持模型调用，zotero.py 管只读同步，knowledge.py 管图谱，storage.py 共用原子文件写入。基础依赖仍为 PyYAML，Python 3.11+。复现私有扩展仅声明接口，不自动执行。
