@@ -1,0 +1,15 @@
+{
+  "id": "jmlr-srivastava-2014-dropout",
+  "title": "Dropout: A Simple Way to Prevent Neural Networks from Overfitting",
+  "landing_url": "https://jmlr.org/papers/v15/srivastava14a.html",
+  "pdf_url": "https://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf",
+  "local_path": "evals/private/dropout.pdf",
+  "expected_pages": 30,
+  "sha256": "9c196ccbe6c6a595a1adba6cd030d35f7c2e548bbf5e7f1278b0109d8dd9ebaa",
+  "gold": [
+    { "page": 1, "text": "Dropout is a technique for addressing this problem.", "candidate_type": "METHOD" },
+    { "page": 1, "text": "The key idea is to randomly drop units", "candidate_type": "METHOD" },
+    { "page": 1, "text": "Abstract", "source_type": "heading" }
+  ],
+  "scope": "Public paper; a small manually checked source-localization gold set, not full scientific evaluation. PDF excluded from Git."
+}

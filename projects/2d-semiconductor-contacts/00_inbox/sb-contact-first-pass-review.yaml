@@ -1,0 +1,35 @@
+task_id: sb-contact-first-pass
+attempt: 1
+reviewer: main
+review_source: current Codex session; actual source and PDF checks
+decision: accept
+passed_criteria:
+- global_position
+- paper_logic_map
+- prerequisites_identified
+- evidence_traceable
+- no_fabrication
+failed_criteria: []
+issues: []
+required_changes: []
+evidence_checks:
+- ref:
+    id: artifact:ab40bde02bcd7e986926ea55
+    type: source.text
+    hash: sha256:cadcdb90676746cd7b803a9ac0dad12a8b2ac70b5a480c49dcfa4f0a0346696e
+  status: verified
+  detail: 已对照PDF p.274式(1)及p.276计算机制；重算29.5328 Ω·μm和1.422倍；晶面上划线正确。
+- ref:
+    id: artifact:7090f67aecd585de8f4fc0f2
+    type: source.text
+    hash: sha256:4bd3f576210cd3d1b58f3617a9a1243bd5dcf50f440f3f0f120ab6ae63bd259a
+  status: verified
+  detail: 已对照PDF p.276 Fig.3、p.277 Fig.4、p.278 Fig.5及正文：最佳与平均Rc、浓度、温度范围、24h氮气、直流/脉冲和延迟估算分开。
+- ref:
+    id: artifact:a023ada73585fa7b58f1e55d
+    type: source.text
+    hash: sha256:d689fe1afd95a3ca54a7323053b8c842843d1af4e92c8eb1d96a39f2f6ce636f
+  status: verified
+  detail: 已核对Methods的20nm Sb/30nm Au、免后退火、测量与DFT条件；不宣称独立复现。
+next_action: 应用限定范围的全局分析；登记概念卡，保留补充资料与长期可靠性缺口
+reason: 真实逐项核对定位、逻辑链、前置知识及关键数字；明确计算/实验/推断和未核验范围。非全文精读或系统综述验收。

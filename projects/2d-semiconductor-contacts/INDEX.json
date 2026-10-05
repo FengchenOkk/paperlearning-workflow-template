@@ -1,0 +1,1107 @@
+{
+  "aliases": {
+    ".runs/sb-concept-interface-band-hybridization/attempts/1/drafts/1.md": "artifact:sb-concept-interface-band-hybridization:attempt-1-1",
+    ".runs/sb-concept-interface-band-hybridization/attempts/1/drafts/2.yaml": "artifact:sb-concept-interface-band-hybridization:attempt-1-2",
+    ".runs/sb-concept-interface-band-hybridization/attempts/1/result.yaml": "attempt:sb-concept-interface-band-hybridization:1",
+    ".runs/sb-concept-interface-band-hybridization/task.yaml": "task:sb-concept-interface-band-hybridization",
+    ".runs/sb-concept-quantum-contact-limit/attempts/1/drafts/1.md": "artifact:sb-concept-quantum-contact-limit:attempt-1-1",
+    ".runs/sb-concept-quantum-contact-limit/attempts/1/drafts/2.yaml": "artifact:sb-concept-quantum-contact-limit:attempt-1-2",
+    ".runs/sb-concept-quantum-contact-limit/attempts/1/result.yaml": "attempt:sb-concept-quantum-contact-limit:1",
+    ".runs/sb-concept-quantum-contact-limit/attempts/2/drafts/1.md": "artifact:sb-concept-quantum-contact-limit:attempt-2-1",
+    ".runs/sb-concept-quantum-contact-limit/attempts/2/drafts/2.yaml": "artifact:sb-concept-quantum-contact-limit:attempt-2-2",
+    ".runs/sb-concept-quantum-contact-limit/attempts/2/result.yaml": "attempt:sb-concept-quantum-contact-limit:2",
+    ".runs/sb-concept-quantum-contact-limit/task.yaml": "task:sb-concept-quantum-contact-limit",
+    ".runs/sb-concept-transfer-length-method/attempts/1/drafts/1.md": "artifact:sb-concept-transfer-length-method:attempt-1-1",
+    ".runs/sb-concept-transfer-length-method/attempts/1/drafts/2.yaml": "artifact:sb-concept-transfer-length-method:attempt-1-2",
+    ".runs/sb-concept-transfer-length-method/attempts/1/result.yaml": "attempt:sb-concept-transfer-length-method:1",
+    ".runs/sb-concept-transfer-length-method/task.yaml": "task:sb-concept-transfer-length-method",
+    ".runs/sb-contact-analysis-verification/attempts/1/drafts/1.md": "artifact:sb-contact-analysis-verification:attempt-1-1",
+    ".runs/sb-contact-analysis-verification/attempts/1/result.yaml": "attempt:sb-contact-analysis-verification:1",
+    ".runs/sb-contact-analysis-verification/task.yaml": "task:sb-contact-analysis-verification",
+    ".runs/sb-contact-first-pass/attempts/1/drafts/1.md": "artifact:sb-contact-first-pass:attempt-1-1",
+    ".runs/sb-contact-first-pass/attempts/1/drafts/2.yaml": "artifact:sb-contact-first-pass:attempt-1-2",
+    ".runs/sb-contact-first-pass/attempts/1/result.yaml": "attempt:sb-contact-first-pass:1",
+    ".runs/sb-contact-first-pass/task.yaml": "task:sb-contact-first-pass",
+    ".runs/sb-formula-field-repair/attempts/1/drafts/1.yaml": "artifact:sb-formula-field-repair:attempt-1-1",
+    ".runs/sb-formula-field-repair/attempts/1/result.yaml": "attempt:sb-formula-field-repair:1",
+    ".runs/sb-formula-field-repair/task.yaml": "task:sb-formula-field-repair",
+    "10_literature/concepts/interface-band-hybridization.md": "concept:interface-band-hybridization",
+    "10_literature/concepts/quantum-contact-limit.md": "concept:quantum-contact-limit",
+    "10_literature/concepts/transfer-length-method.md": "concept:transfer-length-method",
+    "10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-mechanism.md": "artifact:ab40bde02bcd7e986926ea55",
+    "10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-methods.md": "artifact:a023ada73585fa7b58f1e55d",
+    "10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-results.md": "artifact:7090f67aecd585de8f4fc0f2",
+    "10_literature/papers/liApproachingQuantumLimit2023/01_source/paper-reading.txt": "artifact:cabab740ed4ff58ac963b8ce",
+    "10_literature/papers/liApproachingQuantumLimit2023/01_source/paper.txt": "artifact:f86528ec5d6618a47b8569c3",
+    "10_literature/papers/liApproachingQuantumLimit2023/01_source/source-links.yaml": "artifact:liApproachingQuantumLimit2023:source-links",
+    "10_literature/papers/liApproachingQuantumLimit2023/02_translation/translation.md": "translation:liApproachingQuantumLimit2023",
+    "10_literature/papers/liApproachingQuantumLimit2023/03_reading/reading.md": "reading:liApproachingQuantumLimit2023",
+    "10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml": "analysis:liApproachingQuantumLimit2023",
+    "10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml#formulas[0]": "formula:liApproachingQuantumLimit2023:eq-1",
+    "10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml#formulas[1]": "formula:liApproachingQuantumLimit2023:intrinsic-delay",
+    "10_literature/papers/liApproachingQuantumLimit2023/meta.yaml": "paper:liApproachingQuantumLimit2023",
+    "30_outputs/antimony-contact-analysis.md": "artifact:sb-contact-analysis-verification:verification",
+    "citekey:liApproachingQuantumLimit2023": "paper:liApproachingQuantumLimit2023",
+    "liApproachingQuantumLimit2023": "paper:liApproachingQuantumLimit2023",
+    "project.yaml": "project:2d-semiconductor-contacts",
+    "project.yaml#artifact_registry[0]": "topic:光电异构集成技术",
+    "project.yaml#artifact_registry[1]": "topic:label-0d95f34f0ea64e36",
+    "project.yaml#artifact_registry[2]": "topic:zotero-user-19655702-collection-GT4PHIF4",
+    "project.yaml#artifact_registry[3]": "topic:zotero-user-19655702-tag-unread-0d95f34f",
+    "project.yaml#artifact_registry[6]": "topic:二维半导体接触",
+    "research-profile.yaml": "artifact:2d-semiconductor-contacts:research-profile",
+    "zotero:IA2ZTFPU": "paper:liApproachingQuantumLimit2023",
+    "zotero:user:19655702:IA2ZTFPU": "paper:liApproachingQuantumLimit2023"
+  },
+  "artifacts": {
+    "analysis:liApproachingQuantumLimit2023": {
+      "anchors": [],
+      "contract_type": "paper.analysis",
+      "hash": "sha256:cf323650e0699d6e65d50db097d1695c797b7ab6bbe9e0d94cb5d90d07ec79b5",
+      "label": "liApproachingQuantumLimit2023",
+      "path": "10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml",
+      "type": "analysis",
+      "updated_at": "2026-10-01T14:41:11.192252+00:00"
+    },
+    "artifact:2d-semiconductor-contacts:research-profile": {
+      "anchors": [],
+      "hash": "sha256:77f81d87afff18ddf0552d62d508fd0687894a169e4fd104ca28fb2a4c31f037",
+      "label": "2d-semiconductor-contacts:research-profile",
+      "path": "research-profile.yaml",
+      "type": "research-profile",
+      "updated_at": "2026-10-01T14:23:33.095296+00:00"
+    },
+    "artifact:7090f67aecd585de8f4fc0f2": {
+      "anchors": [],
+      "hash": "sha256:4bd3f576210cd3d1b58f3617a9a1243bd5dcf50f440f3f0f120ab6ae63bd259a",
+      "label": "7090f67aecd585de8f4fc0f2",
+      "path": "10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-results.md",
+      "type": "source.text",
+      "updated_at": "2026-10-01T14:25:52.502509+00:00"
+    },
+    "artifact:a023ada73585fa7b58f1e55d": {
+      "anchors": [],
+      "hash": "sha256:d689fe1afd95a3ca54a7323053b8c842843d1af4e92c8eb1d96a39f2f6ce636f",
+      "label": "a023ada73585fa7b58f1e55d",
+      "path": "10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-methods.md",
+      "type": "source.text",
+      "updated_at": "2026-10-01T14:25:52.507508+00:00"
+    },
+    "artifact:ab40bde02bcd7e986926ea55": {
+      "anchors": [],
+      "hash": "sha256:cadcdb90676746cd7b803a9ac0dad12a8b2ac70b5a480c49dcfa4f0a0346696e",
+      "label": "ab40bde02bcd7e986926ea55",
+      "path": "10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-mechanism.md",
+      "type": "source.text",
+      "updated_at": "2026-10-01T14:25:52.502010+00:00"
+    },
+    "artifact:cabab740ed4ff58ac963b8ce": {
+      "anchors": [],
+      "hash": "sha256:82c4d0bc61437db4a3a7100fe9c12aaa3b2c73514774204e9d0e4dc554f89c31",
+      "label": "cabab740ed4ff58ac963b8ce",
+      "path": "10_literature/papers/liApproachingQuantumLimit2023/01_source/paper-reading.txt",
+      "type": "source.text",
+      "updated_at": "2026-10-01T14:23:46.362391+00:00"
+    },
+    "artifact:f86528ec5d6618a47b8569c3": {
+      "anchors": [],
+      "hash": "sha256:e6f8a2a61307df289344c5c170775bb9faa28428638eb807f33676d5f676feed",
+      "label": "f86528ec5d6618a47b8569c3",
+      "path": "10_literature/papers/liApproachingQuantumLimit2023/01_source/paper.txt",
+      "type": "source.text",
+      "updated_at": "2026-10-01T14:23:34.760371+00:00"
+    },
+    "artifact:liApproachingQuantumLimit2023:source-links": {
+      "anchors": [],
+      "contract_type": "paper.source.links",
+      "hash": "sha256:5c941f76cd2a5e3464ff884f821c61b1c98730d58eb3c5aa455b6148afe34357",
+      "label": "liApproachingQuantumLimit2023:source-links",
+      "path": "10_literature/papers/liApproachingQuantumLimit2023/01_source/source-links.yaml",
+      "type": "artifact",
+      "updated_at": "2026-10-01T14:23:34.426999+00:00"
+    },
+    "artifact:sb-concept-interface-band-hybridization:attempt-1-1": {
+      "anchors": [],
+      "contract_type": "concept",
+      "hash": "sha256:06953ef94b610fbe0fbd4b01b8988daff0176c45bba01afaa9ebdc8fa08159b9",
+      "label": "sb-concept-interface-band-hybridization:attempt-1-1",
+      "path": ".runs/sb-concept-interface-band-hybridization/attempts/1/drafts/1.md",
+      "type": "artifact",
+      "updated_at": "2026-10-01T14:38:30.744089+00:00"
+    },
+    "artifact:sb-concept-interface-band-hybridization:attempt-1-2": {
+      "anchors": [],
+      "contract_type": "paper.analysis",
+      "hash": "sha256:45c633af65daa9e5df33d1715bd4d334c40a24bc097dfcd58f3625777769c7d5",
+      "label": "sb-concept-interface-band-hybridization:attempt-1-2",
+      "path": ".runs/sb-concept-interface-band-hybridization/attempts/1/drafts/2.yaml",
+      "type": "artifact",
+      "updated_at": "2026-10-01T14:38:30.745101+00:00"
+    },
+    "artifact:sb-concept-quantum-contact-limit:attempt-1-1": {
+      "anchors": [],
+      "contract_type": "concept",
+      "hash": "sha256:36daddd87a02d0f15c6decf8eeea7e5b72c7142cb2f689fd4fc2e3186c99de6e",
+      "label": "sb-concept-quantum-contact-limit:attempt-1-1",
+      "path": ".runs/sb-concept-quantum-contact-limit/attempts/1/drafts/1.md",
+      "type": "artifact",
+      "updated_at": "2026-10-01T14:37:46.592774+00:00"
+    },
+    "artifact:sb-concept-quantum-contact-limit:attempt-1-2": {
+      "anchors": [],
+      "contract_type": "paper.analysis",
+      "hash": "sha256:1743a34228066750931f18cc872a0f3d0966ca3a7ee35abe48d6416075be2db7",
+      "label": "sb-concept-quantum-contact-limit:attempt-1-2",
+      "path": ".runs/sb-concept-quantum-contact-limit/attempts/1/drafts/2.yaml",
+      "type": "artifact",
+      "updated_at": "2026-10-01T14:37:46.593785+00:00"
+    },
+    "artifact:sb-concept-quantum-contact-limit:attempt-2-1": {
+      "anchors": [],
+      "contract_type": "concept",
+      "hash": "sha256:b06e3077e1dcaad08a660cbcb1da8c2ab377ef96f5e23a9e3ae3d8d5f21a3415",
+      "label": "sb-concept-quantum-contact-limit:attempt-2-1",
+      "path": ".runs/sb-concept-quantum-contact-limit/attempts/2/drafts/1.md",
+      "type": "artifact",
+      "updated_at": "2026-10-01T14:38:26.243265+00:00"
+    },
+    "artifact:sb-concept-quantum-contact-limit:attempt-2-2": {
+      "anchors": [],
+      "contract_type": "paper.analysis",
+      "hash": "sha256:1743a34228066750931f18cc872a0f3d0966ca3a7ee35abe48d6416075be2db7",
+      "label": "sb-concept-quantum-contact-limit:attempt-2-2",
+      "path": ".runs/sb-concept-quantum-contact-limit/attempts/2/drafts/2.yaml",
+      "type": "artifact",
+      "updated_at": "2026-10-01T14:38:26.244278+00:00"
+    },
+    "artifact:sb-concept-transfer-length-method:attempt-1-1": {
+      "anchors": [],
+      "contract_type": "concept",
+      "hash": "sha256:dc61afbd86fdb9faf91098699526c57365ce3cbc29ece90a26d11d24d959f47b",
+      "label": "sb-concept-transfer-length-method:attempt-1-1",
+      "path": ".runs/sb-concept-transfer-length-method/attempts/1/drafts/1.md",
+      "type": "artifact",
+      "updated_at": "2026-10-01T14:38:35.921753+00:00"
+    },
+    "artifact:sb-concept-transfer-length-method:attempt-1-2": {
+      "anchors": [],
+      "contract_type": "paper.analysis",
+      "hash": "sha256:b7d7e958ef4450a58ab84b188ec28f8710f9a242a2f2d54b9cd6da7cf957eafe",
+      "label": "sb-concept-transfer-length-method:attempt-1-2",
+      "path": ".runs/sb-concept-transfer-length-method/attempts/1/drafts/2.yaml",
+      "type": "artifact",
+      "updated_at": "2026-10-01T14:38:35.922763+00:00"
+    },
+    "artifact:sb-contact-analysis-verification:attempt-1-1": {
+      "anchors": [],
+      "contract_type": "verification.report",
+      "hash": "sha256:e5a23a6f81f34848b8514a8ad126e9949e606a47c70b6971b4473257542dbcc4",
+      "label": "sb-contact-analysis-verification:attempt-1-1",
+      "path": ".runs/sb-contact-analysis-verification/attempts/1/drafts/1.md",
+      "type": "artifact",
+      "updated_at": "2026-10-01T14:40:14.652899+00:00"
+    },
+    "artifact:sb-contact-analysis-verification:verification": {
+      "anchors": [],
+      "contract_type": "verification.report",
+      "hash": "sha256:39da606ca3a7913ed1b975a764a8e0ed91f456b954cd43cba2b241285272b263",
+      "label": "sb-contact-analysis-verification:verification",
+      "path": "30_outputs/antimony-contact-analysis.md",
+      "type": "artifact",
+      "updated_at": "2026-10-01T14:40:17.269999+00:00"
+    },
+    "artifact:sb-contact-first-pass:attempt-1-1": {
+      "anchors": [],
+      "contract_type": "paper.reading",
+      "hash": "sha256:53ee112d247037acb6d3a9f4b62be641c74016bb160e46cd2925b9099541d084",
+      "label": "sb-contact-first-pass:attempt-1-1",
+      "path": ".runs/sb-contact-first-pass/attempts/1/drafts/1.md",
+      "type": "artifact",
+      "updated_at": "2026-10-01T14:33:28.395375+00:00"
+    },
+    "artifact:sb-contact-first-pass:attempt-1-2": {
+      "anchors": [],
+      "contract_type": "paper.analysis",
+      "hash": "sha256:a89fbb13b24513f06fb8f66db8db00db5962b4716ee588d95eb78ea04cfebd38",
+      "label": "sb-contact-first-pass:attempt-1-2",
+      "path": ".runs/sb-contact-first-pass/attempts/1/drafts/2.yaml",
+      "type": "artifact",
+      "updated_at": "2026-10-01T14:33:28.400223+00:00"
+    },
+    "artifact:sb-formula-field-repair:attempt-1-1": {
+      "anchors": [],
+      "contract_type": "paper.analysis",
+      "hash": "sha256:cf323650e0699d6e65d50db097d1695c797b7ab6bbe9e0d94cb5d90d07ec79b5",
+      "label": "sb-formula-field-repair:attempt-1-1",
+      "path": ".runs/sb-formula-field-repair/attempts/1/drafts/1.yaml",
+      "type": "artifact",
+      "updated_at": "2026-10-01T14:41:08.294940+00:00"
+    },
+    "attempt:sb-concept-interface-band-hybridization:1": {
+      "anchors": [],
+      "hash": "sha256:ed8134275cb19ae505f1b93f67fd54ef44274cd8fd7d0d756662e01b73abe3bf",
+      "label": "sb-concept-interface-band-hybridization:1",
+      "path": ".runs/sb-concept-interface-band-hybridization/attempts/1/result.yaml",
+      "status": "submitted",
+      "type": "attempt",
+      "updated_at": "2026-10-01T14:38:30.944035+00:00"
+    },
+    "attempt:sb-concept-quantum-contact-limit:1": {
+      "anchors": [],
+      "hash": "sha256:2b7700722afce050144e646d66e64c0c83302f2c97230b0963c81fd22fc18e39",
+      "label": "sb-concept-quantum-contact-limit:1",
+      "path": ".runs/sb-concept-quantum-contact-limit/attempts/1/result.yaml",
+      "status": "submitted",
+      "type": "attempt",
+      "updated_at": "2026-10-01T14:37:46.750011+00:00"
+    },
+    "attempt:sb-concept-quantum-contact-limit:2": {
+      "anchors": [],
+      "hash": "sha256:5a60118970a8ebaa4fe98542a48320c68b1d3bd540e77bef0a8f2da34323658b",
+      "label": "sb-concept-quantum-contact-limit:2",
+      "path": ".runs/sb-concept-quantum-contact-limit/attempts/2/result.yaml",
+      "status": "submitted",
+      "type": "attempt",
+      "updated_at": "2026-10-01T14:38:26.416076+00:00"
+    },
+    "attempt:sb-concept-transfer-length-method:1": {
+      "anchors": [],
+      "hash": "sha256:e280a5a6ab40f277061522c5159050a52fd42f3367d7034fd913968f7903b577",
+      "label": "sb-concept-transfer-length-method:1",
+      "path": ".runs/sb-concept-transfer-length-method/attempts/1/result.yaml",
+      "status": "submitted",
+      "type": "attempt",
+      "updated_at": "2026-10-01T14:38:36.321469+00:00"
+    },
+    "attempt:sb-contact-analysis-verification:1": {
+      "anchors": [],
+      "hash": "sha256:4eb70ecf8cc4db30e4404abd79dd1df45a89ebb57269caf00f14676e9d33ca1c",
+      "label": "sb-contact-analysis-verification:1",
+      "path": ".runs/sb-contact-analysis-verification/attempts/1/result.yaml",
+      "status": "submitted",
+      "type": "attempt",
+      "updated_at": "2026-10-01T14:40:14.964303+00:00"
+    },
+    "attempt:sb-contact-first-pass:1": {
+      "anchors": [],
+      "hash": "sha256:175696d056346663632cad785ed4491d3d550040279e1f219bcdd0f3c464554a",
+      "label": "sb-contact-first-pass:1",
+      "path": ".runs/sb-contact-first-pass/attempts/1/result.yaml",
+      "status": "submitted",
+      "type": "attempt",
+      "updated_at": "2026-10-01T14:33:28.505582+00:00"
+    },
+    "attempt:sb-formula-field-repair:1": {
+      "anchors": [],
+      "hash": "sha256:2b878be6d3cb1e9af6fe2204b67e5f99f563767792fc458ac63a357696c3c1c6",
+      "label": "sb-formula-field-repair:1",
+      "path": ".runs/sb-formula-field-repair/attempts/1/result.yaml",
+      "status": "submitted",
+      "type": "attempt",
+      "updated_at": "2026-10-01T14:41:08.592357+00:00"
+    },
+    "concept:interface-band-hybridization": {
+      "anchors": [],
+      "concept_type": "foundational",
+      "contract_type": "concept",
+      "hash": "sha256:b1d72befd7a7e0d924250e69bd65d5a9d7e9c6422b8ea71d066b382d2e7f20f4",
+      "label": "interface-band-hybridization",
+      "path": "10_literature/concepts/interface-band-hybridization.md",
+      "status": "learning",
+      "type": "concept",
+      "updated_at": "2026-10-01T14:41:12.427837+00:00"
+    },
+    "concept:quantum-contact-limit": {
+      "anchors": [],
+      "concept_type": "foundational",
+      "contract_type": "concept",
+      "hash": "sha256:adfc136f833d2f256e3623e817a8b4bdf46b96e2f537f8b1688a1674d721a6a4",
+      "label": "quantum-contact-limit",
+      "path": "10_literature/concepts/quantum-contact-limit.md",
+      "status": "learning",
+      "type": "concept",
+      "updated_at": "2026-10-01T14:41:12.436424+00:00"
+    },
+    "concept:transfer-length-method": {
+      "anchors": [],
+      "concept_type": "foundational",
+      "contract_type": "concept",
+      "hash": "sha256:a46d3c0d171e758c6d15ea8062197e457c7bcb8636ba834818d0e984c37a1c78",
+      "label": "transfer-length-method",
+      "path": "10_literature/concepts/transfer-length-method.md",
+      "status": "learning",
+      "type": "concept",
+      "updated_at": "2026-10-01T14:38:38.799877+00:00"
+    },
+    "formula:liApproachingQuantumLimit2023:eq-1": {
+      "anchors": [
+        "formulas[0]"
+      ],
+      "hash": "sha256:cf323650e0699d6e65d50db097d1695c797b7ab6bbe9e0d94cb5d90d07ec79b5",
+      "label": "liApproachingQuantumLimit2023:eq-1",
+      "path": "10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml",
+      "type": "formula",
+      "updated_at": "2026-10-01T14:41:11.192252+00:00"
+    },
+    "formula:liApproachingQuantumLimit2023:intrinsic-delay": {
+      "anchors": [
+        "formulas[1]"
+      ],
+      "hash": "sha256:cf323650e0699d6e65d50db097d1695c797b7ab6bbe9e0d94cb5d90d07ec79b5",
+      "label": "liApproachingQuantumLimit2023:intrinsic-delay",
+      "path": "10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml",
+      "type": "formula",
+      "updated_at": "2026-10-01T14:41:11.192252+00:00"
+    },
+    "paper:liApproachingQuantumLimit2023": {
+      "analysis_status": "partial",
+      "anchors": [],
+      "hash": "sha256:f10a12636e3bd11a1addffc31c148bbec64c161c429b9c9438115c54e7d14fb2",
+      "label": "liApproachingQuantumLimit2023",
+      "paper_role": "method",
+      "path": "10_literature/papers/liApproachingQuantumLimit2023/meta.yaml",
+      "reading_status": "partial",
+      "status": "pre-read",
+      "title": "Approaching the quantum limit in two-dimensional semiconductor contacts",
+      "type": "paper",
+      "updated_at": "2026-10-01T14:40:18.747181+00:00"
+    },
+    "project:2d-semiconductor-contacts": {
+      "anchors": [],
+      "hash": "sha256:48d3d5062f7c242520bfdeded564777505222a50a6ca6be4d1441f9aaf6de3c3",
+      "label": "2d-semiconductor-contacts",
+      "path": "project.yaml",
+      "title": "二维半导体接触",
+      "type": "project",
+      "updated_at": "2026-10-01T14:41:08.618060+00:00"
+    },
+    "reading:liApproachingQuantumLimit2023": {
+      "anchors": [],
+      "contract_type": "paper.reading",
+      "hash": "sha256:53ee112d247037acb6d3a9f4b62be641c74016bb160e46cd2925b9099541d084",
+      "label": "liApproachingQuantumLimit2023",
+      "path": "10_literature/papers/liApproachingQuantumLimit2023/03_reading/reading.md",
+      "type": "reading",
+      "updated_at": "2026-10-01T14:34:29.742131+00:00"
+    },
+    "task:sb-concept-interface-band-hybridization": {
+      "anchors": [],
+      "hash": "sha256:464aa2b830315e8679c0a089eec7ecbe1480384f21e6bdc80d0a324b759f1e62",
+      "label": "sb-concept-interface-band-hybridization",
+      "path": ".runs/sb-concept-interface-band-hybridization/task.yaml",
+      "task_type": "literature-knowledge",
+      "type": "task",
+      "updated_at": "2026-10-01T14:38:29.769162+00:00"
+    },
+    "task:sb-concept-quantum-contact-limit": {
+      "anchors": [],
+      "hash": "sha256:23d92f552c98a15e28b1a7e2199402c924a44037f0883cbac165abf907495ff8",
+      "label": "sb-concept-quantum-contact-limit",
+      "path": ".runs/sb-concept-quantum-contact-limit/task.yaml",
+      "task_type": "literature-knowledge",
+      "type": "task",
+      "updated_at": "2026-10-01T14:38:25.685999+00:00"
+    },
+    "task:sb-concept-transfer-length-method": {
+      "anchors": [],
+      "hash": "sha256:6b887dbd15aca964c56c1cc35dbaff13a7ab4415ac36e4a60f8c1edd50522218",
+      "label": "sb-concept-transfer-length-method",
+      "path": ".runs/sb-concept-transfer-length-method/task.yaml",
+      "task_type": "literature-knowledge",
+      "type": "task",
+      "updated_at": "2026-10-01T14:38:34.918187+00:00"
+    },
+    "task:sb-contact-analysis-verification": {
+      "anchors": [],
+      "hash": "sha256:0067478eafcb5105a309efec86d6ce23b934e3eb25910646238b6ed09756c5be",
+      "label": "sb-contact-analysis-verification",
+      "path": ".runs/sb-contact-analysis-verification/task.yaml",
+      "task_type": "verification",
+      "type": "task",
+      "updated_at": "2026-10-01T14:40:13.620360+00:00"
+    },
+    "task:sb-contact-first-pass": {
+      "anchors": [],
+      "hash": "sha256:58ab0acd95b7ea294d0f68bfde5313d0f22cb070f3acaa9eb9466c0bc052d1fe",
+      "label": "sb-contact-first-pass",
+      "path": ".runs/sb-contact-first-pass/task.yaml",
+      "task_type": "literature-first-pass",
+      "type": "task",
+      "updated_at": "2026-10-01T14:25:53.137303+00:00"
+    },
+    "task:sb-formula-field-repair": {
+      "anchors": [],
+      "hash": "sha256:38fa9b2c37510dc591f094fc21e8e7e1db13ba30f86a6555837f4d77c5fda24c",
+      "label": "sb-formula-field-repair",
+      "path": ".runs/sb-formula-field-repair/task.yaml",
+      "task_type": "literature-formula",
+      "type": "task",
+      "updated_at": "2026-10-01T14:41:07.115855+00:00"
+    },
+    "topic:label-0d95f34f0ea64e36": {
+      "anchors": [
+        "artifact_registry[1]"
+      ],
+      "hash": "sha256:48d3d5062f7c242520bfdeded564777505222a50a6ca6be4d1441f9aaf6de3c3",
+      "label": "/unread",
+      "path": "project.yaml",
+      "type": "topic",
+      "updated_at": "2026-10-01T14:41:08.618060+00:00"
+    },
+    "topic:zotero-user-19655702-collection-GT4PHIF4": {
+      "anchors": [
+        "artifact_registry[2]"
+      ],
+      "hash": "sha256:48d3d5062f7c242520bfdeded564777505222a50a6ca6be4d1441f9aaf6de3c3",
+      "label": "zotero-user-19655702-collection-GT4PHIF4",
+      "path": "project.yaml",
+      "type": "topic",
+      "updated_at": "2026-10-01T14:41:08.618060+00:00"
+    },
+    "topic:zotero-user-19655702-tag-unread-0d95f34f": {
+      "anchors": [
+        "artifact_registry[3]"
+      ],
+      "hash": "sha256:48d3d5062f7c242520bfdeded564777505222a50a6ca6be4d1441f9aaf6de3c3",
+      "label": "zotero-user-19655702-tag-unread-0d95f34f",
+      "path": "project.yaml",
+      "type": "topic",
+      "updated_at": "2026-10-01T14:41:08.618060+00:00"
+    },
+    "topic:二维半导体接触": {
+      "anchors": [
+        "artifact_registry[6]"
+      ],
+      "hash": "sha256:48d3d5062f7c242520bfdeded564777505222a50a6ca6be4d1441f9aaf6de3c3",
+      "label": "二维半导体接触",
+      "path": "project.yaml",
+      "type": "topic",
+      "updated_at": "2026-10-01T14:41:08.618060+00:00"
+    },
+    "topic:光电异构集成技术": {
+      "anchors": [
+        "artifact_registry[0]"
+      ],
+      "hash": "sha256:48d3d5062f7c242520bfdeded564777505222a50a6ca6be4d1441f9aaf6de3c3",
+      "label": "光电异构集成技术",
+      "path": "project.yaml",
+      "type": "topic",
+      "updated_at": "2026-10-01T14:41:08.618060+00:00"
+    },
+    "translation:liApproachingQuantumLimit2023": {
+      "anchors": [],
+      "hash": "sha256:4b154ae995b4b4898eed3fcf3cf8f4efc4b729f869bf402e41d702c0fd3382e7",
+      "label": "liApproachingQuantumLimit2023",
+      "path": "10_literature/papers/liApproachingQuantumLimit2023/02_translation/translation.md",
+      "type": "translation",
+      "updated_at": "2026-10-01T14:23:46.538778+00:00"
+    }
+  },
+  "duplicates": {},
+  "generated_at": "2026-10-01T14:41:12.721677+00:00",
+  "generated_by": "wf-registry",
+  "generated_from": [
+    ".runs/sb-concept-interface-band-hybridization/attempts/1/drafts/1.md",
+    ".runs/sb-concept-interface-band-hybridization/attempts/1/drafts/2.yaml",
+    ".runs/sb-concept-interface-band-hybridization/attempts/1/result.yaml",
+    ".runs/sb-concept-interface-band-hybridization/task.yaml",
+    ".runs/sb-concept-quantum-contact-limit/attempts/1/drafts/1.md",
+    ".runs/sb-concept-quantum-contact-limit/attempts/1/drafts/2.yaml",
+    ".runs/sb-concept-quantum-contact-limit/attempts/1/result.yaml",
+    ".runs/sb-concept-quantum-contact-limit/attempts/2/drafts/1.md",
+    ".runs/sb-concept-quantum-contact-limit/attempts/2/drafts/2.yaml",
+    ".runs/sb-concept-quantum-contact-limit/attempts/2/result.yaml",
+    ".runs/sb-concept-quantum-contact-limit/task.yaml",
+    ".runs/sb-concept-transfer-length-method/attempts/1/drafts/1.md",
+    ".runs/sb-concept-transfer-length-method/attempts/1/drafts/2.yaml",
+    ".runs/sb-concept-transfer-length-method/attempts/1/result.yaml",
+    ".runs/sb-concept-transfer-length-method/task.yaml",
+    ".runs/sb-contact-analysis-verification/attempts/1/drafts/1.md",
+    ".runs/sb-contact-analysis-verification/attempts/1/result.yaml",
+    ".runs/sb-contact-analysis-verification/task.yaml",
+    ".runs/sb-contact-first-pass/attempts/1/drafts/1.md",
+    ".runs/sb-contact-first-pass/attempts/1/drafts/2.yaml",
+    ".runs/sb-contact-first-pass/attempts/1/result.yaml",
+    ".runs/sb-contact-first-pass/task.yaml",
+    ".runs/sb-formula-field-repair/attempts/1/drafts/1.yaml",
+    ".runs/sb-formula-field-repair/attempts/1/result.yaml",
+    ".runs/sb-formula-field-repair/task.yaml",
+    "10_literature/concepts/interface-band-hybridization.md",
+    "10_literature/concepts/quantum-contact-limit.md",
+    "10_literature/concepts/transfer-length-method.md",
+    "10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-mechanism.md",
+    "10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-methods.md",
+    "10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-results.md",
+    "10_literature/papers/liApproachingQuantumLimit2023/01_source/paper-reading.txt",
+    "10_literature/papers/liApproachingQuantumLimit2023/01_source/paper.txt",
+    "10_literature/papers/liApproachingQuantumLimit2023/01_source/source-links.yaml",
+    "10_literature/papers/liApproachingQuantumLimit2023/02_translation/translation.md",
+    "10_literature/papers/liApproachingQuantumLimit2023/03_reading/reading.md",
+    "10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml",
+    "10_literature/papers/liApproachingQuantumLimit2023/meta.yaml",
+    "30_outputs/antimony-contact-analysis.md",
+    "project.yaml",
+    "research-profile.yaml"
+  ],
+  "issues": [],
+  "links": [
+    {
+      "confidence": "high",
+      "evidence": [
+        {
+          "field": "summary",
+          "file": ".runs/sb-concept-interface-band-hybridization/attempts/1/result.yaml"
+        }
+      ],
+      "origin": ".runs/sb-concept-interface-band-hybridization/attempts/1/drafts/1.md",
+      "rel": "generated-from",
+      "source": "artifact:sb-concept-interface-band-hybridization:attempt-1-1",
+      "status": "candidate",
+      "target": "attempt:sb-concept-interface-band-hybridization:1"
+    },
+    {
+      "confidence": "high",
+      "evidence": [
+        {
+          "field": "summary",
+          "file": ".runs/sb-concept-interface-band-hybridization/attempts/1/result.yaml"
+        }
+      ],
+      "origin": ".runs/sb-concept-interface-band-hybridization/attempts/1/drafts/2.yaml",
+      "rel": "generated-from",
+      "source": "artifact:sb-concept-interface-band-hybridization:attempt-1-2",
+      "status": "candidate",
+      "target": "attempt:sb-concept-interface-band-hybridization:1"
+    },
+    {
+      "confidence": "high",
+      "evidence": [
+        {
+          "field": "summary",
+          "file": ".runs/sb-concept-quantum-contact-limit/attempts/1/result.yaml"
+        }
+      ],
+      "origin": ".runs/sb-concept-quantum-contact-limit/attempts/1/drafts/1.md",
+      "rel": "generated-from",
+      "source": "artifact:sb-concept-quantum-contact-limit:attempt-1-1",
+      "status": "candidate",
+      "target": "attempt:sb-concept-quantum-contact-limit:1"
+    },
+    {
+      "confidence": "high",
+      "evidence": [
+        {
+          "field": "summary",
+          "file": ".runs/sb-concept-quantum-contact-limit/attempts/1/result.yaml"
+        }
+      ],
+      "origin": ".runs/sb-concept-quantum-contact-limit/attempts/1/drafts/2.yaml",
+      "rel": "generated-from",
+      "source": "artifact:sb-concept-quantum-contact-limit:attempt-1-2",
+      "status": "candidate",
+      "target": "attempt:sb-concept-quantum-contact-limit:1"
+    },
+    {
+      "confidence": "high",
+      "evidence": [
+        {
+          "field": "summary",
+          "file": ".runs/sb-concept-quantum-contact-limit/attempts/2/result.yaml"
+        }
+      ],
+      "origin": ".runs/sb-concept-quantum-contact-limit/attempts/2/drafts/1.md",
+      "rel": "generated-from",
+      "source": "artifact:sb-concept-quantum-contact-limit:attempt-2-1",
+      "status": "candidate",
+      "target": "attempt:sb-concept-quantum-contact-limit:2"
+    },
+    {
+      "confidence": "high",
+      "evidence": [
+        {
+          "field": "summary",
+          "file": ".runs/sb-concept-quantum-contact-limit/attempts/2/result.yaml"
+        }
+      ],
+      "origin": ".runs/sb-concept-quantum-contact-limit/attempts/2/drafts/2.yaml",
+      "rel": "generated-from",
+      "source": "artifact:sb-concept-quantum-contact-limit:attempt-2-2",
+      "status": "candidate",
+      "target": "attempt:sb-concept-quantum-contact-limit:2"
+    },
+    {
+      "confidence": "high",
+      "evidence": [
+        {
+          "field": "summary",
+          "file": ".runs/sb-concept-transfer-length-method/attempts/1/result.yaml"
+        }
+      ],
+      "origin": ".runs/sb-concept-transfer-length-method/attempts/1/drafts/1.md",
+      "rel": "generated-from",
+      "source": "artifact:sb-concept-transfer-length-method:attempt-1-1",
+      "status": "candidate",
+      "target": "attempt:sb-concept-transfer-length-method:1"
+    },
+    {
+      "confidence": "high",
+      "evidence": [
+        {
+          "field": "summary",
+          "file": ".runs/sb-concept-transfer-length-method/attempts/1/result.yaml"
+        }
+      ],
+      "origin": ".runs/sb-concept-transfer-length-method/attempts/1/drafts/2.yaml",
+      "rel": "generated-from",
+      "source": "artifact:sb-concept-transfer-length-method:attempt-1-2",
+      "status": "candidate",
+      "target": "attempt:sb-concept-transfer-length-method:1"
+    },
+    {
+      "confidence": "high",
+      "evidence": [
+        {
+          "field": "summary",
+          "file": ".runs/sb-contact-analysis-verification/attempts/1/result.yaml"
+        }
+      ],
+      "origin": ".runs/sb-contact-analysis-verification/attempts/1/drafts/1.md",
+      "rel": "generated-from",
+      "source": "artifact:sb-contact-analysis-verification:attempt-1-1",
+      "status": "candidate",
+      "target": "attempt:sb-contact-analysis-verification:1"
+    },
+    {
+      "confidence": "high",
+      "evidence": [
+        {
+          "field": "summary",
+          "file": ".runs/sb-contact-first-pass/attempts/1/result.yaml"
+        }
+      ],
+      "origin": ".runs/sb-contact-first-pass/attempts/1/drafts/1.md",
+      "rel": "generated-from",
+      "source": "artifact:sb-contact-first-pass:attempt-1-1",
+      "status": "candidate",
+      "target": "attempt:sb-contact-first-pass:1"
+    },
+    {
+      "confidence": "high",
+      "evidence": [
+        {
+          "field": "summary",
+          "file": ".runs/sb-contact-first-pass/attempts/1/result.yaml"
+        }
+      ],
+      "origin": ".runs/sb-contact-first-pass/attempts/1/drafts/2.yaml",
+      "rel": "generated-from",
+      "source": "artifact:sb-contact-first-pass:attempt-1-2",
+      "status": "candidate",
+      "target": "attempt:sb-contact-first-pass:1"
+    },
+    {
+      "confidence": "high",
+      "evidence": [
+        {
+          "field": "summary",
+          "file": ".runs/sb-formula-field-repair/attempts/1/result.yaml"
+        }
+      ],
+      "origin": ".runs/sb-formula-field-repair/attempts/1/drafts/1.yaml",
+      "rel": "generated-from",
+      "source": "artifact:sb-formula-field-repair:attempt-1-1",
+      "status": "candidate",
+      "target": "attempt:sb-formula-field-repair:1"
+    },
+    {
+      "confidence": "medium",
+      "evidence": [
+        {
+          "field": "concepts[0]",
+          "file": "10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml",
+          "source_refs": [
+            "10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-mechanism.md"
+          ]
+        },
+        {
+          "field": "concepts[1]",
+          "file": "10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml",
+          "source_refs": [
+            "10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-mechanism.md"
+          ]
+        }
+      ],
+      "generated_by": "wf-knowledge",
+      "input_hash": "86eec3bdf57e762a05532ebcb40ea27485016f79e24641eb1819ef8a15e17167",
+      "origin": "10_literature/concepts/interface-band-hybridization.md",
+      "rel": "co-occurs",
+      "source": "concept:interface-band-hybridization",
+      "status": "candidate",
+      "target": "concept:quantum-contact-limit",
+      "weight": 1.0
+    },
+    {
+      "confidence": "medium",
+      "evidence": [
+        {
+          "field": "concepts[1]",
+          "file": "10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml",
+          "source_refs": [
+            "10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-mechanism.md"
+          ]
+        },
+        {
+          "field": "concepts[2]",
+          "file": "10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml",
+          "source_refs": [
+            "10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-results.md"
+          ]
+        }
+      ],
+      "generated_by": "wf-knowledge",
+      "input_hash": "86eec3bdf57e762a05532ebcb40ea27485016f79e24641eb1819ef8a15e17167",
+      "origin": "10_literature/concepts/interface-band-hybridization.md",
+      "rel": "co-occurs",
+      "source": "concept:interface-band-hybridization",
+      "status": "candidate",
+      "target": "concept:transfer-length-method",
+      "weight": 1.0
+    },
+    {
+      "confidence": "medium",
+      "evidence": [
+        {
+          "field": "papers/paper_ids",
+          "file": "10_literature/concepts/interface-band-hybridization.md",
+          "source_refs": []
+        }
+      ],
+      "generated_by": "wf-registry",
+      "origin": "10_literature/concepts/interface-band-hybridization.md",
+      "rel": "derived-from",
+      "source": "concept:interface-band-hybridization",
+      "status": "candidate",
+      "target": "paper:liApproachingQuantumLimit2023"
+    },
+    {
+      "confidence": "medium",
+      "evidence": [
+        {
+          "field": "concepts[0]",
+          "file": "10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml",
+          "source_refs": [
+            "10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-mechanism.md"
+          ]
+        },
+        {
+          "field": "concepts[2]",
+          "file": "10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml",
+          "source_refs": [
+            "10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-results.md"
+          ]
+        }
+      ],
+      "generated_by": "wf-knowledge",
+      "input_hash": "86eec3bdf57e762a05532ebcb40ea27485016f79e24641eb1819ef8a15e17167",
+      "origin": "10_literature/concepts/quantum-contact-limit.md",
+      "rel": "co-occurs",
+      "source": "concept:quantum-contact-limit",
+      "status": "candidate",
+      "target": "concept:transfer-length-method",
+      "weight": 1.0
+    },
+    {
+      "confidence": "medium",
+      "evidence": [
+        {
+          "field": "papers/paper_ids",
+          "file": "10_literature/concepts/quantum-contact-limit.md",
+          "source_refs": []
+        }
+      ],
+      "generated_by": "wf-registry",
+      "origin": "10_literature/concepts/quantum-contact-limit.md",
+      "rel": "derived-from",
+      "source": "concept:quantum-contact-limit",
+      "status": "candidate",
+      "target": "paper:liApproachingQuantumLimit2023"
+    },
+    {
+      "confidence": "medium",
+      "evidence": [
+        {
+          "field": "papers/paper_ids",
+          "file": "10_literature/concepts/transfer-length-method.md",
+          "source_refs": []
+        }
+      ],
+      "generated_by": "wf-registry",
+      "origin": "10_literature/concepts/transfer-length-method.md",
+      "rel": "derived-from",
+      "source": "concept:transfer-length-method",
+      "status": "candidate",
+      "target": "paper:liApproachingQuantumLimit2023"
+    },
+    {
+      "confidence": "medium",
+      "evidence": [
+        {
+          "field": "formulas[0]",
+          "file": "10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml",
+          "source_refs": [
+            "10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-mechanism.md#Visually verified equation (1), PDF p.274"
+          ]
+        }
+      ],
+      "generated_by": "wf-registry",
+      "origin": "10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml",
+      "rel": "derived-from",
+      "source": "formula:liApproachingQuantumLimit2023:eq-1",
+      "status": "candidate",
+      "target": "paper:liApproachingQuantumLimit2023"
+    },
+    {
+      "confidence": "medium",
+      "evidence": [
+        {
+          "field": "formulas[0]",
+          "file": "10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml",
+          "source_refs": []
+        }
+      ],
+      "generated_by": "wf-registry",
+      "origin": "10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml",
+      "rel": "uses",
+      "source": "formula:liApproachingQuantumLimit2023:eq-1",
+      "status": "candidate",
+      "target": "concept:quantum-contact-limit"
+    },
+    {
+      "confidence": "medium",
+      "evidence": [
+        {
+          "field": "formulas[1]",
+          "file": "10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml",
+          "source_refs": [
+            "10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-results.md#Original extracted text L1108-1208"
+          ]
+        }
+      ],
+      "generated_by": "wf-registry",
+      "origin": "10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml",
+      "rel": "derived-from",
+      "source": "formula:liApproachingQuantumLimit2023:intrinsic-delay",
+      "status": "candidate",
+      "target": "paper:liApproachingQuantumLimit2023"
+    },
+    {
+      "confidence": "medium",
+      "evidence": [
+        {
+          "field": "topic_tags",
+          "file": "10_literature/papers/liApproachingQuantumLimit2023/meta.yaml",
+          "source_refs": []
+        }
+      ],
+      "generated_by": "wf-registry",
+      "origin": "10_literature/papers/liApproachingQuantumLimit2023/meta.yaml",
+      "rel": "belongs-to-topic",
+      "source": "paper:liApproachingQuantumLimit2023",
+      "status": "candidate",
+      "target": "topic:label-0d95f34f0ea64e36"
+    },
+    {
+      "confidence": "high",
+      "evidence": [
+        {
+          "field": "zotero.collection_keys",
+          "file": "10_literature/papers/liApproachingQuantumLimit2023/meta.yaml",
+          "source_refs": [],
+          "zotero_value": "GT4PHIF4"
+        }
+      ],
+      "generated_by": "wf-zotero",
+      "origin": "10_literature/papers/liApproachingQuantumLimit2023/meta.yaml",
+      "rel": "belongs-to-topic",
+      "source": "paper:liApproachingQuantumLimit2023",
+      "status": "candidate",
+      "target": "topic:zotero-user-19655702-collection-GT4PHIF4",
+      "weight": 1.0
+    },
+    {
+      "confidence": "high",
+      "evidence": [
+        {
+          "field": "zotero.tags",
+          "file": "10_literature/papers/liApproachingQuantumLimit2023/meta.yaml",
+          "source_refs": [],
+          "zotero_value": "/unread"
+        }
+      ],
+      "generated_by": "wf-zotero",
+      "origin": "10_literature/papers/liApproachingQuantumLimit2023/meta.yaml",
+      "rel": "belongs-to-topic",
+      "source": "paper:liApproachingQuantumLimit2023",
+      "status": "candidate",
+      "target": "topic:zotero-user-19655702-tag-unread-0d95f34f",
+      "weight": 1.0
+    },
+    {
+      "confidence": "medium",
+      "evidence": [
+        {
+          "field": "categories",
+          "file": "10_literature/papers/liApproachingQuantumLimit2023/meta.yaml",
+          "source_refs": []
+        }
+      ],
+      "generated_by": "wf-registry",
+      "origin": "10_literature/papers/liApproachingQuantumLimit2023/meta.yaml",
+      "rel": "belongs-to-topic",
+      "source": "paper:liApproachingQuantumLimit2023",
+      "status": "candidate",
+      "target": "topic:二维半导体接触"
+    },
+    {
+      "confidence": "medium",
+      "evidence": [
+        {
+          "field": "categories",
+          "file": "10_literature/papers/liApproachingQuantumLimit2023/meta.yaml",
+          "source_refs": []
+        }
+      ],
+      "generated_by": "wf-registry",
+      "origin": "10_literature/papers/liApproachingQuantumLimit2023/meta.yaml",
+      "rel": "belongs-to-topic",
+      "source": "paper:liApproachingQuantumLimit2023",
+      "status": "candidate",
+      "target": "topic:光电异构集成技术"
+    },
+    {
+      "confidence": "medium",
+      "evidence": [
+        {
+          "field": "concepts[1]",
+          "file": "10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml",
+          "source_refs": [
+            "10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-mechanism.md"
+          ]
+        }
+      ],
+      "generated_by": "wf-registry",
+      "origin": "10_literature/papers/liApproachingQuantumLimit2023/meta.yaml",
+      "rel": "uses",
+      "source": "paper:liApproachingQuantumLimit2023",
+      "status": "candidate",
+      "target": "concept:interface-band-hybridization"
+    },
+    {
+      "confidence": "medium",
+      "evidence": [
+        {
+          "field": "concepts[0]",
+          "file": "10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml",
+          "source_refs": [
+            "10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-mechanism.md"
+          ]
+        }
+      ],
+      "generated_by": "wf-registry",
+      "origin": "10_literature/papers/liApproachingQuantumLimit2023/meta.yaml",
+      "rel": "uses",
+      "source": "paper:liApproachingQuantumLimit2023",
+      "status": "candidate",
+      "target": "concept:quantum-contact-limit"
+    },
+    {
+      "confidence": "medium",
+      "evidence": [
+        {
+          "field": "concepts[2]",
+          "file": "10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml",
+          "source_refs": [
+            "10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-results.md"
+          ]
+        }
+      ],
+      "generated_by": "wf-registry",
+      "origin": "10_literature/papers/liApproachingQuantumLimit2023/meta.yaml",
+      "rel": "uses",
+      "source": "paper:liApproachingQuantumLimit2023",
+      "status": "candidate",
+      "target": "concept:transfer-length-method"
+    }
+  ],
+  "project_id": "project:2d-semiconductor-contacts",
+  "schema_version": 1,
+  "tasks": {
+    "task:sb-concept-interface-band-hybridization": {
+      "active_revision": null,
+      "attempt": 1,
+      "decision": "accept",
+      "execution_target": "subagent",
+      "main_attempts": 0,
+      "status": "accepted",
+      "status_path": ".runs/sb-concept-interface-band-hybridization/status.yaml",
+      "task_id": "sb-concept-interface-band-hybridization",
+      "task_path": ".runs/sb-concept-interface-band-hybridization/task.yaml"
+    },
+    "task:sb-concept-quantum-contact-limit": {
+      "active_revision": 1,
+      "attempt": 2,
+      "decision": "accept",
+      "execution_target": "subagent",
+      "main_attempts": 0,
+      "status": "accepted",
+      "status_path": ".runs/sb-concept-quantum-contact-limit/status.yaml",
+      "takeover_reason": null,
+      "task_id": "sb-concept-quantum-contact-limit",
+      "task_path": ".runs/sb-concept-quantum-contact-limit/task.yaml"
+    },
+    "task:sb-concept-transfer-length-method": {
+      "active_revision": null,
+      "attempt": 1,
+      "decision": "accept",
+      "execution_target": "subagent",
+      "main_attempts": 0,
+      "status": "accepted",
+      "status_path": ".runs/sb-concept-transfer-length-method/status.yaml",
+      "task_id": "sb-concept-transfer-length-method",
+      "task_path": ".runs/sb-concept-transfer-length-method/task.yaml"
+    },
+    "task:sb-contact-analysis-verification": {
+      "active_revision": null,
+      "attempt": 1,
+      "decision": "accept",
+      "execution_target": "subagent",
+      "main_attempts": 0,
+      "status": "accepted",
+      "status_path": ".runs/sb-contact-analysis-verification/status.yaml",
+      "task_id": "sb-contact-analysis-verification",
+      "task_path": ".runs/sb-contact-analysis-verification/task.yaml"
+    },
+    "task:sb-contact-first-pass": {
+      "active_revision": null,
+      "attempt": 1,
+      "decision": "accept",
+      "execution_target": "subagent",
+      "main_attempts": 0,
+      "status": "accepted",
+      "status_path": ".runs/sb-contact-first-pass/status.yaml",
+      "task_id": "sb-contact-first-pass",
+      "task_path": ".runs/sb-contact-first-pass/task.yaml"
+    },
+    "task:sb-formula-field-repair": {
+      "active_revision": null,
+      "attempt": 1,
+      "decision": "accept",
+      "execution_target": "subagent",
+      "main_attempts": 0,
+      "status": "accepted",
+      "status_path": ".runs/sb-formula-field-repair/status.yaml",
+      "task_id": "sb-formula-field-repair",
+      "task_path": ".runs/sb-formula-field-repair/task.yaml"
+    }
+  }
+}

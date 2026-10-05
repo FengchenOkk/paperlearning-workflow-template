@@ -1,0 +1,41 @@
+task_id: sb-contact-first-pass
+task_type: literature-first-pass
+role: literature-reader
+objective: 依据受控原文完成全局定位、论文逻辑链及关键机制/实验/边界分析；区分作者声称、计算与实验证据、读者推断。非全文翻译、非逐节精读。当前 Codex
+  会话作为真实人工接力撰写草稿，再由主模型独立核对证据；不调用付费 API。
+inputs:
+- id: paper:liApproachingQuantumLimit2023
+  type: paper
+  required: true
+- id: artifact:ab40bde02bcd7e986926ea55
+  type: source.text
+  required: true
+- id: artifact:7090f67aecd585de8f4fc0f2
+  type: source.text
+  required: true
+- id: artifact:a023ada73585fa7b58f1e55d
+  type: source.text
+  required: true
+- id: artifact:2d-semiconductor-contacts:research-profile
+  type: research-profile
+  required: false
+outputs:
+- id: reading:liApproachingQuantumLimit2023
+  type: reading
+  path: 10_literature/papers/liApproachingQuantumLimit2023/03_reading/reading.md
+  mode: replace
+- id: analysis:liApproachingQuantumLimit2023
+  type: analysis
+  path: 10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml
+  mode: replace
+allowed_paths:
+- 10_literature/papers/liApproachingQuantumLimit2023/03_reading
+- 10_literature/papers/liApproachingQuantumLimit2023/04_analysis
+context:
+  task_type: literature-first-pass
+  paper_citekey: liApproachingQuantumLimit2023
+output_schema: null
+source_refs:
+- 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-mechanism.md
+- 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-results.md
+- 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-methods.md

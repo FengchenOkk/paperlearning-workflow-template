@@ -1,0 +1,20 @@
+direction: 二维半导体接触
+goal: 理解 Sb–单层 MoS2 接触的机制、量子极限与实验依据
+resources:
+  compute: TODO(user)
+  data: TODO(user)
+  software: TODO(user)
+  lab_access: TODO(user)
+  equipment: TODO(user)
+  budget: TODO(user)
+  time: TODO(user)
+constraints:
+  ethics: TODO(user)
+  privacy: TODO(user)
+preferences:
+  prefer_online: true
+  allow_simulation: true
+  allow_offline_lab: TODO(user)
+id: artifact:2d-semiconductor-contacts:research-profile
+object_type: research-profile
+links: []

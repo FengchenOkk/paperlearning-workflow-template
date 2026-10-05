@@ -1,0 +1,225 @@
+paper: liApproachingQuantumLimit2023
+overview:
+  object: Sb (01\bar{1}2)–单层MoS2接触及场效应晶体管
+  core_problem: 同时改善能带对齐与跨范德华间隙注入，降低短沟道接触电阻
+  why_important: 二维沟道缩放后接触电阻与器件离散性成为主要瓶颈
+  contributions:
+  - 晶面控制与费米能级附近能带杂化的机制
+  - 高浓度下42 Ω·μm最低接触电阻与统计对照
+  - 短沟道电流、热稳定性与阵列离散性证据
+  position: 晶面工程的接触机制与实验方法论文；非完整CMOS替代验证
+  prerequisites:
+  - 能带与费米能级
+  - 肖特基势垒
+  - 范德华隧穿
+  - 轨道杂化
+  - 量子输运
+  - TLM测量
+  - FET与自热
+first_principles: []
+review_similarity:
+  core_problem: TODO(user)
+  method_summary: TODO(user)
+  key_concepts: []
+formulas:
+- id: eq-1
+  object_id: formula:liApproachingQuantumLimit2023:eq-1
+  label: 原文式(1)
+  latex: R_{c,\min}=\frac{h}{2q^2}\sqrt{\frac{\pi}{2n_{2D}}}
+  name_zh: 二维接触量子下限
+  plain_meaning: 模式数有限导致理想接触仍有非零下限；浓度增加下限按n^-1/2下降
+  symbols:
+  - symbol: Rc,min
+    meaning: 宽度归一化接触电阻
+    type_or_dimension: Ω·m
+  - symbol: h
+    meaning: 普朗克常数
+    type_or_dimension: J·s
+  - symbol: q
+    meaning: 元电荷
+    type_or_dimension: C
+  - symbol: n2D
+    meaning: 面载流子浓度
+    type_or_dimension: m^-2
+  assumptions:
+  - 理想弹道通道、无额外界面背散射
+  - 使用原文的通道计数约定；不同简并结构需重新计算
+  derivation_steps:
+  - 原文公式视觉核对；不声称补齐原文未给出的推导
+  - n=3e17 m^-2代入，Rc,min=29.5 Ω·μm；42/29.5≈1.42
+  intuition: 模式数有限导致理想接触仍有非零下限；浓度增加下限按n^-1/2下降
+  special_cases:
+  - 所有单位与宽度归一化口径必须一致
+  related_concepts:
+  - quantum-contact-limit
+  source_refs:
+  - 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-mechanism.md#Visually
+    verified equation (1), PDF p.274
+  confidence: 0.95
+  object_type: formula
+  links:
+  - rel: derived-from
+    target: paper:liApproachingQuantumLimit2023
+    evidence:
+    - file: 10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml
+      field: formulas[0]
+      source_refs:
+      - 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-mechanism.md#Visually
+        verified equation (1), PDF p.274
+    confidence: medium
+    status: candidate
+    generated_by: wf-registry
+  - rel: uses
+    target: concept:quantum-contact-limit
+    evidence:
+    - file: 10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml
+      field: formulas[0]
+      source_refs: []
+    confidence: medium
+    status: candidate
+    generated_by: wf-registry
+- id: intrinsic-delay
+  object_id: formula:liApproachingQuantumLimit2023:intrinsic-delay
+  label: 正文未编号；p.279
+  latex: \tau=CV_{ds}/I_{on}
+  name_zh: 本征门延迟估算
+  plain_meaning: 由门充电量与导通电流估算本征速度
+  symbols:
+  - symbol: tau
+    meaning: 本征延迟
+    type_or_dimension: s
+  - symbol: C
+    meaning: 门电容
+    type_or_dimension: F
+  - symbol: Vds
+    meaning: 漏源偏压
+    type_or_dimension: V
+  - symbol: Ion
+    meaning: 导通电流
+    type_or_dimension: A
+  assumptions:
+  - 门电容与电流采用一致的总量或宽度归一化口径
+  - 不含完整互连、负载与寄生
+  derivation_steps:
+  - CV给出电荷量，除以电流得到时间；不是电路传播延迟实测
+  intuition: 由门充电量与导通电流估算本征速度
+  special_cases:
+  - 所有单位与宽度归一化口径必须一致
+  related_concepts: []
+  source_refs:
+  - 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-results.md#Original
+    extracted text L1108-1208
+  confidence: 0.95
+  object_type: formula
+  links:
+  - rel: derived-from
+    target: paper:liApproachingQuantumLimit2023
+    evidence:
+    - file: 10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml
+      field: formulas[1]
+      source_refs:
+      - 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-results.md#Original
+        extracted text L1108-1208
+    confidence: medium
+    status: candidate
+    generated_by: wf-registry
+concepts:
+- id: quantum-contact-limit
+  role: used
+  local_meaning: 有限输运模式的接触下限
+  source_refs:
+  - 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-mechanism.md
+  understanding_status: 已核对关键原文并关联全局概念卡
+- id: interface-band-hybridization
+  role: used
+  local_meaning: Sb pz与Mo d轨道重叠，使EF附近出现跨界面电子态
+  source_refs:
+  - 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-mechanism.md
+  understanding_status: 已核对关键原文并关联全局概念卡
+- id: transfer-length-method
+  role: used
+  local_meaning: 多沟道长度电阻拟合分离接触与沟道；LT提取存在片电阻假设
+  source_refs:
+  - 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-results.md
+  understanding_status: 已核对关键原文并关联全局概念卡
+extraction:
+  claims:
+  - statement: 目标晶面支持强杂化并改善注入
+    kind: 作者机制主张
+    source_refs:
+    - 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-mechanism.md
+  - statement: 高浓度最低Rc接近量子下限
+    kind: 实验结果＋原文模型对比
+    source_refs:
+    - 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-results.md
+  method:
+    fabrication: 约100 °C基底蒸镀20 nm Sb/30 nm Au；不需器件完成后退火
+    measurements:
+    - TLM
+    - 50–400 K电学
+    - 160 ns脉冲
+    - XRD
+    - HAADF-STEM
+    - XPS
+    theory: VASP 5.4/PBE/DFT-D3；三层半金属与单层TMD，见Methods
+    source_refs:
+    - 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-methods.md
+  data:
+  - count: 156
+    unit: 晶面对照TLM；115目标取向与41室温取向
+  - count: 573
+    unit: 阵列FET，96组TLM，0.1–1.5 μm沟道
+  baselines:
+  - Sb (0001)晶面对照
+  - Bi稳定性对照；其余前作未独立复核
+  metrics:
+  - Rc
+  - LT
+  - Ion
+  - SS
+  - 开关比
+  - 本征延迟
+  results:
+  - value: 42 Ω·μm
+    conditions: 最低；n2D=3e13 cm^-2
+    source_refs:
+    - 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-results.md
+  - value: 209±100 Ω·μm
+    conditions: 115个目标晶面TLM统计
+    source_refs:
+    - 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-results.md
+  - value: 1.23 mA/μm
+    conditions: 约20 nm沟道、1 V漏压、直流
+    source_refs:
+    - 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-results.md
+  - value: 125 °C/24 h无明显退化
+    conditions: 氮气；Ion、Vth、SS
+    source_refs:
+    - 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-results.md
+  limitations:
+  - 高浓度最佳值非平均
+  - LT片电阻假设可能失效
+  - 热稳定性仅24 h氮气
+  - DFT杂化非直接实验测量
+  - 本征延迟估算与5 nm外推非电路/器件实测
+  - 自热温升是热模拟预测
+  - 未逐项核验补充材料与Source data
+  relevance:
+  - 晶面–电子态–结构–电学–统计联合论证框架
+reproduction:
+  code_url: TODO(user)
+  data_url: TODO(user)
+  candidates: []
+  signals: []
+generated_by: current-codex-session/manual-handoff
+model_role: literature-reader
+prompt_version: sb-contact-first-pass-v1
+source_refs:
+- 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-mechanism.md
+- 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-results.md
+- 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-methods.md
+created_at: '2026-10-01T14:33:28.178425+00:00'
+id: analysis:liApproachingQuantumLimit2023
+type: analysis
+paper_id: paper:liApproachingQuantumLimit2023
+links: []

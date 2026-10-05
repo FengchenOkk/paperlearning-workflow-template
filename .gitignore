@@ -34,6 +34,20 @@ projects/**/online/data/
 auth.json
 *.pem
 *.key
+.venv/
+.runtime/
+data/
+node_modules/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+test-results/
+playwright-report/
+*.db
+*.db-shm
+*.db-wal
+*.tsbuildinfo
 
 # 本仓库公开分享工作流；真实研究测试仅在本地保存。
 /projects/2d-semiconductor-optoelectronic-integration/

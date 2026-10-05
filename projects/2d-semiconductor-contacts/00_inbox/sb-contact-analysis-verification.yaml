@@ -1,0 +1,25 @@
+task_id: sb-contact-analysis-verification
+task_type: verification
+role: verifier
+objective: 复核已完成全局分析的关键数字与证据边界，生成可读的论文分析与核验报告；当前Codex真实人工接力，不假称独立外部模型复核，不执行API。
+inputs:
+- id: paper:liApproachingQuantumLimit2023
+  type: paper
+- id: reading:liApproachingQuantumLimit2023
+  type: reading
+- id: artifact:7090f67aecd585de8f4fc0f2
+  type: source.text
+outputs:
+- id: artifact:sb-contact-analysis-verification:verification
+  type: artifact
+  path: 30_outputs/antimony-contact-analysis.md
+  mode: replace
+allowed_paths:
+- 30_outputs
+context:
+  task_type: verification
+  paper_citekey: liApproachingQuantumLimit2023
+output_schema: null
+source_refs:
+- 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-results.md
+- 10_literature/papers/liApproachingQuantumLimit2023/03_reading/reading.md

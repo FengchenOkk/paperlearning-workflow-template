@@ -1,0 +1,15 @@
+{
+  "id": "gw150914",
+  "title": "Observation of Gravitational Waves from a Binary Black Hole Merger",
+  "source_url": "https://arxiv.org/abs/1602.03837",
+  "pdf_url": "https://arxiv.org/pdf/1602.03837v1",
+  "sha256": "e5e864c23d015b69be17e5b5d51b5b462d2829353a867513414b6728f54589c4",
+  "page_count": 16,
+  "license": "CC BY 3.0; B. P. Abbott et al., Physical Review Letters 116, 061102 (2016), doi:10.1103/PhysRevLett.116.061102",
+  "review_scope": "Source text and first-page pixels manually inspected; no scientific result acceptance",
+  "gold": [
+    {"page_number": 1, "text": "Observation of Gravitational Waves from a Binary Black Hole Merger"},
+    {"page_number": 1, "text": "simultaneously observed a transient gravitational-wave signal."},
+    {"page_number": 1, "text": "I. INTRODUCTION"}
+  ]
+}

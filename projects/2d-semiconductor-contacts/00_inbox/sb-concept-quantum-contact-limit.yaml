@@ -1,0 +1,29 @@
+task_id: sb-concept-quantum-contact-limit
+task_type: literature-knowledge
+role: knowledge-builder
+objective: 基于已核验原文建立二维接触量子下限单概念卡；当前Codex真实人工接力，不执行外部API；自动关系保持candidate。
+inputs:
+- id: paper:liApproachingQuantumLimit2023
+  type: paper
+- id: analysis:liApproachingQuantumLimit2023
+  type: analysis
+- id: reading:liApproachingQuantumLimit2023
+  type: reading
+outputs:
+- id: concept:quantum-contact-limit
+  type: concept
+  path: 10_literature/concepts/quantum-contact-limit.md
+  mode: replace
+- id: analysis:liApproachingQuantumLimit2023
+  type: analysis
+  path: 10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml
+  mode: replace
+allowed_paths:
+- 10_literature/concepts
+- 10_literature/papers/liApproachingQuantumLimit2023/04_analysis
+context:
+  task_type: literature-knowledge
+  paper_citekey: liApproachingQuantumLimit2023
+source_refs:
+- 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-mechanism.md
+output_schema: null

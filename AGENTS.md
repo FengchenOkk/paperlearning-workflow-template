@@ -1,3 +1,15 @@
+# PaperGraph application work
+
+The current product direction is defined by `docs/architecture/SYSTEM.md`, `docs/IMPLEMENTATION_STATUS.md` and the scientific ontology/provenance documents. For application engineering, work in `backend/`, `frontend/`, `packages/`, `evals/`, `infra/` and `docs/`. The canonical application graph is in the database; UI and exports read that model. Do not import the legacy file workflow into the application runtime or treat co-occurrence as scientific dependence.
+
+Preserve user research, untracked files, original PDFs, `.env` and local profiles. Never transmit private papers merely because a credential exists. Every paper-derived scientific object needs validated provenance. Extraction produces candidates; VERIFIED requires an explicit attributable review with current hash/version and an audit record. Distinguish source wording, author assertions, external knowledge, AI interpretation, derivation and unknowns. Do not invent science, citations, source locations, progress or acceptance records.
+
+Run relevant backend/frontend checks and the real public-PDF browser journey for source/evidence interaction changes. Keep implementation status honest; the first slice is not the whole research-grade platform. Use no subagent orchestration for routine application implementation. Do not infer a research project merely to modify application code.
+
+# Legacy research workflow only
+
+The following rules continue to apply when editing the historical `projects/` workspace or running `tools/wf.py`; they do not impose filesystem-based state on the new application.
+
 # 论文工作流编排规则
 
 当前运行本项目的 agent/使用者负责执行器与最终文件管理；主模型 orchestrator 是 commander-reviewer，子模型是 primary-executor，均由 model_profiles 配置，支持已有会话、API、外部 CLI 与 manual。先读 workflow/README.md 通用规则；首次接入看 workflow/model-setup.md，再读 task-orchestration.md、literature.md、zotero.md 与 reproduction.md；指定项目后读 project.yaml、research-profile.yaml、INDEX.md 和机器索引 INDEX.json。未指定项目时明确项目，不猜测研究方向。

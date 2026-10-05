@@ -1,0 +1,185 @@
+citekey: liApproachingQuantumLimit2023
+title: Approaching the quantum limit in two-dimensional semiconductor contacts
+authors: &id001
+- Weisheng Li
+- Xiaoshu Gong
+- Zhihao Yu
+- Liang Ma
+- Wenjie Sun
+- Si Gao
+- Çağıl Köroğlu
+- Wenfeng Wang
+- Lei Liu
+- Taotao Li
+- Hongkai Ning
+- Dongxu Fan
+- Yifei Xu
+- Xuecou Tu
+- Tao Xu
+- Litao Sun
+- Wenhui Wang
+- Junpeng Lu
+- Zhenhua Ni
+- Jia Li
+- Xidong Duan
+- Peng Wang
+- Yuefeng Nie
+- Hao Qiu
+- Yi Shi
+- Eric Pop
+- Jinlan Wang
+- Xinran Wang
+year: 2023
+venue: Nature
+doi: 10.1038/s41586-022-05431-4
+url: https://www.nature.com/articles/s41586-022-05431-4
+language: en
+source_files:
+- 10_literature/papers/liApproachingQuantumLimit2023/01_source/paper.txt
+- 10_literature/papers/liApproachingQuantumLimit2023/01_source/paper-reading.txt
+- 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-mechanism.md
+- 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-results.md
+- 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-methods.md
+paper_role: method
+categories:
+- 二维半导体接触
+topic_tags:
+- /unread
+difficulty: TODO(user)
+importance: TODO(user)
+reading_priority: TODO(user)
+status: pre-read
+translation_status: none
+reading_status: partial
+analysis_status: partial
+concept_ids:
+- quantum-contact-limit
+- interface-band-hybridization
+- transfer-length-method
+formula_ids:
+- eq-1
+- intrinsic-delay
+first_principle_ids: []
+zotero:
+  library_type: user
+  library_id: '19655702'
+  item_key: IA2ZTFPU
+  collection_keys:
+  - GT4PHIF4
+  tags:
+  - /unread
+  attachment_paths:
+  - E:\Zotero8\papers\storage\RVSJ6EJH\Li 等 - 2023 - Approaching the quantum limit
+    in two-dimensional semiconductor contacts.pdf
+  version: 79
+  synthetic_item_key: false
+  synced_fields:
+    title: Approaching the quantum limit in two-dimensional semiconductor contacts
+    authors: *id001
+    year: 2023
+    venue: Nature
+    doi: 10.1038/s41586-022-05431-4
+    url: https://www.nature.com/articles/s41586-022-05431-4
+    language: en
+  synced_at: '2026-10-01T14:23:34.422960+00:00'
+next_action: TODO(user)：按需要获取Source data/补充材料，复核TLM或开展逐节精读
+updated_at: '2026-10-01T14:40:18.743966+00:00'
+code_links: []
+data_links: []
+generated_by: wf
+model_role: orchestrator
+prompt_version: v2
+source_refs:
+- 10_literature/papers/liApproachingQuantumLimit2023/01_source/source-links.yaml
+created_at: '2026-10-01T14:23:34.394922+00:00'
+id: paper:liApproachingQuantumLimit2023
+type: paper
+project_id: project:2d-semiconductor-contacts
+links:
+- rel: belongs-to-topic
+  target: topic:label-0d95f34f0ea64e36
+  evidence:
+  - file: 10_literature/papers/liApproachingQuantumLimit2023/meta.yaml
+    field: topic_tags
+    source_refs: []
+  confidence: medium
+  status: candidate
+  generated_by: wf-registry
+- rel: belongs-to-topic
+  target: topic:zotero-user-19655702-collection-GT4PHIF4
+  evidence:
+  - file: 10_literature/papers/liApproachingQuantumLimit2023/meta.yaml
+    field: zotero.collection_keys
+    source_refs: []
+    zotero_value: GT4PHIF4
+  confidence: high
+  weight: 1.0
+  status: candidate
+  generated_by: wf-zotero
+- rel: belongs-to-topic
+  target: topic:zotero-user-19655702-tag-unread-0d95f34f
+  evidence:
+  - file: 10_literature/papers/liApproachingQuantumLimit2023/meta.yaml
+    field: zotero.tags
+    source_refs: []
+    zotero_value: /unread
+  confidence: high
+  weight: 1.0
+  status: candidate
+  generated_by: wf-zotero
+- rel: belongs-to-topic
+  target: topic:二维半导体接触
+  evidence:
+  - file: 10_literature/papers/liApproachingQuantumLimit2023/meta.yaml
+    field: categories
+    source_refs: []
+  confidence: medium
+  status: candidate
+  generated_by: wf-registry
+- rel: belongs-to-topic
+  target: topic:光电异构集成技术
+  evidence:
+  - file: 10_literature/papers/liApproachingQuantumLimit2023/meta.yaml
+    field: categories
+    source_refs: []
+  confidence: medium
+  status: candidate
+  generated_by: wf-registry
+- rel: uses
+  target: concept:interface-band-hybridization
+  evidence:
+  - file: 10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml
+    field: concepts[1]
+    source_refs:
+    - 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-mechanism.md
+  confidence: medium
+  status: candidate
+  generated_by: wf-registry
+- rel: uses
+  target: concept:quantum-contact-limit
+  evidence:
+  - file: 10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml
+    field: concepts[0]
+    source_refs:
+    - 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-mechanism.md
+  confidence: medium
+  status: candidate
+  generated_by: wf-registry
+- rel: uses
+  target: concept:transfer-length-method
+  evidence:
+  - file: 10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml
+    field: concepts[2]
+    source_refs:
+    - 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-results.md
+  confidence: medium
+  status: candidate
+  generated_by: wf-registry
+zotero_key: IA2ZTFPU
+aliases:
+- citekey:liApproachingQuantumLimit2023
+- zotero:IA2ZTFPU
+- zotero:user:19655702:IA2ZTFPU
+topic_ids:
+- topic:zotero-user-19655702-collection-GT4PHIF4
+- topic:zotero-user-19655702-tag-unread-0d95f34f

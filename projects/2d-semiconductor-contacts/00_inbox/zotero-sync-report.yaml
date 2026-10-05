@@ -1,0 +1,16 @@
+schema_version: 1
+generated_by: wf
+generated_at: '2026-10-01T14:23:33.957386+00:00'
+generated_from:
+- project.yaml
+- INDEX.json
+mode: local
+dry_run: false
+created:
+- liApproachingQuantumLimit2023
+updated: []
+unchanged: []
+duplicates: []
+errors: []
+missing_attachments: []
+index_update_pending: false

@@ -1,0 +1,24 @@
+task_id: sb-concept-transfer-length-method
+attempt: 1
+reviewer: main
+review_source: actual current Codex session source review
+decision: accept
+passed_criteria:
+- stable_concept_ids
+- single_definition
+- evidence_traceable
+- links_resolvable
+- automatic_links_candidate
+- manual_content_preserved
+failed_criteria: []
+issues: []
+required_changes: []
+evidence_checks:
+- ref:
+    id: artifact:7090f67aecd585de8f4fc0f2
+    type: source.text
+    hash: sha256:4bd3f576210cd3d1b58f3617a9a1243bd5dcf50f440f3f0f120ab6ae63bd259a
+  status: verified
+  detail: 逐句核对传输长度法（TLM）定义、单位/计算或方法条件与已读原文；卡片不将作者计算当实验，不声称读取经典全文；旧links保留candidate、原骨架无人工实质正文。
+next_action: 保存单概念卡与分析关联
+reason: 实际核对受控原文、概念定义、适用条件和缺口；范围限定于本文；无自检替代来源审核。

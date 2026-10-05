@@ -1,0 +1,24 @@
+task_id: sb-formula-field-repair
+task_type: literature-formula
+role: literature-reader
+objective: 核对已记录公式，修正confidence为数值；保留公式、出处、正文和关系；当前Codex人工接力。
+inputs:
+- id: paper:liApproachingQuantumLimit2023
+  type: paper
+- id: analysis:liApproachingQuantumLimit2023
+  type: analysis
+- id: artifact:ab40bde02bcd7e986926ea55
+  type: source.text
+outputs:
+- id: analysis:liApproachingQuantumLimit2023
+  type: analysis
+  path: 10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml
+  mode: replace
+allowed_paths:
+- 10_literature/papers/liApproachingQuantumLimit2023/04_analysis
+context:
+  task_type: literature-formula
+  paper_citekey: liApproachingQuantumLimit2023
+output_schema: null
+source_refs:
+- 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-mechanism.md

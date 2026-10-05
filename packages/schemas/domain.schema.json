@@ -1,0 +1,1547 @@
+{
+  "$defs": {
+    "Anchor": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "paper_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Paper Id",
+          "type": "string"
+        },
+        "span_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Span Id",
+          "type": "string"
+        },
+        "page_number": {
+          "title": "Page Number",
+          "type": "integer"
+        },
+        "start_char": {
+          "title": "Start Char",
+          "type": "integer"
+        },
+        "end_char": {
+          "title": "End Char",
+          "type": "integer"
+        },
+        "bbox": {
+          "maxItems": 4,
+          "minItems": 4,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Bbox",
+          "type": "array"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "source_hash": {
+          "title": "Source Hash",
+          "type": "string"
+        },
+        "localization_precision": {
+          "const": "TEXT_BLOCK",
+          "title": "Localization Precision",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "paper_id",
+        "span_id",
+        "page_number",
+        "start_char",
+        "end_char",
+        "bbox",
+        "text",
+        "source_hash",
+        "localization_precision"
+      ],
+      "title": "Anchor",
+      "type": "object"
+    },
+    "CandidateEdge": {
+      "additionalProperties": false,
+      "properties": {
+        "source_node_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Source Node Id",
+          "type": "string"
+        },
+        "target_node_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Target Node Id",
+          "type": "string"
+        },
+        "relation_type": {
+          "$ref": "#/$defs/Relation"
+        },
+        "anchor_ids": {
+          "items": {
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+            "type": "string"
+          },
+          "maxItems": 20,
+          "minItems": 1,
+          "title": "Anchor Ids",
+          "type": "array"
+        },
+        "confidence": {
+          "default": 0.5,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "epistemic_status": {
+          "$ref": "#/$defs/EpistemicStatus",
+          "default": "AI_INTERPRETATION"
+        }
+      },
+      "required": [
+        "source_node_id",
+        "target_node_id",
+        "relation_type",
+        "anchor_ids"
+      ],
+      "title": "CandidateEdge",
+      "type": "object"
+    },
+    "CandidateNode": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "$ref": "#/$defs/NodeType"
+        },
+        "layer": {
+          "$ref": "#/$defs/Layer"
+        },
+        "label": {
+          "maxLength": 300,
+          "minLength": 1,
+          "title": "Label",
+          "type": "string"
+        },
+        "text": {
+          "maxLength": 10000,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        },
+        "anchor_ids": {
+          "items": {
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+            "type": "string"
+          },
+          "maxItems": 20,
+          "minItems": 1,
+          "title": "Anchor Ids",
+          "type": "array"
+        },
+        "epistemic_status": {
+          "$ref": "#/$defs/EpistemicStatus",
+          "default": "AI_INTERPRETATION"
+        },
+        "uncertainty_reason": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Uncertainty Reason",
+          "type": "string"
+        },
+        "confidence": {
+          "default": 0.5,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        }
+      },
+      "required": [
+        "type",
+        "layer",
+        "label",
+        "text",
+        "anchor_ids",
+        "uncertainty_reason"
+      ],
+      "title": "CandidateNode",
+      "type": "object"
+    },
+    "Claim": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "CLAIM",
+          "default": "CLAIM",
+          "title": "Kind",
+          "type": "string"
+        },
+        "node_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Node Id",
+          "type": "string"
+        },
+        "source_anchor_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Source Anchor Id",
+          "type": "string"
+        },
+        "claim_type": {
+          "title": "Claim Type",
+          "type": "string"
+        },
+        "qualifiers": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Qualifiers",
+          "type": "array"
+        },
+        "support_strength": {
+          "const": "NOT_ASSESSED",
+          "title": "Support Strength",
+          "type": "string"
+        },
+        "assumption_node_ids": {
+          "items": {
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+            "type": "string"
+          },
+          "title": "Assumption Node Ids",
+          "type": "array"
+        },
+        "evidence_node_ids": {
+          "items": {
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+            "type": "string"
+          },
+          "title": "Evidence Node Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "node_id",
+        "source_anchor_id",
+        "claim_type",
+        "qualifiers",
+        "support_strength",
+        "assumption_node_ids",
+        "evidence_node_ids"
+      ],
+      "title": "Claim",
+      "type": "object"
+    },
+    "Document": {
+      "additionalProperties": false,
+      "properties": {
+        "paper_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Paper Id",
+          "type": "string"
+        },
+        "parser": {
+          "title": "Parser",
+          "type": "string"
+        },
+        "parser_version": {
+          "title": "Parser Version",
+          "type": "string"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Warnings",
+          "type": "array"
+        },
+        "pages": {
+          "items": {
+            "$ref": "#/$defs/Page"
+          },
+          "title": "Pages",
+          "type": "array"
+        }
+      },
+      "required": [
+        "paper_id",
+        "parser",
+        "parser_version",
+        "warnings",
+        "pages"
+      ],
+      "title": "Document",
+      "type": "object"
+    },
+    "Edge": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "paper_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Paper Id",
+          "type": "string"
+        },
+        "source_node_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Source Node Id",
+          "type": "string"
+        },
+        "target_node_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Target Node Id",
+          "type": "string"
+        },
+        "relation_type": {
+          "$ref": "#/$defs/Relation"
+        },
+        "verification_status": {
+          "$ref": "#/$defs/VerificationStatus"
+        },
+        "confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "provenance": {
+          "items": {
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+            "type": "string"
+          },
+          "title": "Provenance",
+          "type": "array"
+        },
+        "created_by": {
+          "title": "Created By",
+          "type": "string"
+        },
+        "model": {
+          "title": "Model",
+          "type": "string"
+        },
+        "prompt_version": {
+          "title": "Prompt Version",
+          "type": "string"
+        },
+        "created_at": {
+          "title": "Created At",
+          "type": "string"
+        },
+        "updated_at": {
+          "title": "Updated At",
+          "type": "string"
+        },
+        "version": {
+          "title": "Version",
+          "type": "integer"
+        },
+        "epistemic_status": {
+          "$ref": "#/$defs/EpistemicStatus"
+        },
+        "verification_scope": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ReviewScope"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "review_current": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Review Current"
+        }
+      },
+      "required": [
+        "id",
+        "paper_id",
+        "source_node_id",
+        "target_node_id",
+        "relation_type",
+        "verification_status",
+        "confidence",
+        "provenance",
+        "created_by",
+        "model",
+        "prompt_version",
+        "created_at",
+        "updated_at",
+        "version",
+        "epistemic_status",
+        "verification_scope"
+      ],
+      "title": "Edge",
+      "type": "object"
+    },
+    "EpistemicStatus": {
+      "enum": [
+        "PAPER_EXPLICIT",
+        "PAPER_IMPLICIT",
+        "AUTHOR_CLAIM",
+        "OBSERVED_DATA",
+        "REFERENCE_DERIVED",
+        "BACKGROUND_KNOWLEDGE",
+        "AI_INTERPRETATION",
+        "AI_DERIVATION",
+        "AI_HYPOTHESIS",
+        "UNVERIFIED",
+        "CONFLICTING",
+        "UNKNOWN",
+        "NOT_SPECIFIED_IN_PAPER"
+      ],
+      "title": "EpistemicStatus",
+      "type": "string"
+    },
+    "Equation": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "EQUATION",
+          "default": "EQUATION",
+          "title": "Kind",
+          "type": "string"
+        },
+        "node_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Node Id",
+          "type": "string"
+        },
+        "source_anchor_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Source Anchor Id",
+          "type": "string"
+        },
+        "original_expression": {
+          "title": "Original Expression",
+          "type": "string"
+        },
+        "equation_number": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Equation Number"
+        },
+        "normalized_expression": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Normalized Expression"
+        },
+        "latex": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Latex"
+        },
+        "symbols": {
+          "items": {
+            "$ref": "#/$defs/ScientificSymbol"
+          },
+          "title": "Symbols",
+          "type": "array"
+        },
+        "mathematical_meaning": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ScientificStatement"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "physical_meaning": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ScientificStatement"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "definition_node_ids": {
+          "items": {
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+            "type": "string"
+          },
+          "title": "Definition Node Ids",
+          "type": "array"
+        },
+        "assumption_node_ids": {
+          "items": {
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+            "type": "string"
+          },
+          "title": "Assumption Node Ids",
+          "type": "array"
+        },
+        "approximation_node_ids": {
+          "items": {
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+            "type": "string"
+          },
+          "title": "Approximation Node Ids",
+          "type": "array"
+        },
+        "derivation_edge_ids": {
+          "items": {
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+            "type": "string"
+          },
+          "title": "Derivation Edge Ids",
+          "type": "array"
+        },
+        "used_by_node_ids": {
+          "items": {
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+            "type": "string"
+          },
+          "title": "Used By Node Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "node_id",
+        "source_anchor_id",
+        "original_expression",
+        "equation_number",
+        "normalized_expression",
+        "latex",
+        "symbols",
+        "mathematical_meaning",
+        "physical_meaning",
+        "definition_node_ids",
+        "assumption_node_ids",
+        "approximation_node_ids",
+        "derivation_edge_ids",
+        "used_by_node_ids"
+      ],
+      "title": "Equation",
+      "type": "object"
+    },
+    "EvidenceBundle": {
+      "additionalProperties": false,
+      "properties": {
+        "node": {
+          "$ref": "#/$defs/Node"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/EvidenceItem"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "scientific_object": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Claim"
+            },
+            {
+              "$ref": "#/$defs/Equation"
+            },
+            {
+              "$ref": "#/$defs/Figure"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Scientific Object"
+        }
+      },
+      "required": [
+        "node",
+        "evidence",
+        "scientific_object"
+      ],
+      "title": "EvidenceBundle",
+      "type": "object"
+    },
+    "EvidenceItem": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "supports_object_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Supports Object Id",
+          "type": "string"
+        },
+        "evidence_type": {
+          "title": "Evidence Type",
+          "type": "string"
+        },
+        "support_type": {
+          "title": "Support Type",
+          "type": "string"
+        },
+        "confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "verification_status": {
+          "$ref": "#/$defs/VerificationStatus"
+        },
+        "note": {
+          "title": "Note",
+          "type": "string"
+        },
+        "anchor": {
+          "$ref": "#/$defs/Anchor"
+        }
+      },
+      "required": [
+        "id",
+        "supports_object_id",
+        "evidence_type",
+        "support_type",
+        "confidence",
+        "verification_status",
+        "note",
+        "anchor"
+      ],
+      "title": "EvidenceItem",
+      "type": "object"
+    },
+    "Figure": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "FIGURE",
+          "default": "FIGURE",
+          "title": "Kind",
+          "type": "string"
+        },
+        "node_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Node Id",
+          "type": "string"
+        },
+        "source_anchor_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Source Anchor Id",
+          "type": "string"
+        },
+        "figure_number": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Figure Number"
+        },
+        "caption_explicit": {
+          "title": "Caption Explicit",
+          "type": "string"
+        },
+        "visual_anchor_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Visual Anchor Id"
+        },
+        "surrounding_text": {
+          "items": {
+            "$ref": "#/$defs/ScientificStatement"
+          },
+          "title": "Surrounding Text",
+          "type": "array"
+        },
+        "visual_observations": {
+          "items": {
+            "$ref": "#/$defs/ScientificStatement"
+          },
+          "title": "Visual Observations",
+          "type": "array"
+        },
+        "interpretations": {
+          "items": {
+            "$ref": "#/$defs/ScientificStatement"
+          },
+          "title": "Interpretations",
+          "type": "array"
+        },
+        "observation_node_ids": {
+          "items": {
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+            "type": "string"
+          },
+          "title": "Observation Node Ids",
+          "type": "array"
+        },
+        "claim_node_ids": {
+          "items": {
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+            "type": "string"
+          },
+          "title": "Claim Node Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "node_id",
+        "source_anchor_id",
+        "figure_number",
+        "caption_explicit",
+        "visual_anchor_id",
+        "surrounding_text",
+        "visual_observations",
+        "interpretations",
+        "observation_node_ids",
+        "claim_node_ids"
+      ],
+      "title": "Figure",
+      "type": "object"
+    },
+    "Graph": {
+      "additionalProperties": false,
+      "properties": {
+        "nodes": {
+          "items": {
+            "$ref": "#/$defs/Node"
+          },
+          "title": "Nodes",
+          "type": "array"
+        },
+        "edges": {
+          "items": {
+            "$ref": "#/$defs/Edge"
+          },
+          "title": "Edges",
+          "type": "array"
+        },
+        "total_nodes": {
+          "title": "Total Nodes",
+          "type": "integer"
+        },
+        "truncated": {
+          "title": "Truncated",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "nodes",
+        "edges",
+        "total_nodes",
+        "truncated"
+      ],
+      "title": "Graph",
+      "type": "object"
+    },
+    "IntegrityIssue": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "title": "Code",
+          "type": "string"
+        },
+        "object_id": {
+          "title": "Object Id",
+          "type": "string"
+        },
+        "severity": {
+          "default": "ERROR",
+          "enum": [
+            "ERROR",
+            "WARNING"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "detail": {
+          "title": "Detail",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "object_id",
+        "detail"
+      ],
+      "title": "IntegrityIssue",
+      "type": "object"
+    },
+    "IntegrityReport": {
+      "additionalProperties": false,
+      "properties": {
+        "paper_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Paper Id",
+          "type": "string"
+        },
+        "issues": {
+          "items": {
+            "$ref": "#/$defs/IntegrityIssue"
+          },
+          "title": "Issues",
+          "type": "array"
+        },
+        "structurally_valid": {
+          "title": "Structurally Valid",
+          "type": "boolean"
+        },
+        "scientific_validity": {
+          "const": "NOT_ASSESSED",
+          "default": "NOT_ASSESSED",
+          "title": "Scientific Validity",
+          "type": "string"
+        }
+      },
+      "required": [
+        "paper_id",
+        "issues",
+        "structurally_valid"
+      ],
+      "title": "IntegrityReport",
+      "type": "object"
+    },
+    "Job": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "paper_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Paper Id",
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/JobStatus"
+        },
+        "progress": {
+          "title": "Progress",
+          "type": "integer"
+        },
+        "error": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Error"
+        },
+        "input_hash": {
+          "title": "Input Hash",
+          "type": "string"
+        },
+        "pipeline_version": {
+          "title": "Pipeline Version",
+          "type": "string"
+        },
+        "attempt": {
+          "title": "Attempt",
+          "type": "integer"
+        },
+        "updated_at": {
+          "title": "Updated At",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "paper_id",
+        "status",
+        "progress",
+        "error",
+        "input_hash",
+        "pipeline_version",
+        "attempt",
+        "updated_at"
+      ],
+      "title": "Job",
+      "type": "object"
+    },
+    "JobStatus": {
+      "enum": [
+        "UPLOADED",
+        "PARSING",
+        "PARSED",
+        "ENTITY_EXTRACTION",
+        "GRAPH_BUILDING",
+        "READY",
+        "PARTIAL",
+        "FAILED"
+      ],
+      "title": "JobStatus",
+      "type": "string"
+    },
+    "Layer": {
+      "enum": [
+        "SOURCE",
+        "SEMANTIC",
+        "ARGUMENT",
+        "LEARNING",
+        "CONTEXT"
+      ],
+      "title": "Layer",
+      "type": "string"
+    },
+    "Node": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "paper_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Paper Id",
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/$defs/NodeType"
+        },
+        "layer": {
+          "$ref": "#/$defs/Layer"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "epistemic_status": {
+          "$ref": "#/$defs/EpistemicStatus"
+        },
+        "verification_status": {
+          "$ref": "#/$defs/VerificationStatus"
+        },
+        "confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "uncertainty_reason": {
+          "title": "Uncertainty Reason",
+          "type": "string"
+        },
+        "provenance": {
+          "items": {
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+            "type": "string"
+          },
+          "title": "Provenance",
+          "type": "array"
+        },
+        "created_by": {
+          "title": "Created By",
+          "type": "string"
+        },
+        "model": {
+          "title": "Model",
+          "type": "string"
+        },
+        "prompt_version": {
+          "title": "Prompt Version",
+          "type": "string"
+        },
+        "created_at": {
+          "title": "Created At",
+          "type": "string"
+        },
+        "updated_at": {
+          "title": "Updated At",
+          "type": "string"
+        },
+        "version": {
+          "title": "Version",
+          "type": "integer"
+        },
+        "verification_scope": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ReviewScope"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "review_current": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Review Current"
+        }
+      },
+      "required": [
+        "id",
+        "paper_id",
+        "type",
+        "layer",
+        "label",
+        "text",
+        "epistemic_status",
+        "verification_status",
+        "confidence",
+        "uncertainty_reason",
+        "provenance",
+        "created_by",
+        "model",
+        "prompt_version",
+        "created_at",
+        "updated_at",
+        "version",
+        "verification_scope"
+      ],
+      "title": "Node",
+      "type": "object"
+    },
+    "NodeType": {
+      "enum": [
+        "PAPER",
+        "SECTION",
+        "PARAGRAPH",
+        "SOURCE_SPAN",
+        "FIGURE",
+        "TABLE",
+        "EQUATION",
+        "REFERENCE",
+        "FIRST_PRINCIPLE",
+        "MATHEMATICAL_CONCEPT",
+        "MATHEMATICAL_THEOREM",
+        "MATHEMATICAL_METHOD",
+        "PHYSICAL_LAW",
+        "PHYSICAL_CONCEPT",
+        "PHYSICAL_QUANTITY",
+        "PHENOMENON",
+        "CHEMICAL_CONCEPT",
+        "MATERIAL",
+        "THEORY",
+        "MODEL",
+        "DEFINITION",
+        "ASSUMPTION",
+        "APPROXIMATION",
+        "METHOD",
+        "ALGORITHM",
+        "PROCESS",
+        "DEVICE",
+        "ARCHITECTURE",
+        "EXPERIMENT",
+        "SIMULATION",
+        "DATASET",
+        "PARAMETER",
+        "METRIC",
+        "RESEARCH_PROBLEM",
+        "MOTIVATION",
+        "RESEARCH_GAP",
+        "HYPOTHESIS",
+        "CLAIM",
+        "OBSERVATION",
+        "EVIDENCE",
+        "RESULT",
+        "CONCLUSION",
+        "CONTRIBUTION",
+        "INNOVATION",
+        "LIMITATION",
+        "OPEN_QUESTION",
+        "PRIOR_WORK"
+      ],
+      "title": "NodeType",
+      "type": "string"
+    },
+    "Page": {
+      "additionalProperties": false,
+      "properties": {
+        "number": {
+          "title": "Number",
+          "type": "integer"
+        },
+        "width": {
+          "title": "Width",
+          "type": "number"
+        },
+        "height": {
+          "title": "Height",
+          "type": "number"
+        },
+        "rotation": {
+          "title": "Rotation",
+          "type": "integer"
+        },
+        "spans": {
+          "items": {
+            "$ref": "#/$defs/Span"
+          },
+          "title": "Spans",
+          "type": "array"
+        }
+      },
+      "required": [
+        "number",
+        "width",
+        "height",
+        "rotation",
+        "spans"
+      ],
+      "title": "Page",
+      "type": "object"
+    },
+    "Paper": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "source_hash": {
+          "title": "Source Hash",
+          "type": "string"
+        },
+        "page_count": {
+          "title": "Page Count",
+          "type": "integer"
+        },
+        "created_at": {
+          "title": "Created At",
+          "type": "string"
+        },
+        "job_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Job Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "source_hash",
+        "page_count",
+        "created_at",
+        "job_id"
+      ],
+      "title": "Paper",
+      "type": "object"
+    },
+    "PathResult": {
+      "additionalProperties": false,
+      "properties": {
+        "node_ids": {
+          "items": {
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+            "type": "string"
+          },
+          "title": "Node Ids",
+          "type": "array"
+        },
+        "edge_ids": {
+          "items": {
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+            "type": "string"
+          },
+          "title": "Edge Ids",
+          "type": "array"
+        },
+        "found": {
+          "title": "Found",
+          "type": "boolean"
+        },
+        "note": {
+          "title": "Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "node_ids",
+        "edge_ids",
+        "found",
+        "note"
+      ],
+      "title": "PathResult",
+      "type": "object"
+    },
+    "Relation": {
+      "enum": [
+        "CONTAINS",
+        "MENTIONS",
+        "DEFINES",
+        "DESCRIBES",
+        "DERIVES_FROM",
+        "MATHEMATICALLY_DERIVES_FROM",
+        "DEPENDS_ON",
+        "PREREQUISITE_OF",
+        "USES",
+        "APPLIES",
+        "IMPLEMENTS",
+        "ASSUMES",
+        "APPROXIMATES",
+        "EXPLAINS",
+        "CAUSES",
+        "AFFECTS",
+        "MEASURES",
+        "MEASURED_BY",
+        "SIMULATES",
+        "SIMULATED_BY",
+        "VALIDATES",
+        "VALIDATED_BY",
+        "SUPPORTS",
+        "SUPPORTED_BY",
+        "CONTRADICTS",
+        "COMPARES_WITH",
+        "EXTENDS",
+        "IMPROVES",
+        "MOTIVATES",
+        "ADDRESSES",
+        "SOLVES",
+        "PRODUCES",
+        "RESULTS_IN",
+        "CITES",
+        "CITED_BY",
+        "EVIDENCE_FOR",
+        "PART_OF"
+      ],
+      "title": "Relation",
+      "type": "string"
+    },
+    "ReviewScope": {
+      "enum": [
+        "SOURCE_ATTRIBUTION",
+        "SCIENTIFIC_VALIDITY"
+      ],
+      "title": "ReviewScope",
+      "type": "string"
+    },
+    "ScientificStatement": {
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "epistemic_status": {
+          "$ref": "#/$defs/EpistemicStatus"
+        },
+        "anchor_ids": {
+          "items": {
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Anchor Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "text",
+        "epistemic_status",
+        "anchor_ids"
+      ],
+      "title": "ScientificStatement",
+      "type": "object"
+    },
+    "ScientificSymbol": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "title": "Symbol",
+          "type": "string"
+        },
+        "definition": {
+          "$ref": "#/$defs/ScientificStatement"
+        }
+      },
+      "required": [
+        "symbol",
+        "definition"
+      ],
+      "title": "ScientificSymbol",
+      "type": "object"
+    },
+    "SearchHit": {
+      "additionalProperties": false,
+      "properties": {
+        "node_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Node Id"
+        },
+        "anchor_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Anchor Id",
+          "type": "string"
+        },
+        "page_number": {
+          "title": "Page Number",
+          "type": "integer"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "kind": {
+          "title": "Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "node_id",
+        "anchor_id",
+        "page_number",
+        "text",
+        "kind"
+      ],
+      "title": "SearchHit",
+      "type": "object"
+    },
+    "Span": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "anchor_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Anchor Id",
+          "type": "string"
+        },
+        "paper_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "title": "Paper Id",
+          "type": "string"
+        },
+        "page_number": {
+          "title": "Page Number",
+          "type": "integer"
+        },
+        "reading_order": {
+          "title": "Reading Order",
+          "type": "integer"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "bbox": {
+          "maxItems": 4,
+          "minItems": 4,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Bbox",
+          "type": "array"
+        },
+        "kind": {
+          "enum": [
+            "paragraph",
+            "heading"
+          ],
+          "title": "Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "anchor_id",
+        "paper_id",
+        "page_number",
+        "reading_order",
+        "text",
+        "bbox",
+        "kind"
+      ],
+      "title": "Span",
+      "type": "object"
+    },
+    "UploadResult": {
+      "additionalProperties": false,
+      "properties": {
+        "paper": {
+          "$ref": "#/$defs/Paper"
+        },
+        "job": {
+          "$ref": "#/$defs/Job"
+        },
+        "deduplicated": {
+          "title": "Deduplicated",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "paper",
+        "job",
+        "deduplicated"
+      ],
+      "title": "UploadResult",
+      "type": "object"
+    },
+    "Verification": {
+      "additionalProperties": false,
+      "properties": {
+        "decision": {
+          "enum": [
+            "VERIFIED",
+            "REJECTED",
+            "DISPUTED"
+          ],
+          "title": "Decision",
+          "type": "string"
+        },
+        "reviewer": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Reviewer",
+          "type": "string"
+        },
+        "reason": {
+          "maxLength": 5000,
+          "minLength": 10,
+          "title": "Reason",
+          "type": "string"
+        },
+        "source_hash": {
+          "title": "Source Hash",
+          "type": "string"
+        },
+        "expected_version": {
+          "minimum": 1,
+          "title": "Expected Version",
+          "type": "integer"
+        },
+        "scope": {
+          "$ref": "#/$defs/ReviewScope",
+          "default": "SOURCE_ATTRIBUTION"
+        },
+        "scientific_basis": {
+          "anyOf": [
+            {
+              "maxLength": 10000,
+              "minLength": 20,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Scientific Basis"
+        }
+      },
+      "required": [
+        "decision",
+        "reviewer",
+        "reason",
+        "source_hash",
+        "expected_version"
+      ],
+      "title": "Verification",
+      "type": "object"
+    },
+    "VerificationStatus": {
+      "enum": [
+        "CANDIDATE",
+        "SUPPORTED",
+        "VERIFIED",
+        "DISPUTED",
+        "REJECTED",
+        "STALE"
+      ],
+      "title": "VerificationStatus",
+      "type": "string"
+    }
+  },
+  "title": "PaperGraph contracts"
+}

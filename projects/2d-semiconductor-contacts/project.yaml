@@ -1,0 +1,302 @@
+slug: 2d-semiconductor-contacts
+title: 二维半导体接触
+stage: reading
+current_claim: null
+next_action: 全局分析已验收；确认是否继续逐节精读或TLM源数据复核
+created_at: '2026-10-01T14:22:50.931159+00:00'
+zotero:
+  collections: []
+  category_map: {}
+  tag_filter: []
+  ignore_tags: []
+reproduction:
+  profile: generic
+  private_extension: TODO(user)
+  extension_data: {}
+id: project:2d-semiconductor-contacts
+type: project
+links: []
+id_aliases:
+  project.yaml: project:2d-semiconductor-contacts
+  research-profile.yaml: artifact:2d-semiconductor-contacts:research-profile
+  10_literature/papers/liApproachingQuantumLimit2023/01_source/paper-reading.txt: artifact:cabab740ed4ff58ac963b8ce
+  10_literature/papers/liApproachingQuantumLimit2023/01_source/paper.txt: artifact:f86528ec5d6618a47b8569c3
+  10_literature/papers/liApproachingQuantumLimit2023/01_source/source-links.yaml: artifact:liApproachingQuantumLimit2023:source-links
+  10_literature/papers/liApproachingQuantumLimit2023/02_translation/translation.md: translation:liApproachingQuantumLimit2023
+  10_literature/papers/liApproachingQuantumLimit2023/03_reading/reading.md: reading:liApproachingQuantumLimit2023
+  10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml: analysis:liApproachingQuantumLimit2023
+  10_literature/papers/liApproachingQuantumLimit2023/meta.yaml: paper:liApproachingQuantumLimit2023
+  citekey:liApproachingQuantumLimit2023: paper:liApproachingQuantumLimit2023
+  liApproachingQuantumLimit2023: paper:liApproachingQuantumLimit2023
+  project.yaml#artifact_registry[0]: topic:光电异构集成技术
+  project.yaml#artifact_registry[1]: topic:label-0d95f34f0ea64e36
+  project.yaml#artifact_registry[2]: topic:zotero-user-19655702-collection-GT4PHIF4
+  project.yaml#artifact_registry[3]: topic:zotero-user-19655702-tag-unread-0d95f34f
+  zotero:IA2ZTFPU: paper:liApproachingQuantumLimit2023
+  zotero:user:19655702:IA2ZTFPU: paper:liApproachingQuantumLimit2023
+  10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-mechanism.md: artifact:ab40bde02bcd7e986926ea55
+  10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-methods.md: artifact:a023ada73585fa7b58f1e55d
+  10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-results.md: artifact:7090f67aecd585de8f4fc0f2
+  project.yaml#artifact_registry[6]: topic:二维半导体接触
+  .runs/sb-contact-first-pass/task.yaml: task:sb-contact-first-pass
+  .runs/sb-contact-first-pass/attempts/1/result.yaml: attempt:sb-contact-first-pass:1
+  .runs/sb-contact-first-pass/attempts/1/drafts/1.md: artifact:sb-contact-first-pass:attempt-1-1
+  .runs/sb-contact-first-pass/attempts/1/drafts/2.yaml: artifact:sb-contact-first-pass:attempt-1-2
+  10_literature/concepts/quantum-contact-limit.md: concept:quantum-contact-limit
+  10_literature/concepts/interface-band-hybridization.md: concept:interface-band-hybridization
+  10_literature/concepts/transfer-length-method.md: concept:transfer-length-method
+  10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml#formulas[0]: formula:liApproachingQuantumLimit2023:eq-1
+  10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml#formulas[1]: formula:liApproachingQuantumLimit2023:intrinsic-delay
+  .runs/sb-concept-quantum-contact-limit/task.yaml: task:sb-concept-quantum-contact-limit
+  .runs/sb-concept-quantum-contact-limit/attempts/1/result.yaml: attempt:sb-concept-quantum-contact-limit:1
+  .runs/sb-concept-quantum-contact-limit/attempts/1/drafts/1.md: artifact:sb-concept-quantum-contact-limit:attempt-1-1
+  .runs/sb-concept-quantum-contact-limit/attempts/1/drafts/2.yaml: artifact:sb-concept-quantum-contact-limit:attempt-1-2
+  .runs/sb-concept-quantum-contact-limit/attempts/2/result.yaml: attempt:sb-concept-quantum-contact-limit:2
+  .runs/sb-concept-quantum-contact-limit/attempts/2/drafts/1.md: artifact:sb-concept-quantum-contact-limit:attempt-2-1
+  .runs/sb-concept-quantum-contact-limit/attempts/2/drafts/2.yaml: artifact:sb-concept-quantum-contact-limit:attempt-2-2
+  .runs/sb-concept-interface-band-hybridization/task.yaml: task:sb-concept-interface-band-hybridization
+  .runs/sb-concept-interface-band-hybridization/attempts/1/result.yaml: attempt:sb-concept-interface-band-hybridization:1
+  .runs/sb-concept-interface-band-hybridization/attempts/1/drafts/1.md: artifact:sb-concept-interface-band-hybridization:attempt-1-1
+  .runs/sb-concept-interface-band-hybridization/attempts/1/drafts/2.yaml: artifact:sb-concept-interface-band-hybridization:attempt-1-2
+  .runs/sb-concept-transfer-length-method/task.yaml: task:sb-concept-transfer-length-method
+  .runs/sb-concept-transfer-length-method/attempts/1/result.yaml: attempt:sb-concept-transfer-length-method:1
+  .runs/sb-concept-transfer-length-method/attempts/1/drafts/1.md: artifact:sb-concept-transfer-length-method:attempt-1-1
+  .runs/sb-concept-transfer-length-method/attempts/1/drafts/2.yaml: artifact:sb-concept-transfer-length-method:attempt-1-2
+  .runs/sb-contact-analysis-verification/task.yaml: task:sb-contact-analysis-verification
+  .runs/sb-contact-analysis-verification/attempts/1/result.yaml: attempt:sb-contact-analysis-verification:1
+  .runs/sb-contact-analysis-verification/attempts/1/drafts/1.md: artifact:sb-contact-analysis-verification:attempt-1-1
+  30_outputs/antimony-contact-analysis.md: artifact:sb-contact-analysis-verification:verification
+  .runs/sb-formula-field-repair/task.yaml: task:sb-formula-field-repair
+  .runs/sb-formula-field-repair/attempts/1/result.yaml: attempt:sb-formula-field-repair:1
+  .runs/sb-formula-field-repair/attempts/1/drafts/1.yaml: artifact:sb-formula-field-repair:attempt-1-1
+artifact_registry:
+- id: topic:光电异构集成技术
+  type: topic
+  path: project.yaml
+  label: 光电异构集成技术
+  links: []
+- id: topic:label-0d95f34f0ea64e36
+  type: topic
+  path: project.yaml
+  label: /unread
+  links: []
+- id: topic:zotero-user-19655702-collection-GT4PHIF4
+  type: topic
+  path: project.yaml
+  label: zotero-user-19655702-collection-GT4PHIF4
+  links: []
+- id: topic:zotero-user-19655702-tag-unread-0d95f34f
+  type: topic
+  path: project.yaml
+  label: zotero-user-19655702-tag-unread-0d95f34f
+  links: []
+- id: artifact:cabab740ed4ff58ac963b8ce
+  type: source.text
+  path: 10_literature/papers/liApproachingQuantumLimit2023/01_source/paper-reading.txt
+  source_hash: sha256:82c4d0bc61437db4a3a7100fe9c12aaa3b2c73514774204e9d0e4dc554f89c31
+  links: []
+- id: artifact:f86528ec5d6618a47b8569c3
+  type: source.text
+  path: 10_literature/papers/liApproachingQuantumLimit2023/01_source/paper.txt
+  source_hash: sha256:e6f8a2a61307df289344c5c170775bb9faa28428638eb807f33676d5f676feed
+  links: []
+- id: topic:二维半导体接触
+  type: topic
+  path: project.yaml
+  label: 二维半导体接触
+  links: []
+- id: artifact:ab40bde02bcd7e986926ea55
+  type: source.text
+  path: 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-mechanism.md
+  source_hash: sha256:cadcdb90676746cd7b803a9ac0dad12a8b2ac70b5a480c49dcfa4f0a0346696e
+  links: []
+- id: artifact:a023ada73585fa7b58f1e55d
+  type: source.text
+  path: 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-methods.md
+  source_hash: sha256:d689fe1afd95a3ca54a7323053b8c842843d1af4e92c8eb1d96a39f2f6ce636f
+  links: []
+- id: artifact:7090f67aecd585de8f4fc0f2
+  type: source.text
+  path: 10_literature/papers/liApproachingQuantumLimit2023/01_source/evidence-results.md
+  source_hash: sha256:4bd3f576210cd3d1b58f3617a9a1243bd5dcf50f440f3f0f120ab6ae63bd259a
+  links: []
+- id: artifact:sb-contact-first-pass:attempt-1-1
+  type: artifact
+  path: .runs/sb-contact-first-pass/attempts/1/drafts/1.md
+  links:
+  - rel: generated-from
+    target: attempt:sb-contact-first-pass:1
+    evidence:
+    - file: .runs/sb-contact-first-pass/attempts/1/result.yaml
+      field: summary
+    confidence: high
+    status: candidate
+  anchor: null
+  contract_type: paper.reading
+- id: artifact:sb-contact-first-pass:attempt-1-2
+  type: artifact
+  path: .runs/sb-contact-first-pass/attempts/1/drafts/2.yaml
+  links:
+  - rel: generated-from
+    target: attempt:sb-contact-first-pass:1
+    evidence:
+    - file: .runs/sb-contact-first-pass/attempts/1/result.yaml
+      field: summary
+    confidence: high
+    status: candidate
+  anchor: null
+  contract_type: paper.analysis
+- id: reading:liApproachingQuantumLimit2023
+  type: reading
+  path: 10_literature/papers/liApproachingQuantumLimit2023/03_reading/reading.md
+  contract_type: paper.reading
+- id: analysis:liApproachingQuantumLimit2023
+  type: analysis
+  path: 10_literature/papers/liApproachingQuantumLimit2023/04_analysis/analysis.yaml
+  contract_type: paper.analysis
+- id: artifact:sb-concept-quantum-contact-limit:attempt-1-1
+  type: artifact
+  path: .runs/sb-concept-quantum-contact-limit/attempts/1/drafts/1.md
+  links:
+  - rel: generated-from
+    target: attempt:sb-concept-quantum-contact-limit:1
+    evidence:
+    - file: .runs/sb-concept-quantum-contact-limit/attempts/1/result.yaml
+      field: summary
+    confidence: high
+    status: candidate
+  anchor: null
+  contract_type: concept
+- id: artifact:sb-concept-quantum-contact-limit:attempt-1-2
+  type: artifact
+  path: .runs/sb-concept-quantum-contact-limit/attempts/1/drafts/2.yaml
+  links:
+  - rel: generated-from
+    target: attempt:sb-concept-quantum-contact-limit:1
+    evidence:
+    - file: .runs/sb-concept-quantum-contact-limit/attempts/1/result.yaml
+      field: summary
+    confidence: high
+    status: candidate
+  anchor: null
+  contract_type: paper.analysis
+- id: artifact:sb-concept-quantum-contact-limit:attempt-2-1
+  type: artifact
+  path: .runs/sb-concept-quantum-contact-limit/attempts/2/drafts/1.md
+  links:
+  - rel: generated-from
+    target: attempt:sb-concept-quantum-contact-limit:2
+    evidence:
+    - file: .runs/sb-concept-quantum-contact-limit/attempts/2/result.yaml
+      field: summary
+    confidence: high
+    status: candidate
+  anchor: null
+  contract_type: concept
+- id: artifact:sb-concept-quantum-contact-limit:attempt-2-2
+  type: artifact
+  path: .runs/sb-concept-quantum-contact-limit/attempts/2/drafts/2.yaml
+  links:
+  - rel: generated-from
+    target: attempt:sb-concept-quantum-contact-limit:2
+    evidence:
+    - file: .runs/sb-concept-quantum-contact-limit/attempts/2/result.yaml
+      field: summary
+    confidence: high
+    status: candidate
+  anchor: null
+  contract_type: paper.analysis
+- id: concept:quantum-contact-limit
+  type: concept
+  path: 10_literature/concepts/quantum-contact-limit.md
+  contract_type: concept
+- id: artifact:sb-concept-interface-band-hybridization:attempt-1-1
+  type: artifact
+  path: .runs/sb-concept-interface-band-hybridization/attempts/1/drafts/1.md
+  links:
+  - rel: generated-from
+    target: attempt:sb-concept-interface-band-hybridization:1
+    evidence:
+    - file: .runs/sb-concept-interface-band-hybridization/attempts/1/result.yaml
+      field: summary
+    confidence: high
+    status: candidate
+  anchor: null
+  contract_type: concept
+- id: artifact:sb-concept-interface-band-hybridization:attempt-1-2
+  type: artifact
+  path: .runs/sb-concept-interface-band-hybridization/attempts/1/drafts/2.yaml
+  links:
+  - rel: generated-from
+    target: attempt:sb-concept-interface-band-hybridization:1
+    evidence:
+    - file: .runs/sb-concept-interface-band-hybridization/attempts/1/result.yaml
+      field: summary
+    confidence: high
+    status: candidate
+  anchor: null
+  contract_type: paper.analysis
+- id: concept:interface-band-hybridization
+  type: concept
+  path: 10_literature/concepts/interface-band-hybridization.md
+  contract_type: concept
+- id: artifact:sb-concept-transfer-length-method:attempt-1-1
+  type: artifact
+  path: .runs/sb-concept-transfer-length-method/attempts/1/drafts/1.md
+  links:
+  - rel: generated-from
+    target: attempt:sb-concept-transfer-length-method:1
+    evidence:
+    - file: .runs/sb-concept-transfer-length-method/attempts/1/result.yaml
+      field: summary
+    confidence: high
+    status: candidate
+  anchor: null
+  contract_type: concept
+- id: artifact:sb-concept-transfer-length-method:attempt-1-2
+  type: artifact
+  path: .runs/sb-concept-transfer-length-method/attempts/1/drafts/2.yaml
+  links:
+  - rel: generated-from
+    target: attempt:sb-concept-transfer-length-method:1
+    evidence:
+    - file: .runs/sb-concept-transfer-length-method/attempts/1/result.yaml
+      field: summary
+    confidence: high
+    status: candidate
+  anchor: null
+  contract_type: paper.analysis
+- id: concept:transfer-length-method
+  type: concept
+  path: 10_literature/concepts/transfer-length-method.md
+  contract_type: concept
+- id: artifact:sb-contact-analysis-verification:attempt-1-1
+  type: artifact
+  path: .runs/sb-contact-analysis-verification/attempts/1/drafts/1.md
+  links:
+  - rel: generated-from
+    target: attempt:sb-contact-analysis-verification:1
+    evidence:
+    - file: .runs/sb-contact-analysis-verification/attempts/1/result.yaml
+      field: summary
+    confidence: high
+    status: candidate
+  anchor: null
+  contract_type: verification.report
+- id: artifact:sb-contact-analysis-verification:verification
+  type: artifact
+  path: 30_outputs/antimony-contact-analysis.md
+  contract_type: verification.report
+- id: artifact:sb-formula-field-repair:attempt-1-1
+  type: artifact
+  path: .runs/sb-formula-field-repair/attempts/1/drafts/1.yaml
+  links:
+  - rel: generated-from
+    target: attempt:sb-formula-field-repair:1
+    evidence:
+    - file: .runs/sb-formula-field-repair/attempts/1/result.yaml
+      field: summary
+    confidence: high
+    status: candidate
+  anchor: null
+  contract_type: paper.analysis

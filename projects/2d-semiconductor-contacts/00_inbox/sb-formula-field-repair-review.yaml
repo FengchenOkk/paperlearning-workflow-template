@@ -1,0 +1,22 @@
+task_id: sb-formula-field-repair
+attempt: 1
+reviewer: main
+decision: accept
+passed_criteria:
+- stable_formula_ids
+- source_refs
+- symbols_and_dimensions
+- assumptions_and_boundaries
+- derivation_uncertainty_explicit
+failed_criteria: []
+issues: []
+required_changes: []
+evidence_checks:
+- ref:
+    id: artifact:ab40bde02bcd7e986926ea55
+    type: source.text
+    hash: sha256:cadcdb90676746cd7b803a9ac0dad12a8b2ac70b5a480c49dcfa4f0a0346696e
+  status: verified
+  detail: 对照原PDF式(1)和已核验门延迟式；量纲、假设、读者核算标签保持；仅confidence格式修复，不改推导或结论。
+next_action: 应用修正并重查结构
+reason: 当前主模型实际检查修正前后；0.95表达公式转录/解释核对可信度，不是实验结论统计概率。

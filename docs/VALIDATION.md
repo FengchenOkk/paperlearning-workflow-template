@@ -1,0 +1,24 @@
+# Validation record
+
+2026-10-05, Windows / Python 3.13 / Node 24 / Chromium. Updated after architectural audit. No user research content was used as a fixture. Results prove local engineering invariants, not overall scientific correctness.
+
+## Reproducible checks
+
+1. Prior pass: `python -m unittest discover -s tests`: 208 original tests passed in isolated projects. Legacy code was unchanged and was not rerun in this audit.
+2. From backend: `ruff check .`, `ruff format --check .`, `mypy papergraph --no-incremental`, `pytest -q`: **26 tests passed**, strict types clean in 17 modules. On this Windows host, the final pytest invocation used `-p no:cacheprovider --basetemp=../.runtime/audit-tests-20261005-04 --tb=short` to avoid an unrelated shared Temp ACL failure. Use a fresh temporary test directory for reruns.
+3. From frontend: lint, format check, strict typecheck, **five component/coordinate/scientific-status tests**, and production build passed.
+4. `python evals/download_fixture.py` then from backend `python scripts/run_e2e.py`: real public-paper browser journey passed against fresh migrated SQLite and content-addressed storage. Test server/worker stop after each run. Screenshots/logs are ignored under `test-results/`.
+5. `docker compose config --quiet`: configuration valid. Docker engine unavailable, so no container build or PostgreSQL runtime verification is claimed.
+6. `python -m scripts.export_contracts --check` (backend), `node scripts/generate-contracts.mjs --check` (frontend): generated contract consistency passed. Generation now compiles once, avoiding conflicting field aliases. CI definitions include these checks; hosted CI has not been executed locally.
+7. `alembic upgrade head` then `alembic check` on isolated SQLite: no schema drift. A populated v1 preservation test confirms old graph/source/job/review values survive the additive migration. Missing old review scope/fingerprint is flagged, never fabricated. Empty local app DB was backed up under ignored `.runtime/backups/` before upgrade.
+8. `python scripts/audit_content.py` (backend): path/line/column classification inventory of the public/source surface; no private research/credential content copied. See [audit](CURRENT-IMPLEMENTATION-AUDIT.md) for exclusions.
+
+Golden inputs: [JMLR Dropout](https://jmlr.org/papers/v15/srivastava14a.html), 30 pages, SHA-256 `9c196ccbe6c6a595a1adba6cd030d35f7c2e548bbf5e7f1278b0109d8dd9ebaa`; and [GW150914](https://arxiv.org/abs/1602.03837), 16 pages, SHA-256 `e5e864c23d015b69be17e5b5d51b5b462d2829353a867513414b6728f54589c4`. Download with `python evals/download_fixture.py` / `python evals/download_fixture.py gw150914`. URL/hash/license and source gold live in manifests; PDFs remain ignored. The GW first page was visually inspected, including title, observed signal wording and introduction heading. Source attribution and figure captions pass the same generic parser/extractor/DB graph flow; no scientific outcomes or relationships are preloaded. Node counts do not measure quality.
+
+Assertions cover parsing/storage/restart/deduplication, original source PNGs, spans/offsets/ownership/geometry/hash, failures/bounds/jobs, ontology rejection, real first-class subtypes, original-vs-AI meaning, rejected evidence-channel conflation, text blocks rejected as figure image evidence, missing provenance/subtypes, orphan/duplicate candidates, invalid review references, mixed prerequisite directions, rejected reactivation into cycles, scoped reviews/current fingerprints and verified-path endpoint checks. Browser checks cover actual canvas rendering plus keyboard node selection, source inspection/highlight visible inside the PDF viewport, reverse linking, refresh, search, empty learning projection, themes and mobile layout. Integrity report is checked against the real parsed paper. Pixel-coordinate graph-node hit testing is not automated.
+
+## Scientific assessment limits
+
+Candidate evidence coverage is checked for stored extracted nodes; attribution proves where wording comes from, not whether a scientific claim is correct. No claim-evidence support evaluation, prerequisite correctness, innovation novelty, equation derivation, figure interpretation or translation evaluation was performed. No scientific objects were marked VERIFIED in the delivered workspace. Verification actions in isolated tests are explicitly labeled test audit actions.
+
+The old workspace's original files, untracked research and local profiles were outside implementation writes. No original paper was overwritten or automatically migrated. V0 state is not duplicated in the application database. Public fixture files, downloaded dependencies, databases, browser screenshots and build outputs are ignored; source, migrations, generated contracts and the npm lockfile are deliverables.

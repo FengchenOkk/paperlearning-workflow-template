@@ -1,5 +1,19 @@
 # 路线图
 
+## PaperGraph 产品转向（2026-10-05）
+
+以新的科研论文分析平台 prompt 为产品规格；历史研究项目与本地配置保留，新应用的 canonical graph 在数据库中。实施与验收状态见 [IMPLEMENTATION_STATUS](docs/IMPLEMENTATION_STATUS.md)，不以历史 CLI 完成记录代表新产品完成。
+
+- [x] 仓库审计、领域架构、科学 ontology、证据/不确定性规则。
+- [x] PDF → 数据库 → 候选科学图谱 → 证据 → 原文页面与真实 bbox 的首个本地链路。
+- [ ] FIRST PRINCIPLE → PAPER CONTRIBUTION：受控递归前置分解、外部来源与真实科学核验。
+- [ ] 公式/图表智能、论证支持度评价、创新路径、逐段翻译与有引用问答。
+- [ ] PostgreSQL/Docker 实际部署核验、身份权限与解析器隔离。
+- [ ] TODO(user)：公开或商业发布前确认 PyMuPDF AGPL/商业许可及产品发布方式。
+- [ ] TODO(user)：外部 AI 与学术检索阶段确定资料传输范围、提供商和成本预算；本轮未调用模型或上传研究资料。
+
+以下为 V0 工作流历史。
+
 ## 通篇理解与基础学习升级（2026-10-01）
 
 - [x] LIT-006：每篇论文按需添加 `06_synthesis/summary.md` 与 `concept-guide.md`，分别提供连贯通篇讲解及从底层原理到器件/指标的学习路径；原文、译文、精读、分析和全局概念卡相互链接，进度仍只写 meta。

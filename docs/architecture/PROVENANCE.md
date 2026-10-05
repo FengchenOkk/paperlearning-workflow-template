@@ -1,0 +1,9 @@
+# Evidence and verification
+
+SourceAnchor identifies paper, PDF page (one-based), span, character range, real bounding box, exact text and SHA-256 source hash. The source layer preserves extraction output and parser version; it is not an explanation. Every extracted scientific candidate has evidence connecting it to an exact source anchor.
+
+PAPER_EXPLICIT means literal source content. AUTHOR_CLAIM is an attributed sentence, not accepted truth. AI_INTERPRETATION and AI_DERIVATION are separate from paper evidence. No provider calls occur in the first slice. Candidate extraction never sets VERIFIED. Structural containment can be SUPPORTED without claiming scientific validity.
+
+Verification requires a deliberate human action, reviewer identity, reason, current source hash and object version. SOURCE_ATTRIBUTION verifies wording/location; SCIENTIFIC_VALIDITY requires a separate evidence assessment. Attribution cannot verify an edge. Reviews bind source/object/subtype fingerprints; API computes review_current. Stale or unscoped old records remain preserved and flagged, without invented re-signing. Verified paths require current scientific reviews on every node/edge and no normalized prerequisite cycles. Local reviewer identity is not authenticated; these are recorded judgments, not independent scientific endorsements.
+
+Shared validation checks exact ranges/text, page/span ownership, finite geometry within the unrotated page and source hash. Source reads, search, reverse links and reviews validate original PDF bytes. Links use the same anchor IDs. Precision is TEXT_BLOCK: source highlighting does not claim exact glyph, formula or image-region boundaries. Figure visual evidence requires a future image-region parser contract; text blocks cannot establish it. Structural integrity reports explicitly leave scientific validity NOT_ASSESSED.

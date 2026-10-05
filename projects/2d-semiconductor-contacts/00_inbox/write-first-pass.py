@@ -1,0 +1,113 @@
+exec((__import__('pathlib').Path(__file__).parent/'prepare-analysis.py').read_text(encoding='utf-8').split('for name,ranges')[0])
+import yaml
+from datetime import datetime,timezone
+now=datetime.now(timezone.utc).isoformat()
+S=f'{B}/01_source'
+prov={'generated_by':'current-codex-session/manual-handoff','model_role':'literature-reader','prompt_version':'sb-contact-first-pass-v1','source_refs':[f'{S}/evidence-mechanism.md',f'{S}/evidence-results.md',f'{S}/evidence-methods.md'],'created_at':now}
+body=r'''# 论文分析：晶面工程如何改善二维半导体接触
+
+## 1. 全局定位
+
+这篇论文研究的是电极向单层 MoS₂ 注入电子的效率。二维沟道足够薄，并不保证晶体管足够快：电流必须先跨过电极与半导体的界面。肖特基势垒、范德华间隙带来的隧穿障碍，以及波函数耦合不足，都会使接触电阻成为短沟道器件的瓶颈。[原文 p.274，式(1)，p.275 引言]
+
+作者提出以半金属 Sb 的 (01\bar{1}2) 晶面接触 MoS₂，使费米能级附近出现跨界面的杂化电子态，并增强接触区电荷转移。这是“材料选择＋晶面与界面工程”的实验研究；它推进的是低电阻注入，而非证明二维晶体管已具备完整替代硅 CMOS 的制造条件。[p.276，Fig.1；p.277–279，Fig.3–5]
+
+前置知识：费米能级与能带对齐、肖特基势垒、范德华界面与隧穿、轨道杂化、二维载流子浓度、Landauer 量子输运、TLM 测量、场效应晶体管与自热。重要概念的结构化记录见 analysis.yaml；全局卡由知识任务维护。
+
+## 2. 论文地图与逻辑链
+
+Fig.1：比较两种 Sb 晶面的计算能带与电荷，提出改善注入的机制 → Fig.2：用衍射与显微表征验证制备出的晶面和界面 → Fig.3：用 TLM、温度依赖及对照样本验证接触改善 → Fig.4：展示短沟道电流及性能基准 → Fig.5：检查阵列器件的离散性。正文 p.274–279；Methods 给出制备、测量及 DFT 条件。
+
+这个链条的优点是同一种接触材料内部比较晶面，减弱了“更换材料同时改变很多因素”的解释歧义。但沉积温度变化仍可能同时改变界面洁净度或微结构，故电学差异不能单独定量证明轨道杂化贡献。[读者推断；依据 p.276 的生长条件与 p.278 的对照实验]
+
+## 3. 逐节精读
+
+本轮为全局预读与关键证据分析，不宣称逐节精读完成。原文 Methods 和关键结果已抽查；补充材料全文及所有扩展数据未逐项审核。TODO(user)：如需完整精读，后续按章节建立任务。
+
+## 4. 方法与公式
+
+原文式(1)：
+
+$$R_{c,\min}=\frac{h}{2q^2}\sqrt{\frac{\pi}{2n_{2D}}}.$$
+
+这里的接触电阻按宽度归一化，单位是 Ω·μm，并非 Ω 或 Ω·μm²。h 为普朗克常数，q 为元电荷，n₂D 为面载流子浓度。理想输运通道数量仍然有限，即使没有额外界面散射，接触也存在非零量子下限；该式以原文的通道计数约定为前提，不能不加修改地用于所有多谷材料。
+
+代入 n₂D=3×10¹³ cm⁻²=3×10¹⁷ m⁻²，可得约 29.5 Ω·μm。最低实测 42 Ω·μm 是该值的 1.42 倍。这是按论文公式计算的读者核算，支持其“接近”而非达到量子极限。提高浓度本身也会降低下限，因此必须在相同 n₂D 下比较。[p.274 式(1)，p.277 Fig.3b，p.278 Fig.4d]
+
+TLM 的解释模型为 Rtot·W=Rsh·L+2Rc，纵截距为两端接触电阻之和。原文把沟道长度记作 Lc；不要误认为它是接触长度。在线性、两端近似对称且沟道片电阻均匀的条件下，斜率给出片电阻，截距的一半给出单端宽度归一化接触电阻。这是对测量方法的解释式，并非论文编号公式。截距很小时，线性拟合偏差与短沟道修正尤其重要。[Fig.3b 图注，Extended Data Fig.5 图注]
+
+作者进一步用 τ=CVds/Ion 估算本征门延迟。C 是门电容；若电流按宽度归一化，C 也须采用同样宽度口径。这个估算量不含完整互连、负载与寄生开销，74 fs 不能当成实测数字电路的传播延迟。[p.279，Fig.4f]
+
+## 5. 实验设计与结果
+
+**机制：计算支持。** Sb (01\bar{1}2) 的表面原子排列增强垂直方向 Sb pz 与 Mo d 轨道的重叠；计算中包含 MoS₂ 成分的杂化能带穿过 EF，接触区 MoS₂ 导带底约降至 EF 下方 0.4 eV，形成简并电子掺杂。相比之下，Sb (0001) 在 EF 附近主要体现 Sb 轨道贡献。[p.276，Fig.1a–g]
+
+更强的范德华作用与更薄的有效隧穿势垒共同有利于注入；论文计算的势垒宽度分别是 1.35 Å 与 1.39 Å。注意：这两个数不是 STEM 测得的几何间距约 0.285 nm。几何间距、有效势垒宽度、肖特基势垒高度是三个不同量。[p.276；p.277；Extended Data Fig.1c,d]
+
+**结构：实验支持。** 蒸镀时将基底温度提高到约 100 °C，Sb 由室温生长偏好的 (0001) 取向转向目标晶面；XRD 与截面 HAADF-STEM 支持取向和界面结构。XPS 未发现 Sb–S 化学键形成的证据，说明改善不是简单地把范德华接触改成共价接触。制程使用 20 nm Sb / 30 nm Au 电极，无需器件完成后退火。[p.276–277，Fig.2；Methods]
+
+| 结果 | 条件与证据 | 应怎样理解 |
+|---|---|---|
+| 最低 Rc=42 Ω·μm | n₂D=3×10¹³ cm⁻²；TLM；Fig.3b | 最佳值，不是批量平均 |
+| LT=5.1 nm | 同一 TLM 提取；Fig.3b 图注 | 接触内外片电阻相同的假设可能失效，作者明确提示不确定性 |
+| 平均 Rc=209±100 Ω·μm | 115 个目标取向、41 个室温取向 TLM；Fig.3d | 目标晶面平均约改善 3.47 倍，仍存在明显分散 |
+| Rc 对温度不敏感 | 50–400 K；Fig.3c | 与隧穿主导注入相容；结合低温线性输出、约 −10 meV 势垒提取增强欧姆接触判断 |
+| 热稳定性 | 125 °C、氮气、24 h；Extended Data Fig.7 | Sb 无明显退化，Bi 对照 Ion 降 41%；不能外推到长期空气环境 |
+| Ion=1.23 mA/μm | 约20 nm沟道，Vds=1 V，直流；Fig.4b,c | 对应器件数据，不与最佳 Rc 自动配对 |
+| Ion=1.44 / 1.54 mA/μm | 160 ns 脉冲，Vds=1 / 1.5 V | 两个偏压的结果应分开报告 |
+| 开关比 >10⁸；SS≈180 mV/dec | 代表性约20 nm器件；p.278 | 大电流与高开关比并不等于接近理想亚阈值摆幅 |
+| 本征延迟约74 fs | 约20 nm器件；τ估算；Fig.4f | 不是电路时域实测 |
+| 阵列统计573个FET | 96组TLM，沟道0.1–1.5 μm；Fig.5 | 展示统计一致性，但不是573个20 nm晶体管 |
+
+## 6. 前因后果与代表文献
+
+本文定位在“降低肖特基势垒后，如何进一步跨过范德华间隙所造成的注入瓶颈”。相较仅讨论金属功函数或势垒高度，它强调 EF 附近跨界面态的耦合与晶面控制。[p.274–276]
+
+所用受控原文片段提及 Bi 接触的前期记录，但不含完整代表文献全文。本轮没有核验前期工作的实验细节，也没有检索课题组近期论文。TODO(user)：若需要发展脉络，单独建立代表文献核验任务，不能把本文引用的数字视为已独立复核。
+
+## 7. 局限性与边界条件
+
+1. 42 Ω·μm 出现在高载流子浓度下，低密度和接近关断态的注入不应沿用此值。
+2. LT 的提取隐含接触区与沟道片电阻一致，而电荷转移会改变接触区，作者已在 Fig.3 图注注明。
+3. 高直流功率造成明显自热；通道峰值温升 630±150 K 是有限元模拟预测，不是直接测温。界面热阻未知导致大不确定性。[p.278]
+4. 125 °C/24 h/氮气是限定稳定性证据，尚不等于长期寿命、空气稳定或完整后端制程兼容验证。
+5. 5 nm沟道下20 fs及3.6 fs是模型外推，其中3.6 fs采用最佳Rc；并非已制造5 nm器件的测量结果。[p.279]
+6. 与硅比较主要涉及选定器件电流和本征延迟；阈值、电源、关断电流、寄生与集成条件需要统一后才可评价完整技术优劣。
+7. 其他TMD的计算与WSe₂扩展提示适用潜力，但不足以证明所有材料、电子与空穴注入都同样接近量子极限。
+
+## 8. 与当前研究方向的关系
+
+对“二维半导体接触”项目，最值得保留的是比较不同晶面时同时检查电子态、界面结构、同密度Rc及器件离散性的研究框架。可形成候选问题：在控制清洁度与材料质量后，晶面比例如何影响Rc分布？电学最佳接触是否同时具有良好的散热能力？这些是读者推断，尚无本项目实验结果。
+
+## 9. 复现线索
+
+Methods提供CVD/转移、电子束蒸镀、XRD/STEM/XPS、变温电学和VASP计算条件。无资源画像不能认定实验可执行。当前未运行DFT、制备、训练或测量，也未下载和独立分析Source data。可先复核式(1)与TLM拟合，正式复现应另建claim并评估设备、原始数据与预算。
+
+## 10. 待验证问题
+
+TODO(user)：取得补充材料与Source data，复算TLM截距置信区间、逐器件浓度口径和短沟道偏差；核对晶面纯度与界面清洁度的贡献；评估长时间/空气/偏压老化；检查与硅基准的完整归一化条件。用户决策集中记录于项目ROADMAP.md。
+
+## 11. 证据与来源索引
+
+原件：Zotero条目IA2ZTFPU，附件RVSJ6EJH，DOI 10.1038/s41586-022-05431-4；保留原件未修改。
+
+- evidence-mechanism.md：原文抽取行42–66、306–318、636–710及视觉核对式(1)；对应p.274–276。
+- evidence-results.md：抽取行938–973、1108–1208、621–632；对应p.276–279、Fig.3图注。
+- evidence-methods.md：抽取行1366–1449，Methods制备/测量/计算。
+- 原PDF p.274式(1)、p.276 Fig.3、p.277 Fig.4、p.278 Fig.5已视觉抽查；全部正文与图内数字仍以原PDF为准。
+
+范围：关键原文、方法与图表分析；不是全文翻译、全补充材料审核、独立实验复现或系统文献综述。
+'''
+reading='---\n'+yaml.safe_dump(dict(prov,id=f'reading:{K}',type='reading',paper_id=f'paper:{K}',links=[]),allow_unicode=True,sort_keys=False)+'---\n\n'+body
+a=wf.load(P/B/'04_analysis/analysis.yaml');a.update(prov)
+a['overview']={'object':'Sb (01\\bar{1}2)–单层MoS2接触及场效应晶体管','core_problem':'同时改善能带对齐与跨范德华间隙注入，降低短沟道接触电阻','why_important':'二维沟道缩放后接触电阻与器件离散性成为主要瓶颈','contributions':['晶面控制与费米能级附近能带杂化的机制','高浓度下42 Ω·μm最低接触电阻与统计对照','短沟道电流、热稳定性与阵列离散性证据'],'position':'晶面工程的接触机制与实验方法论文；非完整CMOS替代验证','prerequisites':['能带与费米能级','肖特基势垒','范德华隧穿','轨道杂化','量子输运','TLM测量','FET与自热']}
+def formula(i,label,latex,name,meaning,symbols,assumptions,src,steps):
+ return dict(id=i,object_id=f'formula:{K}:{i}',label=label,latex=latex,name_zh=name,plain_meaning=meaning,symbols=[dict(symbol=x,meaning=y,type_or_dimension=z) for x,y,z in symbols],assumptions=assumptions,derivation_steps=steps,intuition=meaning,special_cases=['所有单位与宽度归一化口径必须一致'],related_concepts=[],source_refs=[src],confidence='high')
+a['formulas']=[formula('eq-1','原文式(1)',r'R_{c,\min}=\frac{h}{2q^2}\sqrt{\frac{\pi}{2n_{2D}}}','二维接触量子下限','模式数有限导致理想接触仍有非零下限；浓度增加下限按n^-1/2下降',[('Rc,min','宽度归一化接触电阻','Ω·m'),('h','普朗克常数','J·s'),('q','元电荷','C'),('n2D','面载流子浓度','m^-2')],['理想弹道通道、无额外界面背散射','使用原文的通道计数约定；不同简并结构需重新计算'],f'{S}/evidence-mechanism.md#Visually verified equation (1), PDF p.274',['原文公式视觉核对；不声称补齐原文未给出的推导','n=3e17 m^-2代入，Rc,min=29.5 Ω·μm；42/29.5≈1.42']),formula('intrinsic-delay','正文未编号；p.279',r'\tau=CV_{ds}/I_{on}','本征门延迟估算','由门充电量与导通电流估算本征速度',[('tau','本征延迟','s'),('C','门电容','F'),('Vds','漏源偏压','V'),('Ion','导通电流','A')],['门电容与电流采用一致的总量或宽度归一化口径','不含完整互连、负载与寄生'],f'{S}/evidence-results.md#Original extracted text L1108-1208',['CV给出电荷量，除以电流得到时间；不是电路传播延迟实测'])]
+concepts=[('quantum-contact-limit','有限输运模式的接触下限','used'),('interface-band-hybridization','Sb pz与Mo d轨道重叠，使EF附近出现跨界面电子态','used'),('transfer-length-method','多沟道长度电阻拟合分离接触与沟道；LT提取存在片电阻假设','used')]
+a['concepts']=[dict(id=i,role=r,local_meaning=d,source_refs=[f'{S}/evidence-mechanism.md' if i!='transfer-length-method' else f'{S}/evidence-results.md'],understanding_status='关键原文核对；待知识任务建立全局卡') for i,d,r in concepts]
+a['extraction']={'claims':[{'statement':'目标晶面支持强杂化并改善注入','kind':'作者机制主张','source_refs':[f'{S}/evidence-mechanism.md']},{'statement':'高浓度最低Rc接近量子下限','kind':'实验结果＋原文模型对比','source_refs':[f'{S}/evidence-results.md']}],'method':{'fabrication':'约100 °C基底蒸镀20 nm Sb/30 nm Au；不需器件完成后退火','measurements':['TLM','50–400 K电学','160 ns脉冲','XRD','HAADF-STEM','XPS'],'theory':'VASP 5.4/PBE/DFT-D3；三层半金属与单层TMD，见Methods','source_refs':[f'{S}/evidence-methods.md']},'data':[{'count':156,'unit':'晶面对照TLM；115目标取向与41室温取向'},{'count':573,'unit':'阵列FET，96组TLM，0.1–1.5 μm沟道'}],'baselines':['Sb (0001)晶面对照','Bi稳定性对照；其余前作未独立复核'],'metrics':['Rc','LT','Ion','SS','开关比','本征延迟'],'results':[{'value':'42 Ω·μm','conditions':'最低；n2D=3e13 cm^-2','source_refs':[f'{S}/evidence-results.md']},{'value':'209±100 Ω·μm','conditions':'115个目标晶面TLM统计','source_refs':[f'{S}/evidence-results.md']},{'value':'1.23 mA/μm','conditions':'约20 nm沟道、1 V漏压、直流','source_refs':[f'{S}/evidence-results.md']},{'value':'125 °C/24 h无明显退化','conditions':'氮气；Ion、Vth、SS','source_refs':[f'{S}/evidence-results.md']}],'limitations':['高浓度最佳值非平均','LT片电阻假设可能失效','热稳定性仅24 h氮气','DFT杂化非直接实验测量','本征延迟估算与5 nm外推非电路/器件实测','自热温升是热模拟预测','未逐项核验补充材料与Source data'],'relevance':['晶面–电子态–结构–电学–统计联合论证框架']}
+idx=json.loads((P/'INDEX.json').read_text(encoding='utf-8'))
+evidence=[{'id':idx['aliases'][f'{S}/{n}'],'type':'source.text'} for n in pieces]
+result={'task_id':'sb-contact-first-pass','attempt':1,'status':'submitted','summary':'真实当前Codex会话人工接力草稿：全局定位、关键机制和实验边界；未执行DeepSeek外部API。','created_artifacts':[],'updated_artifacts':[{'id':f'reading:{K}','type':'reading'},{'id':f'analysis:{K}','type':'analysis'}],'evidence':evidence,'unresolved_issues':['补充材料和Source data未独立逐项审核；不影响限定范围的全局定位'],'confidence':'high','self_check':{x:'pass' for x in ['global_position','paper_logic_map','prerequisites_identified','evidence_traceable','no_fabrication']},'execution_actual':{'provider':'current Codex session','mode':'manual-handoff','external_api_executed':False}}
+wf.save(P/'00_inbox/sb-contact-first-pass-result.yaml',{'result':result,'artifacts':[{'id':f'reading:{K}','type':'reading','mode':'replace','content':reading},{'id':f'analysis:{K}','type':'analysis','mode':'replace','content':yaml.safe_dump(a,allow_unicode=True,sort_keys=False)}]})
