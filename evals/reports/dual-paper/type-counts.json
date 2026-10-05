@@ -1,0 +1,37 @@
+{
+  "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e": {
+    "node_types": {
+      "DEFINITION": 1,
+      "DEVICE": 2,
+      "FIGURE": 5,
+      "LIMITATION": 1,
+      "METHOD": 6,
+      "PAPER": 1,
+      "RESEARCH_PROBLEM": 2,
+      "RESULT": 11,
+      "SECTION": 2,
+      "SIMULATION": 2
+    },
+    "edge_types": {
+      "CONTAINS": 32
+    }
+  },
+  "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd": {
+    "node_types": {
+      "ASSUMPTION": 4,
+      "DEFINITION": 2,
+      "EQUATION": 1,
+      "FIGURE": 15,
+      "LIMITATION": 4,
+      "METHOD": 7,
+      "PAPER": 1,
+      "RESEARCH_PROBLEM": 1,
+      "RESULT": 4,
+      "SECTION": 20,
+      "SIMULATION": 1
+    },
+    "edge_types": {
+      "CONTAINS": 59
+    }
+  }
+}

@@ -1,0 +1,677 @@
+{
+  "protocol": "PAPER-GRAPH-EVIDENCE-GATE v1",
+  "frozen_before_scoring": true,
+  "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+  "page_count": 19,
+  "review_origin": "MODEL_SOURCE_REVIEW",
+  "human_review": "PENDING",
+  "scope": "Selected main-article statements only; PDF images checked locally; no scientific-validity acceptance.",
+  "items": [
+    {
+      "id": "b-problem",
+      "type": "RESEARCH_PROBLEM",
+      "page": 1,
+      "section": "Abstract",
+      "components": [
+        {
+          "original_block": 7,
+          "bbox": [
+            217.32009887695312,
+            218.87550354003906,
+            560.9495239257812,
+            502.9736328125
+          ],
+          "text": "The development of next-generation electronics requires scaling of channel \nmaterial thickness down to the two-dimensional limit while maintaining ultralow \ncontact resistance1,2."
+        }
+      ],
+      "number": null,
+      "quantities": [],
+      "epistemic_status": "AUTHOR_CLAIM",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "PAPER_TEXT_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "b-contact-method",
+      "type": "METHOD",
+      "page": 1,
+      "section": "Abstract",
+      "components": [
+        {
+          "original_block": 7,
+          "bbox": [
+            217.32009887695312,
+            218.87550354003906,
+            560.9495239257812,
+            502.9736328125
+          ],
+          "text": "Here we push the electrical contact of monolayer molybdenum \ndisulfide close to the quantum limit by hybridization of energy bands with semi- \nmetallic antimony (0112) through strong van der Waals interactions."
+        }
+      ],
+      "number": null,
+      "quantities": [],
+      "epistemic_status": "AUTHOR_CLAIM",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "PAPER_TEXT_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "b-central-result",
+      "type": "RESULT",
+      "page": 1,
+      "section": "Abstract",
+      "components": [
+        {
+          "original_block": 7,
+          "bbox": [
+            217.32009887695312,
+            218.87550354003906,
+            560.9495239257812,
+            502.9736328125
+          ],
+          "text": "The contacts \nexhibit a low contact resistance of 42 ohm micrometres and excellent stability at \n125 degrees Celsius."
+        }
+      ],
+      "number": null,
+      "quantities": [
+        {
+          "value": "42",
+          "unit": "ohm micrometres",
+          "context": "contact resistance"
+        },
+        {
+          "value": "125",
+          "unit": "degrees Celsius",
+          "context": "stability temperature"
+        }
+      ],
+      "epistemic_status": "AUTHOR_CLAIM",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "PAPER_TEXT_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "b-transistor-result",
+      "type": "RESULT",
+      "page": 1,
+      "section": "Abstract",
+      "components": [
+        {
+          "original_block": 7,
+          "bbox": [
+            217.32009887695312,
+            218.87550354003906,
+            560.9495239257812,
+            502.9736328125
+          ],
+          "text": "Owing to improved contacts, short-channel molybdenum \ndisulfide transistors show current saturation under one-volt drain bias with an \non-state current of 1.23 milliamperes per micrometre, an on/off ratio over 108 and  \nan intrinsic delay of 74 femtoseconds."
+        }
+      ],
+      "number": null,
+      "quantities": [
+        {
+          "value": "1.23",
+          "unit": "milliamperes per micrometre",
+          "context": "on-state current"
+        },
+        {
+          "value": "10^8",
+          "unit": "dimensionless",
+          "context": "on/off ratio lower bound",
+          "representation_warning": "PDF text collapses exponent to 108; plain source quote is ambiguous"
+        },
+        {
+          "value": "74",
+          "unit": "femtoseconds",
+          "context": "intrinsic delay"
+        }
+      ],
+      "epistemic_status": "AUTHOR_CLAIM",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "PAPER_TEXT_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "b-ballistic-assumption",
+      "type": "ASSUMPTION",
+      "page": 1,
+      "section": "Introduction",
+      "components": [
+        {
+          "original_block": 8,
+          "bbox": [
+            39.685001373291016,
+            531.3456420898438,
+            296.2746887207031,
+            584.526123046875
+          ],
+          "text": "In an ideal M–S junction, there is a fundamental quantum limit in the \njunction contact resistance by assuming ballistic transport of the con-\nducting modes:"
+        }
+      ],
+      "number": null,
+      "quantities": [],
+      "epistemic_status": "AUTHOR_CLAIM",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "PAPER_TEXT_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "b-equation-1",
+      "type": "EQUATION",
+      "page": 1,
+      "section": "Introduction",
+      "components": [
+        {
+          "original_block": 9,
+          "bbox": [
+            125.19599914550781,
+            592.1370849609375,
+            162.9974365234375,
+            608.2368774414062
+          ],
+          "text": "R\nh"
+        },
+        {
+          "original_block": 10,
+          "bbox": [
+            146.7942657470703,
+            597.9313354492188,
+            184.8877410888672,
+            614.8609008789062
+          ],
+          "text": "q\nn\n= 2"
+        },
+        {
+          "original_block": 11,
+          "bbox": [
+            130.3800048828125,
+            592.1704711914062,
+            294.445556640625,
+            615.3026733398438
+          ],
+          "text": "π\n2\n,\n(1)\nc,min\n2\n2D"
+        }
+      ],
+      "number": "1",
+      "quantities": [],
+      "epistemic_status": "PAPER_EXPLICIT",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "PAPER_TEXT_EXPLICIT",
+      "visual_inferences": [],
+      "visually_transcribed_expression": "R_c,min = h/(2 q^2) sqrt(pi/(2 n_2D))",
+      "transcription_status": "MODEL_SOURCE_REVIEW; not an automatic LaTeX or algebra interpretation"
+    },
+    {
+      "id": "b-symbol-definitions",
+      "type": "DEFINITION",
+      "page": 1,
+      "section": "Introduction",
+      "components": [
+        {
+          "original_block": 12,
+          "bbox": [
+            39.685001373291016,
+            628.0626220703125,
+            296.3440856933594,
+            659.776123046875
+          ],
+          "text": "where h is Planck’s constant, q is the unit charge and n2D is the carrier \nconcentration in the semiconductor."
+        }
+      ],
+      "number": null,
+      "quantities": [],
+      "epistemic_status": "AUTHOR_CLAIM",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "PAPER_TEXT_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "b-figure-1",
+      "type": "FIGURE",
+      "page": 2,
+      "section": "Results",
+      "components": [
+        {
+          "original_block": 97,
+          "bbox": [
+            39.68220520019531,
+            284.0237121582031,
+            294.2340087890625,
+            352.7767028808594
+          ],
+          "text": "Fig. 1 | Electronic properties of Sb 0112\n(\n)–MoS2 and Sb (0001)–MoS2 contacts \nfrom DFT calculations. a,b, Atomic-projected electronic band structure of Sb \n(0112)–MoS2 (a) and Sb (0001)–MoS2 (b) contacts. The red and blue symbols \nrepresent orbitals from MoS2 and Sb, respectively. The size of the symbols \nrepresents the relative contribution. c,d, The charge density near EF (left) and \nthe differential charge density (right) of Sb (0112) (c) and Sb (0001) (d) contacts \n(red, positive; blue, negative). The blue, green and yellow spheres represent  "
+        },
+        {
+          "original_block": 96,
+          "bbox": [
+            306.13946533203125,
+            283.0007019042969,
+            562.3009643554688,
+            351.6423034667969
+          ],
+          "text": "Sb, Mo and S atoms, respectively. The differential charge density iscalculated \nby subtracting pre-contact three-layer Sb and MoS2 charge density from the \npost-contact charge density. The isosurface level is 9 × 10−5 e Bohr−3 and \n7 × 10−4 e Bohr−3 for the left and right panels, respectively. e, Projected PLDOS of \ndifferent orbitals of Sb (0112)–MoS2 and Sb (0001)–MoS2 contacts near EF. f, The \nintegrated DOS of TMDs at EF. g, The charge transfer from Sb to TMDs by Bader \ncharge analysis. h, The interfacial vdW interaction between TMDs and Sb."
+        }
+      ],
+      "number": "1",
+      "quantities": [],
+      "epistemic_status": "PAPER_EXPLICIT",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "CAPTION_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "b-figure-2",
+      "type": "FIGURE",
+      "page": 2,
+      "section": "Results",
+      "components": [
+        {
+          "original_block": 132,
+          "bbox": [
+            39.681610107421875,
+            695.92236328125,
+            291.4875793457031,
+            745.3051147460938
+          ],
+          "text": "Fig. 2 | Characterization of the Sb 0112\n(\n)–MoS2 contact. a, Raman spectrum \nof Sb film deposited on MoS2/Si substrate shows Sb Eg and A1g peaks at 111 cm−1 \nand 149 cm−1, respectively. b, XRD θ–2θ diffractogram of Sb film with different \ndeposition conditions and substrate. RT, room temperature. c, Cross-section \nHAADF-STEM image of the Sb (0112)–MoS2 contact. The interplane distance of "
+        },
+        {
+          "original_block": 131,
+          "bbox": [
+            306.1414794921875,
+            696.0575561523438,
+            558.864013671875,
+            744.8113403320312
+          ],
+          "text": "0.315 nm for Sb (0112) planes is marked. Scale bar, 2 nm. d, Zoom-in \natomic-resolution image from the red box in c. The Mo, S and Sb atoms are \noverlayed on the image. The vdW gap of 0.285 nm is marked. Scale bar, 1 nm.  \ne, Optical microscope image of Sb films deposited on MoS2 and SiO2 substrate, \nshowing clear colour contrast. Scale bar, 20 μm."
+        }
+      ],
+      "number": "2",
+      "quantities": [],
+      "epistemic_status": "PAPER_EXPLICIT",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "CAPTION_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "b-figure-3",
+      "type": "FIGURE",
+      "page": 3,
+      "section": "Results",
+      "components": [
+        {
+          "original_block": 65,
+          "bbox": [
+            39.682498931884766,
+            262.4661560058594,
+            294.635986328125,
+            331.8489074707031
+          ],
+          "text": "Fig. 3 | Electrical properties and stability of the Sb 0112\n(\n)–MoS2 contact. \n a, Transfer curves of a typical TLM structure with Lc ranging from 0.1 μm to \n1.5 μm and Vds = 0.1 V. Inset: false-colour scanning electron microscope image \nof a TLM structure. Scale bar, 2 μm. b, Rc extraction using the TLM method from \nthe device in a. From top to bottom, n2D = 1.2 × 1013 cm−2, 1.6 × 1013 cm−2, \n2.1 × 1013 cm−2 and 3 × 1013 cm−2, respectively. Inset: the magnified data plot near \nLc = 0, where the y intercept and x intercept represent 2Rc and 2LT, respectively. "
+        },
+        {
+          "original_block": 64,
+          "bbox": [
+            306.1393127441406,
+            261.412109375,
+            560.2733764648438,
+            330.07781982421875
+          ],
+          "text": "It is noted that the LT derived by the TLM method assumes the same MoS2 sheet \nresistivity underneath and outside the contact, which is probably violated \nconsidering the charge transfer between Sb (0112) and MoS2. This could lead to \nuncertainties in the obtained LT. c. Rc (red squares) and intrinsic mobility (black \nrhombuses) as a function of temperature for another device. d–f, Rc (d), LT (e) \nand μint (f) distribution of the Sb (0112) and Sb (0001) contacts, respectively. \nThe solid lines are Gaussian fittings."
+        }
+      ],
+      "number": "3",
+      "quantities": [],
+      "epistemic_status": "PAPER_EXPLICIT",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "CAPTION_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "b-tlm-assumption",
+      "type": "ASSUMPTION",
+      "page": 3,
+      "section": "Figure 3 caption",
+      "components": [
+        {
+          "original_block": 64,
+          "bbox": [
+            306.1393127441406,
+            261.412109375,
+            560.2733764648438,
+            330.07781982421875
+          ],
+          "text": "It is noted that the LT derived by the TLM method assumes the same MoS2 sheet \nresistivity underneath and outside the contact, which is probably violated \nconsidering the charge transfer between Sb (0112) and MoS2."
+        }
+      ],
+      "number": null,
+      "quantities": [],
+      "epistemic_status": "AUTHOR_CLAIM",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "PAPER_TEXT_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "b-tlm-limitation",
+      "type": "LIMITATION",
+      "page": 3,
+      "section": "Figure 3 caption",
+      "components": [
+        {
+          "original_block": 64,
+          "bbox": [
+            306.1393127441406,
+            261.412109375,
+            560.2733764648438,
+            330.07781982421875
+          ],
+          "text": "This could lead to \nuncertainties in the obtained LT."
+        }
+      ],
+      "number": null,
+      "quantities": [],
+      "epistemic_status": "AUTHOR_CLAIM",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "PAPER_TEXT_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "b-average-contact",
+      "type": "RESULT",
+      "page": 5,
+      "section": "Results",
+      "components": [
+        {
+          "original_block": 48,
+          "bbox": [
+            39.68223571777344,
+            369.8003234863281,
+            296.29644775390625,
+            553.02197265625
+          ],
+          "text": "The average Rc of the Sb \n(0112) contact was 209 ± 100 Ω μm, which was 3.47-times lower than \nthe Sb (0001) counterpart."
+        }
+      ],
+      "number": null,
+      "quantities": [
+        {
+          "value": "209 ± 100",
+          "unit": "Ω μm",
+          "context": "average Sb(0112) contact resistance"
+        },
+        {
+          "value": "3.47",
+          "unit": "times",
+          "context": "lower than Sb(0001) average"
+        }
+      ],
+      "epistemic_status": "AUTHOR_CLAIM",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "PAPER_TEXT_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "b-stability",
+      "type": "RESULT",
+      "page": 5,
+      "section": "Results",
+      "components": [
+        {
+          "original_block": 50,
+          "bbox": [
+            39.68510055541992,
+            552.8456420898438,
+            296.334228515625,
+            681.276123046875
+          ],
+          "text": "No obvious degradation of Ion, threshold voltage \n(Vth) and subthreshold swing (SS) was observed during 24 h for the Sb \ncontact."
+        }
+      ],
+      "number": null,
+      "quantities": [
+        {
+          "value": "24",
+          "unit": "h",
+          "context": "stability observation interval"
+        }
+      ],
+      "epistemic_status": "AUTHOR_CLAIM",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "PAPER_TEXT_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "b-dft-method",
+      "type": "SIMULATION",
+      "page": 7,
+      "section": "Methods",
+      "components": [
+        {
+          "original_block": 4,
+          "bbox": [
+            306.1416931152344,
+            143.06312561035156,
+            562.7979125976562,
+            444.776123046875
+          ],
+          "text": "First-principles DFT calculations were performed by using the Vienna \nAb initio Simulation Package (VASP 5.4)49 with the exchange-correlation \nfunctional based on Perdew–Burke–Ernzerhof 50 generalized gradient \napproximation."
+        }
+      ],
+      "number": null,
+      "quantities": [],
+      "epistemic_status": "AUTHOR_CLAIM",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "PAPER_TEXT_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "b-dft-convergence",
+      "type": "METHOD",
+      "page": 7,
+      "section": "Methods",
+      "components": [
+        {
+          "original_block": 4,
+          "bbox": [
+            306.1416931152344,
+            143.06312561035156,
+            562.7979125976562,
+            444.776123046875
+          ],
+          "text": "All structures were fully relaxed until \nthe maximum force component acting on each atom was less than \n0.02 eV Å−1 with an energy convergence criterion of 10−4 eV and an kinetic \nenergy cut-off of 400 eV."
+        }
+      ],
+      "number": null,
+      "quantities": [
+        {
+          "value": "0.02",
+          "unit": "eV Å^−1",
+          "context": "maximum force threshold"
+        },
+        {
+          "value": "10^−4",
+          "unit": "eV",
+          "context": "energy convergence"
+        },
+        {
+          "value": "400",
+          "unit": "eV",
+          "context": "kinetic energy cut-off"
+        }
+      ],
+      "epistemic_status": "AUTHOR_CLAIM",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "PAPER_TEXT_EXPLICIT",
+      "visual_inferences": []
+    }
+  ],
+  "precision_windows": [
+    {
+      "page": 1,
+      "original_block": 7,
+      "bbox": [
+        217.32009887695312,
+        218.87550354003906,
+        560.9495239257812,
+        502.9736328125
+      ]
+    },
+    {
+      "page": 1,
+      "original_block": 8,
+      "bbox": [
+        39.685001373291016,
+        531.3456420898438,
+        296.2746887207031,
+        584.526123046875
+      ]
+    },
+    {
+      "page": 1,
+      "original_block": 9,
+      "bbox": [
+        125.19599914550781,
+        592.1370849609375,
+        162.9974365234375,
+        608.2368774414062
+      ]
+    },
+    {
+      "page": 1,
+      "original_block": 10,
+      "bbox": [
+        146.7942657470703,
+        597.9313354492188,
+        184.8877410888672,
+        614.8609008789062
+      ]
+    },
+    {
+      "page": 1,
+      "original_block": 11,
+      "bbox": [
+        130.3800048828125,
+        592.1704711914062,
+        294.445556640625,
+        615.3026733398438
+      ]
+    },
+    {
+      "page": 1,
+      "original_block": 12,
+      "bbox": [
+        39.685001373291016,
+        628.0626220703125,
+        296.3440856933594,
+        659.776123046875
+      ]
+    },
+    {
+      "page": 2,
+      "original_block": 96,
+      "bbox": [
+        306.13946533203125,
+        283.0007019042969,
+        562.3009643554688,
+        351.6423034667969
+      ]
+    },
+    {
+      "page": 2,
+      "original_block": 97,
+      "bbox": [
+        39.68220520019531,
+        284.0237121582031,
+        294.2340087890625,
+        352.7767028808594
+      ]
+    },
+    {
+      "page": 2,
+      "original_block": 131,
+      "bbox": [
+        306.1414794921875,
+        696.0575561523438,
+        558.864013671875,
+        744.8113403320312
+      ]
+    },
+    {
+      "page": 2,
+      "original_block": 132,
+      "bbox": [
+        39.681610107421875,
+        695.92236328125,
+        291.4875793457031,
+        745.3051147460938
+      ]
+    },
+    {
+      "page": 3,
+      "original_block": 64,
+      "bbox": [
+        306.1393127441406,
+        261.412109375,
+        560.2733764648438,
+        330.07781982421875
+      ]
+    },
+    {
+      "page": 3,
+      "original_block": 65,
+      "bbox": [
+        39.682498931884766,
+        262.4661560058594,
+        294.635986328125,
+        331.8489074707031
+      ]
+    },
+    {
+      "page": 5,
+      "original_block": 48,
+      "bbox": [
+        39.68223571777344,
+        369.8003234863281,
+        296.29644775390625,
+        553.02197265625
+      ]
+    },
+    {
+      "page": 5,
+      "original_block": 50,
+      "bbox": [
+        39.68510055541992,
+        552.8456420898438,
+        296.334228515625,
+        681.276123046875
+      ]
+    },
+    {
+      "page": 7,
+      "original_block": 4,
+      "bbox": [
+        306.1416931152344,
+        143.06312561035156,
+        562.7979125976562,
+        444.776123046875
+      ]
+    }
+  ],
+  "explicit_absences": {}
+}

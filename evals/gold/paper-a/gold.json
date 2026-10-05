@@ -1,0 +1,616 @@
+{
+  "protocol": "PAPER-GRAPH-EVIDENCE-GATE v1",
+  "frozen_before_scoring": true,
+  "source_hash": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+  "page_count": 10,
+  "review_origin": "MODEL_SOURCE_REVIEW",
+  "human_review": "PENDING",
+  "scope": "Selected main-article statements only; PDF images checked locally; no scientific-validity acceptance.",
+  "items": [
+    {
+      "id": "a-problem",
+      "type": "RESEARCH_PROBLEM",
+      "page": 1,
+      "section": "Abstract",
+      "components": [
+        {
+          "original_block": 6,
+          "bbox": [
+            63.15587615966797,
+            271.1330261230469,
+            532.1282958984375,
+            463.1760559082031
+          ],
+          "text": "Optical phase modulators are critical components in integrated photonics, but conventional designs suffer from a\ntrade-off between modulation efﬁciency and optical loss."
+        }
+      ],
+      "number": null,
+      "quantities": [],
+      "epistemic_status": "AUTHOR_CLAIM",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "PAPER_TEXT_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "a-electrode-method",
+      "type": "METHOD",
+      "page": 1,
+      "section": "Abstract",
+      "components": [
+        {
+          "original_block": 6,
+          "bbox": [
+            63.15587615966797,
+            271.1330261230469,
+            532.1282958984375,
+            463.1760559082031
+          ],
+          "text": "Here, we address this challenge by\ndeveloping hybrid tungsten oxyselenide/graphene (TOS/Gr) electrodes that minimize optical loss while enabling\nefﬁcient phase modulation in TMD-based devices."
+        }
+      ],
+      "number": null,
+      "quantities": [],
+      "epistemic_status": "AUTHOR_CLAIM",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "PAPER_TEXT_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "a-device",
+      "type": "DEVICE",
+      "page": 1,
+      "section": "Abstract",
+      "components": [
+        {
+          "original_block": 6,
+          "bbox": [
+            63.15587615966797,
+            271.1330261230469,
+            532.1282958984375,
+            463.1760559082031
+          ],
+          "text": "Our\ncomplete device integrates a hybrid TOS/graphene transparent electrode with a hexagonal boron nitride dielectric\nspacer and monolayer WS2 electro-optic material on a SiN microring platform."
+        }
+      ],
+      "number": null,
+      "quantities": [],
+      "epistemic_status": "AUTHOR_CLAIM",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "PAPER_TEXT_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "a-central-result",
+      "type": "RESULT",
+      "page": 1,
+      "section": "Abstract",
+      "components": [
+        {
+          "original_block": 6,
+          "bbox": [
+            63.15587615966797,
+            271.1330261230469,
+            532.1282958984375,
+            463.1760559082031
+          ],
+          "text": "This achieves a high modulation\nefﬁciency of 0.202 V·cm while maintaining an exceptionally low extinction ratio change of just 0.08 dB, demonstrating\nsuperior performance compared to modulators employing conventional electrodes."
+        }
+      ],
+      "number": null,
+      "quantities": [
+        {
+          "value": "0.202",
+          "unit": "V·cm",
+          "context": "modulation efficiency"
+        },
+        {
+          "value": "0.08",
+          "unit": "dB",
+          "context": "extinction ratio change"
+        }
+      ],
+      "epistemic_status": "AUTHOR_CLAIM",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "PAPER_TEXT_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "a-absorption-method",
+      "type": "METHOD",
+      "page": 2,
+      "section": "Results",
+      "components": [
+        {
+          "original_block": 3,
+          "bbox": [
+            304.7238464355469,
+            256.2337951660156,
+            538.5944213867188,
+            481.2044372558594
+          ],
+          "text": "To investigate\nthe\nnear-infrared\n(NIR)\nabsorption\nproperties of the TOS/graphene HS, we employed the\nmicroring resonator, which is designed to be highly sen-\nsitive to environmental refractive index changes."
+        }
+      ],
+      "number": null,
+      "quantities": [],
+      "epistemic_status": "AUTHOR_CLAIM",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "PAPER_TEXT_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "a-simulation",
+      "type": "SIMULATION",
+      "page": 2,
+      "section": "Results",
+      "components": [
+        {
+          "original_block": 6,
+          "bbox": [
+            304.7240295410156,
+            483.4031677246094,
+            538.5917358398438,
+            732.239013671875
+          ],
+          "text": "To investigates the optical behavior of microring reso-\nnators, ﬁnite-difference time-domain (FDTD) simulations\nwere carried out under three distinct conﬁgurations: a\nbare microring, a microring integrated with pristine gra-\nphene, and a microring integrated with a TOS/graphene\nHS (Fig. 1d)."
+        }
+      ],
+      "number": null,
+      "quantities": [],
+      "epistemic_status": "AUTHOR_CLAIM",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "PAPER_TEXT_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "a-simulation-result",
+      "type": "RESULT",
+      "page": 2,
+      "section": "Results",
+      "components": [
+        {
+          "original_block": 6,
+          "bbox": [
+            304.7240295410156,
+            483.4031677246094,
+            538.5917358398438,
+            732.239013671875
+          ],
+          "text": "The simulation results reveal that the\nintroduction of pristine graphene leads to both a mea-\nsurable phase shift and signiﬁcant optical insertion loss,\nattributed to its inherent absorption at NIR wavelengths."
+        }
+      ],
+      "number": null,
+      "quantities": [],
+      "epistemic_status": "AUTHOR_CLAIM",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "PAPER_TEXT_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "a-figure-1",
+      "type": "FIGURE",
+      "page": 3,
+      "section": "Results",
+      "components": [
+        {
+          "original_block": 49,
+          "bbox": [
+            62.700714111328125,
+            395.7364501953125,
+            532.6988525390625,
+            463.4608459472656
+          ],
+          "text": "Fig. 1 Substantially reduced absorption of TOS/graphene on waveguides. a SEM image (top panel) of the fabricated SiN waveguide on a SiO2/Si\nsubstrate, and the simulated electric ﬁeld distribution (bottom panel) within the waveguide, showing the conﬁned transverse electric (TE) mode.\nb Schematic of the microring resonator integrated with the TOS/graphene HS. c Energy band diagram of the TOS/graphene interface, highlighting\nthe electron transfer from graphene to TOS. d Simulated transmission spectra of the microring resonator for three different conﬁgurations: bare SiN\nmicroring resonator, microring integrated with graphene, and microring integrated with the TOS/graphene HS. e Experimental transmission spectra\nvalidating the simulation results. Shown are the transmission spectra of a bare microring, a microring integrated with graphene, and a microring\nintegrated with TOS/graphene. Inset: Optical image of the TOS/graphene layer on top of the microring resonator; scale bar: 10 µm"
+        }
+      ],
+      "number": "1",
+      "quantities": [],
+      "epistemic_status": "PAPER_EXPLICIT",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "CAPTION_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "a-figure-3",
+      "type": "FIGURE",
+      "page": 5,
+      "section": "Results",
+      "components": [
+        {
+          "original_block": 71,
+          "bbox": [
+            62.701080322265625,
+            488.0891418457031,
+            532.6575317382812,
+            575.76953125
+          ],
+          "text": "Fig. 3 Phase modulation for device with ITO, graphene, and TOS/graphene electrodes. a Schematic of the fabricated device structure,\nconsisting of a capacitor stack (monolayer WS2/hBN/graphene/TOS) integrated onto a SiN microring resonator. Right top: Side-view schematic of the\ndevice, highlighting electrical contacts with the bottom WS2 layer and top graphene electrode, connected independently to gold electrodes for\nvoltage biasing. Right bottom: Optical image of the actual device. b Top: schematic illustrating the on-resonance and off-resonance conditions within\nthe microring-waveguide system. Bottom: Conﬁguration for applying external electrical bias separately to the bottom WS2 and top TOS/graphene\nelectrodes. c–e Top panels: Resonance spectra of microring resonators integrated with c ITO/hBN/WS2, d Gr/hBN/WS2, and e TOS/Gr/hBN/WS2\nheterostructures, under varying applied bias voltages. Color intensity represents the amplitude of the transmission peaks, with spectral shifts\nindicating changes in the optical phase. Bottom panels: Corresponding line plots of the transmission spectra extracted from the top panels,\nhighlighting the resonance wavelength shifts and changes in modulation behavior for each electrode conﬁguration"
+        }
+      ],
+      "number": "3",
+      "quantities": [],
+      "epistemic_status": "PAPER_EXPLICIT",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "CAPTION_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "a-figure-4",
+      "type": "FIGURE",
+      "page": 6,
+      "section": "Results",
+      "components": [
+        {
+          "original_block": 41,
+          "bbox": [
+            62.700927734375,
+            348.11444091796875,
+            532.6964111328125,
+            435.73822021484375
+          ],
+          "text": "Fig. 4 Electrostatically induced changes in the complex refractive index of monolayer WS2 at NIR wavelengths. a Extinction ratio as a\nfunction of applied bias voltage for microring resonators integrated with different top electrodes: TOS/graphene, graphene, and ITO. The extinction\nratio is deﬁned as the difference between the maximum transmission and minimum transmission in the spectra, serving as a measure of insertion\nloss under varying bias conditions. b Changes in the real (Δneff) and imaginary (Δkeff) components of the effective refractive index of the propagating\nmode measured in devices employing three different top electrodes: graphene, ITO, and TOS/graphene, as a function of applied voltage. c Changes\nin the intrinsic real (Δn) and imaginary (Δk) parts of the refractive index of monolayer WS2 as functions of the electrostatically induced carrier density,\nobtained by converting Δneff and Δkeff data from b. d The ratio of electro-refractive response to electro-absorptive response of monolayer WS2\nplotted as a function of carrier density (Supplementary Information I), demonstrating the favorable high refractive index modulation relative to\nabsorption changes"
+        }
+      ],
+      "number": "4",
+      "quantities": [],
+      "epistemic_status": "PAPER_EXPLICIT",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "CAPTION_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "a-definition",
+      "type": "DEFINITION",
+      "page": 6,
+      "section": "Figure 4 caption",
+      "components": [
+        {
+          "original_block": 41,
+          "bbox": [
+            62.700927734375,
+            348.11444091796875,
+            532.6964111328125,
+            435.73822021484375
+          ],
+          "text": "The extinction\nratio is deﬁned as the difference between the maximum transmission and minimum transmission in the spectra, serving as a measure of insertion\nloss under varying bias conditions."
+        }
+      ],
+      "number": null,
+      "quantities": [],
+      "epistemic_status": "AUTHOR_CLAIM",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "PAPER_TEXT_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "a-index-measurement",
+      "type": "METHOD",
+      "page": 6,
+      "section": "Results",
+      "components": [
+        {
+          "original_block": 44,
+          "bbox": [
+            56.691917419433594,
+            519.2328491210938,
+            290.5958557128906,
+            697.998046875
+          ],
+          "text": "We then extract the changes in the real and imaginary\ncomponents of the effective refractive index of the 2D\nmaterial-SiN waveguide composite system, denoted as\nΔneff\nand\nΔkeff,\nrespectively,\nwhich\ncorrespond\nto\ncarrier-induced\nrefractive\nindex\nmodulation\nand\nabsorption loss."
+        }
+      ],
+      "number": null,
+      "quantities": [],
+      "epistemic_status": "AUTHOR_CLAIM",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "PAPER_TEXT_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "a-voltage-length",
+      "type": "RESULT",
+      "page": 6,
+      "section": "Results",
+      "components": [
+        {
+          "original_block": 46,
+          "bbox": [
+            304.72320556640625,
+            590.4694213867188,
+            538.6005859375,
+            732.2406005859375
+          ],
+          "text": "The half-wave voltage–length product (Vπ·L) was cal-\nculated to be 0.629 V·cm, 0.220 V·cm, and 0.202 V·cm for\ndevices with ITO, graphene, and TOS/graphene electro-\ndes, respectively (Supplementary Information VI)."
+        }
+      ],
+      "number": null,
+      "quantities": [
+        {
+          "value": "0.629",
+          "unit": "V·cm",
+          "context": "ITO"
+        },
+        {
+          "value": "0.220",
+          "unit": "V·cm",
+          "context": "graphene"
+        },
+        {
+          "value": "0.202",
+          "unit": "V·cm",
+          "context": "TOS/graphene"
+        }
+      ],
+      "epistemic_status": "AUTHOR_CLAIM",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "PAPER_TEXT_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "a-intrinsic-index",
+      "type": "RESULT",
+      "page": 7,
+      "section": "Results",
+      "components": [
+        {
+          "original_block": 32,
+          "bbox": [
+            56.69093322753906,
+            375.8001403808594,
+            290.5704040527344,
+            578.4327392578125
+          ],
+          "text": "Speciﬁcally, Δn reaches a\nmaximum modulation of −3.4 RIU at a carrier con-\ncentration of 4 × 1012 cm−2, while Δk remains negligible\nacross the entire voltage range."
+        }
+      ],
+      "number": null,
+      "quantities": [
+        {
+          "value": "−3.4",
+          "unit": "RIU",
+          "context": "maximum intrinsic Δn"
+        },
+        {
+          "value": "4 × 10^12",
+          "unit": "cm^−2",
+          "context": "carrier concentration",
+          "representation_warning": "PDF text collapses exponent to 1012; plain source quote is ambiguous"
+        }
+      ],
+      "epistemic_status": "AUTHOR_CLAIM",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "PAPER_TEXT_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "a-limitation",
+      "type": "LIMITATION",
+      "page": 2,
+      "section": "Introduction",
+      "components": [
+        {
+          "original_block": 2,
+          "bbox": [
+            56.691619873046875,
+            88.87735748291016,
+            290.5670471191406,
+            469.241943359375
+          ],
+          "text": "Although\nionic liquid gating is capable of injecting signiﬁcantly high\ncharge densities without introducing absorption losses, it\nsuffers from nonlocal charge dispersion, limited chemical\nstability, and incompatibility with scalable CMOS fabri-\ncation processes28–30."
+        }
+      ],
+      "number": null,
+      "quantities": [],
+      "epistemic_status": "AUTHOR_CLAIM",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "PAPER_TEXT_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "a-fabrication",
+      "type": "METHOD",
+      "page": 8,
+      "section": "Materials and methods",
+      "components": [
+        {
+          "original_block": 3,
+          "bbox": [
+            304.7235107421875,
+            88.87528228759766,
+            538.593017578125,
+            349.67596435546875
+          ],
+          "text": "For controlled oxidation of as-\nexfoliated WSe2 ﬂakes, UV-ozone treatment was per-\nformed at 50 °C for 30 min in the UV ozone cleaner\n(Samco UV-1), maintaining an oxygen ﬂow rate of\n1 L/min, ensuring effective conversion of WSe2 into TOS."
+        }
+      ],
+      "number": null,
+      "quantities": [
+        {
+          "value": "50",
+          "unit": "°C",
+          "context": "UV-ozone treatment"
+        },
+        {
+          "value": "30",
+          "unit": "min",
+          "context": "UV-ozone duration"
+        },
+        {
+          "value": "1",
+          "unit": "L/min",
+          "context": "oxygen flow"
+        }
+      ],
+      "epistemic_status": "AUTHOR_CLAIM",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "PAPER_TEXT_EXPLICIT",
+      "visual_inferences": []
+    },
+    {
+      "id": "a-fdtd-method",
+      "type": "SIMULATION",
+      "page": 8,
+      "section": "Materials and methods",
+      "components": [
+        {
+          "original_block": 10,
+          "bbox": [
+            304.72357177734375,
+            507.2709045410156,
+            538.5941772460938,
+            684.4473266601562
+          ],
+          "text": "A microring resonator and its adjacent bus waveguide\nwere modeled in Lumerical FDTD by deﬁning precise\ngeometries and assigning accurate material refractive\nindices, with the simulation domain bounded by perfectly\nmatched layers (PML) to suppress reﬂections."
+        }
+      ],
+      "number": null,
+      "quantities": [],
+      "epistemic_status": "AUTHOR_CLAIM",
+      "review_origin": "MODEL_SOURCE_REVIEW",
+      "human_review": "PENDING",
+      "channel": "PAPER_TEXT_EXPLICIT",
+      "visual_inferences": []
+    }
+  ],
+  "precision_windows": [
+    {
+      "page": 1,
+      "original_block": 6,
+      "bbox": [
+        63.15587615966797,
+        271.1330261230469,
+        532.1282958984375,
+        463.1760559082031
+      ]
+    },
+    {
+      "page": 2,
+      "original_block": 2,
+      "bbox": [
+        56.691619873046875,
+        88.87735748291016,
+        290.5670471191406,
+        469.241943359375
+      ]
+    },
+    {
+      "page": 2,
+      "original_block": 3,
+      "bbox": [
+        304.7238464355469,
+        256.2337951660156,
+        538.5944213867188,
+        481.2044372558594
+      ]
+    },
+    {
+      "page": 2,
+      "original_block": 6,
+      "bbox": [
+        304.7240295410156,
+        483.4031677246094,
+        538.5917358398438,
+        732.239013671875
+      ]
+    },
+    {
+      "page": 3,
+      "original_block": 49,
+      "bbox": [
+        62.700714111328125,
+        395.7364501953125,
+        532.6988525390625,
+        463.4608459472656
+      ]
+    },
+    {
+      "page": 5,
+      "original_block": 71,
+      "bbox": [
+        62.701080322265625,
+        488.0891418457031,
+        532.6575317382812,
+        575.76953125
+      ]
+    },
+    {
+      "page": 6,
+      "original_block": 41,
+      "bbox": [
+        62.700927734375,
+        348.11444091796875,
+        532.6964111328125,
+        435.73822021484375
+      ]
+    },
+    {
+      "page": 6,
+      "original_block": 44,
+      "bbox": [
+        56.691917419433594,
+        519.2328491210938,
+        290.5958557128906,
+        697.998046875
+      ]
+    },
+    {
+      "page": 6,
+      "original_block": 46,
+      "bbox": [
+        304.72320556640625,
+        590.4694213867188,
+        538.6005859375,
+        732.2406005859375
+      ]
+    },
+    {
+      "page": 7,
+      "original_block": 32,
+      "bbox": [
+        56.69093322753906,
+        375.8001403808594,
+        290.5704040527344,
+        578.4327392578125
+      ]
+    },
+    {
+      "page": 8,
+      "original_block": 3,
+      "bbox": [
+        304.7235107421875,
+        88.87528228759766,
+        538.593017578125,
+        349.67596435546875
+      ]
+    },
+    {
+      "page": 8,
+      "original_block": 10,
+      "bbox": [
+        304.72357177734375,
+        507.2709045410156,
+        538.5941772460938,
+        684.4473266601562
+      ]
+    }
+  ],
+  "explicit_absences": {
+    "numbered_equations": "No numbered display equation found in the 10-page supplied main article. Supplementary information not supplied or assessed."
+  }
+}

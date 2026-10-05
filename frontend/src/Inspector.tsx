@@ -103,8 +103,8 @@ export function Inspector({
               </p>
             )}
             <p className="muted">
-              Original expression preserved above. Symbols, assumptions, meanings and derivations
-              require separate analysis.
+              Extracted formula text is shown above. Read the original PDF for layout. Symbols,
+              assumptions, meanings and derivations require separate analysis.
             </p>
           </section>
         )}

@@ -1,0 +1,146 @@
+{
+  "1d94749e59dcc1f2cc75f2678731e216b6fee23cd0bdbde0c16505ee50ccf2f8": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "RESEARCH_PROBLEM",
+    "source_page": 1,
+    "reason": "Source explicitly states the problem/challenge motivating the work."
+  },
+  "736ff73f7f51505e00e0b893722f5266f0c4a54987c8847271117727291195b5": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "METHOD",
+    "source_page": 1,
+    "reason": "Source describes an employed procedure or proposed construction; no validity acceptance."
+  },
+  "4afc27cb153df80c8b61f37a6e1422d03f01af8159e0495e9402f57355cd921c": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "RESULT",
+    "source_page": 1,
+    "reason": "Source attributes the stated outcome to the authors; numerical typography and context checked against PDF."
+  },
+  "0ce4a64ad391996efda2c4fa16b2656570bbfaf273078655f096a0a464643cbb": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "RESULT",
+    "source_page": 1,
+    "reason": "Source attributes the stated outcome to the authors; numerical typography and context checked against PDF."
+  },
+  "d2b3529cf9ffd7cc3b19585e9dac11558f07e2e022ded2aee6195f785e29ebd5": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "ASSUMPTION",
+    "source_page": 1,
+    "reason": "Source explicitly states an assumption; its validity is not accepted."
+  },
+  "9d465db2812ceabe88ffd2bfab186ccadd72cdb3b10d3524325862245ba8189d": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "EQUATION",
+    "source_page": 1,
+    "reason": "Observed numbered display equation and merged block geometry agree with page 1; algebra transcription remains unverified."
+  },
+  "37ef6a8106f32214dc95cf8425126b3439b6e5b37f6217606e12f2b0e6229a63": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "DEFINITION",
+    "source_page": 1,
+    "reason": "Source explicitly defines the quantity; individual sentence boundaries checked."
+  },
+  "20dc584a26a792ec12e74d544fdfbd1fc2bc68a2a169f1b7066b3f0fb5fd1e52": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "FIGURE",
+    "source_page": 2,
+    "reason": "Caption identifier and full selected caption wording agree with the rendered PDF; no image interpretation accepted."
+  },
+  "99ec6ea9bc19bb2ed6f8c2c3cd50978e32d3e9f3d715c4b20cab570da96b46a1": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "FIGURE",
+    "source_page": 2,
+    "reason": "Caption identifier and full selected caption wording agree with the rendered PDF; no image interpretation accepted."
+  },
+  "d600f4651fabb7213681884178ab3d0cd02b56500383db884e910b0c15d5bd81": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "FIGURE",
+    "source_page": 3,
+    "reason": "Caption identifier and full selected caption wording agree with the rendered PDF; no image interpretation accepted."
+  },
+  "c4e617ecca1d75c0968fee887baab86d37d059a6f9f69428dbca3a2c427e084b": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "ASSUMPTION",
+    "source_page": 3,
+    "reason": "Source explicitly states an assumption; its validity is not accepted."
+  },
+  "f80f7f96f1fe5acf2793360c9daa6c477ce7e49f17b0c0f77e4a25eb9c0c92f2": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "LIMITATION",
+    "source_page": 3,
+    "reason": "Source explicitly states a constraint or uncertainty."
+  },
+  "8535901b689de325a4ac274faedb415cb62f5852feca24f34ca78c865ca6d45b": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "METHOD",
+    "source_page": 5,
+    "reason": "Source describes an employed procedure or proposed construction; no validity acceptance."
+  },
+  "d31983b4f2f28aeec1d7c41b87b1593fbd740f735c2af688fd87a85f2c22ec9d": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "RESULT",
+    "source_page": 5,
+    "reason": "Source attributes the stated outcome to the authors; numerical typography and context checked against PDF."
+  },
+  "c122b3c98f960ccc6cc6c4907dba1211ad96196e7fcb12b69074cc2b868fb7aa": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "RESULT",
+    "source_page": 5,
+    "reason": "Source attributes the stated outcome to the authors; numerical typography and context checked against PDF."
+  },
+  "48b848f51191d1e796ddf88bb9d0bdb7d482639b9ef68e5f4b6d79d6d523ca0a": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "SIMULATION",
+    "source_page": 7,
+    "reason": "Source reports actual computational modeling or calculations; no experimental result implied."
+  },
+  "00762870e2755bed1d6be024b8508fd075e303ad84ab39075c2d65331e266c1b": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "METHOD",
+    "source_page": 7,
+    "reason": "Source describes an employed procedure or proposed construction; no validity acceptance."
+  },
+  "71a3da0b5babf24a8d2304e01a4933d00936107cc44513d63caf5db36c40a17f": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "LIMITATION",
+    "source_page": 1,
+    "reason": "Page 1 explicitly attributes limited contact performance and stability issues to existing technologies. Classification is a source attribution, not acceptance of the comparison."
+  }
+}

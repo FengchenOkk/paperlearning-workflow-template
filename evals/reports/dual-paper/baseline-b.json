@@ -1,0 +1,365 @@
+{
+  "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+  "gold_hash": "f1647451ea439c4b4b29b31f41bc1ca7a368ada89d40d74fceebf019c96cba63",
+  "parser": "pymupdf",
+  "parser_version": "1.28.2",
+  "pipeline_version": "source-graph-v2",
+  "job_status": "READY",
+  "title": "Article Approaching the quantum limit in two-dimensional semiconductor contacts",
+  "page_count": 19,
+  "nodes": 41,
+  "edges": 40,
+  "semantic_edges": 0,
+  "verification_records": 0,
+  "metrics": {
+    "precision": {
+      "passed": 0,
+      "total": 0,
+      "rate": null
+    },
+    "recall": {
+      "passed": 0,
+      "total": 16,
+      "rate": 0.0
+    },
+    "type_accuracy": {
+      "passed": 0,
+      "total": 0,
+      "rate": null
+    },
+    "anchors": {
+      "passed": 0,
+      "total": 0,
+      "rate": null
+    },
+    "pages": {
+      "passed": 0,
+      "total": 0,
+      "rate": null
+    },
+    "figures": {
+      "passed": 0,
+      "total": 3,
+      "rate": 0.0
+    },
+    "equations": {
+      "passed": 0,
+      "total": 1,
+      "rate": 0.0
+    },
+    "quantities": {
+      "passed": 0,
+      "total": 11,
+      "rate": 0.0
+    },
+    "node_provenance": {
+      "passed": 41,
+      "total": 41,
+      "rate": 1.0
+    }
+  },
+  "matches": [
+    {
+      "gold_id": "b-problem",
+      "expected_type": "RESEARCH_PROBLEM",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": []
+    },
+    {
+      "gold_id": "b-contact-method",
+      "expected_type": "METHOD",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": []
+    },
+    {
+      "gold_id": "b-central-result",
+      "expected_type": "RESULT",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": [
+        {
+          "value": "42",
+          "unit": "ohm micrometres",
+          "context": "contact resistance",
+          "pass": false,
+          "issue": "No same-type extracted object"
+        },
+        {
+          "value": "125",
+          "unit": "degrees Celsius",
+          "context": "stability temperature",
+          "pass": false,
+          "issue": "No same-type extracted object"
+        }
+      ]
+    },
+    {
+      "gold_id": "b-transistor-result",
+      "expected_type": "RESULT",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": [
+        {
+          "value": "1.23",
+          "unit": "milliamperes per micrometre",
+          "context": "on-state current",
+          "pass": false,
+          "issue": "No same-type extracted object"
+        },
+        {
+          "value": "10^8",
+          "unit": "dimensionless",
+          "context": "on/off ratio lower bound",
+          "pass": false,
+          "issue": "PDF text collapses exponent to 108; plain source quote is ambiguous"
+        },
+        {
+          "value": "74",
+          "unit": "femtoseconds",
+          "context": "intrinsic delay",
+          "pass": false,
+          "issue": "No same-type extracted object"
+        }
+      ]
+    },
+    {
+      "gold_id": "b-ballistic-assumption",
+      "expected_type": "ASSUMPTION",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": []
+    },
+    {
+      "gold_id": "b-equation-1",
+      "expected_type": "EQUATION",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": []
+    },
+    {
+      "gold_id": "b-symbol-definitions",
+      "expected_type": "DEFINITION",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": []
+    },
+    {
+      "gold_id": "b-figure-1",
+      "expected_type": "FIGURE",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": []
+    },
+    {
+      "gold_id": "b-figure-2",
+      "expected_type": "FIGURE",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": []
+    },
+    {
+      "gold_id": "b-figure-3",
+      "expected_type": "FIGURE",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": []
+    },
+    {
+      "gold_id": "b-tlm-assumption",
+      "expected_type": "ASSUMPTION",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": []
+    },
+    {
+      "gold_id": "b-tlm-limitation",
+      "expected_type": "LIMITATION",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": []
+    },
+    {
+      "gold_id": "b-average-contact",
+      "expected_type": "RESULT",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": [
+        {
+          "value": "209 ± 100",
+          "unit": "Ω μm",
+          "context": "average Sb(0112) contact resistance",
+          "pass": false,
+          "issue": "No same-type extracted object"
+        },
+        {
+          "value": "3.47",
+          "unit": "times",
+          "context": "lower than Sb(0001) average",
+          "pass": false,
+          "issue": "No same-type extracted object"
+        }
+      ]
+    },
+    {
+      "gold_id": "b-stability",
+      "expected_type": "RESULT",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": [
+        {
+          "value": "24",
+          "unit": "h",
+          "context": "stability observation interval",
+          "pass": false,
+          "issue": "No same-type extracted object"
+        }
+      ]
+    },
+    {
+      "gold_id": "b-dft-method",
+      "expected_type": "SIMULATION",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": []
+    },
+    {
+      "gold_id": "b-dft-convergence",
+      "expected_type": "METHOD",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": [
+        {
+          "value": "0.02",
+          "unit": "eV Å^−1",
+          "context": "maximum force threshold",
+          "pass": false,
+          "issue": "No same-type extracted object"
+        },
+        {
+          "value": "10^−4",
+          "unit": "eV",
+          "context": "energy convergence",
+          "pass": false,
+          "issue": "No same-type extracted object"
+        },
+        {
+          "value": "400",
+          "unit": "eV",
+          "context": "kinetic energy cut-off",
+          "pass": false,
+          "issue": "No same-type extracted object"
+        }
+      ]
+    }
+  ],
+  "predictions": [],
+  "integrity": {
+    "paper_id": "6fc4255d-e479-4374-8c97-b0a00a726465",
+    "issues": [
+      {
+        "code": "DUPLICATE_CANDIDATE",
+        "object_id": "ebd15a42-248b-5a54-aa79-dd695d764d50",
+        "severity": "WARNING",
+        "detail": "Same type/text as 8067e381-1b59-58c3-9b09-5c829a1d0c10; no automatic merge"
+      },
+      {
+        "code": "DUPLICATE_CANDIDATE",
+        "object_id": "db3c57ee-069c-54fc-98cf-d72c0ad6452b",
+        "severity": "WARNING",
+        "detail": "Same type/text as aea4698a-d94e-56b5-b184-3d202016c7a1; no automatic merge"
+      },
+      {
+        "code": "DUPLICATE_CANDIDATE",
+        "object_id": "aab62e76-73af-5021-8e6c-2d8a8972de1c",
+        "severity": "WARNING",
+        "detail": "Same type/text as fd1c7fcc-495d-564a-8285-5245027d814a; no automatic merge"
+      },
+      {
+        "code": "DUPLICATE_CANDIDATE",
+        "object_id": "4cc5f4fa-e900-5bf2-8674-e23f5cd8419d",
+        "severity": "WARNING",
+        "detail": "Same type/text as 77eb5efe-5581-5d00-9c6d-b2aca7c9cf19; no automatic merge"
+      },
+      {
+        "code": "DUPLICATE_CANDIDATE",
+        "object_id": "4f7419c1-2c11-5fc4-9d20-76d74a30e5ed",
+        "severity": "WARNING",
+        "detail": "Same type/text as 4cc5f4fa-e900-5bf2-8674-e23f5cd8419d; no automatic merge"
+      },
+      {
+        "code": "DUPLICATE_CANDIDATE",
+        "object_id": "99f28350-93dd-569d-9d42-8f15cbbf5784",
+        "severity": "WARNING",
+        "detail": "Same type/text as 4f7419c1-2c11-5fc4-9d20-76d74a30e5ed; no automatic merge"
+      },
+      {
+        "code": "DUPLICATE_CANDIDATE",
+        "object_id": "edf6a3f9-428b-5b17-b8ea-4c9aa90a8a44",
+        "severity": "WARNING",
+        "detail": "Same type/text as 99f28350-93dd-569d-9d42-8f15cbbf5784; no automatic merge"
+      },
+      {
+        "code": "DUPLICATE_CANDIDATE",
+        "object_id": "a43a692c-5a6a-57eb-a1ed-49b9a483bab2",
+        "severity": "WARNING",
+        "detail": "Same type/text as edf6a3f9-428b-5b17-b8ea-4c9aa90a8a44; no automatic merge"
+      },
+      {
+        "code": "DUPLICATE_CANDIDATE",
+        "object_id": "56815b9d-a4a3-5063-b09b-b858ff352288",
+        "severity": "WARNING",
+        "detail": "Same type/text as a43a692c-5a6a-57eb-a1ed-49b9a483bab2; no automatic merge"
+      },
+      {
+        "code": "DUPLICATE_CANDIDATE",
+        "object_id": "c465b512-3359-5e69-9772-85c593254016",
+        "severity": "WARNING",
+        "detail": "Same type/text as 56815b9d-a4a3-5063-b09b-b858ff352288; no automatic merge"
+      }
+    ],
+    "structurally_valid": true,
+    "scientific_validity": "NOT_ASSESSED"
+  },
+  "human_review": "PENDING",
+  "overall_reviewed_gate": "FAIL",
+  "limitations": [
+    "Precision requires separately recorded source adjudication; unreviewed predictions count as incorrect.",
+    "Numeric scoring is a frozen model source-review comparison, not scientific validity or human acceptance.",
+    "Anchor/page rates are conditional on matched objects; missing figures/equations fail their own measures.",
+    "Browser results are recorded separately. No semantic reasoning quality is established by an empty semantic graph."
+  ]
+}

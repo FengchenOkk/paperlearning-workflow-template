@@ -1,7 +1,5 @@
 """First-class node subtypes; all relations are projections of canonical edges."""
 
-import re
-
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
@@ -16,6 +14,7 @@ from .schemas import (
     ScientificStatement,
     ScientificSymbol,
 )
+from .source_patterns import equation_number, figure_number
 
 CLAIM_TYPES = {"CLAIM", "RESULT", "CONCLUSION", "HYPOTHESIS"}
 
@@ -29,21 +28,19 @@ def ensure_scientific_object(session: Session, node: NodeRow) -> None:
             ClaimRow(node_id=node.id, source_anchor_id=node.provenance[0], claim_type=node.type)
         )
     elif node.type == "EQUATION" and session.get(EquationRow, node.id) is None:
-        number = re.search(r"\((\d+[a-z]?)\)\s*$", " ".join(node.text.split()))
         session.add(
             EquationRow(
                 node_id=node.id,
                 source_anchor_id=node.provenance[0],
-                equation_number=number[1] if number else None,
+                equation_number=equation_number(node.text),
             )
         )
     elif node.type == "FIGURE" and session.get(FigureRow, node.id) is None:
-        number = re.match(r"(?i)^fig(?:ure)?\.?\s*(\d+)", " ".join(node.text.split()))
         session.add(
             FigureRow(
                 node_id=node.id,
                 source_anchor_id=node.provenance[0],
-                figure_number=number[1] if number else None,
+                figure_number=figure_number(node.text),
             )
         )
     session.flush()

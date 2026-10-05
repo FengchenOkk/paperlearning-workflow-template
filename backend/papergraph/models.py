@@ -138,7 +138,7 @@ class JobRow(Base):
     progress: Mapped[int] = mapped_column(Integer, default=0)
     error: Mapped[str | None] = mapped_column(Text, nullable=True)
     input_hash: Mapped[str]
-    pipeline_version: Mapped[str] = mapped_column(default="source-graph-v2")
+    pipeline_version: Mapped[str] = mapped_column(default="source-graph-v3")
     attempt: Mapped[int] = mapped_column(default=0)
     lease_until: Mapped[float] = mapped_column(default=0.0)
     lease_token: Mapped[str | None] = mapped_column(nullable=True)

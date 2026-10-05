@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import type { Anchor, Document } from './contracts';
 
 export function displayedBox(
@@ -32,6 +32,9 @@ export function SourcePanel({
   const highlight = useRef<HTMLDivElement>(null);
   const pdfScroll = useRef<HTMLDivElement>(null);
   const textScroll = useRef<HTMLDivElement>(null);
+  const [loadedImage, setLoadedImage] = useState('');
+  const [failedImage, setFailedImage] = useState('');
+  const imageUrl = `/api/papers/${paperId}/pages/${pageNumber}/image`;
   const scrollToEvidence = useCallback(() => {
     requestAnimationFrame(() => {
       const target = highlight.current;
@@ -45,7 +48,7 @@ export function SourcePanel({
   const page = document.pages.find((p) => p.number === pageNumber);
   useEffect(() => {
     scrollToEvidence();
-  }, [anchor?.id, pageNumber, scrollToEvidence]);
+  }, [anchor?.id, pageNumber, loadedImage, scrollToEvidence]);
   if (!page)
     return (
       <section className="source-panel">
@@ -101,11 +104,25 @@ export function SourcePanel({
         <div ref={pdfScroll} className="pdf-scroll">
           <div className="pdf-page" style={{ aspectRatio: `${page.width} / ${page.height}` }}>
             <img
-              src={`/api/papers/${paperId}/pages/${pageNumber}/image`}
+              key={imageUrl}
+              src={imageUrl}
               alt={`Original PDF page ${pageNumber}`}
-              onLoad={scrollToEvidence}
+              style={{ visibility: loadedImage === imageUrl ? 'visible' : 'hidden' }}
+              onLoad={(event) => {
+                if (event.currentTarget.isConnected) setLoadedImage(imageUrl);
+              }}
+              onError={(event) => {
+                if (event.currentTarget.isConnected) setFailedImage(imageUrl);
+              }}
             />
-            {box && (
+            {loadedImage !== imageUrl && (
+              <p role="status" className="muted">
+                {failedImage === imageUrl
+                  ? 'Original page could not be loaded.'
+                  : 'Loading original page…'}
+              </p>
+            )}
+            {box && loadedImage === imageUrl && (
               <div
                 ref={highlight}
                 className="source-highlight"

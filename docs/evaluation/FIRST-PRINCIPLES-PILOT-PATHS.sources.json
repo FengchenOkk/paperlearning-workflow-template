@@ -1,0 +1,544 @@
+{
+  "version": "draft-v1",
+  "date": "2026-10-05",
+  "verification_state": "CANDIDATE",
+  "human_scientific_review": "PENDING",
+  "scope": "Local document evidence snapshot; identifiers are report-local, not canonical database IDs.",
+  "precision": "TEXT_BLOCK",
+  "bbox_coordinates": "PDF points, unrotated page, origin at top left",
+  "page_indexing": "one-based",
+  "block_indexing": "zero-based inspection text-block enumeration; current parser block number recorded separately",
+  "papers": {
+    "A": {
+      "sha256": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+      "local_pdf_path": "E:\\PaperLearning\\backend\\data\\documents\\30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e.pdf",
+      "page_count": 10
+    },
+    "B": {
+      "sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "local_pdf_path": "E:\\PaperLearning\\backend\\data\\documents\\4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd.pdf",
+      "page_count": 19
+    }
+  },
+  "anchors": {
+    "PA-structure": {
+      "paper": "A",
+      "source_sha256": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+      "pdf_page": 5,
+      "blocks": [
+        {
+          "inspection_block_index": 71,
+          "current_parser_block_number": 73,
+          "bbox": [
+            62.701080322265625,
+            488.0891418457031,
+            532.6575317382812,
+            575.76953125
+          ],
+          "text": "Fig. 3 Phase modulation for device with ITO, graphene, and TOS/graphene electrodes. a Schematic of the fabricated device structure,\nconsisting of a capacitor stack (monolayer WS2/hBN/graphene/TOS) integrated onto a SiN microring resonator. Right top: Side-view schematic of the\ndevice, highlighting electrical contacts with the bottom WS2 layer and top graphene electrode, connected independently to gold electrodes for\nvoltage biasing. Right bottom: Optical image of the actual device. b Top: schematic illustrating the on-resonance and off-resonance conditions within\nthe microring-waveguide system. Bottom: Conﬁguration for applying external electrical bias separately to the bottom WS2 and top TOS/graphene\nelectrodes. c–e Top panels: Resonance spectra of microring resonators integrated with c ITO/hBN/WS2, d Gr/hBN/WS2, and e TOS/Gr/hBN/WS2\nheterostructures, under varying applied bias voltages. Color intensity represents the amplitude of the transmission peaks, with spectral shifts\nindicating changes in the optical phase. Bottom panels: Corresponding line plots of the transmission spectra extracted from the top panels,\nhighlighting the resonance wavelength shifts and changes in modulation behavior for each electrode conﬁguration\n"
+        }
+      ]
+    },
+    "PA-gating": {
+      "paper": "A",
+      "source_sha256": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+      "pdf_page": 4,
+      "blocks": [
+        {
+          "inspection_block_index": 52,
+          "current_parser_block_number": 2,
+          "bbox": [
+            304.72259521484375,
+            447.515380859375,
+            538.5803833007812,
+            552.92041015625
+          ],
+          "text": "bias, we tune the carrier density in WS2, thereby inducing\nchanges in its refractive index and subsequently altering\nthe resonance conditions of the microring resonator.\nNotably, variations in optical absorption of materials on\ntop of the microring resonator can shift the microring\nresonance from critical coupling toward either under-\ncoupled or over-coupled conditions, resulting in reduced\nresonance efﬁciency and modiﬁed transmission char-\nacteristics (Fig. 3b top).\n"
+        }
+      ]
+    },
+    "PA-mode": {
+      "paper": "A",
+      "source_sha256": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+      "pdf_page": 2,
+      "blocks": [
+        {
+          "inspection_block_index": 1,
+          "current_parser_block_number": 4,
+          "bbox": [
+            304.7238464355469,
+            88.8754653930664,
+            538.595458984375,
+            254.0351104736328
+          ],
+          "text": "silicon waveguides, SiN waveguides exhibit superior per-\nformance due to signiﬁcantly lower optical losses, broader\ntransparency extending from visible to mid-infrared\nwavelengths, and excellent compatibility with standard\nCMOS fabrication processes34,35. Figure 1a presents a\nscanning electron microscopy (SEM) image of the SiN\nwaveguide (top) alongside its simulated electric ﬁeld dis-\ntribution (bottom). The transverse electric (TE) mode is\npredominantly guided within the waveguide, exhibiting an\nexponential decay outside the waveguide boundaries. This\nevanescent ﬁeld enables strong interaction with the\nmaterials deposited on top of the waveguide, allowing\nmodulation of the guided mode via modulation of the\nrefractive index of the deposited materials.\n"
+        }
+      ]
+    },
+    "PA-effective": {
+      "paper": "A",
+      "source_sha256": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+      "pdf_page": 6,
+      "blocks": [
+        {
+          "inspection_block_index": 44,
+          "current_parser_block_number": 1,
+          "bbox": [
+            56.691917419433594,
+            519.2328491210938,
+            290.5958557128906,
+            697.998046875
+          ],
+          "text": "We then extract the changes in the real and imaginary\ncomponents of the effective refractive index of the 2D\nmaterial-SiN waveguide composite system, denoted as\nΔneff\nand\nΔkeff,\nrespectively,\nwhich\ncorrespond\nto\ncarrier-induced\nrefractive\nindex\nmodulation\nand\nabsorption loss. As shown in Fig. 4b, Δneff linearly\ndecreases with applied voltage for all three electrode\nconﬁgurations:\nITO,\ngraphene,\nand\nTOS/graphene,\nindicating that the carrier density in the active region is\nmodulated in a linear fashion by the external bias.\nNotably, the graphene and TOS/graphene devices exhi-\nbit a larger Δneff variation over the same voltage range\ncompared to the ITO device. This is attributed to\nimproved interfacial contact and more efﬁcient charge\ninjection at the electrode/WS2 interface.\n"
+        }
+      ]
+    },
+    "PA-fig4": {
+      "paper": "A",
+      "source_sha256": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+      "pdf_page": 6,
+      "blocks": [
+        {
+          "inspection_block_index": 41,
+          "current_parser_block_number": 45,
+          "bbox": [
+            62.700927734375,
+            348.11444091796875,
+            532.6964111328125,
+            435.73822021484375
+          ],
+          "text": "Fig. 4 Electrostatically induced changes in the complex refractive index of monolayer WS2 at NIR wavelengths. a Extinction ratio as a\nfunction of applied bias voltage for microring resonators integrated with different top electrodes: TOS/graphene, graphene, and ITO. The extinction\nratio is deﬁned as the difference between the maximum transmission and minimum transmission in the spectra, serving as a measure of insertion\nloss under varying bias conditions. b Changes in the real (Δneff) and imaginary (Δkeff) components of the effective refractive index of the propagating\nmode measured in devices employing three different top electrodes: graphene, ITO, and TOS/graphene, as a function of applied voltage. c Changes\nin the intrinsic real (Δn) and imaginary (Δk) parts of the refractive index of monolayer WS2 as functions of the electrostatically induced carrier density,\nobtained by converting Δneff and Δkeff data from b. d The ratio of electro-refractive response to electro-absorptive response of monolayer WS2\nplotted as a function of carrier density (Supplementary Information I), demonstrating the favorable high refractive index modulation relative to\nabsorption changes\n"
+        }
+      ]
+    },
+    "PA-transfer": {
+      "paper": "A",
+      "source_sha256": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+      "pdf_page": 2,
+      "blocks": [
+        {
+          "inspection_block_index": 3,
+          "current_parser_block_number": 5,
+          "bbox": [
+            304.7238464355469,
+            256.2337951660156,
+            538.5944213867188,
+            481.2044372558594
+          ],
+          "text": "To investigate\nthe\nnear-infrared\n(NIR)\nabsorption\nproperties of the TOS/graphene HS, we employed the\nmicroring resonator, which is designed to be highly sen-\nsitive to environmental refractive index changes. TOS/\ngraphene HS was transferred onto the microring by the\nall-dry transfer method (Fig. 1b). Guided light resonating\nwithin the microring interacts with the HS layer on top.\nTOS (5.6 eV) has a signiﬁcantly higher work function\ncompared to graphene (4.6 eV)31,32,36, which drives elec-\ntron migration from graphene into TOS. This charge\ntransfer results in substantial p-doping of the graphene\n(Fig. 1c and Supplementary Information III). Due to p-\ndoping, graphene’s Fermi level shifts further into the\nvalence band, increasing the energy required for electrons\nto transition into the conduction band. As a result, inci-\ndent NIR photons at telecommunication wavelengths\ncannot meet these energy-momentum matching condi-\ntions,\nsigniﬁcantly\neliminating\ninterband\noptical\nabsorption20.\n"
+        }
+      ]
+    },
+    "PA-blocking": {
+      "paper": "A",
+      "source_sha256": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+      "pdf_page": 3,
+      "blocks": [
+        {
+          "inspection_block_index": 53,
+          "current_parser_block_number": 3,
+          "bbox": [
+            304.723388671875,
+            531.1952514648438,
+            538.600830078125,
+            732.2402954101562
+          ],
+          "text": "Subsequently, we investigated the doping effect of TOS\non graphene using Raman spectroscopy and electrical\nmeasurements. Raman analysis of pristine graphene and\nTOS/graphene reveals a signiﬁcant reduction in the\nintensity ratio of the 2D peak to the G peak (I2D/IG) as\nshown in Fig. 2c, decreasing from approximately 3 to 1.\nWe also observed a clear blueshift of the 2D peaks\n(16 cm−1) in TOS/graphene relative to the original posi-\ntion in pristine graphene. These results indicate a hole\ndensity of ~ 2 × 1013 cm−2 and a Fermi level shift of\napproximately –500 meV37. This degenerate p-type dop-\ning satisﬁes the Pauli blocking condition (2|EF |~1.0 eV\n> 0.8 eV for 1550 nm excitation), effectively suppressing\ninterband absorption and enabling the observed low\ninsertion loss. Furthermore, the sheet resistance values for\npristine graphene and TOS/graphene HS, as shown in\nFig. 2d, reveal a pronounced shift of the charge neutral\n"
+        }
+      ]
+    },
+    "PA-electrode-test": {
+      "paper": "A",
+      "source_sha256": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+      "pdf_page": 2,
+      "blocks": [
+        {
+          "inspection_block_index": 6,
+          "current_parser_block_number": 6,
+          "bbox": [
+            304.7240295410156,
+            483.4031677246094,
+            538.5917358398438,
+            732.239013671875
+          ],
+          "text": "To investigates the optical behavior of microring reso-\nnators, ﬁnite-difference time-domain (FDTD) simulations\nwere carried out under three distinct conﬁgurations: a\nbare microring, a microring integrated with pristine gra-\nphene, and a microring integrated with a TOS/graphene\nHS (Fig. 1d). The simulation results reveal that the\nintroduction of pristine graphene leads to both a mea-\nsurable phase shift and signiﬁcant optical insertion loss,\nattributed to its inherent absorption at NIR wavelengths.\nIn contrast, in the heavily p-doped graphene model (TOS/\ngraphene), the microring exhibits a clear phase shift with\nnegligible insertion loss. To verify these predictions, we\ntransferred pristine graphene and TOS/graphene HS\n(Fig. 1e inset) onto separate microring resonators and\nmeasured their transmission spectra (Fig. 1e). In agree-\nment with our calculations, the pristine graphene induces\na pronounced reduction in transmission, consistent with\nincreased absorption. In contrast, the TOS/graphene-\nintegrated microring only exhibits a comparable phase\nshift without any noticeable degradation in transmission\nintensity. These results clearly conﬁrm that the TOS layer\n"
+        }
+      ]
+    },
+    "PA-loss": {
+      "paper": "A",
+      "source_sha256": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+      "pdf_page": 6,
+      "blocks": [
+        {
+          "inspection_block_index": 43,
+          "current_parser_block_number": 3,
+          "bbox": [
+            304.7236328125,
+            459.4775085449219,
+            538.5989379882812,
+            589.665771484375
+          ],
+          "text": "absorption due to the interaction between the evanescent\nﬁeld of the guided mode and the absorbing graphene\nlayer. Conversely, the ITO and TOS/graphene devices\nshow negligible changes in Δkeff under applied bias, sug-\ngesting minimal additional optical absorption. This clear\ncontrast conﬁrms that the graphene electrode directly\ncontributes to insertion loss, whereas the TOS/graphene\nhybrid electrode remains optically transparent under\noperation. In the hybrid electrode, the observed phase\nmodulation originates exclusively from the modulated\ncarrier density in the underlying WS2.\n"
+        }
+      ]
+    },
+    "PA-efficiency": {
+      "paper": "A",
+      "source_sha256": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+      "pdf_page": 6,
+      "blocks": [
+        {
+          "inspection_block_index": 46,
+          "current_parser_block_number": 4,
+          "bbox": [
+            304.72320556640625,
+            590.4694213867188,
+            538.6005859375,
+            732.2406005859375
+          ],
+          "text": "The half-wave voltage–length product (Vπ·L) was cal-\nculated to be 0.629 V·cm, 0.220 V·cm, and 0.202 V·cm for\ndevices with ITO, graphene, and TOS/graphene electro-\ndes, respectively (Supplementary Information VI). These\nresults clearly demonstrate that graphene-based electro-\ndes offer superior capability for modulating the carrier\ndensity in WS2 compared to conventional ITO electrodes.\nFurthermore, the modulation efﬁciency achieved with the\nTOS/graphene conﬁguration represents an extraordinary\nadvancement\nthat\nsubstantially\nsurpasses\npreviously\nreported values (Fig. 5), establishing a new benchmark for\n2D-material-based phase modulators30,39,40.\n"
+        }
+      ]
+    },
+    "PA-er": {
+      "paper": "A",
+      "source_sha256": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+      "pdf_page": 5,
+      "blocks": [
+        {
+          "inspection_block_index": 73,
+          "current_parser_block_number": 2,
+          "bbox": [
+            304.7236022949219,
+            602.9115600585938,
+            538.5863647460938,
+            732.239501953125
+          ],
+          "text": "extracted from the transmission spectra presented in\nFig. 3c, d. A comparison across the three devices shows\ndistinct trends. The TOS/graphene electrode exhibits\nminimal variation in the extinction ratio of 0.08 dB over\nthe entire bias range, indicating negligible bias-induced\noptical loss. In contrast, the extinction ratio for the\ngraphene-based\ndevice\ndecreases\nsigniﬁcantly\nwith\nincreasing bias (extinction ratio variation = 7.4 dB).\nreﬂecting substantial absorption losses. The ITO-based\ndevice displays a moderate change in the extinction ratio\n(2.1 dB), suggesting a bias-dependent but less pronounced\n"
+        }
+      ]
+    },
+    "PB-limit": {
+      "paper": "B",
+      "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "pdf_page": 1,
+      "blocks": [
+        {
+          "inspection_block_index": 8,
+          "current_parser_block_number": 4,
+          "bbox": [
+            39.685001373291016,
+            531.3456420898438,
+            296.2746887207031,
+            584.526123046875
+          ],
+          "text": "Metal–semiconductor (M–S) contacts have essential roles in modern \nelectronics owing to the continuous scaling of device dimensions14. \nIn an ideal M–S junction, there is a fundamental quantum limit in the \njunction contact resistance by assuming ballistic transport of the con-\nducting modes:\n"
+        },
+        {
+          "inspection_block_index": 9,
+          "current_parser_block_number": 5,
+          "bbox": [
+            125.19599914550781,
+            592.1370849609375,
+            162.9974365234375,
+            608.2368774414062
+          ],
+          "text": "R\nh\n"
+        },
+        {
+          "inspection_block_index": 10,
+          "current_parser_block_number": 6,
+          "bbox": [
+            146.7942657470703,
+            597.9313354492188,
+            184.8877410888672,
+            614.8609008789062
+          ],
+          "text": "q\nn\n= 2\n"
+        },
+        {
+          "inspection_block_index": 11,
+          "current_parser_block_number": 7,
+          "bbox": [
+            130.3800048828125,
+            592.1704711914062,
+            294.445556640625,
+            615.3026733398438
+          ],
+          "text": "π\n2\n,\n(1)\nc,min\n2\n2D\n"
+        },
+        {
+          "inspection_block_index": 12,
+          "current_parser_block_number": 8,
+          "bbox": [
+            39.685001373291016,
+            628.0626220703125,
+            296.3440856933594,
+            659.776123046875
+          ],
+          "text": "where h is Planck’s constant, q is the unit charge and n2D is the carrier \nconcentration in the semiconductor. Such ideal M–S contacts have, \nhowever, been rarely obtained experimentally owing to the stringent \n"
+        }
+      ]
+    },
+    "PB-barriers": {
+      "paper": "B",
+      "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "pdf_page": 1,
+      "blocks": [
+        {
+          "inspection_block_index": 13,
+          "current_parser_block_number": 9,
+          "bbox": [
+            306.1416931152344,
+            531.3456420898438,
+            562.7490234375,
+            660.52197265625
+          ],
+          "text": "requirement of energy-level alignment (that is, a zero or negative \nSchottky barrier) and coherence of wavefunctions across the inter-\nface without backscattering15. The situation is more complicated for \nvan der Waals (vdW) materials such as transition-metal dichalcoge-\nnides (TMDs) owing to their dangling-bond-free surface. The existence \nof a vdW gap introduces an additional tunnel barrier and reduces the \ncharge injection, making typical Rc values several orders of magni-\ntude higher than the quantum limit15. Attempts to overcome such a \n‘contact gap’ include edge contacts16,17, low-work-function metals18, \nultrahigh vacuum evaporation8, low-energy metal integration4,6,19, \ndoping20,21, tunnelling contacts22,23 and, more recently, semi-metal \ncontacts7,9,10,24. These efforts have reduced the Rc to several hundred \n"
+        }
+      ]
+    },
+    "PB-fig1": {
+      "paper": "B",
+      "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "pdf_page": 2,
+      "blocks": [
+        {
+          "inspection_block_index": 96,
+          "current_parser_block_number": 101,
+          "bbox": [
+            306.13946533203125,
+            283.0007019042969,
+            562.3009643554688,
+            351.6423034667969
+          ],
+          "text": "Sb, Mo and S atoms, respectively. The differential charge density iscalculated \nby subtracting pre-contact three-layer Sb and MoS2 charge density from the \npost-contact charge density. The isosurface level is 9 × 10−5 e Bohr−3 and \n7 × 10−4 e Bohr−3 for the left and right panels, respectively. e, Projected PLDOS of \ndifferent orbitals of Sb (0112)–MoS2 and Sb (0001)–MoS2 contacts near EF. f, The \nintegrated DOS of TMDs at EF. g, The charge transfer from Sb to TMDs by Bader \ncharge analysis. h, The interfacial vdW interaction between TMDs and Sb.\n"
+        },
+        {
+          "inspection_block_index": 97,
+          "current_parser_block_number": 100,
+          "bbox": [
+            39.68220520019531,
+            284.0237121582031,
+            294.2340087890625,
+            352.7767028808594
+          ],
+          "text": "Fig. 1 | Electronic properties of Sb 0112\n(\n)–MoS2 and Sb (0001)–MoS2 contacts \nfrom DFT calculations. a,b, Atomic-projected electronic band structure of Sb \n(0112)–MoS2 (a) and Sb (0001)–MoS2 (b) contacts. The red and blue symbols \nrepresent orbitals from MoS2 and Sb, respectively. The size of the symbols \nrepresents the relative contribution. c,d, The charge density near EF (left) and \nthe differential charge density (right) of Sb (0112) (c) and Sb (0001) (d) contacts \n(red, positive; blue, negative). The blue, green and yellow spheres represent  \n"
+        }
+      ]
+    },
+    "PB-fig2": {
+      "paper": "B",
+      "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "pdf_page": 2,
+      "blocks": [
+        {
+          "inspection_block_index": 131,
+          "current_parser_block_number": 133,
+          "bbox": [
+            306.1414794921875,
+            696.0575561523438,
+            558.864013671875,
+            744.8113403320312
+          ],
+          "text": "0.315 nm for Sb (0112) planes is marked. Scale bar, 2 nm. d, Zoom-in \natomic-resolution image from the red box in c. The Mo, S and Sb atoms are \noverlayed on the image. The vdW gap of 0.285 nm is marked. Scale bar, 1 nm.  \ne, Optical microscope image of Sb films deposited on MoS2 and SiO2 substrate, \nshowing clear colour contrast. Scale bar, 20 μm.\n"
+        },
+        {
+          "inspection_block_index": 132,
+          "current_parser_block_number": 132,
+          "bbox": [
+            39.681610107421875,
+            695.92236328125,
+            291.4875793457031,
+            745.3051147460938
+          ],
+          "text": "Fig. 2 | Characterization of the Sb 0112\n(\n)–MoS2 contact. a, Raman spectrum \nof Sb film deposited on MoS2/Si substrate shows Sb Eg and A1g peaks at 111 cm−1 \nand 149 cm−1, respectively. b, XRD θ–2θ diffractogram of Sb film with different \ndeposition conditions and substrate. RT, room temperature. c, Cross-section \nHAADF-STEM image of the Sb (0112)–MoS2 contact. The interplane distance of \n"
+        }
+      ]
+    },
+    "PB-hybridization": {
+      "paper": "B",
+      "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "pdf_page": 3,
+      "blocks": [
+        {
+          "inspection_block_index": 68,
+          "current_parser_block_number": 2,
+          "bbox": [
+            39.684898376464844,
+            359.3456115722656,
+            296.40380859375,
+            745.776123046875
+          ],
+          "text": "density-functional theory (DFT) calculations to validate our approach \n(see Methods for calculation details). Figure 1a,b show the atomically \nprojected band structure of Sb (0112)–MoS2 and Sb (0001)–MoS2, \nrespectively. For Sb (0112)–MoS2, multiple hybridized bands composed \nof a molybdenum (Mo) d orbital and Sb p and s orbitals intersect EF. For \nSb (0001)–MoS2, however, the bands intersecting EF are mainly com-\nposed of Sb p and s orbitals, and the MoS2 conduction band minimum \nis located above EF (Fig. 1b). To find the origin of band hybridization, \nwe analysed the population of orbitals in the projected local density \nof states (PLDOS) near EF (Fig. 1e). It can be seen that, although the Sb \npx,y orbitals are comparable, the Sb pz orbital of Sb (0112) is 190% larger \nthan that of Sb (0001) owing to the closely packed atomic surface of \nSb (0112) (surface Sb atom density, 10.43 nm−2 versus 5.34 nm−2). Fur-\nthermore, the population of Mo d orbitals in the Sb (0112)–MoS2 contact \nis also markedly enhanced (Fig. 1e). It is noted that the distribution of \nSb pz and Mo d z 2 orbitals is mainly along the vertical direction. As a \nresult, a considerable real-space overlap between the Sb pz orbital and \nthe Mo d orbital emerges (Fig. 1c), which leads to strong band hybrid-\nization in the Sb (0112)–MoS2 contact. The hybridization is visualized \nby plotting the spatial charge distribution at EF in Fig. 1c,d (left). We \ncan see that the charge is distributed in both Sb (0112) and MoS2 layers \ndespite the vdW gap, in clear contrast to Sb (0001)–MoS2. We further \ninvestigated the charge transfer by calculating the differential charge \ndensity as shown in Fig. 1c,d (right). The degree of hybridization and \ncharge transfer was quantified by the integrated DOS of MoS2 at EF \n(Fig. 1f) and Bader charge transfer (Fig. 1g). In both cases, the Sb (0112)– \nMoS2 contact shows significant enhancement, which is favourable for \nM–S contacts. The charge transfer effectively pulls the MoS2 conduc-\ntion band minimum about 0.4 eV below EF (Fig. 1a). Therefore, the MoS2 \nunder Sb (0112) is degenerated doped and forms ohmic contact with \nthe channel, which is similar to the situation in Si14. In fact, the simulated \nlocal device density of states (LDDOS) suggest that the band bending \nacross the highly doped contact and the channel region is very steep \nin real space (about 0.6 nm) and allows considerable carrier tunnelling \nthrough this space-charge region in the on state (Extended Data \nFig. 1a,b).\n"
+        }
+      ]
+    },
+    "PB-vdw": {
+      "paper": "B",
+      "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "pdf_page": 3,
+      "blocks": [
+        {
+          "inspection_block_index": 66,
+          "current_parser_block_number": 3,
+          "bbox": [
+            306.1416931152344,
+            359.3126220703125,
+            562.8379516601562,
+            487.776123046875
+          ],
+          "text": "We further calculated the interfacial vdW interaction (Evdw) in the \nheterobilayer. Previous studies have established that the degree of \nband hybridization in TMD heterostructures can be increased by vdW \ninteraction28. Our calculation indeed revealed a strong Evdw = 3.33 eV nm−2 \nfor Sb (0112)–MoS2, which was much greater than that for Sb (0001)–\nMoS2 (2.62 eV nm−2; Fig. 1h). This was attributed to the planar instead \nof protruding distribution of Sb atoms in the (0112) plane. We further \nextended our calculations to several other TMDs (Fig. 1f–h and Extended \nData Fig. 2), as well as bismuth (Bi) (0112)–MoS2 (Extended Data Fig. 1e–h). \nIn all the cases, the Sb (0112) and Bi (0112) contacts showed enhanced \nband hybridization and Bader charge transfer compared with their \n(0001) counterparts, showing that our approach is general and robust.\n"
+        }
+      ]
+    },
+    "PB-tunnel": {
+      "paper": "B",
+      "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "pdf_page": 3,
+      "blocks": [
+        {
+          "inspection_block_index": 67,
+          "current_parser_block_number": 4,
+          "bbox": [
+            306.1416931152344,
+            488.3456115722656,
+            562.7913818359375,
+            563.026123046875
+          ],
+          "text": "Besides band hybridization, another important aspect to realize \nohmic contact is the tunnel barrier width. To this end, we calculated \nthe electrostatic potential profile of the contacts (Extended Data \nFig. 1c,d). The tunnel barrier width of Sb (0112)–MoS2 was 1.35 Å, which \nwas smaller than that of Sb (0001)–MoS2 (1.39 Å) as well as Bi (0001)–\nMoS2 (1.66 Å) (ref. 7). This further ensures the low tunnelling resistivity \nof Sb (0112) compared with other semi-metallic contacts.\n"
+        }
+      ]
+    },
+    "PB-tlm": {
+      "paper": "B",
+      "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "pdf_page": 3,
+      "blocks": [
+        {
+          "inspection_block_index": 64,
+          "current_parser_block_number": 70,
+          "bbox": [
+            306.1393127441406,
+            261.412109375,
+            560.2733764648438,
+            330.07781982421875
+          ],
+          "text": "It is noted that the LT derived by the TLM method assumes the same MoS2 sheet \nresistivity underneath and outside the contact, which is probably violated \nconsidering the charge transfer between Sb (0112) and MoS2. This could lead to \nuncertainties in the obtained LT. c. Rc (red squares) and intrinsic mobility (black \nrhombuses) as a function of temperature for another device. d–f, Rc (d), LT (e) \nand μint (f) distribution of the Sb (0112) and Sb (0001) contacts, respectively. \nThe solid lines are Gaussian fittings.\n"
+        },
+        {
+          "inspection_block_index": 65,
+          "current_parser_block_number": 69,
+          "bbox": [
+            39.682498931884766,
+            262.4661560058594,
+            294.635986328125,
+            331.8489074707031
+          ],
+          "text": "Fig. 3 | Electrical properties and stability of the Sb 0112\n(\n)–MoS2 contact. \n a, Transfer curves of a typical TLM structure with Lc ranging from 0.1 μm to \n1.5 μm and Vds = 0.1 V. Inset: false-colour scanning electron microscope image \nof a TLM structure. Scale bar, 2 μm. b, Rc extraction using the TLM method from \nthe device in a. From top to bottom, n2D = 1.2 × 1013 cm−2, 1.6 × 1013 cm−2, \n2.1 × 1013 cm−2 and 3 × 1013 cm−2, respectively. Inset: the magnified data plot near \nLc = 0, where the y intercept and x intercept represent 2Rc and 2LT, respectively. \n"
+        }
+      ]
+    },
+    "PB-statistics": {
+      "paper": "B",
+      "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "pdf_page": 5,
+      "blocks": [
+        {
+          "inspection_block_index": 48,
+          "current_parser_block_number": 2,
+          "bbox": [
+            39.68223571777344,
+            369.8003234863281,
+            296.29644775390625,
+            553.02197265625
+          ],
+          "text": "To demonstrate the advantage of the Sb (0112) contact, we fabricated \ncontrol TLM devices using an Sb (0001) contact (Fig. 2b). Figure 3d,e \nshows the statistics of Rc and LT derived from 156 TLM devices (115 high \ntemperature and 41 ambient temperature). The average Rc of the Sb \n(0112) contact was 209 ± 100 Ω μm, which was 3.47-times lower than \nthe Sb (0001) counterpart. A similar trend was observed for LT. The \nhigh confidence of Rc was supported by the standard deviation σ and \ncorrelation coefficient R2 from the fitting process as well as the TLM \nstructure extending to sub-100-nm channel length, Lc (Extended Data \nFig. 5). We note that the improvement using the Sb (0112) contact was \nnot due to the MoS2 quality, as supported by nearly the same average \nmobility for the two cases (Fig. 3f). In addition, variable-temperature \nmeasurements revealed a small but positive SBH of about 20 meV for \nthe Sb (0001) contact (Extended Data Fig. 4d–f), consistent with the \nrecent results from the Taiwan Semiconductor Manufacturing Com-\npany (TSMC)9. Owing to the improved contacts of Sb (0112), the FETs \ndelivered an average 38%-higher Ion at 100-nm Lc (Extended Data Fig. 6).\n"
+        }
+      ]
+    },
+    "PB-benchmark": {
+      "paper": "B",
+      "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "pdf_page": 5,
+      "blocks": [
+        {
+          "inspection_block_index": 52,
+          "current_parser_block_number": 7,
+          "bbox": [
+            306.1418151855469,
+            671.0953979492188,
+            562.8080444335938,
+            746.52197265625
+          ],
+          "text": "We next benchmarked our device performance with existing TMDs \nand Si complementary metal–oxide–semiconductor (CMOS) tech-\nnologies. We first summarized the Rc of various materials in Fig. 4d. \nIt was apparent that our Rc was not only one of the lowest among TMDs, \nbut also lower than covalently bonded contacts in Si and compound \nsemiconductors3. At high n2D, the Rc was within a factor of two from the \nquantum limit3. The reduced Rc led to a significant boost of Ion under \n"
+        }
+      ]
+    },
+    "PB-delay": {
+      "paper": "B",
+      "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "pdf_page": 6,
+      "blocks": [
+        {
+          "inspection_block_index": 0,
+          "current_parser_block_number": 1,
+          "bbox": [
+            39.685001373291016,
+            47.562625885009766,
+            296.30120849609375,
+            219.77200317382812
+          ],
+          "text": "aggressively scaled Vds = 1 V (Fig. 4e). The Ion under d.c. and pulse con-\nditions was 44.7% and 68.8% higher than the previous record in mon-\nolayer TMDs7. More importantly, our devices delivered similar Ion with \nhigh-performance planar Si CMOS and superior Ion than fin-shaped \nFET (FinFET) and gate-all-round FET (GAAFET) technologies37,38, and \nsimultaneously showed immunity to short-channel effects owing to \nthe sub-1-nm channel thickness. We further benchmark with Si tech-\nnologies by comparing the intrinsic gate delay (τ = CVds/Ion, where C is \nthe gate capacitance)39. As shown in Fig. 4f, the intrinsic gate delay is \n74 fs for 20-nm MoS2 FETs, which is faster than Si planar devices and \nFinFETs by 6.9 times and 15.7 times, respectively37–39. The solid red line \nshows the fitting of experimental data using Rc = 240 Ω μm, projecting \nan intrinsic gate delay of 20 fs at 5-nm Lc. This is an order of magnitude \nlower than the International Roadmap for Devices and Systems (IRDS) \ntarget for 202837. By using the lowest Rc = 42 Ω μm obtained in this work, \nwe project an intrinsic delay of 3.6 fs at 5-nm Lc.\n"
+        }
+      ]
+    },
+    "PB-short-channel": {
+      "paper": "B",
+      "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "pdf_page": 5,
+      "blocks": [
+        {
+          "inspection_block_index": 51,
+          "current_parser_block_number": 4,
+          "bbox": [
+            39.68510055541992,
+            681.55029296875,
+            296.3935241699219,
+            745.776123046875
+          ],
+          "text": "To fully determine the potential of the Sb (0112) contact, we fabri-\ncated scaled MoS2 FETs with sub-50-nm Lc (Fig. 4a). Figure 4b,c shows \nthe Ids–Vgs and Ids–Vds characteristics of a representative device with \nLc ≈ 20 nm (more device data are shown in Extended Data Fig. 8). The \ndevice showed excellent short-channel immunity, with an on/off ratio \nover 108, an SS of about 180 mV dec−1 and negligible drain-induced \n"
+        }
+      ]
+    },
+    "PB-current": {
+      "paper": "B",
+      "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "pdf_page": 5,
+      "blocks": [
+        {
+          "inspection_block_index": 47,
+          "current_parser_block_number": 5,
+          "bbox": [
+            306.1416931152344,
+            370.0956115722656,
+            562.7119140625,
+            434.02587890625
+          ],
+          "text": "barrier lowering. More importantly, the device readily reached current \nsaturation at Vds = 1 V as evident from both transfer and output char-\nacteristics. The Ion (1.23 mA μm−1) was 44.7% and 104% higher than \nshort-channel devices with Bi (0001) and Sb (0001) contacts, respec-\ntively, under the same drain bias7,9. Both the saturation voltage and Ion \nwere unprecedented in TMDs owing to the improved contacts.\n"
+        }
+      ]
+    }
+  },
+  "validation": {
+    "checked_at": "2026-10-05",
+    "source_hashes_match": true,
+    "anchor_count": 24,
+    "text_block_count": 31,
+    "exact_text_and_bbox_match": true,
+    "bbox_in_page": true,
+    "all_document_anchor_references_resolve": true,
+    "scientific_validity": "NOT_ASSESSED_BY_HUMAN"
+  }
+}

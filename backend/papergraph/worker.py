@@ -220,7 +220,7 @@ def run_once(
                                 epistemic_status=candidate.epistemic_status,
                                 uncertainty_reason=candidate.reason,
                                 provenance=[anchor_id],
-                                created_by="local-rule-extractor-v1",
+                                created_by="local-rule-extractor-v2",
                             )
                         )
                         session.flush()

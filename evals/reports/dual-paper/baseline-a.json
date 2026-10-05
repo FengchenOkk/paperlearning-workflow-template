@@ -1,0 +1,362 @@
+{
+  "source_hash": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+  "gold_hash": "b2cf5c09d52627a92ebdd17209ca9e51f3af85599896731336a4a00427ec0109",
+  "parser": "pymupdf",
+  "parser_version": "1.28.2",
+  "pipeline_version": "source-graph-v2",
+  "job_status": "READY",
+  "title": "Hybrid tungsten oxyselenide/graphene electrodes for near-lossless 2D semiconductor phase modulators",
+  "page_count": 10,
+  "nodes": 42,
+  "edges": 41,
+  "semantic_edges": 0,
+  "verification_records": 0,
+  "metrics": {
+    "precision": {
+      "passed": 1,
+      "total": 2,
+      "rate": 0.5
+    },
+    "recall": {
+      "passed": 1,
+      "total": 17,
+      "rate": 0.058823529411764705
+    },
+    "type_accuracy": {
+      "passed": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "anchors": {
+      "passed": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "pages": {
+      "passed": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "figures": {
+      "passed": 0,
+      "total": 3,
+      "rate": 0.0
+    },
+    "equations": {
+      "passed": 0,
+      "total": 0,
+      "rate": null
+    },
+    "quantities": {
+      "passed": 2,
+      "total": 10,
+      "rate": 0.2
+    },
+    "node_provenance": {
+      "passed": 42,
+      "total": 42,
+      "rate": 1.0
+    }
+  },
+  "matches": [
+    {
+      "gold_id": "a-problem",
+      "expected_type": "RESEARCH_PROBLEM",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": []
+    },
+    {
+      "gold_id": "a-electrode-method",
+      "expected_type": "METHOD",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": []
+    },
+    {
+      "gold_id": "a-device",
+      "expected_type": "DEVICE",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": []
+    },
+    {
+      "gold_id": "a-central-result",
+      "expected_type": "RESULT",
+      "node_id": "928c806f-b13e-5f09-ad5a-20811fa04fd8",
+      "actual_type": "RESULT",
+      "same_type": true,
+      "correct_source": true,
+      "quantities": [
+        {
+          "value": "0.202",
+          "unit": "V·cm",
+          "context": "modulation efficiency",
+          "pass": true,
+          "issue": null
+        },
+        {
+          "value": "0.08",
+          "unit": "dB",
+          "context": "extinction ratio change",
+          "pass": true,
+          "issue": null
+        }
+      ]
+    },
+    {
+      "gold_id": "a-absorption-method",
+      "expected_type": "METHOD",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": []
+    },
+    {
+      "gold_id": "a-simulation",
+      "expected_type": "SIMULATION",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": []
+    },
+    {
+      "gold_id": "a-simulation-result",
+      "expected_type": "RESULT",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": []
+    },
+    {
+      "gold_id": "a-figure-1",
+      "expected_type": "FIGURE",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": []
+    },
+    {
+      "gold_id": "a-figure-3",
+      "expected_type": "FIGURE",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": []
+    },
+    {
+      "gold_id": "a-figure-4",
+      "expected_type": "FIGURE",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": []
+    },
+    {
+      "gold_id": "a-definition",
+      "expected_type": "DEFINITION",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": []
+    },
+    {
+      "gold_id": "a-index-measurement",
+      "expected_type": "METHOD",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": []
+    },
+    {
+      "gold_id": "a-voltage-length",
+      "expected_type": "RESULT",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": [
+        {
+          "value": "0.629",
+          "unit": "V·cm",
+          "context": "ITO",
+          "pass": false,
+          "issue": "No same-type extracted object"
+        },
+        {
+          "value": "0.220",
+          "unit": "V·cm",
+          "context": "graphene",
+          "pass": false,
+          "issue": "No same-type extracted object"
+        },
+        {
+          "value": "0.202",
+          "unit": "V·cm",
+          "context": "TOS/graphene",
+          "pass": false,
+          "issue": "No same-type extracted object"
+        }
+      ]
+    },
+    {
+      "gold_id": "a-intrinsic-index",
+      "expected_type": "RESULT",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": [
+        {
+          "value": "−3.4",
+          "unit": "RIU",
+          "context": "maximum intrinsic Δn",
+          "pass": false,
+          "issue": "No same-type extracted object"
+        },
+        {
+          "value": "4 × 10^12",
+          "unit": "cm^−2",
+          "context": "carrier concentration",
+          "pass": false,
+          "issue": "PDF text collapses exponent to 1012; plain source quote is ambiguous"
+        }
+      ]
+    },
+    {
+      "gold_id": "a-limitation",
+      "expected_type": "LIMITATION",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": []
+    },
+    {
+      "gold_id": "a-fabrication",
+      "expected_type": "METHOD",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": [
+        {
+          "value": "50",
+          "unit": "°C",
+          "context": "UV-ozone treatment",
+          "pass": false,
+          "issue": "No same-type extracted object"
+        },
+        {
+          "value": "30",
+          "unit": "min",
+          "context": "UV-ozone duration",
+          "pass": false,
+          "issue": "No same-type extracted object"
+        },
+        {
+          "value": "1",
+          "unit": "L/min",
+          "context": "oxygen flow",
+          "pass": false,
+          "issue": "No same-type extracted object"
+        }
+      ]
+    },
+    {
+      "gold_id": "a-fdtd-method",
+      "expected_type": "SIMULATION",
+      "node_id": null,
+      "actual_type": null,
+      "same_type": false,
+      "correct_source": false,
+      "quantities": []
+    }
+  ],
+  "predictions": [
+    {
+      "key": "3d56ee6760a59d655c2217a6cf92eba0877ffafb7751f22b91e0d65688799041",
+      "node_id": "928c806f-b13e-5f09-ad5a-20811fa04fd8",
+      "type": "RESULT",
+      "text": "This achieves a high modulation\nefﬁciency of 0.202 V·cm while maintaining an exceptionally low extinction ratio change of just 0.08 dB, demonstrating\nsuperior performance compared to modulators employing conventional electrodes.",
+      "page": 1,
+      "bbox": [
+        63.15587615966797,
+        271.1330261230469,
+        532.1282958984375,
+        463.1760559082031
+      ],
+      "adjudication": {
+        "correct": true,
+        "origin": "MODEL_SOURCE_REVIEW",
+        "human_review": "PENDING"
+      }
+    },
+    {
+      "key": "b9643b310ba659ee0279160506713392a33f91b0545b5e9c180428cd2c6737c2",
+      "node_id": "f0f2f8c6-2e13-5872-b77d-062a1ac9ca33",
+      "type": "RESULT",
+      "text": "Therefore, developing electrode\nmaterials that simultaneously achieve efﬁcient electro-\nstatic\ncontrol,\noptical\ntransparency,\nand\nscalability\nremains a critical challenge for integrated photonic\napplications.",
+      "page": 2,
+      "bbox": [
+        56.691619873046875,
+        88.87735748291016,
+        290.5670471191406,
+        469.241943359375
+      ],
+      "adjudication": {
+        "correct": false,
+        "origin": "MODEL_SOURCE_REVIEW",
+        "human_review": "PENDING",
+        "reason": "Motivating challenge mislabeled RESULT."
+      }
+    }
+  ],
+  "integrity": {
+    "paper_id": "2162e3f5-bf1e-4f74-85ac-bedf62daa989",
+    "issues": [
+      {
+        "code": "DUPLICATE_CANDIDATE",
+        "object_id": "bbcfb499-1654-5720-b42c-72f2e517a725",
+        "severity": "WARNING",
+        "detail": "Same type/text as 91ed8683-49d9-56bd-8b76-3b87b66d879c; no automatic merge"
+      },
+      {
+        "code": "DUPLICATE_CANDIDATE",
+        "object_id": "ee6ed838-fe16-511a-bbb7-2575db09e979",
+        "severity": "WARNING",
+        "detail": "Same type/text as f1c769fc-d213-58d7-8b76-53427252b767; no automatic merge"
+      },
+      {
+        "code": "DUPLICATE_CANDIDATE",
+        "object_id": "58b45056-398a-56ff-8c78-32165a137dd4",
+        "severity": "WARNING",
+        "detail": "Same type/text as 08adf32d-5350-56f0-b12e-8f15db978058; no automatic merge"
+      }
+    ],
+    "structurally_valid": true,
+    "scientific_validity": "NOT_ASSESSED"
+  },
+  "human_review": "PENDING",
+  "overall_reviewed_gate": "FAIL",
+  "limitations": [
+    "Precision requires separately recorded source adjudication; unreviewed predictions count as incorrect.",
+    "Numeric scoring is a frozen model source-review comparison, not scientific validity or human acceptance.",
+    "Anchor/page rates are conditional on matched objects; missing figures/equations fail their own measures.",
+    "Browser results are recorded separately. No semantic reasoning quality is established by an empty semantic graph."
+  ]
+}

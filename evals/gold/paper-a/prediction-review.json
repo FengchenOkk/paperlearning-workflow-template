@@ -1,0 +1,154 @@
+{
+  "3777317fe9c4627ac181ca9f922c60e36ced693803d404a521128ce6d9fff7ce": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "RESEARCH_PROBLEM",
+    "source_page": 1,
+    "reason": "Source explicitly states the problem/challenge motivating the work."
+  },
+  "5ff7ca7e4613b9f93b14467cc5fc0ca3bcfa6c052c314b7b0011acd159377e97": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "METHOD",
+    "source_page": 1,
+    "reason": "Source describes an employed procedure or proposed construction; no validity acceptance."
+  },
+  "24d4ea55915f6627cdaa999aec3a07be9d030f23f167871168b7d213d91b04c0": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "DEVICE",
+    "source_page": 1,
+    "reason": "Source describes the integrated device components."
+  },
+  "3d56ee6760a59d655c2217a6cf92eba0877ffafb7751f22b91e0d65688799041": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "RESULT",
+    "source_page": 1,
+    "reason": "Source attributes the stated outcome to the authors; numerical typography and context checked against PDF."
+  },
+  "f0f230cec893431e7822cb5628780ddbd47a0125fa3df5d43aedc54134d3307d": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "LIMITATION",
+    "source_page": 2,
+    "reason": "Source explicitly states a constraint or uncertainty."
+  },
+  "2b485bc0a39965f9841952b498294838d24ccf55889a753b4004437a67377a30": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "RESEARCH_PROBLEM",
+    "source_page": 2,
+    "reason": "Source explicitly states the problem/challenge motivating the work."
+  },
+  "fa04d3ea6e285d72f3e25aab5ef7964d940221b23ae9783e9846dbbe5b69c7c9": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "METHOD",
+    "source_page": 2,
+    "reason": "Source describes an employed procedure or proposed construction; no validity acceptance."
+  },
+  "4932ae0bb4f78e370dac0248c625b05b6ad89b6287504beb56be5c7a6e2a29bf": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "SIMULATION",
+    "source_page": 2,
+    "reason": "Source reports actual computational modeling or calculations; no experimental result implied."
+  },
+  "1ad902ea07147975915d645eb09c073bf0567eb6df666c64e7ff493a5de2804e": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "RESULT",
+    "source_page": 2,
+    "reason": "Source attributes the stated outcome to the authors; numerical typography and context checked against PDF."
+  },
+  "3794d4cff1c44bdb6d3d2f6ab9639bda9e22cda0ba006691a530e3a6e5e2300f": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "FIGURE",
+    "source_page": 3,
+    "reason": "Caption identifier and full selected caption wording agree with the rendered PDF; no image interpretation accepted."
+  },
+  "fd62d5f9947fcfaf3834c64108ba8081bd3eb640ecbef3148b9860c16ac85456": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "FIGURE",
+    "source_page": 5,
+    "reason": "Caption identifier and full selected caption wording agree with the rendered PDF; no image interpretation accepted."
+  },
+  "55cf07a2aadfa4ce73c380d035081581e6c83f4ec52065eb12f4a0cc37a5e744": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "FIGURE",
+    "source_page": 6,
+    "reason": "Caption identifier and full selected caption wording agree with the rendered PDF; no image interpretation accepted."
+  },
+  "be74b88142d11c5f1f2adbbd2f2d8c1efe89be52ba950a45f5fa784eb9d5d97d": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "DEFINITION",
+    "source_page": 6,
+    "reason": "Source explicitly defines the quantity; individual sentence boundaries checked."
+  },
+  "e6ae449cf244fc9caab165cb303bf4de09cc8bb7c63e7aeeecb69d556cd3fb45": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "METHOD",
+    "source_page": 6,
+    "reason": "Source describes an employed procedure or proposed construction; no validity acceptance."
+  },
+  "dbb68524da543d9fb1b6114363ff4e384f150be315b61f630cd529784d75deed": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "RESULT",
+    "source_page": 6,
+    "reason": "Source attributes the stated outcome to the authors; numerical typography and context checked against PDF."
+  },
+  "c935580f9be3e0df4cc1187c71ad463cc5dc39af96ea51a8ba94c8e21f751699": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "METHOD",
+    "source_page": 7,
+    "reason": "Source describes an employed procedure or proposed construction; no validity acceptance."
+  },
+  "6dc57c862b98522eb05c5a699060aed9ec8310d77db5538924fa1ac9a7bbded7": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "RESULT",
+    "source_page": 7,
+    "reason": "Source attributes the stated outcome to the authors; numerical typography and context checked against PDF."
+  },
+  "1ef9e8f7b9c048366d8b25e4b9357ad4871e95788e3324f6360cab39340bec60": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "METHOD",
+    "source_page": 8,
+    "reason": "Source describes an employed procedure or proposed construction; no validity acceptance."
+  },
+  "24f7a3cf45b01b053d3a292eab33ee857a60f282add4d0cf866a08116f8cb47b": {
+    "correct": true,
+    "origin": "MODEL_SOURCE_REVIEW",
+    "human_review": "PENDING",
+    "expected_type": "SIMULATION",
+    "source_page": 8,
+    "reason": "Source reports actual computational modeling or calculations; no experimental result implied."
+  }
+}

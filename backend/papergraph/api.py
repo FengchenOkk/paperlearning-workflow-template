@@ -14,7 +14,7 @@ from sqlalchemy.orm import Session
 from starlette.middleware.base import RequestResponseEndpoint
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 
-from . import integrity, repository, services
+from . import integrity, repository, services, text_search
 from .config import Settings
 from .database import Database
 from .models import AnchorRow, EvidenceRow, JobRow, NodeRow, PageRow, PaperRow, SpanRow, timestamp
@@ -319,50 +319,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     ) -> list[SearchHit]:
         with database.session() as session:
             paper = source_paper(session, paper_id)
-            hits = []
-            query = (
-                select(NodeRow)
-                .where(
-                    NodeRow.paper_id == paper_id,
-                    (
-                        NodeRow.text.icontains(q, autoescape=True)
-                        | NodeRow.label.icontains(q, autoescape=True)
-                    ),
-                )
-                .limit(30)
-            )
-            for node in session.scalars(query):
-                if node.provenance:
-                    anchor = session.get(AnchorRow, node.provenance[0])
-                    if anchor:
-                        repository.anchors_for(session, paper, [anchor.id])
-                        hits.append(
-                            SearchHit(
-                                node_id=node.id,
-                                anchor_id=anchor.id,
-                                page_number=anchor.page_number,
-                                text=node.text,
-                                kind=node.type,
-                            )
-                        )
-            used = {h.anchor_id for h in hits}
-            for anchor in session.scalars(
-                select(AnchorRow)
-                .where(AnchorRow.paper_id == paper_id, AnchorRow.text.icontains(q, autoescape=True))
-                .limit(30)
-            ):
-                if anchor.id not in used:
-                    repository.anchors_for(session, paper, [anchor.id])
-                    hits.append(
-                        SearchHit(
-                            node_id=None,
-                            anchor_id=anchor.id,
-                            page_number=anchor.page_number,
-                            text=anchor.text,
-                            kind="SOURCE_SPAN",
-                        )
-                    )
-            return hits[:50]
+            return text_search.search(session, paper, q)
 
     @app.get("/api/papers/{paper_id}/integrity", response_model=IntegrityReport)
     def integrity_report(paper_id: str) -> IntegrityReport:
