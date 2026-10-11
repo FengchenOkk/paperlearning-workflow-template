@@ -1,0 +1,106 @@
+[
+  {
+    "source_hash": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+    "journeys": [
+      {
+        "gold_id": "a-central-result",
+        "page": 1,
+        "type": "RESULT",
+        "source_hash": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+        "result": "PASS",
+        "notation_view": "NOT_REQUIRED"
+      },
+      {
+        "gold_id": "a-figure-1",
+        "page": 3,
+        "type": "FIGURE",
+        "source_hash": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+        "result": "PASS",
+        "notation_view": "PASS"
+      },
+      {
+        "gold_id": "a-figure-3",
+        "page": 5,
+        "type": "FIGURE",
+        "source_hash": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+        "result": "PASS",
+        "notation_view": "PASS"
+      },
+      {
+        "gold_id": "a-figure-4",
+        "page": 6,
+        "type": "FIGURE",
+        "source_hash": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+        "result": "PASS",
+        "notation_view": "PASS"
+      }
+    ],
+    "search": "PASS",
+    "integrity": "PASS",
+    "status": "PASS"
+  },
+  {
+    "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+    "journeys": [
+      {
+        "gold_id": "b-central-result",
+        "page": 1,
+        "type": "RESULT",
+        "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+        "result": "PASS",
+        "notation_view": "NOT_REQUIRED"
+      },
+      {
+        "gold_id": "b-equation-1",
+        "page": 1,
+        "type": "EQUATION",
+        "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+        "result": "PASS",
+        "notation_view": "NOT_REQUIRED"
+      },
+      {
+        "gold_id": "b-figure-1",
+        "page": 2,
+        "type": "FIGURE",
+        "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+        "result": "PASS",
+        "notation_view": "PASS"
+      },
+      {
+        "gold_id": "b-figure-2",
+        "page": 2,
+        "type": "FIGURE",
+        "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+        "result": "PASS",
+        "notation_view": "PASS"
+      },
+      {
+        "gold_id": "b-figure-3",
+        "page": 3,
+        "type": "FIGURE",
+        "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+        "result": "PASS",
+        "notation_view": "PASS"
+      },
+      {
+        "gold_id": "b-contact-method",
+        "page": 1,
+        "type": "METHOD",
+        "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+        "result": "PASS",
+        "notation_view": "PASS"
+      },
+      {
+        "gold_id": "b-stability",
+        "page": 5,
+        "type": "RESULT",
+        "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+        "result": "PASS",
+        "notation_view": "PASS"
+      }
+    ],
+    "search": "PASS",
+    "integrity": "PASS",
+    "status": "PASS"
+  }
+]

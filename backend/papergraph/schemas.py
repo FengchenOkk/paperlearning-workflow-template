@@ -25,6 +25,28 @@ class Contract(BaseModel):
     model_config = ConfigDict(extra="forbid", from_attributes=True)
 
 
+class SourceNotation(Contract):
+    start_char: int = Field(ge=0)
+    end_char: int = Field(gt=0)
+    raw: str = Field(min_length=1)
+    display: str = Field(min_length=1)
+    kind: Literal["SUBSCRIPT", "SUPERSCRIPT", "OVERBAR"]
+    bbox: BBox
+    basis: Literal["PDF_BASELINE_AND_SIZE", "PDF_SUPERSCRIPT_FLAG", "PDF_DRAWING_AND_GLYPH"]
+
+    @model_validator(mode="after")
+    def check_display(self) -> "SourceNotation":
+        raw = self.raw.translate(str.maketrans("⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁽⁾", "0123456789+−()"))
+        expected = (
+            self.raw + "\u0305"
+            if self.kind == "OVERBAR"
+            else ("_" if self.kind == "SUBSCRIPT" else "^") + raw
+        )
+        if self.display != expected:
+            raise ValueError("Notation view must encode the observed glyphs only")
+        return self
+
+
 class Anchor(Contract):
     id: Identifier
     paper_id: Identifier
@@ -36,6 +58,8 @@ class Anchor(Contract):
     text: str
     source_hash: str
     localization_precision: Literal["TEXT_BLOCK"]
+    notation: list[SourceNotation] = Field(default_factory=list)
+    notation_issues: list[str] = Field(default_factory=list)
 
 
 class Node(Contract):
@@ -101,7 +125,10 @@ class Span(Contract):
     reading_order: int
     text: str
     bbox: BBox
-    kind: Literal["paragraph", "heading"]
+    kind: Literal["paragraph", "heading", "header", "panel_label"]
+    notation: list[SourceNotation] = Field(default_factory=list)
+    notation_issues: list[str] = Field(default_factory=list)
+    section_titles: list[str] = Field(default_factory=list)
 
 
 class Page(Contract):

@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "fixture": "public-jmlr-dropout",
+  "journeys": [
+    "upload",
+    "graph",
+    "inspector",
+    "evidence",
+    "original_pdf",
+    "highlight",
+    "reverse",
+    "refresh",
+    "search",
+    "learning_empty",
+    "themes",
+    "mobile"
+  ]
+}

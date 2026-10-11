@@ -86,12 +86,16 @@ export function App() {
           if (saved) {
             try {
               const restored = await api.evidence(saved);
+              const represented = g.nodes.some((node) => node.id === saved);
               if (
                 !disposed &&
                 selectionEpoch.current === epoch &&
                 restored.node.paper_id === paperId &&
-                g.nodes.some((node) => node.id === saved)
+                (represented || (view === 'knowledge' && g.truncated))
               ) {
+                const focused = represented ? null : await api.neighborhood(saved, 1);
+                if (disposed || selectionEpoch.current !== epoch) return;
+                if (focused) setGraph(focused);
                 setBundle(restored);
                 const source = restored.evidence[0]?.anchor;
                 if (source) {
@@ -296,14 +300,17 @@ export function App() {
               <div className="panel-title">SOURCE STRUCTURE</div>
               <div className="section-list">
                 {document.pages.flatMap((p) =>
-                  p.spans
-                    .filter((s) => s.kind === 'heading')
-                    .map((s) => (
-                      <button key={s.id} onClick={() => void chooseSource(s.anchor_id)}>
-                        <span>{s.text}</span>
+                  p.spans.flatMap((s) =>
+                    (s.section_titles ?? []).map((title, index) => (
+                      <button
+                        key={`${s.id}:${index}`}
+                        onClick={() => void chooseSource(s.anchor_id)}
+                      >
+                        <span>{title}</span>
                         <small>{p.number}</small>
                       </button>
                     )),
+                  ),
                 )}
               </div>
             </>

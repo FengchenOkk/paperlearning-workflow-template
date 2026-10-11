@@ -1,0 +1,1361 @@
+{
+  "schema_version": "paper-methods-inventory-1",
+  "created_at_utc": "2026-10-11 09:18:20 UTC",
+  "paper": "B",
+  "paper_id": "a947a15a-db74-4bb0-82c4-45eff7807c79",
+  "title": "Approaching the quantum limit in two-dimensional semiconductor contacts",
+  "source_pdf_path": "E:\\PaperLearning\\backend\\data\\documents\\4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd.pdf",
+  "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+  "scope": {
+    "section": "Methods",
+    "pdf_pages": [
+      7
+    ],
+    "subsection_count": 5,
+    "method_or_step_count": 30
+  },
+  "origin": "MODEL_SOURCE_REVIEW",
+  "human_review": "PENDING",
+  "scientific_validity": "NOT_ASSESSED",
+  "requested_by_user_verbatim": "accept,这里是DFT的使用方法，但这一大节都是方法，所有用到的方法都需要识别出来，并做好总结",
+  "request_decision_id": "human-source-B-b-dft-method-1",
+  "source_anchor_aliases": {
+    "mos2": "0f74e956-9c09-5dc2-b278-5dc94148bb30",
+    "wse2": "012279a8-2df2-5ee2-b591-67a909dbc67f",
+    "fabrication": "ef7744e8-eade-5132-8c9b-19a63aff1217",
+    "electrical": "a091d6cc-c138-5390-80c1-075ba22ca5c2",
+    "characterization": "98dd9a2e-3987-5508-ac41-da96d1b17535",
+    "fib": "44a3596c-0090-53ae-86dd-7560166b15c0",
+    "dft": "eabf77bc-88cd-576b-bee5-1bf27aa1459f"
+  },
+  "source_anchor_snapshots": {
+    "0f74e956-9c09-5dc2-b278-5dc94148bb30": {
+      "id": "0f74e956-9c09-5dc2-b278-5dc94148bb30",
+      "paper_id": "a947a15a-db74-4bb0-82c4-45eff7807c79",
+      "span_id": "dca346e8-bc70-573f-b580-3d3a38e4e1a2",
+      "page_number": 7,
+      "start_char": 0,
+      "end_char": 762,
+      "bbox": "[39.685001373291016, 67.81312561035156, 296.28167724609375, 197.5262451171875]",
+      "text": "Chemical-vapour-deposition growth and transfer of monolayer \nMoS2\nWe grew single-crystal monolayer MoS2 on A-axis c-plane (C/A) sapphire \n(0001) substrates with miscut angle αA ranging from 0.2° to 1° that had \nundergone 1,000 °C annealing for 4 h as described in our previous \nwork³¹. The transfer of MoS2 was done by a polymer-based transfer \nmethod. Poly(methyl methacrylate) (PMMA; Allresist A4, 950K) was \nspin-coated on the MoS2/sapphire substrate at 2,000 r.p.m. After baking \nat 150 °C to evaporate solvent completely, a thermal release tape (TRT) \nwas laminated and the PMMA/MoS2 was gently peeled off the sapphire \nsubstrate in deionized water. The TRT/PMMA/MoS2 stack was trans-\nferred onto the target substrate and baked at 120 °C to release the TRT.",
+      "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "localization_precision": "TEXT_BLOCK"
+    },
+    "012279a8-2df2-5ee2-b591-67a909dbc67f": {
+      "id": "012279a8-2df2-5ee2-b591-67a909dbc67f",
+      "paper_id": "a947a15a-db74-4bb0-82c4-45eff7807c79",
+      "span_id": "8908c478-0384-5b4a-be0d-cb40ff29c687",
+      "page_number": 7,
+      "start_char": 0,
+      "end_char": 815,
+      "bbox": "[39.685001373291016, 207.56324768066406, 296.3952331542969, 348.026123046875]",
+      "text": "Chemical-vapour-deposition growth of monolayer WSe2\nWe grew monolayer WSe2 on 100-nm SiNx/Si substrate using a \nchemical-vapour-deposition tube furnace with a reverse-flow reac-\ntor. An alumina boat loaded with WSe2 (Alfa Aesar, 99.98%) powder \nwas placed into the heating zone of a quartz tube, and the substrate \nwas placed on the alumina boat and placed in the variable-temperature \nzone. The chemical-vapour-deposition growth process was carried \nout at 1,180 °C under ambient pressure with a reverse argon gas flow \nof 80 standard cubic centimetres per minute. Once the desired growth \ntemperature was reached, the chemical vapour source was carried \ndownstream under a forward argon gas flow of 80 standard cubic cen-\ntimetres for a growth period of 4 min. After the growth, the furnace \nwas cooled naturally.",
+      "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "localization_precision": "TEXT_BLOCK"
+    },
+    "ef7744e8-eade-5132-8c9b-19a63aff1217": {
+      "id": "ef7744e8-eade-5132-8c9b-19a63aff1217",
+      "paper_id": "a947a15a-db74-4bb0-82c4-45eff7807c79",
+      "span_id": "649fecb5-9a26-5648-8296-5652e21e0af5",
+      "page_number": 7,
+      "start_char": 0,
+      "end_char": 968,
+      "bbox": "[39.685001373291016, 358.0631103515625, 296.4149475097656, 520.026123046875]",
+      "text": "Transistor fabrication and measurement\nMonolayer MoS2 film was transferred onto hafnium oxide (HfO2)/highly \ndoped Si substrate using the PMMA-assisted transfer followed by chan-\nnel isolation through electron beam lithography and dry etching by \nO2. After removing PMMA by acetone and N-methyl-2-pyrrolidone \n(NMP), electron beam lithography was used to define the source and \ndrain contacts followed by electron beam evaporation of 20-nm \nSb/30-nm Au and lift-off. We controlled the substrate temperature \nduring electron beam evaporation through infrared heating and adjust-\ning the cooling water flow rate. The substrate temperature was meas-\nured using the surface temperature indicating strips. Notably, the Sb \n(0112) contact did not require any thermal annealing after device fab-\nrication, which made this technology back-end-of-line compatible with \nCMOS. WSe2 FETs were fabricated on in-situ SiNx/Si substrate by the \nsame methods without transfer process. ",
+      "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "localization_precision": "TEXT_BLOCK"
+    },
+    "a091d6cc-c138-5390-80c1-075ba22ca5c2": {
+      "id": "a091d6cc-c138-5390-80c1-075ba22ca5c2",
+      "paper_id": "a947a15a-db74-4bb0-82c4-45eff7807c79",
+      "span_id": "624806eb-f0f7-5b5c-8906-3d89f2f25dc5",
+      "page_number": 7,
+      "start_char": 0,
+      "end_char": 716,
+      "bbox": "[39.685001373291016, 520.5956420898438, 296.3868103027344, 638.276123046875]",
+      "text": "Electrical measurements were carried out by Keithley 4200 semicon-\nductor parameter analyser in a closed-cycle cryogenic probe station \nwith a base pressure of about 10⁻⁶ torr. Pulse testing was performed \nusing a Keithley 4200 pulse measurement unit in conjunction with \nmodel 4225-RPM remote amplifier. During the pulse measurement, \na synchronous pulse voltage sequence was applied to the drain and \ngate electrodes, the minimum pulse width can be as low as 160 ns \nand the voltage duty cycle was 10 times. To reduce parasitic effects \nduring pulse measurement, all the cables were shortened as much \nas possible. The data on the MoS2 FETs shown in Fig. 4d,e are from \nrefs. ³,⁴,⁷,⁹,¹⁰,¹⁷,²¹,²²,²⁴,³¹,³⁷,³⁸,⁴⁰–⁴⁸.",
+      "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "localization_precision": "TEXT_BLOCK"
+    },
+    "98dd9a2e-3987-5508-ac41-da96d1b17535": {
+      "id": "98dd9a2e-3987-5508-ac41-da96d1b17535",
+      "paper_id": "a947a15a-db74-4bb0-82c4-45eff7807c79",
+      "span_id": "d80ec6e6-30e5-5237-bb30-50dd1014037a",
+      "page_number": 7,
+      "start_char": 0,
+      "end_char": 561,
+      "bbox": "[39.685001373291016, 648.3131103515625, 296.2748718261719, 745.776123046875]",
+      "text": "Characterization\nXRD was performed on a Bruker D8 Discover system. AFM was per-\nformed by an Asylum Cypher S system. Raman and photoluminescence \nspectroscopy were carried out by a home-built system equipped with \n488-nm laser excitation and Princeton Instruments SP-2500 spectrome-\nter. X-ray photoemission spectroscopy (PHI 5000 VersaProbe Scanning \nXPS Microprobe with a monochromatized Al Kα excitation source) was \nperformed with calibration to the chemical state of C–C of adventitious \ncarbon at 284.8 eV. Cross-section TEM samples were fabricated using ",
+      "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "localization_precision": "TEXT_BLOCK"
+    },
+    "44a3596c-0090-53ae-86dd-7560166b15c0": {
+      "id": "44a3596c-0090-53ae-86dd-7560166b15c0",
+      "paper_id": "a947a15a-db74-4bb0-82c4-45eff7807c79",
+      "span_id": "e8113733-2ce9-576a-8e56-87d6f9984f0b",
+      "page_number": 7,
+      "start_char": 0,
+      "end_char": 530,
+      "bbox": "[306.1416931152344, 47.59513854980469, 562.7642211914062, 133.026123046875]",
+      "text": "an FEI Helios 600i dual-beam focused ion beam (FIB) system. A tung-\nsten protection layer was in situ deposited before FIB bombardment, \nfollowed by etching the surrounding area to form the lamella using a \n30-kV acceleration voltage and a 21-nA gallium ion beam. The target \nlamella was exfoliated from the original substrate and transferred to \nTEM half grid inside the FIB chamber. HAADF-STEM characterization \nwas acquired on a FEI Titan G2 60–300 aberration-corrected S/TEM \nmicroscope with an acceleration voltage of 300 kV.",
+      "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "localization_precision": "TEXT_BLOCK"
+    },
+    "eabf77bc-88cd-576b-bee5-1bf27aa1459f": {
+      "id": "eabf77bc-88cd-576b-bee5-1bf27aa1459f",
+      "paper_id": "a947a15a-db74-4bb0-82c4-45eff7807c79",
+      "span_id": "51994cf6-7d86-5615-814a-1f8f4660742e",
+      "page_number": 7,
+      "start_char": 0,
+      "end_char": 1927,
+      "bbox": "[306.1416931152344, 143.06312561035156, 562.7979125976562, 444.776123046875]",
+      "text": "DFT calculations\nFirst-principles DFT calculations were performed by using the Vienna \nAb initio Simulation Package (VASP 5.4)⁴⁹ with the exchange-correlation \nfunctional based on Perdew–Burke–Ernzerhof ⁵⁰ generalized gradient \napproximation. The projected augmented wave potentials was adopted \nto describe the interactions between valence electrons and ion cores⁵¹. \nThe Grimme’s DFT-D3 scheme was employed to include the vdW inter-\nactions⁵². A slab model stacked with monolayer TMDs and three-layer \nsemi-metal (Sb or Bi) (0001)/(0112) plane was used to simulate the \nMoS2–Sb contact. The supercells of the semi-metal (0001)/(0112) sur-\nfaces and TMDs were carefully built to ensure a lattice mismatch smaller \nthan 3%, where a vacuum space of >15 Å was added to separate images \nalong c direction of the supercells. All structures were fully relaxed until \nthe maximum force component acting on each atom was less than \n0.02 eV Å⁻¹ with an energy convergence criterion of 10⁻⁴ eV and an kinetic \nenergy cut-off of 400 eV. Considering the very large systems simulated \nin this work, a k-spacing of <0.04 Å⁻¹ was used for the structural relaxa-\ntion of metal (Sb (0001), Sb (0112), Bi(0001) and Bi (0112))–TMD (MoS2, \nMoSe2, WS2 and WSe2) contacts. For the static electronic structure cal-\nculations, the Brillouin zone integrations were sampled on a k-spacing \nof <0.01 Å⁻¹ for semi-metal–TMD contacts, respectively. The dipole \ncorrection along the c axis of supercell was considered in all DFT cal-\nculations as well. The electrostatic potential profiles of Sb (0112)–MoS2 \nand Sb (0001)–MoS2 contacts along the vertical direction were calcu-\nlated using Poisson’s equation. The real-space band diagrams and the \nLDDOSs of the device composed of monolayer MoS2 and double-ended \nSb (0112) electrodes without doping (zero bias) and with electron dop-\ning (similar to high gate bias) were simulated by using the DFT method.",
+      "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "localization_precision": "TEXT_BLOCK"
+    }
+  },
+  "existing_application_method_nodes": [
+    {
+      "id": "14a5cee5-6df1-547c-893d-e14ad2ca16cd",
+      "type": "SIMULATION",
+      "text": "DFT calculations\nFirst-principles DFT calculations were performed by using the Vienna \nAb initio Simulation Package (VASP 5.4)⁴⁹ with the exchange-correlation \nfunctional based on Perdew–Burke–Ernzerhof ⁵⁰ generalized gradient \napproximation.",
+      "version": 1,
+      "verification_status": "CANDIDATE"
+    },
+    {
+      "id": "33f28989-fa3e-57ca-9c98-daabb13ced9e",
+      "type": "METHOD",
+      "text": "All structures were fully relaxed until \nthe maximum force component acting on each atom was less than \n0.02 eV Å⁻¹ with an energy convergence criterion of 10⁻⁴ eV and an kinetic \nenergy cut-off of 400 eV.",
+      "version": 1,
+      "verification_status": "CANDIDATE"
+    }
+  ],
+  "coverage_counts": {
+    "existing_candidate": 1,
+    "partial_candidate": 1,
+    "no_separate_candidate": 28
+  },
+  "items": [
+    {
+      "id": "paper-b-methods-step-01",
+      "section_group": "生长与转移",
+      "title": "MoS₂ 单晶单层 CVD 生长",
+      "chinese_summary": "在 C/A 蓝宝石 (0001) 衬底上生长单层 MoS₂；偏切角 0.2°–1°，衬底预退火 1,000 °C、4 h。详细生长工艺引用前作 31，本节未完整展开。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "0f74e956-9c09-5dc2-b278-5dc94148bb30",
+          "span_id": "dca346e8-bc70-573f-b580-3d3a38e4e1a2",
+          "pdf_page": 7,
+          "bbox": [
+            39.685001373291016,
+            67.81312561035156,
+            296.28167724609375,
+            197.5262451171875
+          ],
+          "start_char": 66,
+          "end_char": 285,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "We grew single-crystal monolayer MoS2 on A-axis c-plane (C/A) sapphire \n(0001) substrates with miscut angle αA ranging from 0.2° to 1° that had \nundergone 1,000 °C annealing for 4 h as described in our previous \nwork³¹.",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 1,
+            "text_sha256": "aa66cd5a85021e60c85ccb1a41b64046d682422a49cf3e2e0f57b3e45f34fa46"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "NO_METHOD_CANDIDATE_FOR_THIS_STEP",
+        "existing_node_ids": []
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-02",
+      "section_group": "生长与转移",
+      "title": "PMMA/TRT 辅助 MoS₂ 转移",
+      "chinese_summary": "PMMA（Allresist A4, 950K）2,000 rpm 旋涂，150 °C 烘烤去溶剂；贴 TRT，在去离子水中剥离，转移后 120 °C 烘烤释放 TRT。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "0f74e956-9c09-5dc2-b278-5dc94148bb30",
+          "span_id": "dca346e8-bc70-573f-b580-3d3a38e4e1a2",
+          "pdf_page": 7,
+          "bbox": [
+            39.685001373291016,
+            67.81312561035156,
+            296.28167724609375,
+            197.5262451171875
+          ],
+          "start_char": 286,
+          "end_char": 762,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "The transfer of MoS2 was done by a polymer-based transfer \nmethod. Poly(methyl methacrylate) (PMMA; Allresist A4, 950K) was \nspin-coated on the MoS2/sapphire substrate at 2,000 r.p.m. After baking \nat 150 °C to evaporate solvent completely, a thermal release tape (TRT) \nwas laminated and the PMMA/MoS2 was gently peeled off the sapphire \nsubstrate in deionized water. The TRT/PMMA/MoS2 stack was trans-\nferred onto the target substrate and baked at 120 °C to release the TRT.",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 1,
+            "text_sha256": "aa66cd5a85021e60c85ccb1a41b64046d682422a49cf3e2e0f57b3e45f34fa46"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "NO_METHOD_CANDIDATE_FOR_THIS_STEP",
+        "existing_node_ids": []
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-03",
+      "section_group": "WSe₂ 生长",
+      "title": "逆流/顺流 CVD 生长 WSe₂",
+      "chinese_summary": "在 100 nm SiN_x/Si 上用逆流管式炉生长；WSe₂ 粉末纯度 99.98%，1,180 °C、常压，逆流氩气 80 sccm；到温后改顺流，生长 4 min，再自然冷却。顺流流量的时间单位在原文中不完整。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "012279a8-2df2-5ee2-b591-67a909dbc67f",
+          "span_id": "8908c478-0384-5b4a-be0d-cb40ff29c687",
+          "pdf_page": 7,
+          "bbox": [
+            39.685001373291016,
+            207.56324768066406,
+            296.3952331542969,
+            348.026123046875
+          ],
+          "start_char": 52,
+          "end_char": 815,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "We grew monolayer WSe2 on 100-nm SiNx/Si substrate using a \nchemical-vapour-deposition tube furnace with a reverse-flow reac-\ntor. An alumina boat loaded with WSe2 (Alfa Aesar, 99.98%) powder \nwas placed into the heating zone of a quartz tube, and the substrate \nwas placed on the alumina boat and placed in the variable-temperature \nzone. The chemical-vapour-deposition growth process was carried \nout at 1,180 °C under ambient pressure with a reverse argon gas flow \nof 80 standard cubic centimetres per minute. Once the desired growth \ntemperature was reached, the chemical vapour source was carried \ndownstream under a forward argon gas flow of 80 standard cubic cen-\ntimetres for a growth period of 4 min. After the growth, the furnace \nwas cooled naturally.",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 2,
+            "text_sha256": "bf0d281a78d0145f8cb0205896e627dea7bd94be9d0b8fff23d1cb98f8db4c96"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "NO_METHOD_CANDIDATE_FOR_THIS_STEP",
+        "existing_node_ids": []
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-04",
+      "section_group": "器件制备与测量",
+      "title": "MoS₂ 向器件衬底转移",
+      "chinese_summary": "采用 PMMA 辅助转移，将单层 MoS₂ 放到 HfO₂/高掺杂 Si 衬底。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "ef7744e8-eade-5132-8c9b-19a63aff1217",
+          "span_id": "649fecb5-9a26-5648-8296-5652e21e0af5",
+          "pdf_page": 7,
+          "bbox": [
+            39.685001373291016,
+            358.0631103515625,
+            296.4149475097656,
+            520.026123046875
+          ],
+          "start_char": 39,
+          "end_char": 160,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "Monolayer MoS2 film was transferred onto hafnium oxide (HfO2)/highly \ndoped Si substrate using the PMMA-assisted transfer",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 3,
+            "text_sha256": "06d320768376053a3315b9c8015e2b33db9aeb4968df15e28d8f3631d5e7ccb1"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "NO_METHOD_CANDIDATE_FOR_THIS_STEP",
+        "existing_node_ids": []
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-05",
+      "section_group": "器件制备与测量",
+      "title": "沟道隔离",
+      "chinese_summary": "用电子束光刻和 O₂ 干法刻蚀进行沟道隔离。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "ef7744e8-eade-5132-8c9b-19a63aff1217",
+          "span_id": "649fecb5-9a26-5648-8296-5652e21e0af5",
+          "pdf_page": 7,
+          "bbox": [
+            39.685001373291016,
+            358.0631103515625,
+            296.4149475097656,
+            520.026123046875
+          ],
+          "start_char": 161,
+          "end_char": 250,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "followed by chan-\nnel isolation through electron beam lithography and dry etching by \nO2.",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 3,
+            "text_sha256": "06d320768376053a3315b9c8015e2b33db9aeb4968df15e28d8f3631d5e7ccb1"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "NO_METHOD_CANDIDATE_FOR_THIS_STEP",
+        "existing_node_ids": []
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-06",
+      "section_group": "器件制备与测量",
+      "title": "去除 PMMA",
+      "chinese_summary": "使用丙酮与 N-甲基-2-吡咯烷酮（NMP）去除 PMMA。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "ef7744e8-eade-5132-8c9b-19a63aff1217",
+          "span_id": "649fecb5-9a26-5648-8296-5652e21e0af5",
+          "pdf_page": 7,
+          "bbox": [
+            39.685001373291016,
+            358.0631103515625,
+            296.4149475097656,
+            520.026123046875
+          ],
+          "start_char": 251,
+          "end_char": 316,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "After removing PMMA by acetone and N-methyl-2-pyrrolidone \n(NMP),",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 3,
+            "text_sha256": "06d320768376053a3315b9c8015e2b33db9aeb4968df15e28d8f3631d5e7ccb1"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "NO_METHOD_CANDIDATE_FOR_THIS_STEP",
+        "existing_node_ids": []
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-07",
+      "section_group": "器件制备与测量",
+      "title": "源漏接触图形定义",
+      "chinese_summary": "用电子束光刻定义源极和漏极接触。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "ef7744e8-eade-5132-8c9b-19a63aff1217",
+          "span_id": "649fecb5-9a26-5648-8296-5652e21e0af5",
+          "pdf_page": 7,
+          "bbox": [
+            39.685001373291016,
+            358.0631103515625,
+            296.4149475097656,
+            520.026123046875
+          ],
+          "start_char": 317,
+          "end_char": 392,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "electron beam lithography was used to define the source and \ndrain contacts",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 3,
+            "text_sha256": "06d320768376053a3315b9c8015e2b33db9aeb4968df15e28d8f3631d5e7ccb1"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "NO_METHOD_CANDIDATE_FOR_THIS_STEP",
+        "existing_node_ids": []
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-08",
+      "section_group": "器件制备与测量",
+      "title": "Sb/Au 电子束蒸发及剥离",
+      "chinese_summary": "电子束蒸发 20 nm Sb / 30 nm Au，随后 lift-off；作者明确说明 Sb (011̅2) 接触在器件制备后无需热退火。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "ef7744e8-eade-5132-8c9b-19a63aff1217",
+          "span_id": "649fecb5-9a26-5648-8296-5652e21e0af5",
+          "pdf_page": 7,
+          "bbox": [
+            39.685001373291016,
+            358.0631103515625,
+            296.4149475097656,
+            520.026123046875
+          ],
+          "start_char": 393,
+          "end_char": 466,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "followed by electron beam evaporation of 20-nm \nSb/30-nm Au and lift-off.",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 3,
+            "text_sha256": "06d320768376053a3315b9c8015e2b33db9aeb4968df15e28d8f3631d5e7ccb1"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        },
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "ef7744e8-eade-5132-8c9b-19a63aff1217",
+          "span_id": "649fecb5-9a26-5648-8296-5652e21e0af5",
+          "pdf_page": 7,
+          "bbox": [
+            39.685001373291016,
+            358.0631103515625,
+            296.4149475097656,
+            520.026123046875
+          ],
+          "start_char": 701,
+          "end_char": 865,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "Notably, the Sb \n(0112) contact did not require any thermal annealing after device fab-\nrication, which made this technology back-end-of-line compatible with \nCMOS.",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 3,
+            "text_sha256": "06d320768376053a3315b9c8015e2b33db9aeb4968df15e28d8f3631d5e7ccb1"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "NO_METHOD_CANDIDATE_FOR_THIS_STEP",
+        "existing_node_ids": []
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-09",
+      "section_group": "器件制备与测量",
+      "title": "蒸发时衬底温度控制与测量",
+      "chinese_summary": "通过红外加热及调整冷却水流量控制温度，用表面温度指示条测温；本段未给出具体沉积温度值。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "ef7744e8-eade-5132-8c9b-19a63aff1217",
+          "span_id": "649fecb5-9a26-5648-8296-5652e21e0af5",
+          "pdf_page": 7,
+          "bbox": [
+            39.685001373291016,
+            358.0631103515625,
+            296.4149475097656,
+            520.026123046875
+          ],
+          "start_char": 467,
+          "end_char": 700,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "We controlled the substrate temperature \nduring electron beam evaporation through infrared heating and adjust-\ning the cooling water flow rate. The substrate temperature was meas-\nured using the surface temperature indicating strips.",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 3,
+            "text_sha256": "06d320768376053a3315b9c8015e2b33db9aeb4968df15e28d8f3631d5e7ccb1"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "NO_METHOD_CANDIDATE_FOR_THIS_STEP",
+        "existing_node_ids": []
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-10",
+      "section_group": "器件制备与测量",
+      "title": "WSe₂ FET 制备分支",
+      "chinese_summary": "WSe₂ FET 在原位 SiN_x/Si 衬底上采用同类制备方法，无需转移过程。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "ef7744e8-eade-5132-8c9b-19a63aff1217",
+          "span_id": "649fecb5-9a26-5648-8296-5652e21e0af5",
+          "pdf_page": 7,
+          "bbox": [
+            39.685001373291016,
+            358.0631103515625,
+            296.4149475097656,
+            520.026123046875
+          ],
+          "start_char": 866,
+          "end_char": 967,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "WSe2 FETs were fabricated on in-situ SiNx/Si substrate by the \nsame methods without transfer process.",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 3,
+            "text_sha256": "06d320768376053a3315b9c8015e2b33db9aeb4968df15e28d8f3631d5e7ccb1"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "NO_METHOD_CANDIDATE_FOR_THIS_STEP",
+        "existing_node_ids": []
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-11",
+      "section_group": "器件制备与测量",
+      "title": "电学参数测量",
+      "chinese_summary": "用 Keithley 4200 半导体参数分析仪，在闭循环低温探针台中测量；基础压力约 10⁻⁶ torr。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "a091d6cc-c138-5390-80c1-075ba22ca5c2",
+          "span_id": "624806eb-f0f7-5b5c-8906-3d89f2f25dc5",
+          "pdf_page": 7,
+          "bbox": [
+            39.685001373291016,
+            520.5956420898438,
+            296.3868103027344,
+            638.276123046875
+          ],
+          "start_char": 0,
+          "end_char": 176,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "Electrical measurements were carried out by Keithley 4200 semicon-\nductor parameter analyser in a closed-cycle cryogenic probe station \nwith a base pressure of about 10⁻⁶ torr.",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 4,
+            "text_sha256": "164ce3d0233c511bd5e0491311e813a5a4d25055f912561e6d1b80ed81bc87ee"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "NO_METHOD_CANDIDATE_FOR_THIS_STEP",
+        "existing_node_ids": []
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-12",
+      "section_group": "器件制备与测量",
+      "title": "同步栅漏脉冲测量",
+      "chinese_summary": "使用 Keithley 4200 脉冲测量单元和 4225-RPM 远程放大器；栅漏同步施加脉冲，最短脉宽可达 160 ns；占空比相关原话为“10 times”，含义需澄清。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "a091d6cc-c138-5390-80c1-075ba22ca5c2",
+          "span_id": "624806eb-f0f7-5b5c-8906-3d89f2f25dc5",
+          "pdf_page": 7,
+          "bbox": [
+            39.685001373291016,
+            520.5956420898438,
+            296.3868103027344,
+            638.276123046875
+          ],
+          "start_char": 177,
+          "end_char": 509,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "Pulse testing was performed \nusing a Keithley 4200 pulse measurement unit in conjunction with \nmodel 4225-RPM remote amplifier. During the pulse measurement, \na synchronous pulse voltage sequence was applied to the drain and \ngate electrodes, the minimum pulse width can be as low as 160 ns \nand the voltage duty cycle was 10 times.",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 4,
+            "text_sha256": "164ce3d0233c511bd5e0491311e813a5a4d25055f912561e6d1b80ed81bc87ee"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "NO_METHOD_CANDIDATE_FOR_THIS_STEP",
+        "existing_node_ids": []
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-13",
+      "section_group": "器件制备与测量",
+      "title": "脉冲测量寄生效应控制",
+      "chinese_summary": "尽量缩短所有电缆，以减少脉冲测量中的寄生效应。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "a091d6cc-c138-5390-80c1-075ba22ca5c2",
+          "span_id": "624806eb-f0f7-5b5c-8906-3d89f2f25dc5",
+          "pdf_page": 7,
+          "bbox": [
+            39.685001373291016,
+            520.5956420898438,
+            296.3868103027344,
+            638.276123046875
+          ],
+          "start_char": 510,
+          "end_char": 616,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "To reduce parasitic effects \nduring pulse measurement, all the cables were shortened as much \nas possible.",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 4,
+            "text_sha256": "164ce3d0233c511bd5e0491311e813a5a4d25055f912561e6d1b80ed81bc87ee"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "NO_METHOD_CANDIDATE_FOR_THIS_STEP",
+        "existing_node_ids": []
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-14",
+      "section_group": "材料表征",
+      "title": "XRD",
+      "chinese_summary": "使用 Bruker D8 Discover 系统进行 X 射线衍射。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "98dd9a2e-3987-5508-ac41-da96d1b17535",
+          "span_id": "d80ec6e6-30e5-5237-bb30-50dd1014037a",
+          "pdf_page": 7,
+          "bbox": [
+            39.685001373291016,
+            648.3131103515625,
+            296.2748718261719,
+            745.776123046875
+          ],
+          "start_char": 17,
+          "end_char": 66,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "XRD was performed on a Bruker D8 Discover system.",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 5,
+            "text_sha256": "06ca68256886ebb6cba46212d41a3a9835a7a2659275248f16e1a244d9d6c208"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "NO_METHOD_CANDIDATE_FOR_THIS_STEP",
+        "existing_node_ids": []
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-15",
+      "section_group": "材料表征",
+      "title": "AFM",
+      "chinese_summary": "使用 Asylum Cypher S 系统进行原子力显微镜表征。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "98dd9a2e-3987-5508-ac41-da96d1b17535",
+          "span_id": "d80ec6e6-30e5-5237-bb30-50dd1014037a",
+          "pdf_page": 7,
+          "bbox": [
+            39.685001373291016,
+            648.3131103515625,
+            296.2748718261719,
+            745.776123046875
+          ],
+          "start_char": 67,
+          "end_char": 116,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "AFM was per-\nformed by an Asylum Cypher S system.",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 5,
+            "text_sha256": "06ca68256886ebb6cba46212d41a3a9835a7a2659275248f16e1a244d9d6c208"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "NO_METHOD_CANDIDATE_FOR_THIS_STEP",
+        "existing_node_ids": []
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-16",
+      "section_group": "材料表征",
+      "title": "拉曼光谱",
+      "chinese_summary": "使用自建光谱系统、488 nm 激光及 Princeton Instruments SP-2500 光谱仪。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "98dd9a2e-3987-5508-ac41-da96d1b17535",
+          "span_id": "d80ec6e6-30e5-5237-bb30-50dd1014037a",
+          "pdf_page": 7,
+          "bbox": [
+            39.685001373291016,
+            648.3131103515625,
+            296.2748718261719,
+            745.776123046875
+          ],
+          "start_char": 117,
+          "end_char": 287,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "Raman and photoluminescence \nspectroscopy were carried out by a home-built system equipped with \n488-nm laser excitation and Princeton Instruments SP-2500 spectrome-\nter.",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 5,
+            "text_sha256": "06ca68256886ebb6cba46212d41a3a9835a7a2659275248f16e1a244d9d6c208"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "NO_METHOD_CANDIDATE_FOR_THIS_STEP",
+        "existing_node_ids": []
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-17",
+      "section_group": "材料表征",
+      "title": "光致发光光谱",
+      "chinese_summary": "与拉曼共用文中所述自建系统、488 nm 激发及 SP-2500 光谱仪。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "98dd9a2e-3987-5508-ac41-da96d1b17535",
+          "span_id": "d80ec6e6-30e5-5237-bb30-50dd1014037a",
+          "pdf_page": 7,
+          "bbox": [
+            39.685001373291016,
+            648.3131103515625,
+            296.2748718261719,
+            745.776123046875
+          ],
+          "start_char": 117,
+          "end_char": 287,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "Raman and photoluminescence \nspectroscopy were carried out by a home-built system equipped with \n488-nm laser excitation and Princeton Instruments SP-2500 spectrome-\nter.",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 5,
+            "text_sha256": "06ca68256886ebb6cba46212d41a3a9835a7a2659275248f16e1a244d9d6c208"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "NO_METHOD_CANDIDATE_FOR_THIS_STEP",
+        "existing_node_ids": []
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-18",
+      "section_group": "材料表征",
+      "title": "XPS 及能量标定",
+      "chinese_summary": "使用 PHI 5000 VersaProbe、单色 Al Kα 激发；以外来碳的 C–C 化学态 284.8 eV 标定。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "98dd9a2e-3987-5508-ac41-da96d1b17535",
+          "span_id": "d80ec6e6-30e5-5237-bb30-50dd1014037a",
+          "pdf_page": 7,
+          "bbox": [
+            39.685001373291016,
+            648.3131103515625,
+            296.2748718261719,
+            745.776123046875
+          ],
+          "start_char": 288,
+          "end_char": 512,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "X-ray photoemission spectroscopy (PHI 5000 VersaProbe Scanning \nXPS Microprobe with a monochromatized Al Kα excitation source) was \nperformed with calibration to the chemical state of C–C of adventitious \ncarbon at 284.8 eV.",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 5,
+            "text_sha256": "06ca68256886ebb6cba46212d41a3a9835a7a2659275248f16e1a244d9d6c208"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "NO_METHOD_CANDIDATE_FOR_THIS_STEP",
+        "existing_node_ids": []
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-19",
+      "section_group": "材料表征",
+      "title": "FIB 截面 TEM 样品制备",
+      "chinese_summary": "FEI Helios 600i 双束 FIB；先原位沉积钨保护层，以 30 kV、21 nA 镓离子束刻蚀形成薄片，剥离后转移至 TEM 半网格。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "98dd9a2e-3987-5508-ac41-da96d1b17535",
+          "span_id": "d80ec6e6-30e5-5237-bb30-50dd1014037a",
+          "pdf_page": 7,
+          "bbox": [
+            39.685001373291016,
+            648.3131103515625,
+            296.2748718261719,
+            745.776123046875
+          ],
+          "start_char": 513,
+          "end_char": 561,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "Cross-section TEM samples were fabricated using ",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 5,
+            "text_sha256": "06ca68256886ebb6cba46212d41a3a9835a7a2659275248f16e1a244d9d6c208"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        },
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "44a3596c-0090-53ae-86dd-7560166b15c0",
+          "span_id": "e8113733-2ce9-576a-8e56-87d6f9984f0b",
+          "pdf_page": 7,
+          "bbox": [
+            306.1416931152344,
+            47.59513854980469,
+            562.7642211914062,
+            133.026123046875
+          ],
+          "start_char": 0,
+          "end_char": 384,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "an FEI Helios 600i dual-beam focused ion beam (FIB) system. A tung-\nsten protection layer was in situ deposited before FIB bombardment, \nfollowed by etching the surrounding area to form the lamella using a \n30-kV acceleration voltage and a 21-nA gallium ion beam. The target \nlamella was exfoliated from the original substrate and transferred to \nTEM half grid inside the FIB chamber.",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 6,
+            "text_sha256": "e14004356c4c0d4cf0b71d88a33a01f83f0bd75a3e06d31ec85805017e28f51f"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "NO_METHOD_CANDIDATE_FOR_THIS_STEP",
+        "existing_node_ids": []
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-20",
+      "section_group": "材料表征",
+      "title": "HAADF-STEM",
+      "chinese_summary": "使用 FEI Titan G2 60–300 像差校正 S/TEM，工作加速电压 300 kV。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "44a3596c-0090-53ae-86dd-7560166b15c0",
+          "span_id": "e8113733-2ce9-576a-8e56-87d6f9984f0b",
+          "pdf_page": 7,
+          "bbox": [
+            306.1416931152344,
+            47.59513854980469,
+            562.7642211914062,
+            133.026123046875
+          ],
+          "start_char": 385,
+          "end_char": 530,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "HAADF-STEM characterization \nwas acquired on a FEI Titan G2 60–300 aberration-corrected S/TEM \nmicroscope with an acceleration voltage of 300 kV.",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 6,
+            "text_sha256": "e14004356c4c0d4cf0b71d88a33a01f83f0bd75a3e06d31ec85805017e28f51f"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "NO_METHOD_CANDIDATE_FOR_THIS_STEP",
+        "existing_node_ids": []
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-21",
+      "section_group": "DFT 计算",
+      "title": "VASP/PBE-GGA 第一性原理计算",
+      "chinese_summary": "使用 VASP 5.4；采用基于 Perdew–Burke–Ernzerhof 广义梯度近似的交换关联泛函。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "eabf77bc-88cd-576b-bee5-1bf27aa1459f",
+          "span_id": "51994cf6-7d86-5615-814a-1f8f4660742e",
+          "pdf_page": 7,
+          "bbox": [
+            306.1416931152344,
+            143.06312561035156,
+            562.7979125976562,
+            444.776123046875
+          ],
+          "start_char": 17,
+          "end_char": 242,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "First-principles DFT calculations were performed by using the Vienna \nAb initio Simulation Package (VASP 5.4)⁴⁹ with the exchange-correlation \nfunctional based on Perdew–Burke–Ernzerhof ⁵⁰ generalized gradient \napproximation.",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 7,
+            "text_sha256": "55d5fdf2543de8897414baf85aa4ed555aceabf6c4d6e4ceae58370917f560a1"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "EXISTING_METHOD_CANDIDATE",
+        "existing_node_ids": [
+          "14a5cee5-6df1-547c-893d-e14ad2ca16cd"
+        ]
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-22",
+      "section_group": "DFT 计算",
+      "title": "PAW 势",
+      "chinese_summary": "使用投影缀加波势描述价电子与离子芯相互作用。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "eabf77bc-88cd-576b-bee5-1bf27aa1459f",
+          "span_id": "51994cf6-7d86-5615-814a-1f8f4660742e",
+          "pdf_page": 7,
+          "bbox": [
+            306.1416931152344,
+            143.06312561035156,
+            562.7979125976562,
+            444.776123046875
+          ],
+          "start_char": 243,
+          "end_char": 367,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "The projected augmented wave potentials was adopted \nto describe the interactions between valence electrons and ion cores⁵¹.",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 7,
+            "text_sha256": "55d5fdf2543de8897414baf85aa4ed555aceabf6c4d6e4ceae58370917f560a1"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "NO_METHOD_CANDIDATE_FOR_THIS_STEP",
+        "existing_node_ids": []
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-23",
+      "section_group": "DFT 计算",
+      "title": "DFT-D3 范德华修正",
+      "chinese_summary": "采用 Grimme 的 DFT-D3 方案计入范德华相互作用。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "eabf77bc-88cd-576b-bee5-1bf27aa1459f",
+          "span_id": "51994cf6-7d86-5615-814a-1f8f4660742e",
+          "pdf_page": 7,
+          "bbox": [
+            306.1416931152344,
+            143.06312561035156,
+            562.7979125976562,
+            444.776123046875
+          ],
+          "start_char": 369,
+          "end_char": 445,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "The Grimme’s DFT-D3 scheme was employed to include the vdW inter-\nactions⁵².",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 7,
+            "text_sha256": "55d5fdf2543de8897414baf85aa4ed555aceabf6c4d6e4ceae58370917f560a1"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "NO_METHOD_CANDIDATE_FOR_THIS_STEP",
+        "existing_node_ids": []
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-24",
+      "section_group": "DFT 计算",
+      "title": "接触 slab 模型",
+      "chinese_summary": "用单层 TMD 与三层半金属 Sb 或 Bi 堆叠；考察 (0001)/(011̅2) 晶面。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "eabf77bc-88cd-576b-bee5-1bf27aa1459f",
+          "span_id": "51994cf6-7d86-5615-814a-1f8f4660742e",
+          "pdf_page": 7,
+          "bbox": [
+            306.1416931152344,
+            143.06312561035156,
+            562.7979125976562,
+            444.776123046875
+          ],
+          "start_char": 446,
+          "end_char": 588,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "A slab model stacked with monolayer TMDs and three-layer \nsemi-metal (Sb or Bi) (0001)/(0112) plane was used to simulate the \nMoS2–Sb contact.",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 7,
+            "text_sha256": "55d5fdf2543de8897414baf85aa4ed555aceabf6c4d6e4ceae58370917f560a1"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "NO_METHOD_CANDIDATE_FOR_THIS_STEP",
+        "existing_node_ids": []
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-25",
+      "section_group": "DFT 计算",
+      "title": "超胞匹配与真空层",
+      "chinese_summary": "控制半金属/TMD 超胞晶格失配小于 3%；沿 c 方向设置大于 15 Å 的真空层。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "eabf77bc-88cd-576b-bee5-1bf27aa1459f",
+          "span_id": "51994cf6-7d86-5615-814a-1f8f4660742e",
+          "pdf_page": 7,
+          "bbox": [
+            306.1416931152344,
+            143.06312561035156,
+            562.7979125976562,
+            444.776123046875
+          ],
+          "start_char": 589,
+          "end_char": 820,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "The supercells of the semi-metal (0001)/(0112) sur-\nfaces and TMDs were carefully built to ensure a lattice mismatch smaller \nthan 3%, where a vacuum space of >15 Å was added to separate images \nalong c direction of the supercells.",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 7,
+            "text_sha256": "55d5fdf2543de8897414baf85aa4ed555aceabf6c4d6e4ceae58370917f560a1"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "NO_METHOD_CANDIDATE_FOR_THIS_STEP",
+        "existing_node_ids": []
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-26",
+      "section_group": "DFT 计算",
+      "title": "结构松弛与数值设置",
+      "chinese_summary": "所有结构充分松弛，最大力小于 0.02 eV·Å⁻¹，能量收敛标准 10⁻⁴ eV，截断能 400 eV；结构松弛 k-spacing 小于 0.04 Å⁻¹。原文还列出 Sb/Bi 两晶面及 MoS₂、MoSe₂、WS₂、WSe₂ 接触模型。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "eabf77bc-88cd-576b-bee5-1bf27aa1459f",
+          "span_id": "51994cf6-7d86-5615-814a-1f8f4660742e",
+          "pdf_page": 7,
+          "bbox": [
+            306.1416931152344,
+            143.06312561035156,
+            562.7979125976562,
+            444.776123046875
+          ],
+          "start_char": 821,
+          "end_char": 1026,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "All structures were fully relaxed until \nthe maximum force component acting on each atom was less than \n0.02 eV Å⁻¹ with an energy convergence criterion of 10⁻⁴ eV and an kinetic \nenergy cut-off of 400 eV.",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 7,
+            "text_sha256": "55d5fdf2543de8897414baf85aa4ed555aceabf6c4d6e4ceae58370917f560a1"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        },
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "eabf77bc-88cd-576b-bee5-1bf27aa1459f",
+          "span_id": "51994cf6-7d86-5615-814a-1f8f4660742e",
+          "pdf_page": 7,
+          "bbox": [
+            306.1416931152344,
+            143.06312561035156,
+            562.7979125976562,
+            444.776123046875
+          ],
+          "start_char": 1027,
+          "end_char": 1251,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "Considering the very large systems simulated \nin this work, a k-spacing of <0.04 Å⁻¹ was used for the structural relaxa-\ntion of metal (Sb (0001), Sb (0112), Bi(0001) and Bi (0112))–TMD (MoS2, \nMoSe2, WS2 and WSe2) contacts.",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 7,
+            "text_sha256": "55d5fdf2543de8897414baf85aa4ed555aceabf6c4d6e4ceae58370917f560a1"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "PARTIAL_METHOD_CANDIDATE",
+        "existing_node_ids": [
+          "33f28989-fa3e-57ca-9c98-daabb13ced9e"
+        ],
+        "note": "The existing candidate covers force/energy/cutoff criteria; it omits the following structural-relaxation k-spacing and model scope sentence."
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-27",
+      "section_group": "DFT 计算",
+      "title": "静态电子结构及布里渊区积分",
+      "chinese_summary": "静态计算采用小于 0.01 Å⁻¹ 的 k-spacing 进行布里渊区积分采样。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "eabf77bc-88cd-576b-bee5-1bf27aa1459f",
+          "span_id": "51994cf6-7d86-5615-814a-1f8f4660742e",
+          "pdf_page": 7,
+          "bbox": [
+            306.1416931152344,
+            143.06312561035156,
+            562.7979125976562,
+            444.776123046875
+          ],
+          "start_char": 1252,
+          "end_char": 1420,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "For the static electronic structure cal-\nculations, the Brillouin zone integrations were sampled on a k-spacing \nof <0.01 Å⁻¹ for semi-metal–TMD contacts, respectively.",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 7,
+            "text_sha256": "55d5fdf2543de8897414baf85aa4ed555aceabf6c4d6e4ceae58370917f560a1"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "NO_METHOD_CANDIDATE_FOR_THIS_STEP",
+        "existing_node_ids": []
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-28",
+      "section_group": "DFT 计算",
+      "title": "偶极修正",
+      "chinese_summary": "所有 DFT 计算均考虑超胞 c 轴方向的偶极修正。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "eabf77bc-88cd-576b-bee5-1bf27aa1459f",
+          "span_id": "51994cf6-7d86-5615-814a-1f8f4660742e",
+          "pdf_page": 7,
+          "bbox": [
+            306.1416931152344,
+            143.06312561035156,
+            562.7979125976562,
+            444.776123046875
+          ],
+          "start_char": 1421,
+          "end_char": 1523,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "The dipole \ncorrection along the c axis of supercell was considered in all DFT cal-\nculations as well.",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 7,
+            "text_sha256": "55d5fdf2543de8897414baf85aa4ed555aceabf6c4d6e4ceae58370917f560a1"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "NO_METHOD_CANDIDATE_FOR_THIS_STEP",
+        "existing_node_ids": []
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-29",
+      "section_group": "DFT 计算",
+      "title": "Poisson 方程求静电势分布",
+      "chinese_summary": "用 Poisson 方程计算 Sb (011̅2)–MoS₂ 与 Sb (0001)–MoS₂ 接触的垂直静电势剖面。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "eabf77bc-88cd-576b-bee5-1bf27aa1459f",
+          "span_id": "51994cf6-7d86-5615-814a-1f8f4660742e",
+          "pdf_page": 7,
+          "bbox": [
+            306.1416931152344,
+            143.06312561035156,
+            562.7979125976562,
+            444.776123046875
+          ],
+          "start_char": 1524,
+          "end_char": 1680,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "The electrostatic potential profiles of Sb (0112)–MoS2 \nand Sb (0001)–MoS2 contacts along the vertical direction were calcu-\nlated using Poisson’s equation.",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 7,
+            "text_sha256": "55d5fdf2543de8897414baf85aa4ed555aceabf6c4d6e4ceae58370917f560a1"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "NO_METHOD_CANDIDATE_FOR_THIS_STEP",
+        "existing_node_ids": []
+      },
+      "is_application_graph_object": false
+    },
+    {
+      "id": "paper-b-methods-step-30",
+      "section_group": "DFT 计算",
+      "title": "实空间能带与 LDDOS 模拟",
+      "chinese_summary": "对单层 MoS₂、两端 Sb (011̅2) 电极器件，用 DFT 模拟未掺杂零偏压及电子掺杂（类似高栅偏压）条件下的实空间能带和 LDDOS。",
+      "summary_origin": "MODEL_SOURCE_REVIEW",
+      "epistemic_status": "AUTHOR_CLAIM",
+      "status": "CANDIDATE",
+      "human_review": "PENDING",
+      "evidence": [
+        {
+          "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "anchor_id": "eabf77bc-88cd-576b-bee5-1bf27aa1459f",
+          "span_id": "51994cf6-7d86-5615-814a-1f8f4660742e",
+          "pdf_page": 7,
+          "bbox": [
+            306.1416931152344,
+            143.06312561035156,
+            562.7979125976562,
+            444.776123046875
+          ],
+          "start_char": 1681,
+          "end_char": 1927,
+          "character_offsets_relative_to": "canonical_source_anchor.text",
+          "source_quote": "The real-space band diagrams and the \nLDDOSs of the device composed of monolayer MoS2 and double-ended \nSb (0112) electrodes without doping (zero bias) and with electron dop-\ning (similar to high gate bias) were simulated by using the DFT method.",
+          "raw_pdf_block": {
+            "pymupdf_block_index": 7,
+            "text_sha256": "55d5fdf2543de8897414baf85aa4ed555aceabf6c4d6e4ceae58370917f560a1"
+          },
+          "validation": "SOURCE_HASH_BBOX_AND_TEXT_MATCH"
+        }
+      ],
+      "application_coverage": {
+        "kind": "NO_METHOD_CANDIDATE_FOR_THIS_STEP",
+        "existing_node_ids": []
+      },
+      "is_application_graph_object": false
+    }
+  ],
+  "limitations": [
+    "This inventory covers the five Methods subsections on PDF page 7. Body-only procedures, extended-data captions and separate supplementary files are not claimed to be exhaustively covered.",
+    "MoS2 growth refers to prior work 31; the 1,000 °C and 4 h values describe substrate annealing, not a newly supplied complete CVD growth recipe.",
+    "The WSe2 forward-flow phrase reads “80 standard cubic centimetres”; its time unit is absent. The reverse-flow value explicitly says per minute. Do not silently give both flows the same fully specified unit.",
+    "The pulse phrase “the voltage duty cycle was 10 times” is ambiguous. Do not convert it to 10% or invent a duty ratio.",
+    "The crystallographic overbar in (01-bar-1-2), chemical subscripts and exponents require the rendered PDF. Quotes preserve current canonical extracted text, including typography omissions.",
+    "The Methods characterization paragraph continues from the bottom of the left column to the top of the right column. FIB specimen preparation is supported by both anchors.",
+    "The inventory includes operational steps and numerical settings; the count 30 does not mean 30 distinct physical techniques.",
+    "The 11th accepted review item covers the VASP/PBE source sentence. This user ACCEPT does not accept all 30 newly summarized entries.",
+    "No extraction code, application graph, frozen gold, evaluation thresholds or original PDF was changed. Source-location validation is not scientific-validity acceptance."
+  ],
+  "applied_to_application_database": false,
+  "frozen_gate_sample_changed": false
+}

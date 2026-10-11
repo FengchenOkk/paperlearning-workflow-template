@@ -201,7 +201,12 @@ def create_app(settings: Settings | None = None) -> FastAPI:
                             reading_order=span.reading_order,
                             text=span.text,
                             bbox=(span.bbox[0], span.bbox[1], span.bbox[2], span.bbox[3]),
-                            kind="heading" if span.kind == "heading" else "paragraph",
+                            kind=span.kind,  # type: ignore[arg-type]
+                            notation=repository.anchor_contract(
+                                session, repository.anchors_for(session, row, [anchor_id])[0]
+                            ).notation,
+                            notation_issues=span.notation_issues,
+                            section_titles=span.section_titles,
                         )
                     )
                     repository.anchors_for(session, row, [anchor_id])
@@ -290,7 +295,9 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         with database.session() as session:
             anchor = repository.required(session, AnchorRow, anchor_id)
             paper = source_paper(session, anchor.paper_id)
-            return Anchor.model_validate(repository.anchors_for(session, paper, [anchor_id])[0])
+            return repository.anchor_contract(
+                session, repository.anchors_for(session, paper, [anchor_id])[0]
+            )
 
     @app.get("/api/anchors/{anchor_id}/nodes", response_model=list[Node])
     def anchor_nodes(anchor_id: str) -> list[Node]:

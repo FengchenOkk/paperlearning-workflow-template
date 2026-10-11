@@ -2,13 +2,14 @@ import argparse
 import logging
 import time
 import unicodedata
+from dataclasses import replace
 from uuid import NAMESPACE_URL, uuid5
 
 from sqlalchemy import select, update
 
 from .config import Settings
 from .database import Database
-from .extraction import extract
+from .extraction import document_candidates
 from .integrity import report
 from .models import (
     AnchorRow,
@@ -24,6 +25,7 @@ from .models import (
 )
 from .parser import DocumentParser, MuPDFParser, ParsedBlock
 from .scientific_objects import ensure_scientific_object
+from .source_patterns import TEMPLATE_HEADER
 from .storage import DocumentStorage
 
 logger = logging.getLogger("papergraph.worker")
@@ -48,7 +50,14 @@ def title_blocks(blocks: list[ParsedBlock]) -> list[ParsedBlock]:
         ):
             break
         result.append(block)
-    return result
+    cleaned = []
+    for block in result:
+        lines = block.text.splitlines()
+        while lines and TEMPLATE_HEADER.fullmatch(lines[0].strip()):
+            lines.pop(0)
+        if lines:
+            cleaned.append(replace(block, text="\n".join(lines)))
+    return cleaned
 
 
 def run_once(
@@ -108,11 +117,7 @@ def run_once(
                 .where(JobRow.id == job_id, JobRow.lease_token == token)
                 .values(status="ENTITY_EXTRACTION", progress=55, updated_at=timestamp())
             )
-        entities = {
-            (page.number, block.order): extract(block.text, block.kind == "heading")
-            for page in parsed
-            for block in page.blocks
-        }
+        entities = document_candidates(parsed)
         with db.session() as session:
             session.execute(
                 update(JobRow)
@@ -184,6 +189,9 @@ def run_once(
                             text=block.text,
                             bbox=list(block.bbox),
                             kind=block.kind,
+                            notation=[n.model_dump(mode="json") for n in block.notation],
+                            notation_issues=block.notation_issues,
+                            section_titles=list(block.section_titles),
                         )
                     )
                     session.flush()
@@ -204,9 +212,22 @@ def run_once(
                     session.flush()
                     if page.number == 1 and block.order in title_orders:
                         title_anchors.append(anchor_id)
+                    warnings.extend(
+                        f"Page {page.number}, block {block.order}: {issue}"
+                        for issue in block.notation_issues
+                    )
+            # Persist every source block before multi-anchor graph/evidence rows.
+            for page in parsed:
+                for block in page.blocks:
+                    span_id = stable(paper_id, f"span:{page.number}:{block.order}")
+                    anchor_id = stable(paper_id, f"anchor:{span_id}")
                     for number, candidate in enumerate(entities[page.number, block.order]):
                         node_id = stable(paper_id, f"node:{span_id}:{number}")
                         label = " ".join(candidate.text.split())
+                        candidate_anchors = [
+                            stable(paper_id, f"anchor:{stable(paper_id, f'span:{p}:{o}')}")
+                            for p, o in candidate.source_blocks
+                        ] or [anchor_id]
                         session.add(
                             NodeRow(
                                 id=node_id,
@@ -219,8 +240,8 @@ def run_once(
                                 verification_status="CANDIDATE",
                                 epistemic_status=candidate.epistemic_status,
                                 uncertainty_reason=candidate.reason,
-                                provenance=[anchor_id],
-                                created_by="local-rule-extractor-v2",
+                                provenance=candidate_anchors,
+                                created_by="local-rule-extractor-v5",
                             )
                         )
                         session.flush()
@@ -228,13 +249,14 @@ def run_once(
                         if candidate_node is None:
                             raise ValueError("MISSING_CANDIDATE")
                         ensure_scientific_object(session, candidate_node)
-                        session.add(
-                            EvidenceRow(
-                                id=stable(paper_id, f"evidence:{node_id}"),
-                                supports_object_id=node_id,
-                                anchor_id=anchor_id,
+                        for evidence_anchor in candidate_anchors:
+                            session.add(
+                                EvidenceRow(
+                                    id=stable(paper_id, f"evidence:{node_id}:{evidence_anchor}"),
+                                    supports_object_id=node_id,
+                                    anchor_id=evidence_anchor,
+                                )
                             )
-                        )
                         session.add(
                             EdgeRow(
                                 id=stable(paper_id, f"edge:{node_id}"),
@@ -244,7 +266,7 @@ def run_once(
                                 relation_type="CONTAINS",
                                 confidence=1,
                                 verification_status="SUPPORTED",
-                                provenance=[anchor_id],
+                                provenance=candidate_anchors,
                                 created_by="document-parser",
                                 epistemic_status="PAPER_EXPLICIT",
                             )

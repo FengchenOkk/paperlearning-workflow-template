@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { Anchor, EvidenceBundle, Paper, Verification } from './contracts';
+import { notationView } from './notation';
 
 export function Inspector({
   bundle,
@@ -34,6 +35,14 @@ export function Inspector({
       </aside>
     );
   const node = bundle.node;
+  const notationAnchor = bundle.evidence.find((e) => e.anchor.text.includes(node.text))?.anchor;
+  const notation = notationAnchor
+    ? notationView(
+        node.text,
+        notationAnchor.notation,
+        Array.from(notationAnchor.text.slice(0, notationAnchor.text.indexOf(node.text))).length,
+      )
+    : node.text;
   return (
     <aside className="inspector" aria-label="Scientific inspector">
       <div className="panel-title">
@@ -61,6 +70,25 @@ export function Inspector({
         </div>
         <h4>Source wording / annotation</h4>
         <p className="node-text">{node.text}</p>
+        {notation !== node.text && (
+          <section aria-label="PDF notation view">
+            <h4>PDF notation</h4>
+            <p className="notation-text" data-testid="notation-view">
+              {notation}
+            </p>
+            <p className="muted">
+              Typography observed in the original PDF. Check the original page for mathematical
+              layout.
+            </p>
+          </section>
+        )}
+        {bundle.evidence
+          .flatMap((e) => e.anchor.notation_issues ?? [])
+          .map((issue, index) => (
+            <p className="muted" key={`notation-issue-${index}`}>
+              {issue}
+            </p>
+          ))}
         <h4>Uncertainty</h4>
         {node.review_current === false && (
           <p className="muted">

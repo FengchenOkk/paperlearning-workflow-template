@@ -59,6 +59,11 @@ class SpanRow(Base):
     text: Mapped[str] = mapped_column(Text)
     bbox: Mapped[list[float]] = mapped_column(JSON)
     kind: Mapped[str]
+    notation: Mapped[list[dict[str, object]]] = mapped_column(
+        JSON, default=list, server_default="[]"
+    )
+    notation_issues: Mapped[list[str]] = mapped_column(JSON, default=list, server_default="[]")
+    section_titles: Mapped[list[str]] = mapped_column(JSON, default=list, server_default="[]")
 
 
 class AnchorRow(Base):
@@ -138,7 +143,7 @@ class JobRow(Base):
     progress: Mapped[int] = mapped_column(Integer, default=0)
     error: Mapped[str | None] = mapped_column(Text, nullable=True)
     input_hash: Mapped[str]
-    pipeline_version: Mapped[str] = mapped_column(default="source-graph-v3")
+    pipeline_version: Mapped[str] = mapped_column(default="source-graph-v6")
     attempt: Mapped[int] = mapped_column(default=0)
     lease_until: Mapped[float] = mapped_column(default=0.0)
     lease_token: Mapped[str | None] = mapped_column(nullable=True)

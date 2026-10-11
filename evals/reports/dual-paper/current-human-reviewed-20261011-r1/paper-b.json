@@ -1,0 +1,808 @@
+{
+  "schema_version": 1,
+  "paper": "B",
+  "evaluated_at_utc": "2026-10-11T15:27:23.438202+00:00",
+  "scope": "FROZEN_SOURCE_WINDOWS_AND_GOLD_NOT_FULL_DOCUMENT",
+  "thresholds": {
+    "precision": 0.9,
+    "recall": 0.8,
+    "type_accuracy": 0.9,
+    "anchors": 1,
+    "pages": 1,
+    "figures": 1,
+    "equations": 1,
+    "quantities": 1,
+    "node_provenance": 1,
+    "edge_provenance": 1
+  },
+  "inputs": {
+    "proposal_report_path": "E:\\PaperLearning\\evals\\reports\\dual-paper\\reconciliation-20261011-r4\\paper-b.json",
+    "proposal_report_sha256": "6fc32138a3957a2af246843e0ba097ee485d658c5ebfe538436423635c8e6881",
+    "production_path": "E:\\PaperLearning\\.runtime\\gate-a-a2a-revision-20261011\\current-b.json",
+    "production_sha256": "b5f67f4d7e30b7518045acddbf30e807884d0a8dd29a512cac2f89ec574d7ce2",
+    "database": "E:\\PaperLearning\\.runtime\\gate-a-a2a-revision-20261011\\current-b-runtime\\graph.db",
+    "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+    "gold_sha256": "f1647451ea439c4b4b29b31f41bc1ca7a368ada89d40d74fceebf019c96cba63",
+    "parser_version": "1.28.2+layout-v3-notation",
+    "pipeline_version": "source-graph-v6",
+    "revision_report_path": "E:\\PaperLearning\\evals\\reports\\dual-paper\\a2a-grouping-revision-20261011-r1\\revision.json"
+  },
+  "current_review_audit_sha256": "9fc27225e92d9abac7c99c1b5f1183d12fcdacd213e8cf385e7acad66e3413de",
+  "historical_ledger_sha256": "4c9220d03943ddc25583270fd2c08a1f20aa0853c518860db7cef9c31f7e9d99",
+  "human_source_metrics": {
+    "precision": {
+      "passed": 18,
+      "total": 18,
+      "rate": 1.0
+    },
+    "recall": {
+      "passed": 16,
+      "total": 16,
+      "rate": 1.0
+    },
+    "type_accuracy": {
+      "passed": 16,
+      "total": 16,
+      "rate": 1.0
+    },
+    "anchors": {
+      "passed": 16,
+      "total": 16,
+      "rate": 1.0
+    },
+    "pages": {
+      "passed": 16,
+      "total": 16,
+      "rate": 1.0
+    },
+    "figures": {
+      "passed": 3,
+      "total": 3,
+      "rate": 1.0
+    },
+    "equations": {
+      "passed": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "quantities": {
+      "passed": 11,
+      "total": 11,
+      "rate": 1.0
+    },
+    "node_provenance": {
+      "passed": 78,
+      "total": 78,
+      "rate": 1.0
+    },
+    "edge_provenance": {
+      "passed": 77,
+      "total": 77,
+      "rate": 1.0
+    }
+  },
+  "human_metric_checks": {
+    "precision": true,
+    "recall": true,
+    "type_accuracy": true,
+    "anchors": true,
+    "pages": true,
+    "figures": true,
+    "equations": true,
+    "quantities": true,
+    "node_provenance": true,
+    "edge_provenance": true
+  },
+  "model_key_metrics_unchanged": {
+    "precision": {
+      "passed": 17,
+      "total": 18,
+      "rate": 0.9444444444444444
+    },
+    "recall": {
+      "passed": 16,
+      "total": 16,
+      "rate": 1.0
+    },
+    "type_accuracy": {
+      "passed": 16,
+      "total": 16,
+      "rate": 1.0
+    },
+    "anchors": {
+      "passed": 16,
+      "total": 16,
+      "rate": 1.0
+    },
+    "pages": {
+      "passed": 16,
+      "total": 16,
+      "rate": 1.0
+    },
+    "figures": {
+      "passed": 3,
+      "total": 3,
+      "rate": 1.0
+    },
+    "equations": {
+      "passed": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "quantities": {
+      "passed": 11,
+      "total": 11,
+      "rate": 1.0
+    },
+    "node_provenance": {
+      "passed": 78,
+      "total": 78,
+      "rate": 1.0
+    },
+    "edge_provenance": {
+      "passed": 77,
+      "total": 77,
+      "rate": 1.0
+    }
+  },
+  "model_key_checks_unchanged": {
+    "precision": true,
+    "recall": true,
+    "type_accuracy": true,
+    "anchors": true,
+    "pages": true,
+    "figures": true,
+    "equations": true,
+    "quantities": true,
+    "node_provenance": true,
+    "edge_provenance": true
+  },
+  "model_key_sample_pass": true,
+  "prediction_adjudications": [
+    {
+      "node_id": "c2c03fc6-52bc-5ecd-9734-6abb08cca073",
+      "prediction_key": "1d94749e59dcc1f2cc75f2678731e216b6fee23cd0bdbde0c16505ee50ccf2f8",
+      "type": "RESEARCH_PROBLEM",
+      "correct_identity_type": true,
+      "basis": "E0_ORIGINAL_ACCEPT_REFERENCE",
+      "decision_label": "ACCEPT",
+      "audit_references": [
+        "E0-B-c2c03fc6-52bc-5ecd-9734-6abb08cca073",
+        "human-source-B-b-problem-1"
+      ],
+      "original_decision_rewritten": false
+    },
+    {
+      "node_id": "19e915d5-9591-5ad0-bd6e-0d94efefd9d7",
+      "prediction_key": "71a3da0b5babf24a8d2304e01a4933d00936107cc44513d63caf5db36c40a17f",
+      "type": "LIMITATION",
+      "correct_identity_type": true,
+      "basis": "E0_ORIGINAL_ACCEPT_REFERENCE",
+      "decision_label": "ACCEPT",
+      "audit_references": [
+        "E0-B-19e915d5-9591-5ad0-bd6e-0d94efefd9d7",
+        "human-source-B-b-prediction-71a3da0b5bab-1"
+      ],
+      "original_decision_rewritten": false
+    },
+    {
+      "node_id": "5ca9a9b2-fc14-5c6e-997d-80a0bdef2605",
+      "prediction_key": "736ff73f7f51505e00e0b893722f5266f0c4a54987c8847271117727291195b5",
+      "type": "METHOD",
+      "correct_identity_type": true,
+      "basis": "EXPLICIT_CURRENT_USER_ACCEPT",
+      "decision_label": "ACCEPT",
+      "audit_references": [
+        "current-human-source-B-B1-20261011-1"
+      ],
+      "original_decision_rewritten": false
+    },
+    {
+      "node_id": "e1c4818d-6c10-5467-b91d-f5af5055efc5",
+      "prediction_key": "4afc27cb153df80c8b61f37a6e1422d03f01af8159e0495e9402f57355cd921c",
+      "type": "RESULT",
+      "correct_identity_type": true,
+      "basis": "E0_ORIGINAL_ACCEPT_REFERENCE",
+      "decision_label": "ACCEPT",
+      "audit_references": [
+        "E0-B-e1c4818d-6c10-5467-b91d-f5af5055efc5",
+        "human-source-B-b-central-result-1"
+      ],
+      "original_decision_rewritten": false
+    },
+    {
+      "node_id": "f95bca85-365d-5d1f-a127-8a5e904da4c8",
+      "prediction_key": "0ce4a64ad391996efda2c4fa16b2656570bbfaf273078655f096a0a464643cbb",
+      "type": "RESULT",
+      "correct_identity_type": true,
+      "basis": "E0_ORIGINAL_ACCEPT_REFERENCE",
+      "decision_label": "ACCEPT",
+      "audit_references": [
+        "E0-B-f95bca85-365d-5d1f-a127-8a5e904da4c8",
+        "human-source-B-b-transistor-result-1"
+      ],
+      "original_decision_rewritten": false
+    },
+    {
+      "node_id": "9891ffe8-982b-5443-9d80-b3a5aa1897db",
+      "prediction_key": "d2b3529cf9ffd7cc3b19585e9dac11558f07e2e022ded2aee6195f785e29ebd5",
+      "type": "ASSUMPTION",
+      "correct_identity_type": true,
+      "basis": "E0_ORIGINAL_ACCEPT_REFERENCE",
+      "decision_label": "ACCEPT",
+      "audit_references": [
+        "E0-B-9891ffe8-982b-5443-9d80-b3a5aa1897db",
+        "human-source-B-b-ballistic-assumption-1"
+      ],
+      "original_decision_rewritten": false
+    },
+    {
+      "node_id": "e9780c96-2710-51a5-b299-067a6f020983",
+      "prediction_key": "9d465db2812ceabe88ffd2bfab186ccadd72cdb3b10d3524325862245ba8189d",
+      "type": "EQUATION",
+      "correct_identity_type": true,
+      "basis": "E0_ORIGINAL_ACCEPT_REFERENCE",
+      "decision_label": "ACCEPT",
+      "audit_references": [
+        "E0-B-e9780c96-2710-51a5-b299-067a6f020983",
+        "human-source-B-b-equation-1-1"
+      ],
+      "original_decision_rewritten": false
+    },
+    {
+      "node_id": "5a958cd9-8d8a-5e63-bd98-fe7a2c2a0f86",
+      "prediction_key": "37ef6a8106f32214dc95cf8425126b3439b6e5b37f6217606e12f2b0e6229a63",
+      "type": "DEFINITION",
+      "correct_identity_type": true,
+      "basis": "E0_ORIGINAL_ACCEPT_REFERENCE",
+      "decision_label": "ACCEPT",
+      "audit_references": [
+        "E0-B-5a958cd9-8d8a-5e63-bd98-fe7a2c2a0f86",
+        "human-source-B-b-symbol-definitions-1"
+      ],
+      "original_decision_rewritten": false
+    },
+    {
+      "node_id": "59a69832-0448-5cfa-bc79-d9637355efb4",
+      "prediction_key": "20dc584a26a792ec12e74d544fdfbd1fc2bc68a2a169f1b7066b3f0fb5fd1e52",
+      "type": "FIGURE",
+      "correct_identity_type": true,
+      "basis": "E0_ORIGINAL_ACCEPT_REFERENCE",
+      "decision_label": "ACCEPT",
+      "audit_references": [
+        "E0-B-59a69832-0448-5cfa-bc79-d9637355efb4",
+        "human-source-B-b-figure-1-1"
+      ],
+      "original_decision_rewritten": false
+    },
+    {
+      "node_id": "2c97daff-b368-5f11-a320-9485ef397b3a",
+      "prediction_key": "99ec6ea9bc19bb2ed6f8c2c3cd50978e32d3e9f3d715c4b20cab570da96b46a1",
+      "type": "FIGURE",
+      "correct_identity_type": true,
+      "basis": "E0_ORIGINAL_ACCEPT_REFERENCE",
+      "decision_label": "ACCEPT",
+      "audit_references": [
+        "E0-B-2c97daff-b368-5f11-a320-9485ef397b3a",
+        "human-source-B-b-figure-2-1"
+      ],
+      "original_decision_rewritten": false
+    },
+    {
+      "node_id": "de3c4f23-bfee-5955-88c5-a758eaeaf426",
+      "prediction_key": "d600f4651fabb7213681884178ab3d0cd02b56500383db884e910b0c15d5bd81",
+      "type": "FIGURE",
+      "correct_identity_type": true,
+      "basis": "E0_ORIGINAL_ACCEPT_REFERENCE",
+      "decision_label": "ACCEPT",
+      "audit_references": [
+        "E0-B-de3c4f23-bfee-5955-88c5-a758eaeaf426",
+        "human-source-B-b-figure-3-1"
+      ],
+      "original_decision_rewritten": false
+    },
+    {
+      "node_id": "a630fb6c-abca-5fad-bfac-ec6cbc6cad1d",
+      "prediction_key": "c4e617ecca1d75c0968fee887baab86d37d059a6f9f69428dbca3a2c427e084b",
+      "type": "ASSUMPTION",
+      "correct_identity_type": true,
+      "basis": "E0_ORIGINAL_ACCEPT_REFERENCE",
+      "decision_label": "ACCEPT",
+      "audit_references": [
+        "E0-B-a630fb6c-abca-5fad-bfac-ec6cbc6cad1d",
+        "human-source-B-b-tlm-assumption-1"
+      ],
+      "original_decision_rewritten": false
+    },
+    {
+      "node_id": "d6cb9fa8-66a2-57fa-8e95-88609ba61582",
+      "prediction_key": "f80f7f96f1fe5acf2793360c9daa6c477ce7e49f17b0c0f77e4a25eb9c0c92f2",
+      "type": "LIMITATION",
+      "correct_identity_type": true,
+      "basis": "E0_ORIGINAL_ACCEPT_REFERENCE",
+      "decision_label": "ACCEPT",
+      "audit_references": [
+        "E0-B-d6cb9fa8-66a2-57fa-8e95-88609ba61582",
+        "human-source-B-b-tlm-limitation-1"
+      ],
+      "original_decision_rewritten": false
+    },
+    {
+      "node_id": "cee8704f-4ca4-5432-817f-167bec0b564b",
+      "prediction_key": "8535901b689de325a4ac274faedb415cb62f5852feca24f34ca78c865ca6d45b",
+      "type": "METHOD",
+      "correct_identity_type": true,
+      "basis": "E0_ORIGINAL_ACCEPT_REFERENCE",
+      "decision_label": "ACCEPT",
+      "audit_references": [
+        "E0-B-cee8704f-4ca4-5432-817f-167bec0b564b",
+        "human-source-B-b-prediction-8535901b689d-1"
+      ],
+      "original_decision_rewritten": false
+    },
+    {
+      "node_id": "c6f01a9b-5b67-5989-a5a8-ff7847cbc345",
+      "prediction_key": "d31983b4f2f28aeec1d7c41b87b1593fbd740f735c2af688fd87a85f2c22ec9d",
+      "type": "RESULT",
+      "correct_identity_type": true,
+      "basis": "E0_ORIGINAL_ACCEPT_REFERENCE",
+      "decision_label": "ACCEPT",
+      "audit_references": [
+        "E0-B-c6f01a9b-5b67-5989-a5a8-ff7847cbc345",
+        "human-source-B-b-average-contact-1"
+      ],
+      "original_decision_rewritten": false
+    },
+    {
+      "node_id": "8c008d5d-6389-503d-8c92-ea46a92fdae2",
+      "prediction_key": "c122b3c98f960ccc6cc6c4907dba1211ad96196e7fcb12b69074cc2b868fb7aa",
+      "type": "RESULT",
+      "correct_identity_type": true,
+      "basis": "EXPLICIT_CURRENT_USER_ACCEPT",
+      "decision_label": "ACCEPT",
+      "audit_references": [
+        "current-human-source-B-B2-20261011-1"
+      ],
+      "original_decision_rewritten": false
+    },
+    {
+      "node_id": "656715f2-1b94-5c6b-abf2-f0dbb5d7c5e3",
+      "prediction_key": "3eed8cbe5e1e2f83287ea33107b6547e145a931bed9a3fa7c28bce3e9bd7a570",
+      "type": "SIMULATION",
+      "correct_identity_type": true,
+      "basis": "E0_ORIGINAL_ACCEPT_REFERENCE",
+      "decision_label": "ACCEPT",
+      "audit_references": [
+        "E0-B-656715f2-1b94-5c6b-abf2-f0dbb5d7c5e3",
+        "human-source-B-b-dft-method-1"
+      ],
+      "original_decision_rewritten": false
+    },
+    {
+      "node_id": "93426ebb-abc2-5834-8880-4cfe44b24e12",
+      "prediction_key": "00762870e2755bed1d6be024b8508fd075e303ad84ab39075c2d65331e266c1b",
+      "type": "METHOD",
+      "correct_identity_type": true,
+      "basis": "E0_ORIGINAL_ACCEPT_REFERENCE",
+      "decision_label": "ACCEPT",
+      "audit_references": [
+        "E0-B-93426ebb-abc2-5834-8880-4cfe44b24e12",
+        "human-source-B-b-dft-convergence-1"
+      ],
+      "original_decision_rewritten": false
+    }
+  ],
+  "adjudication_basis_counts": {
+    "E0_ORIGINAL_ACCEPT_REFERENCE": 16,
+    "EXPLICIT_CURRENT_USER_ACCEPT": 2
+  },
+  "gold_matches": [
+    {
+      "gold_id": "b-problem",
+      "expected_type": "RESEARCH_PROBLEM",
+      "node_id": "c2c03fc6-52bc-5ecd-9734-6abb08cca073",
+      "actual_type": "RESEARCH_PROBLEM",
+      "same_type": true,
+      "correct_source": true,
+      "number_correct": true,
+      "quantities": []
+    },
+    {
+      "gold_id": "b-contact-method",
+      "expected_type": "METHOD",
+      "node_id": "5ca9a9b2-fc14-5c6e-997d-80a0bdef2605",
+      "actual_type": "METHOD",
+      "same_type": true,
+      "correct_source": true,
+      "number_correct": true,
+      "quantities": []
+    },
+    {
+      "gold_id": "b-central-result",
+      "expected_type": "RESULT",
+      "node_id": "e1c4818d-6c10-5467-b91d-f5af5055efc5",
+      "actual_type": "RESULT",
+      "same_type": true,
+      "correct_source": true,
+      "number_correct": true,
+      "quantities": [
+        {
+          "value": "42",
+          "unit": "ohm micrometres",
+          "context": "contact resistance",
+          "pass": true,
+          "issue": null
+        },
+        {
+          "value": "125",
+          "unit": "degrees Celsius",
+          "context": "stability temperature",
+          "pass": true,
+          "issue": null
+        }
+      ]
+    },
+    {
+      "gold_id": "b-transistor-result",
+      "expected_type": "RESULT",
+      "node_id": "f95bca85-365d-5d1f-a127-8a5e904da4c8",
+      "actual_type": "RESULT",
+      "same_type": true,
+      "correct_source": true,
+      "number_correct": true,
+      "quantities": [
+        {
+          "value": "1.23",
+          "unit": "milliamperes per micrometre",
+          "context": "on-state current",
+          "pass": true,
+          "issue": null
+        },
+        {
+          "value": "10^8",
+          "unit": "dimensionless",
+          "context": "on/off ratio lower bound",
+          "pass": true,
+          "issue": null
+        },
+        {
+          "value": "74",
+          "unit": "femtoseconds",
+          "context": "intrinsic delay",
+          "pass": true,
+          "issue": null
+        }
+      ]
+    },
+    {
+      "gold_id": "b-ballistic-assumption",
+      "expected_type": "ASSUMPTION",
+      "node_id": "9891ffe8-982b-5443-9d80-b3a5aa1897db",
+      "actual_type": "ASSUMPTION",
+      "same_type": true,
+      "correct_source": true,
+      "number_correct": true,
+      "quantities": []
+    },
+    {
+      "gold_id": "b-equation-1",
+      "expected_type": "EQUATION",
+      "node_id": "e9780c96-2710-51a5-b299-067a6f020983",
+      "actual_type": "EQUATION",
+      "same_type": true,
+      "correct_source": true,
+      "number_correct": true,
+      "quantities": []
+    },
+    {
+      "gold_id": "b-symbol-definitions",
+      "expected_type": "DEFINITION",
+      "node_id": "5a958cd9-8d8a-5e63-bd98-fe7a2c2a0f86",
+      "actual_type": "DEFINITION",
+      "same_type": true,
+      "correct_source": true,
+      "number_correct": true,
+      "quantities": []
+    },
+    {
+      "gold_id": "b-figure-1",
+      "expected_type": "FIGURE",
+      "node_id": "59a69832-0448-5cfa-bc79-d9637355efb4",
+      "actual_type": "FIGURE",
+      "same_type": true,
+      "correct_source": true,
+      "number_correct": true,
+      "quantities": []
+    },
+    {
+      "gold_id": "b-figure-2",
+      "expected_type": "FIGURE",
+      "node_id": "2c97daff-b368-5f11-a320-9485ef397b3a",
+      "actual_type": "FIGURE",
+      "same_type": true,
+      "correct_source": true,
+      "number_correct": true,
+      "quantities": []
+    },
+    {
+      "gold_id": "b-figure-3",
+      "expected_type": "FIGURE",
+      "node_id": "de3c4f23-bfee-5955-88c5-a758eaeaf426",
+      "actual_type": "FIGURE",
+      "same_type": true,
+      "correct_source": true,
+      "number_correct": true,
+      "quantities": []
+    },
+    {
+      "gold_id": "b-tlm-assumption",
+      "expected_type": "ASSUMPTION",
+      "node_id": "a630fb6c-abca-5fad-bfac-ec6cbc6cad1d",
+      "actual_type": "ASSUMPTION",
+      "same_type": true,
+      "correct_source": true,
+      "number_correct": true,
+      "quantities": []
+    },
+    {
+      "gold_id": "b-tlm-limitation",
+      "expected_type": "LIMITATION",
+      "node_id": "d6cb9fa8-66a2-57fa-8e95-88609ba61582",
+      "actual_type": "LIMITATION",
+      "same_type": true,
+      "correct_source": true,
+      "number_correct": true,
+      "quantities": []
+    },
+    {
+      "gold_id": "b-average-contact",
+      "expected_type": "RESULT",
+      "node_id": "c6f01a9b-5b67-5989-a5a8-ff7847cbc345",
+      "actual_type": "RESULT",
+      "same_type": true,
+      "correct_source": true,
+      "number_correct": true,
+      "quantities": [
+        {
+          "value": "209 ± 100",
+          "unit": "Ω μm",
+          "context": "average Sb(0112) contact resistance",
+          "pass": true,
+          "issue": null
+        },
+        {
+          "value": "3.47",
+          "unit": "times",
+          "context": "lower than Sb(0001) average",
+          "pass": true,
+          "issue": null
+        }
+      ]
+    },
+    {
+      "gold_id": "b-stability",
+      "expected_type": "RESULT",
+      "node_id": "8c008d5d-6389-503d-8c92-ea46a92fdae2",
+      "actual_type": "RESULT",
+      "same_type": true,
+      "correct_source": true,
+      "number_correct": true,
+      "quantities": [
+        {
+          "value": "24",
+          "unit": "h",
+          "context": "stability observation interval",
+          "pass": true,
+          "issue": null
+        }
+      ]
+    },
+    {
+      "gold_id": "b-dft-method",
+      "expected_type": "SIMULATION",
+      "node_id": "656715f2-1b94-5c6b-abf2-f0dbb5d7c5e3",
+      "actual_type": "SIMULATION",
+      "same_type": true,
+      "correct_source": true,
+      "number_correct": true,
+      "quantities": []
+    },
+    {
+      "gold_id": "b-dft-convergence",
+      "expected_type": "METHOD",
+      "node_id": "93426ebb-abc2-5834-8880-4cfe44b24e12",
+      "actual_type": "METHOD",
+      "same_type": true,
+      "correct_source": true,
+      "number_correct": true,
+      "quantities": [
+        {
+          "value": "0.02",
+          "unit": "eV Å^−1",
+          "context": "maximum force threshold",
+          "pass": true,
+          "issue": null
+        },
+        {
+          "value": "10^−4",
+          "unit": "eV",
+          "context": "energy convergence",
+          "pass": true,
+          "issue": null
+        },
+        {
+          "value": "400",
+          "unit": "eV",
+          "context": "kinetic energy cut-off",
+          "pass": true,
+          "issue": null
+        }
+      ]
+    }
+  ],
+  "quantity_audit": [
+    {
+      "gold_id": "b-central-result",
+      "quantity_index": 0,
+      "original_decision_id": "human-source-B-b-central-result-quantity-1-1",
+      "correct": true,
+      "source_context_unchanged": true,
+      "new_accept_created": false
+    },
+    {
+      "gold_id": "b-central-result",
+      "quantity_index": 1,
+      "original_decision_id": "human-source-B-b-central-result-quantity-2-1",
+      "correct": true,
+      "source_context_unchanged": true,
+      "new_accept_created": false
+    },
+    {
+      "gold_id": "b-transistor-result",
+      "quantity_index": 0,
+      "original_decision_id": "human-source-B-b-transistor-result-quantity-1-1",
+      "correct": true,
+      "source_context_unchanged": true,
+      "new_accept_created": false
+    },
+    {
+      "gold_id": "b-transistor-result",
+      "quantity_index": 1,
+      "original_decision_id": "human-source-B-b-transistor-result-quantity-2-1",
+      "correct": true,
+      "source_context_unchanged": true,
+      "new_accept_created": false
+    },
+    {
+      "gold_id": "b-transistor-result",
+      "quantity_index": 2,
+      "original_decision_id": "human-source-B-b-transistor-result-quantity-3-1",
+      "correct": true,
+      "source_context_unchanged": true,
+      "new_accept_created": false
+    },
+    {
+      "gold_id": "b-average-contact",
+      "quantity_index": 0,
+      "original_decision_id": "human-source-B-b-average-contact-quantity-1-1",
+      "correct": true,
+      "source_context_unchanged": true,
+      "new_accept_created": false
+    },
+    {
+      "gold_id": "b-average-contact",
+      "quantity_index": 1,
+      "original_decision_id": "human-source-B-b-average-contact-quantity-2-1",
+      "correct": true,
+      "source_context_unchanged": true,
+      "new_accept_created": false
+    },
+    {
+      "gold_id": "b-stability",
+      "quantity_index": 0,
+      "original_decision_id": "human-source-B-b-stability-quantity-1-1",
+      "correct": true,
+      "source_context_unchanged": true,
+      "new_accept_created": false
+    },
+    {
+      "gold_id": "b-dft-convergence",
+      "quantity_index": 0,
+      "original_decision_id": "human-source-B-b-dft-convergence-quantity-1-1",
+      "correct": true,
+      "source_context_unchanged": true,
+      "new_accept_created": false
+    },
+    {
+      "gold_id": "b-dft-convergence",
+      "quantity_index": 1,
+      "original_decision_id": "human-source-B-b-dft-convergence-quantity-2-1",
+      "correct": true,
+      "source_context_unchanged": true,
+      "new_accept_created": false
+    },
+    {
+      "gold_id": "b-dft-convergence",
+      "quantity_index": 2,
+      "original_decision_id": "human-source-B-b-dft-convergence-quantity-3-1",
+      "correct": true,
+      "source_context_unchanged": true,
+      "new_accept_created": false
+    }
+  ],
+  "parser_anomaly_audit": [
+    {
+      "original_decision_id": "human-source-B-b-parser-article-header-section-1",
+      "original_decision": "REVISE",
+      "technical_source_role_correction": "APPLIED_SOURCE_PRESERVED",
+      "new_accept_created": false
+    },
+    {
+      "original_decision_id": "human-source-B-b-parser-article-header-section-1",
+      "original_decision": "REVISE",
+      "technical_source_role_correction": "APPLIED_SOURCE_PRESERVED",
+      "new_accept_created": false
+    },
+    {
+      "original_decision_id": "human-source-B-b-parser-article-header-section-1",
+      "original_decision": "REVISE",
+      "technical_source_role_correction": "APPLIED_SOURCE_PRESERVED",
+      "new_accept_created": false
+    },
+    {
+      "original_decision_id": "human-source-B-b-parser-article-header-section-1",
+      "original_decision": "REVISE",
+      "technical_source_role_correction": "APPLIED_SOURCE_PRESERVED",
+      "new_accept_created": false
+    },
+    {
+      "original_decision_id": "human-source-B-b-parser-article-header-section-1",
+      "original_decision": "REVISE",
+      "technical_source_role_correction": "APPLIED_SOURCE_PRESERVED",
+      "new_accept_created": false
+    },
+    {
+      "original_decision_id": "human-source-B-b-parser-article-header-section-1",
+      "original_decision": "REVISE",
+      "technical_source_role_correction": "APPLIED_SOURCE_PRESERVED",
+      "new_accept_created": false
+    },
+    {
+      "original_decision_id": "human-source-B-b-parser-article-header-section-1",
+      "original_decision": "REVISE",
+      "technical_source_role_correction": "APPLIED_SOURCE_PRESERVED",
+      "new_accept_created": false
+    },
+    {
+      "original_decision_id": "human-source-B-b-parser-article-header-section-1",
+      "original_decision": "REVISE",
+      "technical_source_role_correction": "APPLIED_SOURCE_PRESERVED",
+      "new_accept_created": false
+    }
+  ],
+  "integrity": {
+    "paper_id": "04f3b46f-483d-4349-8404-5c4ef6718647",
+    "issues": [],
+    "structurally_valid": true,
+    "scientific_validity": "NOT_ASSESSED"
+  },
+  "browser": {
+    "status": "EXISTING_CURRENT_V6_PASS_REUSED",
+    "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+    "revision_manifest_sha256": "ab0c50765146b7322888a144f9f250ed1455c38b4784aa3ad5092ead0712061c",
+    "rerun_this_turn": false
+  },
+  "source_fidelity_audit_path": "E:\\PaperLearning\\.runtime\\gate-a-a2a-revision-20261011\\final-source-fidelity.json",
+  "source_fidelity_audit_sha256": "875139b3102faccd7e6b8fef9c7fc4778a3f9da19aa135ad5f0794a84d5317dd",
+  "overall_reviewed_gate": "PASS",
+  "failure_reasons": [],
+  "scientific_validity": "NOT_ASSESSED",
+  "application_reviews_created": 0,
+  "gate_b": "NOT_STARTED",
+  "limitations": [
+    "Scores concern the frozen sample; accepted objects outside windows do not inflate denominators.",
+    "Explanation-only REVISE remains REVISE; correct identity/type is not explicit acceptance coverage.",
+    "Original source/glyph evidence can be reviewed while automatic formula reconstruction remains unknown.",
+    "Additional full-document candidates are unreviewed; source attribution does not verify science."
+  ]
+}

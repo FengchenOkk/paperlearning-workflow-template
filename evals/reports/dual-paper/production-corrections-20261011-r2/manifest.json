@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "evaluated_at_utc": "2026-10-11T13:04:41.147538+00:00",
+  "papers": {
+    "A": {
+      "path": "E:\\PaperLearning\\evals\\reports\\dual-paper\\production-corrections-20261011-r2\\paper-a.json",
+      "sha256": "73a7b852ec9ad5539c03e526cf0b13aacb619c969461efa49f5c4f7b5bee5d63",
+      "overall_reviewed_gate": "FAIL"
+    },
+    "B": {
+      "path": "E:\\PaperLearning\\evals\\reports\\dual-paper\\production-corrections-20261011-r2\\paper-b.json",
+      "sha256": "bb9139941fb3afe7ab046d71befefce43a1d23af3f4d5ec70a12db8179668049",
+      "overall_reviewed_gate": "FAIL"
+    }
+  },
+  "human_ledger_sha256": "4c9220d03943ddc25583270fd2c08a1f20aa0853c518860db7cef9c31f7e9d99",
+  "human_decision_history_sha256": "daeff02aa4d6b27445e57b87f7963f1d075884e7e86b5b2f4d0426bd860df99e",
+  "evaluator_sha256": "8467ac6628708520af8ace9ac3c9a1f0d49b4c25a71e281f1ff790aea6f55986",
+  "browser_sha256": "7a50b91637529ea97d9af0f60d9cf7f13566c8ec353a638a8ab7b06831902e3d",
+  "public_browser_sha256": "36fc18aabf8851c7545ddbf831bd25f49932822a9f040f98517d7d9d82e05831",
+  "thresholds": {
+    "precision": 0.9,
+    "recall": 0.8,
+    "type_accuracy": 0.9,
+    "anchors": 1,
+    "pages": 1,
+    "figures": 1,
+    "equations": 1,
+    "quantities": 1,
+    "node_provenance": 1,
+    "edge_provenance": 1
+  },
+  "gate_b": "NOT_STARTED",
+  "new_human_decisions_created": 0,
+  "artifacts": {
+    "browser.json": "7a50b91637529ea97d9af0f60d9cf7f13566c8ec353a638a8ab7b06831902e3d",
+    "paper-a.json": "73a7b852ec9ad5539c03e526cf0b13aacb619c969461efa49f5c4f7b5bee5d63",
+    "paper-b.json": "bb9139941fb3afe7ab046d71befefce43a1d23af3f4d5ec70a12db8179668049",
+    "production-a.json": "1400939aeb13b8dc0dfcee61cc2c9569b89c4c7e0e473666432fb42e65791e75",
+    "production-b.json": "90e0d03b19ef2a6ba6e5106daae3b27b6c9a7bf7cbd46f3cd40872ebaa87e490",
+    "public-browser.json": "36fc18aabf8851c7545ddbf831bd25f49932822a9f040f98517d7d9d82e05831",
+    "README.md": "661a3a61eff84568b9016132349a71e297541dca71e0e0f2e1e9a8e406eda3e2",
+    "REVIEW-DELTA.md": "018441b1e3c860523502bbc1d4ac4b67005192a1f5c9dc8fef1641b496b7b897",
+    "validation.json": "75f51a450081fa40573aefadc781b7bb3467a0873c759370d1a56c22b346ac41"
+  }
+}

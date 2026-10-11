@@ -1,0 +1,42 @@
+{
+  "validated_on": "2026-10-11",
+  "backend_tests": {
+    "status": "PASS",
+    "passed": 38,
+    "command": "python -m pytest -q -p no:cacheprovider --basetemp=E:/PaperLearning/.runtime/tests-corrections-final-03 --tb=short",
+    "plugin_autoload_disabled": true
+  },
+  "frontend_tests": {
+    "status": "PASS",
+    "passed": 8
+  },
+  "ruff_lint": "PASS",
+  "ruff_format": "PASS",
+  "mypy": {
+    "status": "PASS",
+    "modules": 20
+  },
+  "frontend_lint": "PASS",
+  "frontend_format": "PASS",
+  "frontend_strict_types": "PASS",
+  "frontend_production_build": "PASS",
+  "python_contract_drift": "PASS",
+  "typescript_contract_drift": "PASS",
+  "isolated_alembic_upgrade_and_check": "PASS",
+  "canonical_alembic_upgrade_and_check": "PASS",
+  "canonical_row_and_field_preservation": "PASS",
+  "human_snapshots_preserved": 77,
+  "canonical_db_head": "35c8d2ea0003",
+  "canonical_graphs_reparsed": false,
+  "canonical_backup": "E:\\PaperLearning\\.runtime\\gate-a-corrections-20261011\\canonical-before-schema.db",
+  "public_browser": "PASS",
+  "dual_paper_browser": "PASS",
+  "environment_notes": [
+    "Sandbox FastAPI test client hangs and Node realpath EPERM resolved using elevated local checks.",
+    "Existing E:/PaperLearning/.runtime/browsers Chromium used; no download or private-paper transmission.",
+    "One test setup overlapped frontend dist replacement; completed build followed by full successful backend run."
+  ],
+  "scientific_validity": "NOT_ASSESSED",
+  "human_decisions_created": 0,
+  "gate_b": "NOT_STARTED"
+}

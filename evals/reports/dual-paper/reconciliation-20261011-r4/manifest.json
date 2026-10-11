@@ -1,0 +1,194 @@
+{
+  "scope": "TECHNICAL_RECONCILIATION_PROPOSALS_BEFORE_CURRENT_HUMAN_DECISIONS",
+  "human_ledger_sha256": "4c9220d03943ddc25583270fd2c08a1f20aa0853c518860db7cef9c31f7e9d99",
+  "human_decision_history_sha256": "daeff02aa4d6b27445e57b87f7963f1d075884e7e86b5b2f4d0426bd860df99e",
+  "unchanged_historical_snapshots_checked": 77,
+  "thresholds": {
+    "precision": 0.9,
+    "recall": 0.8,
+    "type_accuracy": 0.9,
+    "anchors": 1,
+    "pages": 1,
+    "figures": 1,
+    "equations": 1,
+    "quantities": 1,
+    "node_provenance": 1,
+    "edge_provenance": 1
+  },
+  "papers": {
+    "A": {
+      "mapping_counts": {
+        "NONMATERIAL_METADATA_CHANGE": 29,
+        "NEW_CANDIDATE": 26,
+        "MATERIAL_CONTENT_OR_TYPE_CHANGE": 1,
+        "REMOVED_CANDIDATE": 3
+      },
+      "prediction_mapping_counts": {
+        "NONMATERIAL_METADATA_CHANGE": 17,
+        "MATERIAL_CONTENT_OR_TYPE_CHANGE": 1,
+        "NEW_CANDIDATE": 3
+      },
+      "frozen_model_metrics": {
+        "precision": {
+          "passed": 16,
+          "total": 21,
+          "rate": 0.7619047619047619
+        },
+        "recall": {
+          "passed": 16,
+          "total": 17,
+          "rate": 0.9411764705882353
+        },
+        "type_accuracy": {
+          "passed": 16,
+          "total": 16,
+          "rate": 1.0
+        },
+        "anchors": {
+          "passed": 16,
+          "total": 16,
+          "rate": 1.0
+        },
+        "pages": {
+          "passed": 16,
+          "total": 16,
+          "rate": 1.0
+        },
+        "figures": {
+          "passed": 3,
+          "total": 3,
+          "rate": 1.0
+        },
+        "equations": {
+          "passed": 0,
+          "total": 0,
+          "rate": null
+        },
+        "quantities": {
+          "passed": 10,
+          "total": 10,
+          "rate": 1.0
+        },
+        "node_provenance": {
+          "passed": 56,
+          "total": 56,
+          "rate": 1.0
+        },
+        "edge_provenance": {
+          "passed": 55,
+          "total": 55,
+          "rate": 1.0
+        }
+      },
+      "overall_reviewed_gate": "FAIL",
+      "gold_misses": [
+        {
+          "gold_id": "a-limitation",
+          "expected_type": "LIMITATION",
+          "node_id": null,
+          "actual_type": null,
+          "same_type": false,
+          "correct_source": false,
+          "number_correct": true,
+          "quantities": []
+        }
+      ]
+    },
+    "B": {
+      "mapping_counts": {
+        "NEW_CANDIDATE": 32,
+        "NONMATERIAL_METADATA_CHANGE": 44,
+        "REMOVED_CANDIDATE": 16
+      },
+      "prediction_mapping_counts": {
+        "NONMATERIAL_METADATA_CHANGE": 18
+      },
+      "frozen_model_metrics": {
+        "precision": {
+          "passed": 17,
+          "total": 18,
+          "rate": 0.9444444444444444
+        },
+        "recall": {
+          "passed": 16,
+          "total": 16,
+          "rate": 1.0
+        },
+        "type_accuracy": {
+          "passed": 16,
+          "total": 16,
+          "rate": 1.0
+        },
+        "anchors": {
+          "passed": 16,
+          "total": 16,
+          "rate": 1.0
+        },
+        "pages": {
+          "passed": 16,
+          "total": 16,
+          "rate": 1.0
+        },
+        "figures": {
+          "passed": 3,
+          "total": 3,
+          "rate": 1.0
+        },
+        "equations": {
+          "passed": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "quantities": {
+          "passed": 11,
+          "total": 11,
+          "rate": 1.0
+        },
+        "node_provenance": {
+          "passed": 76,
+          "total": 76,
+          "rate": 1.0
+        },
+        "edge_provenance": {
+          "passed": 75,
+          "total": 75,
+          "rate": 1.0
+        }
+      },
+      "overall_reviewed_gate": "FAIL",
+      "gold_misses": []
+    }
+  },
+  "human_decisions_created": 0,
+  "application_reviews_created": 0,
+  "scientific_validity": "NOT_ASSESSED",
+  "gate_b": "NOT_STARTED",
+  "artifacts": {
+    "browser.json": "7a50b91637529ea97d9af0f60d9cf7f13566c8ec353a638a8ab7b06831902e3d",
+    "CANDIDATE-DELTA.md": "afc1d623d8916c4a66d061de567ce62e5d11164c3aa19bc0af9c146d12edc838",
+    "EQUIVALENCE-PROPOSAL.md": "6c3ae0cca851f96acf3d11b2eeb195b2b2fd3e31719efd6b99cb8c7872ce79ae",
+    "paper-a.json": "88a631b338155ccd93a25dc900ba5e7feaaa8f1a1296dd06ce7ac2ed3495f388",
+    "paper-b.json": "6fc32138a3957a2af246843e0ba097ee485d658c5ebfe538436423635c8e6881",
+    "production-a.json": "7a6c24c37228122e2330a95c5f109de8a194c2de71b3e4347fe5fb3c7308e909",
+    "production-b.json": "c1b8c4e3f1278c78eddaff63efd3361a548a9399e08dd2b50a97cff97ad290b2",
+    "public-browser.json": "36fc18aabf8851c7545ddbf831bd25f49932822a9f040f98517d7d9d82e05831",
+    "README.md": "aae6527e2344b2a6e026f21cd63f4860caf2242961c759f6075ee44148281929",
+    "TARGETED-REVIEW.md": "0bd93852e143d81ef6652e16329f3f2975c8f6567964de920170688ae14c24a5",
+    "validation.json": "374da782e38aee90db5e800177aa7aff80b2819243ecb7dc8f6e7853a21c3db3"
+  },
+  "implementation_sha256": {
+    "backend/papergraph/extraction.py": "3df6ad03d1bafe45420250f495e9b4c8f4a82a9879ef1fbf8285546420e75a07",
+    "backend/papergraph/models.py": "648963105e0d1f1352668a6417584b6f0ebaa5aae204ca7a867a1cb25aee9658",
+    "backend/papergraph/worker.py": "f5370720682aeaa7da01fadd7b96ea663c0b0db72a3142d9aa5df89111f8dc4b",
+    "evals/reviews/dual-paper/build_reconciliation_packet.py": "abaa9e99fc060e8d429ee959616db1ef1d487032dee439d9c5b76e37dfdf9b21",
+    "evals/reviews/dual-paper/reconcile_current_review.py": "ac5bae317449d4fe1c501f697c55ad5c6e1bb2ad86b8563b07bfe3258d0924f5"
+  },
+  "documentation_sha256": {
+    "docs/CODEX_HANDOFF.md": "579b03e609ca6ca9ceedf8aed6ca27ccd633ceab6610f272db2c3577b7f68ca5",
+    "docs/IMPLEMENTATION_STATUS.md": "542cf3ca02a852734c1a3c8e6d2292f43be38173fdb993b8e2407becbdcb938d",
+    "docs/evaluation/PAPER-A-RESULTS.md": "d4ba2353f7e904c5facabad4c9e4ff8a92235be173434d4adf6a279d9d9ca622",
+    "docs/evaluation/PAPER-B-RESULTS.md": "ea50230fa0983392ae9e80f495969aaded021a50feac5aa44b6ff52e69365c81",
+    "docs/evaluation/CROSS-DOMAIN-GENERALIZATION.md": "2712a1af250fafa9fcb6c1d816352361b49ff0f204e372d48ccb6bbb738e13a6",
+    "docs/evaluation/PAPER-GRAPH-EVIDENCE-GATE.md": "0f742901e6be979b60f0882f44a910bf13d1a107d5c2bd300d160f0b1c03dd21"
+  }
+}

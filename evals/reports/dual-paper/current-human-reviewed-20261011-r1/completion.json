@@ -1,0 +1,24 @@
+{
+  "recorded_at_utc": "2026-10-11T15:28:45.918480+00:00",
+  "evaluation_manifest_sha256": "a11c0d900619908b784ec84149a1d17b1adff499da4de7bc5252e5042a626b59",
+  "review_snapshot_sha256": "9fc27225e92d9abac7c99c1b5f1183d12fcdacd213e8cf385e7acad66e3413de",
+  "current_audit_sha256_after_evaluation": "8d0fa630e1398cc4f358317d7e172628a962e17051b1e1e42cc8bde3c1941c1d",
+  "current_audit_path": "E:\\PaperLearning\\evals\\reviews\\dual-paper\\CURRENT_SOURCE_REVIEW.json",
+  "reviewed_gate": {
+    "A": {
+      "status": "PASS",
+      "reason": "FROZEN_PROTOCOL_CURRENT_HUMAN_SOURCE_METRICS_AND_SOURCE_CHECKS",
+      "report_path": "E:\\PaperLearning\\evals\\reports\\dual-paper\\current-human-reviewed-20261011-r1\\paper-a.json",
+      "report_sha256": "ced666e7b01d9dd88b864731393ed53ffd9279262c29c5c8ce7c861bd55c3241"
+    },
+    "B": {
+      "status": "PASS",
+      "reason": "FROZEN_PROTOCOL_CURRENT_HUMAN_SOURCE_METRICS_AND_SOURCE_CHECKS",
+      "report_path": "E:\\PaperLearning\\evals\\reports\\dual-paper\\current-human-reviewed-20261011-r1\\paper-b.json",
+      "report_sha256": "c708f3632e169dc51350fbcabd9c99b84df1c97c4493d350f6ec52d8f1655e0e"
+    }
+  },
+  "application_reviews_created": 0,
+  "scientific_validity": "NOT_ASSESSED",
+  "gate_b": "NOT_STARTED"
+}

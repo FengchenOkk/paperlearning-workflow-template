@@ -1,0 +1,4270 @@
+{
+  "schema_version": 1,
+  "paper": "B",
+  "evaluated_at_utc": "2026-10-11T13:02:49.097149+00:00",
+  "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+  "gold_sha256": "f1647451ea439c4b4b29b31f41bc1ca7a368ada89d40d74fceebf019c96cba63",
+  "human_ledger_sha256": "4c9220d03943ddc25583270fd2c08a1f20aa0853c518860db7cef9c31f7e9d99",
+  "human_decision_history_sha256": "daeff02aa4d6b27445e57b87f7963f1d075884e7e86b5b2f4d0426bd860df99e",
+  "production_path": "E:\\PaperLearning\\.runtime\\gate-a-corrections-20261011\\final-production-b.json",
+  "production_sha256": "90e0d03b19ef2a6ba6e5106daae3b27b6c9a7bf7cbd46f3cd40872ebaa87e490",
+  "isolated_database": "E:\\PaperLearning\\.runtime\\gate-a-corrections-20261011\\final-production-b-runtime\\graph.db",
+  "parser_version": "1.28.2+layout-v3-notation",
+  "pipeline_version": "source-graph-v4",
+  "thresholds": {
+    "precision": 0.9,
+    "recall": 0.8,
+    "type_accuracy": 0.9,
+    "anchors": 1,
+    "pages": 1,
+    "figures": 1,
+    "equations": 1,
+    "quantities": 1,
+    "node_provenance": 1,
+    "edge_provenance": 1
+  },
+  "frozen_model_comparison_metrics": {
+    "precision": {
+      "passed": 17,
+      "total": 18,
+      "rate": 0.9444444444444444
+    },
+    "recall": {
+      "passed": 16,
+      "total": 16,
+      "rate": 1.0
+    },
+    "type_accuracy": {
+      "passed": 16,
+      "total": 16,
+      "rate": 1.0
+    },
+    "anchors": {
+      "passed": 16,
+      "total": 16,
+      "rate": 1.0
+    },
+    "pages": {
+      "passed": 16,
+      "total": 16,
+      "rate": 1.0
+    },
+    "figures": {
+      "passed": 3,
+      "total": 3,
+      "rate": 1.0
+    },
+    "equations": {
+      "passed": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "quantities": {
+      "passed": 11,
+      "total": 11,
+      "rate": 1.0
+    },
+    "node_provenance": {
+      "passed": 74,
+      "total": 74,
+      "rate": 1.0
+    },
+    "edge_provenance": {
+      "passed": 73,
+      "total": 73,
+      "rate": 1.0
+    }
+  },
+  "frozen_model_metric_checks": {
+    "precision": true,
+    "recall": true,
+    "type_accuracy": true,
+    "anchors": true,
+    "pages": true,
+    "figures": true,
+    "equations": true,
+    "quantities": true,
+    "node_provenance": true,
+    "edge_provenance": true
+  },
+  "frozen_model_sampled_measurements_pass": true,
+  "prior_human_review": "COMPLETE",
+  "current_production_human_review": "REQUIRES_CURRENT_REVIEW",
+  "current_human_precision": null,
+  "human_acceptance_inherited": false,
+  "prediction_reconciliation": [
+    {
+      "prediction_key": "1d94749e59dcc1f2cc75f2678731e216b6fee23cd0bdbde0c16505ee50ccf2f8",
+      "node_id": "6c826568-f498-5c6e-8c0a-59b800ca0264",
+      "node_version": 1,
+      "type": "RESEARCH_PROBLEM",
+      "text": "The development of next-generation electronics requires scaling of channel \nmaterial thickness down to the two-dimensional limit while maintaining ultralow \ncontact resistance¹,².",
+      "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "evidence_fingerprint": "45cb421fb86ded91ac9fb02f40e9bd01ff9777549fefc521eb8e6e4d946f7975",
+      "evaluation_snapshot_digest": "4cffa232eb4bad57c22d45587667f4861276e6822864930abf50ccf5058cfefe",
+      "source_snapshot": [
+        {
+          "id": "7b28a566-ae2f-5a04-86b8-d6691dd61812",
+          "paper_id": "d3354b1e-cc8d-4d4e-a951-e7b8a8686567",
+          "span_id": "0fd818a7-1019-5f73-9bf7-054a0492e93d",
+          "page_number": 1,
+          "start_char": 0,
+          "end_char": 1695,
+          "bbox": [
+            217.32009887695312,
+            218.87550354003906,
+            560.9495239257812,
+            502.9736328125
+          ],
+          "text": "The development of next-generation electronics requires scaling of channel \nmaterial thickness down to the two-dimensional limit while maintaining ultralow \ncontact resistance¹,². Transition-metal dichalcogenides can sustain transistor \nscaling to the end of roadmap, but despite a myriad of efforts, the device \nperformance remains contact-limited³–¹². In particular, the contact resistance has \nnot surpassed that of covalently bonded metal–semiconductor junctions owing to \nthe intrinsic van der Waals gap, and the best contact technologies are facing \nstability issues³,⁷. Here we push the electrical contact of monolayer molybdenum \ndisulfide close to the quantum limit by hybridization of energy bands with semi- \nmetallic antimony (0112) through strong van der Waals interactions. The contacts \nexhibit a low contact resistance of 42 ohm micrometres and excellent stability at \n125 degrees Celsius. Owing to improved contacts, short-channel molybdenum \ndisulfide transistors show current saturation under one-volt drain bias with an \non-state current of 1.23 milliamperes per micrometre, an on/off ratio over 10⁸ and  \nan intrinsic delay of 74 femtoseconds. These performances outperformed \nequivalent silicon complementary metal–oxide–semiconductor technologies and \nsatisfied the 2028 roadmap target. We further fabricate large-area device arrays and \ndemonstrate low variability in contact resistance, threshold voltage, subthreshold \nswing, on/off ratio, on-state current and transconductance¹³. The excellent \nelectrical performance, stability and variability make antimony (0112) a promising \ncontact technology for transition-metal-dichalcogenide-based electronics beyond \nsilicon.",
+          "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "localization_precision": "TEXT_BLOCK",
+          "notation": [
+            {
+              "start_char": 175,
+              "end_char": 178,
+              "raw": "¹,²",
+              "display": "^1,2",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                293.13531494140625,
+                244.5065460205078,
+                299.8691101074219,
+                251.17015075683594
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 348,
+              "end_char": 352,
+              "raw": "³–¹²",
+              "display": "^3–12",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                373.06878662109375,
+                270.5066223144531,
+                384.4087829589844,
+                277.17022705078125
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 572,
+              "end_char": 575,
+              "raw": "³,⁷",
+              "display": "^3,7",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                277.8804016113281,
+                309.5066223144531,
+                285.1055908203125,
+                316.17022705078125
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 741,
+              "end_char": 742,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                306.62469482421875,
+                335.7473449707031,
+                310.3565979003906,
+                346.7644958496094
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 1118,
+              "end_char": 1119,
+              "raw": "⁸",
+              "display": "^8",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                528.7028198242188,
+                387.5066223144531,
+                531.8834228515625,
+                394.17022705078125
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 1503,
+              "end_char": 1505,
+              "raw": "¹³",
+              "display": "^13",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                457.44610595703125,
+                452.5066223144531,
+                462.68951416015625,
+                459.17022705078125
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 1589,
+              "end_char": 1590,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                490.4109802246094,
+                465.7473449707031,
+                494.14288330078125,
+                476.7644958496094
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            }
+          ],
+          "notation_issues": [],
+          "section_titles": []
+        }
+      ],
+      "previous_decision_id": "human-source-B-b-problem-1",
+      "previous_human_decision": "ACCEPT",
+      "comparison_status": "STALE_REQUIRES_CURRENT_REVIEW",
+      "material_changes": [
+        "source.typography_or_heading_metadata"
+      ],
+      "human_acceptance_inherited": false,
+      "current_human_decision": null,
+      "current_review_scope": "SOURCE_ATTRIBUTION"
+    },
+    {
+      "prediction_key": "71a3da0b5babf24a8d2304e01a4933d00936107cc44513d63caf5db36c40a17f",
+      "node_id": "3b7c4e18-9796-5b01-b92f-dc82cee9e739",
+      "node_version": 1,
+      "type": "LIMITATION",
+      "text": "In particular, the contact resistance has \nnot surpassed that of covalently bonded metal–semiconductor junctions owing to \nthe intrinsic van der Waals gap, and the best contact technologies are facing \nstability issues³,⁷.",
+      "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "evidence_fingerprint": "76453b952b18703f2c3466bff43379924d41ce61e0dfec6c533005ec8a578d12",
+      "evaluation_snapshot_digest": "5425c9d33e327e2255da905ca574730b71902ff46eb25a28493b385df3c09a91",
+      "source_snapshot": [
+        {
+          "id": "7b28a566-ae2f-5a04-86b8-d6691dd61812",
+          "paper_id": "d3354b1e-cc8d-4d4e-a951-e7b8a8686567",
+          "span_id": "0fd818a7-1019-5f73-9bf7-054a0492e93d",
+          "page_number": 1,
+          "start_char": 0,
+          "end_char": 1695,
+          "bbox": [
+            217.32009887695312,
+            218.87550354003906,
+            560.9495239257812,
+            502.9736328125
+          ],
+          "text": "The development of next-generation electronics requires scaling of channel \nmaterial thickness down to the two-dimensional limit while maintaining ultralow \ncontact resistance¹,². Transition-metal dichalcogenides can sustain transistor \nscaling to the end of roadmap, but despite a myriad of efforts, the device \nperformance remains contact-limited³–¹². In particular, the contact resistance has \nnot surpassed that of covalently bonded metal–semiconductor junctions owing to \nthe intrinsic van der Waals gap, and the best contact technologies are facing \nstability issues³,⁷. Here we push the electrical contact of monolayer molybdenum \ndisulfide close to the quantum limit by hybridization of energy bands with semi- \nmetallic antimony (0112) through strong van der Waals interactions. The contacts \nexhibit a low contact resistance of 42 ohm micrometres and excellent stability at \n125 degrees Celsius. Owing to improved contacts, short-channel molybdenum \ndisulfide transistors show current saturation under one-volt drain bias with an \non-state current of 1.23 milliamperes per micrometre, an on/off ratio over 10⁸ and  \nan intrinsic delay of 74 femtoseconds. These performances outperformed \nequivalent silicon complementary metal–oxide–semiconductor technologies and \nsatisfied the 2028 roadmap target. We further fabricate large-area device arrays and \ndemonstrate low variability in contact resistance, threshold voltage, subthreshold \nswing, on/off ratio, on-state current and transconductance¹³. The excellent \nelectrical performance, stability and variability make antimony (0112) a promising \ncontact technology for transition-metal-dichalcogenide-based electronics beyond \nsilicon.",
+          "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "localization_precision": "TEXT_BLOCK",
+          "notation": [
+            {
+              "start_char": 175,
+              "end_char": 178,
+              "raw": "¹,²",
+              "display": "^1,2",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                293.13531494140625,
+                244.5065460205078,
+                299.8691101074219,
+                251.17015075683594
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 348,
+              "end_char": 352,
+              "raw": "³–¹²",
+              "display": "^3–12",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                373.06878662109375,
+                270.5066223144531,
+                384.4087829589844,
+                277.17022705078125
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 572,
+              "end_char": 575,
+              "raw": "³,⁷",
+              "display": "^3,7",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                277.8804016113281,
+                309.5066223144531,
+                285.1055908203125,
+                316.17022705078125
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 741,
+              "end_char": 742,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                306.62469482421875,
+                335.7473449707031,
+                310.3565979003906,
+                346.7644958496094
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 1118,
+              "end_char": 1119,
+              "raw": "⁸",
+              "display": "^8",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                528.7028198242188,
+                387.5066223144531,
+                531.8834228515625,
+                394.17022705078125
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 1503,
+              "end_char": 1505,
+              "raw": "¹³",
+              "display": "^13",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                457.44610595703125,
+                452.5066223144531,
+                462.68951416015625,
+                459.17022705078125
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 1589,
+              "end_char": 1590,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                490.4109802246094,
+                465.7473449707031,
+                494.14288330078125,
+                476.7644958496094
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            }
+          ],
+          "notation_issues": [],
+          "section_titles": []
+        }
+      ],
+      "previous_decision_id": "human-source-B-b-prediction-71a3da0b5bab-1",
+      "previous_human_decision": "ACCEPT",
+      "comparison_status": "STALE_REQUIRES_CURRENT_REVIEW",
+      "material_changes": [
+        "source.typography_or_heading_metadata"
+      ],
+      "human_acceptance_inherited": false,
+      "current_human_decision": null,
+      "current_review_scope": "SOURCE_ATTRIBUTION"
+    },
+    {
+      "prediction_key": "736ff73f7f51505e00e0b893722f5266f0c4a54987c8847271117727291195b5",
+      "node_id": "a67fa06d-b9af-5bde-91b9-6b8c96ecba49",
+      "node_version": 1,
+      "type": "METHOD",
+      "text": "Here we push the electrical contact of monolayer molybdenum \ndisulfide close to the quantum limit by hybridization of energy bands with semi- \nmetallic antimony (0112) through strong van der Waals interactions.",
+      "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "evidence_fingerprint": "09e6b75fd35271ee656bd4f2d3c42b0edd6a9d4f1183dbcd079d0e9bda4adcb9",
+      "evaluation_snapshot_digest": "2f406f87bdebdf4a07abf6be401e7ffb8c7460fc7625474e93c8be0d2d028eac",
+      "source_snapshot": [
+        {
+          "id": "7b28a566-ae2f-5a04-86b8-d6691dd61812",
+          "paper_id": "d3354b1e-cc8d-4d4e-a951-e7b8a8686567",
+          "span_id": "0fd818a7-1019-5f73-9bf7-054a0492e93d",
+          "page_number": 1,
+          "start_char": 0,
+          "end_char": 1695,
+          "bbox": [
+            217.32009887695312,
+            218.87550354003906,
+            560.9495239257812,
+            502.9736328125
+          ],
+          "text": "The development of next-generation electronics requires scaling of channel \nmaterial thickness down to the two-dimensional limit while maintaining ultralow \ncontact resistance¹,². Transition-metal dichalcogenides can sustain transistor \nscaling to the end of roadmap, but despite a myriad of efforts, the device \nperformance remains contact-limited³–¹². In particular, the contact resistance has \nnot surpassed that of covalently bonded metal–semiconductor junctions owing to \nthe intrinsic van der Waals gap, and the best contact technologies are facing \nstability issues³,⁷. Here we push the electrical contact of monolayer molybdenum \ndisulfide close to the quantum limit by hybridization of energy bands with semi- \nmetallic antimony (0112) through strong van der Waals interactions. The contacts \nexhibit a low contact resistance of 42 ohm micrometres and excellent stability at \n125 degrees Celsius. Owing to improved contacts, short-channel molybdenum \ndisulfide transistors show current saturation under one-volt drain bias with an \non-state current of 1.23 milliamperes per micrometre, an on/off ratio over 10⁸ and  \nan intrinsic delay of 74 femtoseconds. These performances outperformed \nequivalent silicon complementary metal–oxide–semiconductor technologies and \nsatisfied the 2028 roadmap target. We further fabricate large-area device arrays and \ndemonstrate low variability in contact resistance, threshold voltage, subthreshold \nswing, on/off ratio, on-state current and transconductance¹³. The excellent \nelectrical performance, stability and variability make antimony (0112) a promising \ncontact technology for transition-metal-dichalcogenide-based electronics beyond \nsilicon.",
+          "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "localization_precision": "TEXT_BLOCK",
+          "notation": [
+            {
+              "start_char": 175,
+              "end_char": 178,
+              "raw": "¹,²",
+              "display": "^1,2",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                293.13531494140625,
+                244.5065460205078,
+                299.8691101074219,
+                251.17015075683594
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 348,
+              "end_char": 352,
+              "raw": "³–¹²",
+              "display": "^3–12",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                373.06878662109375,
+                270.5066223144531,
+                384.4087829589844,
+                277.17022705078125
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 572,
+              "end_char": 575,
+              "raw": "³,⁷",
+              "display": "^3,7",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                277.8804016113281,
+                309.5066223144531,
+                285.1055908203125,
+                316.17022705078125
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 741,
+              "end_char": 742,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                306.62469482421875,
+                335.7473449707031,
+                310.3565979003906,
+                346.7644958496094
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 1118,
+              "end_char": 1119,
+              "raw": "⁸",
+              "display": "^8",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                528.7028198242188,
+                387.5066223144531,
+                531.8834228515625,
+                394.17022705078125
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 1503,
+              "end_char": 1505,
+              "raw": "¹³",
+              "display": "^13",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                457.44610595703125,
+                452.5066223144531,
+                462.68951416015625,
+                459.17022705078125
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 1589,
+              "end_char": 1590,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                490.4109802246094,
+                465.7473449707031,
+                494.14288330078125,
+                476.7644958496094
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            }
+          ],
+          "notation_issues": [],
+          "section_titles": []
+        }
+      ],
+      "previous_decision_id": "human-source-B-b-contact-method-1",
+      "previous_human_decision": "REVISE",
+      "comparison_status": "STALE_REQUIRES_CURRENT_REVIEW",
+      "material_changes": [
+        "source.typography_or_heading_metadata"
+      ],
+      "human_acceptance_inherited": false,
+      "current_human_decision": null,
+      "current_review_scope": "SOURCE_ATTRIBUTION"
+    },
+    {
+      "prediction_key": "4afc27cb153df80c8b61f37a6e1422d03f01af8159e0495e9402f57355cd921c",
+      "node_id": "bf83b2f9-f7fa-5c03-9b15-9443cf63a25d",
+      "node_version": 1,
+      "type": "RESULT",
+      "text": "The contacts \nexhibit a low contact resistance of 42 ohm micrometres and excellent stability at \n125 degrees Celsius.",
+      "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "evidence_fingerprint": "c6dc7d6044e4f65e4ff1b160ef00160226fcc76256e121631c8208e02c79d309",
+      "evaluation_snapshot_digest": "cc232ccb54f09e07d8f583a3bf4e150c6482035d81c4373e0a39ef6cfc26d9d9",
+      "source_snapshot": [
+        {
+          "id": "7b28a566-ae2f-5a04-86b8-d6691dd61812",
+          "paper_id": "d3354b1e-cc8d-4d4e-a951-e7b8a8686567",
+          "span_id": "0fd818a7-1019-5f73-9bf7-054a0492e93d",
+          "page_number": 1,
+          "start_char": 0,
+          "end_char": 1695,
+          "bbox": [
+            217.32009887695312,
+            218.87550354003906,
+            560.9495239257812,
+            502.9736328125
+          ],
+          "text": "The development of next-generation electronics requires scaling of channel \nmaterial thickness down to the two-dimensional limit while maintaining ultralow \ncontact resistance¹,². Transition-metal dichalcogenides can sustain transistor \nscaling to the end of roadmap, but despite a myriad of efforts, the device \nperformance remains contact-limited³–¹². In particular, the contact resistance has \nnot surpassed that of covalently bonded metal–semiconductor junctions owing to \nthe intrinsic van der Waals gap, and the best contact technologies are facing \nstability issues³,⁷. Here we push the electrical contact of monolayer molybdenum \ndisulfide close to the quantum limit by hybridization of energy bands with semi- \nmetallic antimony (0112) through strong van der Waals interactions. The contacts \nexhibit a low contact resistance of 42 ohm micrometres and excellent stability at \n125 degrees Celsius. Owing to improved contacts, short-channel molybdenum \ndisulfide transistors show current saturation under one-volt drain bias with an \non-state current of 1.23 milliamperes per micrometre, an on/off ratio over 10⁸ and  \nan intrinsic delay of 74 femtoseconds. These performances outperformed \nequivalent silicon complementary metal–oxide–semiconductor technologies and \nsatisfied the 2028 roadmap target. We further fabricate large-area device arrays and \ndemonstrate low variability in contact resistance, threshold voltage, subthreshold \nswing, on/off ratio, on-state current and transconductance¹³. The excellent \nelectrical performance, stability and variability make antimony (0112) a promising \ncontact technology for transition-metal-dichalcogenide-based electronics beyond \nsilicon.",
+          "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "localization_precision": "TEXT_BLOCK",
+          "notation": [
+            {
+              "start_char": 175,
+              "end_char": 178,
+              "raw": "¹,²",
+              "display": "^1,2",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                293.13531494140625,
+                244.5065460205078,
+                299.8691101074219,
+                251.17015075683594
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 348,
+              "end_char": 352,
+              "raw": "³–¹²",
+              "display": "^3–12",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                373.06878662109375,
+                270.5066223144531,
+                384.4087829589844,
+                277.17022705078125
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 572,
+              "end_char": 575,
+              "raw": "³,⁷",
+              "display": "^3,7",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                277.8804016113281,
+                309.5066223144531,
+                285.1055908203125,
+                316.17022705078125
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 741,
+              "end_char": 742,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                306.62469482421875,
+                335.7473449707031,
+                310.3565979003906,
+                346.7644958496094
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 1118,
+              "end_char": 1119,
+              "raw": "⁸",
+              "display": "^8",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                528.7028198242188,
+                387.5066223144531,
+                531.8834228515625,
+                394.17022705078125
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 1503,
+              "end_char": 1505,
+              "raw": "¹³",
+              "display": "^13",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                457.44610595703125,
+                452.5066223144531,
+                462.68951416015625,
+                459.17022705078125
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 1589,
+              "end_char": 1590,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                490.4109802246094,
+                465.7473449707031,
+                494.14288330078125,
+                476.7644958496094
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            }
+          ],
+          "notation_issues": [],
+          "section_titles": []
+        }
+      ],
+      "previous_decision_id": "human-source-B-b-central-result-1",
+      "previous_human_decision": "ACCEPT",
+      "comparison_status": "STALE_REQUIRES_CURRENT_REVIEW",
+      "material_changes": [
+        "source.typography_or_heading_metadata"
+      ],
+      "human_acceptance_inherited": false,
+      "current_human_decision": null,
+      "current_review_scope": "SOURCE_ATTRIBUTION"
+    },
+    {
+      "prediction_key": "0ce4a64ad391996efda2c4fa16b2656570bbfaf273078655f096a0a464643cbb",
+      "node_id": "957458a1-14ac-5c8b-a670-d187482a25ad",
+      "node_version": 1,
+      "type": "RESULT",
+      "text": "Owing to improved contacts, short-channel molybdenum \ndisulfide transistors show current saturation under one-volt drain bias with an \non-state current of 1.23 milliamperes per micrometre, an on/off ratio over 10⁸ and  \nan intrinsic delay of 74 femtoseconds.",
+      "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "evidence_fingerprint": "65bfe233220bb9546ce364252945e0d78a5c7328d844486e07b87afaba1bd2b1",
+      "evaluation_snapshot_digest": "cf63e73fd50d3448279dba6ddd6fc7c9f600a9a2957792f5820cf7309dbdd35a",
+      "source_snapshot": [
+        {
+          "id": "7b28a566-ae2f-5a04-86b8-d6691dd61812",
+          "paper_id": "d3354b1e-cc8d-4d4e-a951-e7b8a8686567",
+          "span_id": "0fd818a7-1019-5f73-9bf7-054a0492e93d",
+          "page_number": 1,
+          "start_char": 0,
+          "end_char": 1695,
+          "bbox": [
+            217.32009887695312,
+            218.87550354003906,
+            560.9495239257812,
+            502.9736328125
+          ],
+          "text": "The development of next-generation electronics requires scaling of channel \nmaterial thickness down to the two-dimensional limit while maintaining ultralow \ncontact resistance¹,². Transition-metal dichalcogenides can sustain transistor \nscaling to the end of roadmap, but despite a myriad of efforts, the device \nperformance remains contact-limited³–¹². In particular, the contact resistance has \nnot surpassed that of covalently bonded metal–semiconductor junctions owing to \nthe intrinsic van der Waals gap, and the best contact technologies are facing \nstability issues³,⁷. Here we push the electrical contact of monolayer molybdenum \ndisulfide close to the quantum limit by hybridization of energy bands with semi- \nmetallic antimony (0112) through strong van der Waals interactions. The contacts \nexhibit a low contact resistance of 42 ohm micrometres and excellent stability at \n125 degrees Celsius. Owing to improved contacts, short-channel molybdenum \ndisulfide transistors show current saturation under one-volt drain bias with an \non-state current of 1.23 milliamperes per micrometre, an on/off ratio over 10⁸ and  \nan intrinsic delay of 74 femtoseconds. These performances outperformed \nequivalent silicon complementary metal–oxide–semiconductor technologies and \nsatisfied the 2028 roadmap target. We further fabricate large-area device arrays and \ndemonstrate low variability in contact resistance, threshold voltage, subthreshold \nswing, on/off ratio, on-state current and transconductance¹³. The excellent \nelectrical performance, stability and variability make antimony (0112) a promising \ncontact technology for transition-metal-dichalcogenide-based electronics beyond \nsilicon.",
+          "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "localization_precision": "TEXT_BLOCK",
+          "notation": [
+            {
+              "start_char": 175,
+              "end_char": 178,
+              "raw": "¹,²",
+              "display": "^1,2",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                293.13531494140625,
+                244.5065460205078,
+                299.8691101074219,
+                251.17015075683594
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 348,
+              "end_char": 352,
+              "raw": "³–¹²",
+              "display": "^3–12",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                373.06878662109375,
+                270.5066223144531,
+                384.4087829589844,
+                277.17022705078125
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 572,
+              "end_char": 575,
+              "raw": "³,⁷",
+              "display": "^3,7",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                277.8804016113281,
+                309.5066223144531,
+                285.1055908203125,
+                316.17022705078125
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 741,
+              "end_char": 742,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                306.62469482421875,
+                335.7473449707031,
+                310.3565979003906,
+                346.7644958496094
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 1118,
+              "end_char": 1119,
+              "raw": "⁸",
+              "display": "^8",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                528.7028198242188,
+                387.5066223144531,
+                531.8834228515625,
+                394.17022705078125
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 1503,
+              "end_char": 1505,
+              "raw": "¹³",
+              "display": "^13",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                457.44610595703125,
+                452.5066223144531,
+                462.68951416015625,
+                459.17022705078125
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 1589,
+              "end_char": 1590,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                490.4109802246094,
+                465.7473449707031,
+                494.14288330078125,
+                476.7644958496094
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            }
+          ],
+          "notation_issues": [],
+          "section_titles": []
+        }
+      ],
+      "previous_decision_id": "human-source-B-b-transistor-result-1",
+      "previous_human_decision": "ACCEPT",
+      "comparison_status": "STALE_REQUIRES_CURRENT_REVIEW",
+      "material_changes": [
+        "source.typography_or_heading_metadata"
+      ],
+      "human_acceptance_inherited": false,
+      "current_human_decision": null,
+      "current_review_scope": "SOURCE_ATTRIBUTION"
+    },
+    {
+      "prediction_key": "d2b3529cf9ffd7cc3b19585e9dac11558f07e2e022ded2aee6195f785e29ebd5",
+      "node_id": "84698003-6602-5844-9423-7aace2c4c521",
+      "node_version": 1,
+      "type": "ASSUMPTION",
+      "text": "In an ideal M–S junction, there is a fundamental quantum limit in the \njunction contact resistance by assuming ballistic transport of the con-\nducting modes:",
+      "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "evidence_fingerprint": "1c6c1efb79047904de2b7bea93487d2dc8f14d46db6b1142eee381d00459b7ae",
+      "evaluation_snapshot_digest": "2ea3ca0a894c9e51d2c1b90a915db850eb5f425f07a9d4d3debde83a007752b5",
+      "source_snapshot": [
+        {
+          "id": "b28b10f2-fef4-5379-9ae3-50dd6aaf8e6a",
+          "paper_id": "d3354b1e-cc8d-4d4e-a951-e7b8a8686567",
+          "span_id": "cc2b74b6-35ec-5e18-9d8c-793b387fba8a",
+          "page_number": 1,
+          "start_char": 0,
+          "end_char": 293,
+          "bbox": [
+            39.685001373291016,
+            531.3456420898438,
+            296.2746887207031,
+            584.526123046875
+          ],
+          "text": "Metal–semiconductor (M–S) contacts have essential roles in modern \nelectronics owing to the continuous scaling of device dimensions¹⁴. \nIn an ideal M–S junction, there is a fundamental quantum limit in the \njunction contact resistance by assuming ballistic transport of the con-\nducting modes:",
+          "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "localization_precision": "TEXT_BLOCK",
+          "notation": [
+            {
+              "start_char": 131,
+              "end_char": 133,
+              "raw": "¹⁴",
+              "display": "^14",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                287.5990905761719,
+                541.75732421875,
+                292.6155090332031,
+                547.8656616210938
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            }
+          ],
+          "notation_issues": [],
+          "section_titles": []
+        }
+      ],
+      "previous_decision_id": "human-source-B-b-ballistic-assumption-1",
+      "previous_human_decision": "ACCEPT",
+      "comparison_status": "STALE_REQUIRES_CURRENT_REVIEW",
+      "material_changes": [
+        "source.typography_or_heading_metadata"
+      ],
+      "human_acceptance_inherited": false,
+      "current_human_decision": null,
+      "current_review_scope": "SOURCE_ATTRIBUTION"
+    },
+    {
+      "prediction_key": "9d465db2812ceabe88ffd2bfab186ccadd72cdb3b10d3524325862245ba8189d",
+      "node_id": "69283503-0cc9-528a-b9e2-fc552e97213a",
+      "node_version": 1,
+      "type": "EQUATION",
+      "text": "R\nh\nπ\n2\n,\n(1)\nc,min\n2\n2D\nq\nn\n= 2",
+      "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "evidence_fingerprint": "9000ef2c105ac13c0a15658f91e8014c04f4135bb5c3401fad720535fd81cbb6",
+      "evaluation_snapshot_digest": "9970334e03ad6a754769413849f98ea9ebbcc354d82136a5eff50e031290f504",
+      "source_snapshot": [
+        {
+          "id": "e7ecd8cb-48e3-5aca-88ce-3daff726e35f",
+          "paper_id": "d3354b1e-cc8d-4d4e-a951-e7b8a8686567",
+          "span_id": "c7f1c91c-5f9f-527f-8cd7-b800999afd47",
+          "page_number": 1,
+          "start_char": 0,
+          "end_char": 32,
+          "bbox": [
+            125.19599914550781,
+            592.1370849609375,
+            294.445556640625,
+            615.3026733398438
+          ],
+          "text": "R\nh\nπ\n2\n,\n(1)\nc,min\n2\n2D\nq\nn\n= 2",
+          "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "localization_precision": "TEXT_BLOCK",
+          "notation": [],
+          "notation_issues": [
+            "Unresolved short mathematical rule; no symbol reconstruction inferred.",
+            "Unresolved short mathematical rule; no symbol reconstruction inferred."
+          ],
+          "section_titles": []
+        }
+      ],
+      "previous_decision_id": "human-source-B-b-equation-1-1",
+      "previous_human_decision": "ACCEPT",
+      "comparison_status": "STALE_REQUIRES_CURRENT_REVIEW",
+      "material_changes": [
+        "source.typography_or_heading_metadata"
+      ],
+      "human_acceptance_inherited": false,
+      "current_human_decision": null,
+      "current_review_scope": "SOURCE_ATTRIBUTION"
+    },
+    {
+      "prediction_key": "37ef6a8106f32214dc95cf8425126b3439b6e5b37f6217606e12f2b0e6229a63",
+      "node_id": "fea557ca-6c06-5f9a-9079-12a1a5947a59",
+      "node_version": 1,
+      "type": "DEFINITION",
+      "text": "where h is Planck’s constant, q is the unit charge and n2D is the carrier \nconcentration in the semiconductor.",
+      "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "evidence_fingerprint": "1a641dc085bd5b65ddff553984bd9a54feefbb2d0690b7d995cb566cbf954eee",
+      "evaluation_snapshot_digest": "3925b7f4c488f6d64ceb84ee5e4da3ef9ba8e38a851afc3c71f025d8a974eef3",
+      "source_snapshot": [
+        {
+          "id": "5e3b5a99-06d8-5f29-8f6e-cb77f485f123",
+          "paper_id": "d3354b1e-cc8d-4d4e-a951-e7b8a8686567",
+          "span_id": "06225810-5e0f-56ba-9c33-19fc126229e5",
+          "page_number": 1,
+          "start_char": 0,
+          "end_char": 210,
+          "bbox": [
+            39.685001373291016,
+            628.0626220703125,
+            296.3440856933594,
+            659.776123046875
+          ],
+          "text": "where h is Planck’s constant, q is the unit charge and n2D is the carrier \nconcentration in the semiconductor. Such ideal M–S contacts have, \nhowever, been rarely obtained experimentally owing to the stringent ",
+          "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "localization_precision": "TEXT_BLOCK",
+          "notation": [
+            {
+              "start_char": 56,
+              "end_char": 58,
+              "raw": "2D",
+              "display": "_2D",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                239.95179748535156,
+                632.9136352539062,
+                246.22840881347656,
+                639.02197265625
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            }
+          ],
+          "notation_issues": [],
+          "section_titles": []
+        }
+      ],
+      "previous_decision_id": "human-source-B-b-symbol-definitions-1",
+      "previous_human_decision": "ACCEPT",
+      "comparison_status": "STALE_REQUIRES_CURRENT_REVIEW",
+      "material_changes": [
+        "source.typography_or_heading_metadata"
+      ],
+      "human_acceptance_inherited": false,
+      "current_human_decision": null,
+      "current_review_scope": "SOURCE_ATTRIBUTION"
+    },
+    {
+      "prediction_key": "20dc584a26a792ec12e74d544fdfbd1fc2bc68a2a169f1b7066b3f0fb5fd1e52",
+      "node_id": "1e4f2020-f5d6-5a59-8937-6165766f37ca",
+      "node_version": 1,
+      "type": "FIGURE",
+      "text": "Fig. 1 | Electronic properties of Sb 0112\n(\n)–MoS2 and Sb (0001)–MoS2 contacts \nfrom DFT calculations. a,b, Atomic-projected electronic band structure of Sb \n(0112)–MoS2 (a) and Sb (0001)–MoS2 (b) contacts. The red and blue symbols \nrepresent orbitals from MoS2 and Sb, respectively. The size of the symbols \nrepresents the relative contribution. c,d, The charge density near EF (left) and \nthe differential charge density (right) of Sb (0112) (c) and Sb (0001) (d) contacts \n(red, positive; blue, negative). The blue, green and yellow spheres represent  \nSb, Mo and S atoms, respectively. The differential charge density iscalculated \nby subtracting pre-contact three-layer Sb and MoS2 charge density from the \npost-contact charge density. The isosurface level is 9 × 10⁻⁵ e Bohr⁻³ and \n7 × 10⁻⁴ e Bohr⁻³ for the left and right panels, respectively. e, Projected PLDOS of \ndifferent orbitals of Sb (0112)–MoS2 and Sb (0001)–MoS2 contacts near EF. f, The \nintegrated DOS of TMDs at EF. g, The charge transfer from Sb to TMDs by Bader \ncharge analysis. h, The interfacial vdW interaction between TMDs and Sb.",
+      "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "evidence_fingerprint": "d3c6545396efda7b13632b096d6a8feae408b73010925a5f7bf7177453826aeb",
+      "evaluation_snapshot_digest": "d424747988348cb816f1d97f61b08e9d9c8ba2f1de5dd9316e59c21a105a414c",
+      "source_snapshot": [
+        {
+          "id": "e24fac97-02aa-510d-8696-aee28cf9e36a",
+          "paper_id": "d3354b1e-cc8d-4d4e-a951-e7b8a8686567",
+          "span_id": "4504f4ac-f27c-539d-86bb-0246621d541a",
+          "page_number": 2,
+          "start_char": 0,
+          "end_char": 1107,
+          "bbox": [
+            39.68220520019531,
+            283.0007019042969,
+            562.3009643554688,
+            352.7767028808594
+          ],
+          "text": "Fig. 1 | Electronic properties of Sb 0112\n(\n)–MoS2 and Sb (0001)–MoS2 contacts \nfrom DFT calculations. a,b, Atomic-projected electronic band structure of Sb \n(0112)–MoS2 (a) and Sb (0001)–MoS2 (b) contacts. The red and blue symbols \nrepresent orbitals from MoS2 and Sb, respectively. The size of the symbols \nrepresents the relative contribution. c,d, The charge density near EF (left) and \nthe differential charge density (right) of Sb (0112) (c) and Sb (0001) (d) contacts \n(red, positive; blue, negative). The blue, green and yellow spheres represent  \nSb, Mo and S atoms, respectively. The differential charge density iscalculated \nby subtracting pre-contact three-layer Sb and MoS2 charge density from the \npost-contact charge density. The isosurface level is 9 × 10⁻⁵ e Bohr⁻³ and \n7 × 10⁻⁴ e Bohr⁻³ for the left and right panels, respectively. e, Projected PLDOS of \ndifferent orbitals of Sb (0112)–MoS2 and Sb (0001)–MoS2 contacts near EF. f, The \nintegrated DOS of TMDs at EF. g, The charge transfer from Sb to TMDs by Bader \ncharge analysis. h, The interfacial vdW interaction between TMDs and Sb.",
+          "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "localization_precision": "TEXT_BLOCK",
+          "notation": [
+            {
+              "start_char": 39,
+              "end_char": 40,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                161.09510803222656,
+                284.0483093261719,
+                164.2884521484375,
+                292.6952209472656
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 49,
+              "end_char": 50,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                189.68899536132812,
+                288.1565246582031,
+                192.09140014648438,
+                293.4107360839844
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 68,
+              "end_char": 69,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                257.67510986328125,
+                288.1565246582031,
+                260.0775146484375,
+                293.4107360839844
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 161,
+              "end_char": 162,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                49.43104934692383,
+                304.02288818359375,
+                52.32026672363281,
+                312.55230712890625
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 168,
+              "end_char": 169,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                77.42990112304688,
+                308.2237243652344,
+                79.706298828125,
+                313.4065246582031
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 191,
+              "end_char": 192,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                154.2288055419922,
+                308.2237243652344,
+                156.5052032470703,
+                313.4065246582031
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 260,
+              "end_char": 261,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                131.54209899902344,
+                318.2237243652344,
+                133.81849670410156,
+                323.4065246582031
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 377,
+              "end_char": 378,
+              "raw": "F",
+              "display": "_F",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                254.93809509277344,
+                328.2237243652344,
+                257.2355041503906,
+                333.4065246582031
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 440,
+              "end_char": 441,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                187.8734588623047,
+                334.02288818359375,
+                190.76268005371094,
+                342.55230712890625
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 685,
+              "end_char": 686,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                468.8362121582031,
+                297.0823059082031,
+                471.11260986328125,
+                302.2651062011719
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 771,
+              "end_char": 773,
+              "raw": "⁻⁵",
+              "display": "^−5",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                490.0429992675781,
+                302.7073059082031,
+                494.64617919921875,
+                307.8901062011719
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 780,
+              "end_char": 782,
+              "raw": "⁻³",
+              "display": "^−3",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                516.8571166992188,
+                302.7073059082031,
+                521.5086669921875,
+                307.8901062011719
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 794,
+              "end_char": 796,
+              "raw": "⁻⁴",
+              "display": "^−4",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                324.2506103515625,
+                312.7073059082031,
+                329.2528076171875,
+                317.8901062011719
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 803,
+              "end_char": 805,
+              "raw": "⁻³",
+              "display": "^−3",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                351.4624938964844,
+                312.7073059082031,
+                356.1139831542969,
+                317.8901062011719
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 902,
+              "end_char": 903,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                389.9550476074219,
+                322.8815002441406,
+                392.8442687988281,
+                331.4109191894531
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 909,
+              "end_char": 910,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                417.9540100097656,
+                327.0823059082031,
+                420.23040771484375,
+                332.2651062011719
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 928,
+              "end_char": 929,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                484.8360900878906,
+                327.0823059082031,
+                487.11248779296875,
+                332.2651062011719
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 945,
+              "end_char": 946,
+              "raw": "F",
+              "display": "_F",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                537.6024780273438,
+                327.0823059082031,
+                539.89990234375,
+                332.2651062011719
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 983,
+              "end_char": 984,
+              "raw": "F",
+              "display": "_F",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                397.26361083984375,
+                337.0823059082031,
+                399.5610046386719,
+                342.2651062011719
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            }
+          ],
+          "notation_issues": [],
+          "section_titles": []
+        }
+      ],
+      "previous_decision_id": "human-source-B-b-figure-1-1",
+      "previous_human_decision": "ACCEPT",
+      "comparison_status": "STALE_REQUIRES_CURRENT_REVIEW",
+      "material_changes": [
+        "source.typography_or_heading_metadata"
+      ],
+      "human_acceptance_inherited": false,
+      "current_human_decision": null,
+      "current_review_scope": "SOURCE_ATTRIBUTION"
+    },
+    {
+      "prediction_key": "99ec6ea9bc19bb2ed6f8c2c3cd50978e32d3e9f3d715c4b20cab570da96b46a1",
+      "node_id": "0863efd3-f7d1-55b5-b382-7f687bc617df",
+      "node_version": 1,
+      "type": "FIGURE",
+      "text": "Fig. 2 | Characterization of the Sb 0112\n(\n)–MoS2 contact. a, Raman spectrum \nof Sb film deposited on MoS2/Si substrate shows Sb Eg and A1g peaks at 111 cm⁻¹ \nand 149 cm⁻¹, respectively. b, XRD θ–2θ diffractogram of Sb film with different \ndeposition conditions and substrate. RT, room temperature. c, Cross-section \nHAADF-STEM image of the Sb (0112)–MoS2 contact. The interplane distance of \n0.315 nm for Sb (0112) planes is marked. Scale bar, 2 nm. d, Zoom-in \natomic-resolution image from the red box in c. The Mo, S and Sb atoms are \noverlayed on the image. The vdW gap of 0.285 nm is marked. Scale bar, 1 nm.  \ne, Optical microscope image of Sb films deposited on MoS2 and SiO2 substrate, \nshowing clear colour contrast. Scale bar, 20 μm.",
+      "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "evidence_fingerprint": "e05fc69c985d6ab15b18a0e3d02450ca9ce27d0276c3a666f3e1f2c7a821a360",
+      "evaluation_snapshot_digest": "a2e572a245c6f8fd26f9b940c2908bbefe37f0cea6b32d7030182d5f8fddc9e2",
+      "source_snapshot": [
+        {
+          "id": "5ce259fa-49aa-5b45-b988-cdbc7721f011",
+          "paper_id": "d3354b1e-cc8d-4d4e-a951-e7b8a8686567",
+          "span_id": "286f6ed0-4bcf-56a2-a7c3-dd8b420a570e",
+          "page_number": 2,
+          "start_char": 0,
+          "end_char": 743,
+          "bbox": [
+            39.681610107421875,
+            695.92236328125,
+            558.864013671875,
+            745.3051147460938
+          ],
+          "text": "Fig. 2 | Characterization of the Sb 0112\n(\n)–MoS2 contact. a, Raman spectrum \nof Sb film deposited on MoS2/Si substrate shows Sb Eg and A1g peaks at 111 cm⁻¹ \nand 149 cm⁻¹, respectively. b, XRD θ–2θ diffractogram of Sb film with different \ndeposition conditions and substrate. RT, room temperature. c, Cross-section \nHAADF-STEM image of the Sb (0112)–MoS2 contact. The interplane distance of \n0.315 nm for Sb (0112) planes is marked. Scale bar, 2 nm. d, Zoom-in \natomic-resolution image from the red box in c. The Mo, S and Sb atoms are \noverlayed on the image. The vdW gap of 0.285 nm is marked. Scale bar, 1 nm.  \ne, Optical microscope image of Sb films deposited on MoS2 and SiO2 substrate, \nshowing clear colour contrast. Scale bar, 20 μm.",
+          "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "localization_precision": "TEXT_BLOCK",
+          "notation": [
+            {
+              "start_char": 38,
+              "end_char": 39,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                162.318603515625,
+                695.9469604492188,
+                165.51194763183594,
+                704.5938720703125
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 48,
+              "end_char": 49,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                191.2624969482422,
+                700.0551147460938,
+                193.66490173339844,
+                705.309326171875
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 105,
+              "end_char": 106,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                129.92999267578125,
+                710.122314453125,
+                132.20639038085938,
+                715.3051147460938
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 130,
+              "end_char": 131,
+              "raw": "g",
+              "display": "_g",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                208.88699340820312,
+                710.122314453125,
+                211.33139038085938,
+                715.3051147460938
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 137,
+              "end_char": 139,
+              "raw": "1g",
+              "display": "_1g",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                230.6237030029297,
+                710.122314453125,
+                234.91610717773438,
+                715.3051147460938
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 155,
+              "end_char": 157,
+              "raw": "⁻¹",
+              "display": "^−1",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                284.2663879394531,
+                705.747314453125,
+                288.36981201171875,
+                710.9301147460938
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 169,
+              "end_char": 171,
+              "raw": "⁻¹",
+              "display": "^−1",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                75.45040130615234,
+                715.747314453125,
+                79.55380249023438,
+                720.9301147460938
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 347,
+              "end_char": 348,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                145.61285400390625,
+                735.9215087890625,
+                148.5020751953125,
+                744.4508666992188
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 354,
+              "end_char": 355,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                173.61180114746094,
+                740.122314453125,
+                175.88819885253906,
+                745.3051147460938
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 412,
+              "end_char": 413,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                366.2325439453125,
+                696.0575561523438,
+                369.12176513671875,
+                704.5869140625
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 672,
+              "end_char": 673,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                492.97149658203125,
+                730.2583618164062,
+                495.2478942871094,
+                735.441162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 681,
+              "end_char": 682,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                521.1201171875,
+                730.2583618164062,
+                523.3965454101562,
+                735.441162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            }
+          ],
+          "notation_issues": [],
+          "section_titles": []
+        }
+      ],
+      "previous_decision_id": "human-source-B-b-figure-2-1",
+      "previous_human_decision": "ACCEPT",
+      "comparison_status": "STALE_REQUIRES_CURRENT_REVIEW",
+      "material_changes": [
+        "source.typography_or_heading_metadata"
+      ],
+      "human_acceptance_inherited": false,
+      "current_human_decision": null,
+      "current_review_scope": "SOURCE_ATTRIBUTION"
+    },
+    {
+      "prediction_key": "d600f4651fabb7213681884178ab3d0cd02b56500383db884e910b0c15d5bd81",
+      "node_id": "90fcf964-c7fc-5d5b-90df-f07397193867",
+      "node_version": 1,
+      "type": "FIGURE",
+      "text": "Fig. 3 | Electrical properties and stability of the Sb 0112\n(\n)–MoS2 contact. \n a, Transfer curves of a typical TLM structure with Lc ranging from 0.1 μm to \n1.5 μm and Vds = 0.1 V. Inset: false-colour scanning electron microscope image \nof a TLM structure. Scale bar, 2 μm. b, Rc extraction using the TLM method from \nthe device in a. From top to bottom, n2D = 1.2 × 10¹³ cm⁻², 1.6 × 10¹³ cm⁻², \n2.1 × 10¹³ cm⁻² and 3 × 10¹³ cm⁻², respectively. Inset: the magnified data plot near \nLc = 0, where the y intercept and x intercept represent 2Rc and 2LT, respectively. \nIt is noted that the LT derived by the TLM method assumes the same MoS2 sheet \nresistivity underneath and outside the contact, which is probably violated \nconsidering the charge transfer between Sb (0112) and MoS2. This could lead to \nuncertainties in the obtained LT. c. Rc (red squares) and intrinsic mobility (black \nrhombuses) as a function of temperature for another device. d–f, Rc (d), LT (e) \nand μint (f) distribution of the Sb (0112) and Sb (0001) contacts, respectively. \nThe solid lines are Gaussian fittings.",
+      "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "evidence_fingerprint": "78077ece5a2b26fd34728a345a9728f62c327031fec2851131a3cbe14f289f27",
+      "evaluation_snapshot_digest": "3c4194b783c04a854238d8a835929949d046ce0e14db27163ce6482014d772ec",
+      "source_snapshot": [
+        {
+          "id": "8a55c5fb-3109-53f6-a660-89879b482159",
+          "paper_id": "d3354b1e-cc8d-4d4e-a951-e7b8a8686567",
+          "span_id": "2f4c2944-815a-5d23-939e-77aa05d765bb",
+          "page_number": 3,
+          "start_char": 0,
+          "end_char": 1088,
+          "bbox": [
+            39.682498931884766,
+            261.412109375,
+            560.2733764648438,
+            331.8489074707031
+          ],
+          "text": "Fig. 3 | Electrical properties and stability of the Sb 0112\n(\n)–MoS2 contact. \n a, Transfer curves of a typical TLM structure with Lc ranging from 0.1 μm to \n1.5 μm and Vds = 0.1 V. Inset: false-colour scanning electron microscope image \nof a TLM structure. Scale bar, 2 μm. b, Rc extraction using the TLM method from \nthe device in a. From top to bottom, n2D = 1.2 × 10¹³ cm⁻², 1.6 × 10¹³ cm⁻², \n2.1 × 10¹³ cm⁻² and 3 × 10¹³ cm⁻², respectively. Inset: the magnified data plot near \nLc = 0, where the y intercept and x intercept represent 2Rc and 2LT, respectively. \nIt is noted that the LT derived by the TLM method assumes the same MoS2 sheet \nresistivity underneath and outside the contact, which is probably violated \nconsidering the charge transfer between Sb (0112) and MoS2. This could lead to \nuncertainties in the obtained LT. c. Rc (red squares) and intrinsic mobility (black \nrhombuses) as a function of temperature for another device. d–f, Rc (d), LT (e) \nand μint (f) distribution of the Sb (0112) and Sb (0001) contacts, respectively. \nThe solid lines are Gaussian fittings.",
+          "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "localization_precision": "TEXT_BLOCK",
+          "notation": [
+            {
+              "start_char": 57,
+              "end_char": 58,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                218.8227081298828,
+                262.4906921386719,
+                222.01605224609375,
+                271.1376037597656
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 67,
+              "end_char": 68,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                247.7666015625,
+                266.5990295410156,
+                250.16900634765625,
+                271.8532409667969
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 132,
+              "end_char": 133,
+              "raw": "c",
+              "display": "_c",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                202.42230224609375,
+                276.6661071777344,
+                204.5727081298828,
+                281.8489074707031
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 170,
+              "end_char": 172,
+              "raw": "ds",
+              "display": "_ds",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                79.32479858398438,
+                286.6661071777344,
+                83.90280151367188,
+                291.8489074707031
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 279,
+              "end_char": 280,
+              "raw": "c",
+              "display": "_c",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                164.6916046142578,
+                296.6661071777344,
+                166.84201049804688,
+                301.8489074707031
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 357,
+              "end_char": 359,
+              "raw": "2D",
+              "display": "_2D",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                159.60690307617188,
+                306.6661071777344,
+                165.02490234375,
+                311.8489074707031
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 370,
+              "end_char": 372,
+              "raw": "¹³",
+              "display": "^13",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                194.73190307617188,
+                302.2911071777344,
+                198.93609619140625,
+                307.4739074707031
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 375,
+              "end_char": 377,
+              "raw": "⁻²",
+              "display": "^−2",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                210.2996063232422,
+                302.2911071777344,
+                214.85659790039062,
+                307.4739074707031
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 387,
+              "end_char": 389,
+              "raw": "¹³",
+              "display": "^13",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                241.34210205078125,
+                302.2911071777344,
+                245.54629516601562,
+                307.4739074707031
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 392,
+              "end_char": 394,
+              "raw": "⁻²",
+              "display": "^−2",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                256.9097900390625,
+                302.2911071777344,
+                261.466796875,
+                307.4739074707031
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 405,
+              "end_char": 407,
+              "raw": "¹³",
+              "display": "^13",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                62.81209945678711,
+                312.2911071777344,
+                67.01630401611328,
+                317.4739074707031
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 410,
+              "end_char": 412,
+              "raw": "⁻²",
+              "display": "^−2",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                78.37969970703125,
+                312.2911071777344,
+                82.93669891357422,
+                317.4739074707031
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 423,
+              "end_char": 425,
+              "raw": "¹³",
+              "display": "^13",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                115.2405014038086,
+                312.2911071777344,
+                119.4447021484375,
+                317.4739074707031
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 428,
+              "end_char": 430,
+              "raw": "⁻²",
+              "display": "^−2",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                130.80810546875,
+                312.2911071777344,
+                135.36509704589844,
+                317.4739074707031
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 484,
+              "end_char": 485,
+              "raw": "c",
+              "display": "_c",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                43.47549819946289,
+                326.6661071777344,
+                45.62589645385742,
+                331.8489074707031
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 541,
+              "end_char": 542,
+              "raw": "c",
+              "display": "_c",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                220.04550170898438,
+                326.6661071777344,
+                222.19590759277344,
+                331.8489074707031
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 549,
+              "end_char": 550,
+              "raw": "T",
+              "display": "_T",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                243.91920471191406,
+                326.6661071777344,
+                246.54420471191406,
+                331.8489074707031
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 589,
+              "end_char": 590,
+              "raw": "T",
+              "display": "_T",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                368.601806640625,
+                265.5248107910156,
+                371.226806640625,
+                270.7076110839844
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 637,
+              "end_char": 638,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                536.2296142578125,
+                265.5248107910156,
+                538.5060424804688,
+                270.7076110839844
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 768,
+              "end_char": 769,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                457.60772705078125,
+                281.32391357421875,
+                460.4969482421875,
+                289.85333251953125
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 779,
+              "end_char": 780,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                495.9642028808594,
+                285.5248107910156,
+                498.2406005859375,
+                290.7076110839844
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 833,
+              "end_char": 834,
+              "raw": "T",
+              "display": "_T",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                404.57708740234375,
+                295.5248107910156,
+                407.20208740234375,
+                300.7076110839844
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 840,
+              "end_char": 841,
+              "raw": "c",
+              "display": "_c",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                421.1282958984375,
+                295.5248107910156,
+                423.2786865234375,
+                300.7076110839844
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 953,
+              "end_char": 954,
+              "raw": "c",
+              "display": "_c",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                520.2745971679688,
+                305.5248107910156,
+                522.4249877929688,
+                310.7076110839844
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 961,
+              "end_char": 962,
+              "raw": "T",
+              "display": "_T",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                539.1273193359375,
+                305.5248107910156,
+                541.7523193359375,
+                310.7076110839844
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 973,
+              "end_char": 976,
+              "raw": "int",
+              "display": "_int",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                323.7638854980469,
+                315.5248107910156,
+                329.21844482421875,
+                320.7076110839844
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 1007,
+              "end_char": 1008,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                418.9923400878906,
+                311.32391357421875,
+                421.8815612792969,
+                319.85333251953125
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            }
+          ],
+          "notation_issues": [],
+          "section_titles": []
+        }
+      ],
+      "previous_decision_id": "human-source-B-b-figure-3-1",
+      "previous_human_decision": "ACCEPT",
+      "comparison_status": "STALE_REQUIRES_CURRENT_REVIEW",
+      "material_changes": [
+        "source.typography_or_heading_metadata"
+      ],
+      "human_acceptance_inherited": false,
+      "current_human_decision": null,
+      "current_review_scope": "SOURCE_ATTRIBUTION"
+    },
+    {
+      "prediction_key": "c4e617ecca1d75c0968fee887baab86d37d059a6f9f69428dbca3a2c427e084b",
+      "node_id": "83f68580-b8b0-58f1-a95d-2a80a8f1ed25",
+      "node_version": 1,
+      "type": "ASSUMPTION",
+      "text": "It is noted that the LT derived by the TLM method assumes the same MoS2 sheet \nresistivity underneath and outside the contact, which is probably violated \nconsidering the charge transfer between Sb (0112) and MoS2.",
+      "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "evidence_fingerprint": "758d05fc2fa5026cb2b54ce7734aea88338d13cee12c212e0a66d2bf33457364",
+      "evaluation_snapshot_digest": "90146ec09cb9973c97b08896367fbcbdefb15aa4e7beff5812ad3413f7bf7388",
+      "source_snapshot": [
+        {
+          "id": "8a55c5fb-3109-53f6-a660-89879b482159",
+          "paper_id": "d3354b1e-cc8d-4d4e-a951-e7b8a8686567",
+          "span_id": "2f4c2944-815a-5d23-939e-77aa05d765bb",
+          "page_number": 3,
+          "start_char": 0,
+          "end_char": 1088,
+          "bbox": [
+            39.682498931884766,
+            261.412109375,
+            560.2733764648438,
+            331.8489074707031
+          ],
+          "text": "Fig. 3 | Electrical properties and stability of the Sb 0112\n(\n)–MoS2 contact. \n a, Transfer curves of a typical TLM structure with Lc ranging from 0.1 μm to \n1.5 μm and Vds = 0.1 V. Inset: false-colour scanning electron microscope image \nof a TLM structure. Scale bar, 2 μm. b, Rc extraction using the TLM method from \nthe device in a. From top to bottom, n2D = 1.2 × 10¹³ cm⁻², 1.6 × 10¹³ cm⁻², \n2.1 × 10¹³ cm⁻² and 3 × 10¹³ cm⁻², respectively. Inset: the magnified data plot near \nLc = 0, where the y intercept and x intercept represent 2Rc and 2LT, respectively. \nIt is noted that the LT derived by the TLM method assumes the same MoS2 sheet \nresistivity underneath and outside the contact, which is probably violated \nconsidering the charge transfer between Sb (0112) and MoS2. This could lead to \nuncertainties in the obtained LT. c. Rc (red squares) and intrinsic mobility (black \nrhombuses) as a function of temperature for another device. d–f, Rc (d), LT (e) \nand μint (f) distribution of the Sb (0112) and Sb (0001) contacts, respectively. \nThe solid lines are Gaussian fittings.",
+          "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "localization_precision": "TEXT_BLOCK",
+          "notation": [
+            {
+              "start_char": 57,
+              "end_char": 58,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                218.8227081298828,
+                262.4906921386719,
+                222.01605224609375,
+                271.1376037597656
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 67,
+              "end_char": 68,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                247.7666015625,
+                266.5990295410156,
+                250.16900634765625,
+                271.8532409667969
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 132,
+              "end_char": 133,
+              "raw": "c",
+              "display": "_c",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                202.42230224609375,
+                276.6661071777344,
+                204.5727081298828,
+                281.8489074707031
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 170,
+              "end_char": 172,
+              "raw": "ds",
+              "display": "_ds",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                79.32479858398438,
+                286.6661071777344,
+                83.90280151367188,
+                291.8489074707031
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 279,
+              "end_char": 280,
+              "raw": "c",
+              "display": "_c",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                164.6916046142578,
+                296.6661071777344,
+                166.84201049804688,
+                301.8489074707031
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 357,
+              "end_char": 359,
+              "raw": "2D",
+              "display": "_2D",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                159.60690307617188,
+                306.6661071777344,
+                165.02490234375,
+                311.8489074707031
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 370,
+              "end_char": 372,
+              "raw": "¹³",
+              "display": "^13",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                194.73190307617188,
+                302.2911071777344,
+                198.93609619140625,
+                307.4739074707031
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 375,
+              "end_char": 377,
+              "raw": "⁻²",
+              "display": "^−2",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                210.2996063232422,
+                302.2911071777344,
+                214.85659790039062,
+                307.4739074707031
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 387,
+              "end_char": 389,
+              "raw": "¹³",
+              "display": "^13",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                241.34210205078125,
+                302.2911071777344,
+                245.54629516601562,
+                307.4739074707031
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 392,
+              "end_char": 394,
+              "raw": "⁻²",
+              "display": "^−2",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                256.9097900390625,
+                302.2911071777344,
+                261.466796875,
+                307.4739074707031
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 405,
+              "end_char": 407,
+              "raw": "¹³",
+              "display": "^13",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                62.81209945678711,
+                312.2911071777344,
+                67.01630401611328,
+                317.4739074707031
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 410,
+              "end_char": 412,
+              "raw": "⁻²",
+              "display": "^−2",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                78.37969970703125,
+                312.2911071777344,
+                82.93669891357422,
+                317.4739074707031
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 423,
+              "end_char": 425,
+              "raw": "¹³",
+              "display": "^13",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                115.2405014038086,
+                312.2911071777344,
+                119.4447021484375,
+                317.4739074707031
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 428,
+              "end_char": 430,
+              "raw": "⁻²",
+              "display": "^−2",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                130.80810546875,
+                312.2911071777344,
+                135.36509704589844,
+                317.4739074707031
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 484,
+              "end_char": 485,
+              "raw": "c",
+              "display": "_c",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                43.47549819946289,
+                326.6661071777344,
+                45.62589645385742,
+                331.8489074707031
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 541,
+              "end_char": 542,
+              "raw": "c",
+              "display": "_c",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                220.04550170898438,
+                326.6661071777344,
+                222.19590759277344,
+                331.8489074707031
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 549,
+              "end_char": 550,
+              "raw": "T",
+              "display": "_T",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                243.91920471191406,
+                326.6661071777344,
+                246.54420471191406,
+                331.8489074707031
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 589,
+              "end_char": 590,
+              "raw": "T",
+              "display": "_T",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                368.601806640625,
+                265.5248107910156,
+                371.226806640625,
+                270.7076110839844
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 637,
+              "end_char": 638,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                536.2296142578125,
+                265.5248107910156,
+                538.5060424804688,
+                270.7076110839844
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 768,
+              "end_char": 769,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                457.60772705078125,
+                281.32391357421875,
+                460.4969482421875,
+                289.85333251953125
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 779,
+              "end_char": 780,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                495.9642028808594,
+                285.5248107910156,
+                498.2406005859375,
+                290.7076110839844
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 833,
+              "end_char": 834,
+              "raw": "T",
+              "display": "_T",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                404.57708740234375,
+                295.5248107910156,
+                407.20208740234375,
+                300.7076110839844
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 840,
+              "end_char": 841,
+              "raw": "c",
+              "display": "_c",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                421.1282958984375,
+                295.5248107910156,
+                423.2786865234375,
+                300.7076110839844
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 953,
+              "end_char": 954,
+              "raw": "c",
+              "display": "_c",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                520.2745971679688,
+                305.5248107910156,
+                522.4249877929688,
+                310.7076110839844
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 961,
+              "end_char": 962,
+              "raw": "T",
+              "display": "_T",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                539.1273193359375,
+                305.5248107910156,
+                541.7523193359375,
+                310.7076110839844
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 973,
+              "end_char": 976,
+              "raw": "int",
+              "display": "_int",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                323.7638854980469,
+                315.5248107910156,
+                329.21844482421875,
+                320.7076110839844
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 1007,
+              "end_char": 1008,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                418.9923400878906,
+                311.32391357421875,
+                421.8815612792969,
+                319.85333251953125
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            }
+          ],
+          "notation_issues": [],
+          "section_titles": []
+        }
+      ],
+      "previous_decision_id": "human-source-B-b-tlm-assumption-1",
+      "previous_human_decision": "ACCEPT",
+      "comparison_status": "STALE_REQUIRES_CURRENT_REVIEW",
+      "material_changes": [
+        "source.typography_or_heading_metadata"
+      ],
+      "human_acceptance_inherited": false,
+      "current_human_decision": null,
+      "current_review_scope": "SOURCE_ATTRIBUTION"
+    },
+    {
+      "prediction_key": "f80f7f96f1fe5acf2793360c9daa6c477ce7e49f17b0c0f77e4a25eb9c0c92f2",
+      "node_id": "35736309-a32a-5ab7-98a5-1b6db08451f1",
+      "node_version": 1,
+      "type": "LIMITATION",
+      "text": "This could lead to \nuncertainties in the obtained LT.",
+      "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "evidence_fingerprint": "ee305ec045923cb09df5bbbb6ad1ba8a572d9bcbee478034dc71a73f1e717624",
+      "evaluation_snapshot_digest": "fa505949a20fed9083130eed00bfbd59a004fa55010a393d527e8ad91f067c24",
+      "source_snapshot": [
+        {
+          "id": "8a55c5fb-3109-53f6-a660-89879b482159",
+          "paper_id": "d3354b1e-cc8d-4d4e-a951-e7b8a8686567",
+          "span_id": "2f4c2944-815a-5d23-939e-77aa05d765bb",
+          "page_number": 3,
+          "start_char": 0,
+          "end_char": 1088,
+          "bbox": [
+            39.682498931884766,
+            261.412109375,
+            560.2733764648438,
+            331.8489074707031
+          ],
+          "text": "Fig. 3 | Electrical properties and stability of the Sb 0112\n(\n)–MoS2 contact. \n a, Transfer curves of a typical TLM structure with Lc ranging from 0.1 μm to \n1.5 μm and Vds = 0.1 V. Inset: false-colour scanning electron microscope image \nof a TLM structure. Scale bar, 2 μm. b, Rc extraction using the TLM method from \nthe device in a. From top to bottom, n2D = 1.2 × 10¹³ cm⁻², 1.6 × 10¹³ cm⁻², \n2.1 × 10¹³ cm⁻² and 3 × 10¹³ cm⁻², respectively. Inset: the magnified data plot near \nLc = 0, where the y intercept and x intercept represent 2Rc and 2LT, respectively. \nIt is noted that the LT derived by the TLM method assumes the same MoS2 sheet \nresistivity underneath and outside the contact, which is probably violated \nconsidering the charge transfer between Sb (0112) and MoS2. This could lead to \nuncertainties in the obtained LT. c. Rc (red squares) and intrinsic mobility (black \nrhombuses) as a function of temperature for another device. d–f, Rc (d), LT (e) \nand μint (f) distribution of the Sb (0112) and Sb (0001) contacts, respectively. \nThe solid lines are Gaussian fittings.",
+          "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "localization_precision": "TEXT_BLOCK",
+          "notation": [
+            {
+              "start_char": 57,
+              "end_char": 58,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                218.8227081298828,
+                262.4906921386719,
+                222.01605224609375,
+                271.1376037597656
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 67,
+              "end_char": 68,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                247.7666015625,
+                266.5990295410156,
+                250.16900634765625,
+                271.8532409667969
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 132,
+              "end_char": 133,
+              "raw": "c",
+              "display": "_c",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                202.42230224609375,
+                276.6661071777344,
+                204.5727081298828,
+                281.8489074707031
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 170,
+              "end_char": 172,
+              "raw": "ds",
+              "display": "_ds",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                79.32479858398438,
+                286.6661071777344,
+                83.90280151367188,
+                291.8489074707031
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 279,
+              "end_char": 280,
+              "raw": "c",
+              "display": "_c",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                164.6916046142578,
+                296.6661071777344,
+                166.84201049804688,
+                301.8489074707031
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 357,
+              "end_char": 359,
+              "raw": "2D",
+              "display": "_2D",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                159.60690307617188,
+                306.6661071777344,
+                165.02490234375,
+                311.8489074707031
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 370,
+              "end_char": 372,
+              "raw": "¹³",
+              "display": "^13",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                194.73190307617188,
+                302.2911071777344,
+                198.93609619140625,
+                307.4739074707031
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 375,
+              "end_char": 377,
+              "raw": "⁻²",
+              "display": "^−2",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                210.2996063232422,
+                302.2911071777344,
+                214.85659790039062,
+                307.4739074707031
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 387,
+              "end_char": 389,
+              "raw": "¹³",
+              "display": "^13",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                241.34210205078125,
+                302.2911071777344,
+                245.54629516601562,
+                307.4739074707031
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 392,
+              "end_char": 394,
+              "raw": "⁻²",
+              "display": "^−2",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                256.9097900390625,
+                302.2911071777344,
+                261.466796875,
+                307.4739074707031
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 405,
+              "end_char": 407,
+              "raw": "¹³",
+              "display": "^13",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                62.81209945678711,
+                312.2911071777344,
+                67.01630401611328,
+                317.4739074707031
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 410,
+              "end_char": 412,
+              "raw": "⁻²",
+              "display": "^−2",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                78.37969970703125,
+                312.2911071777344,
+                82.93669891357422,
+                317.4739074707031
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 423,
+              "end_char": 425,
+              "raw": "¹³",
+              "display": "^13",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                115.2405014038086,
+                312.2911071777344,
+                119.4447021484375,
+                317.4739074707031
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 428,
+              "end_char": 430,
+              "raw": "⁻²",
+              "display": "^−2",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                130.80810546875,
+                312.2911071777344,
+                135.36509704589844,
+                317.4739074707031
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 484,
+              "end_char": 485,
+              "raw": "c",
+              "display": "_c",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                43.47549819946289,
+                326.6661071777344,
+                45.62589645385742,
+                331.8489074707031
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 541,
+              "end_char": 542,
+              "raw": "c",
+              "display": "_c",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                220.04550170898438,
+                326.6661071777344,
+                222.19590759277344,
+                331.8489074707031
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 549,
+              "end_char": 550,
+              "raw": "T",
+              "display": "_T",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                243.91920471191406,
+                326.6661071777344,
+                246.54420471191406,
+                331.8489074707031
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 589,
+              "end_char": 590,
+              "raw": "T",
+              "display": "_T",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                368.601806640625,
+                265.5248107910156,
+                371.226806640625,
+                270.7076110839844
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 637,
+              "end_char": 638,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                536.2296142578125,
+                265.5248107910156,
+                538.5060424804688,
+                270.7076110839844
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 768,
+              "end_char": 769,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                457.60772705078125,
+                281.32391357421875,
+                460.4969482421875,
+                289.85333251953125
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 779,
+              "end_char": 780,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                495.9642028808594,
+                285.5248107910156,
+                498.2406005859375,
+                290.7076110839844
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 833,
+              "end_char": 834,
+              "raw": "T",
+              "display": "_T",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                404.57708740234375,
+                295.5248107910156,
+                407.20208740234375,
+                300.7076110839844
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 840,
+              "end_char": 841,
+              "raw": "c",
+              "display": "_c",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                421.1282958984375,
+                295.5248107910156,
+                423.2786865234375,
+                300.7076110839844
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 953,
+              "end_char": 954,
+              "raw": "c",
+              "display": "_c",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                520.2745971679688,
+                305.5248107910156,
+                522.4249877929688,
+                310.7076110839844
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 961,
+              "end_char": 962,
+              "raw": "T",
+              "display": "_T",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                539.1273193359375,
+                305.5248107910156,
+                541.7523193359375,
+                310.7076110839844
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 973,
+              "end_char": 976,
+              "raw": "int",
+              "display": "_int",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                323.7638854980469,
+                315.5248107910156,
+                329.21844482421875,
+                320.7076110839844
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 1007,
+              "end_char": 1008,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                418.9923400878906,
+                311.32391357421875,
+                421.8815612792969,
+                319.85333251953125
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            }
+          ],
+          "notation_issues": [],
+          "section_titles": []
+        }
+      ],
+      "previous_decision_id": "human-source-B-b-tlm-limitation-1",
+      "previous_human_decision": "ACCEPT",
+      "comparison_status": "STALE_REQUIRES_CURRENT_REVIEW",
+      "material_changes": [
+        "source.typography_or_heading_metadata"
+      ],
+      "human_acceptance_inherited": false,
+      "current_human_decision": null,
+      "current_review_scope": "SOURCE_ATTRIBUTION"
+    },
+    {
+      "prediction_key": "8535901b689de325a4ac274faedb415cb62f5852feca24f34ca78c865ca6d45b",
+      "node_id": "b7038455-debc-5412-a5fb-032afd568f30",
+      "node_version": 1,
+      "type": "METHOD",
+      "text": "To demonstrate the advantage of the Sb (0112) contact, we fabricated \ncontrol TLM devices using an Sb (0001) contact (Fig. 2b).",
+      "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "evidence_fingerprint": "bf24f64919f79ed6e4069e78b5d527f71cd38aae091af57c171827f4f05c5f40",
+      "evaluation_snapshot_digest": "a91f32413a9f9c931393007e223e540ded47d4aa533077c5ffd0df1015da96e3",
+      "source_snapshot": [
+        {
+          "id": "f6fc09dc-7fa5-503a-9d8c-cb3978e711ac",
+          "paper_id": "d3354b1e-cc8d-4d4e-a951-e7b8a8686567",
+          "span_id": "5f86214e-dd27-5701-b352-ff579deab53c",
+          "page_number": 5,
+          "start_char": 0,
+          "end_char": 1186,
+          "bbox": [
+            39.68223571777344,
+            369.8003234863281,
+            296.29644775390625,
+            553.02197265625
+          ],
+          "text": "To demonstrate the advantage of the Sb (0112) contact, we fabricated \ncontrol TLM devices using an Sb (0001) contact (Fig. 2b). Figure 3d,e \nshows the statistics of Rc and LT derived from 156 TLM devices (115 high \ntemperature and 41 ambient temperature). The average Rc of the Sb \n(0112) contact was 209 ± 100 Ω μm, which was 3.47-times lower than \nthe Sb (0001) counterpart. A similar trend was observed for LT. The \nhigh confidence of Rc was supported by the standard deviation σ and \ncorrelation coefficient R² from the fitting process as well as the TLM \nstructure extending to sub-100-nm channel length, Lc (Extended Data \nFig. 5). We note that the improvement using the Sb (0112) contact was \nnot due to the MoS2 quality, as supported by nearly the same average \nmobility for the two cases (Fig. 3f). In addition, variable-temperature \nmeasurements revealed a small but positive SBH of about 20 meV for \nthe Sb (0001) contact (Extended Data Fig. 4d–f), consistent with the \nrecent results from the Taiwan Semiconductor Manufacturing Com-\npany (TSMC)⁹. Owing to the improved contacts of Sb (0112), the FETs \ndelivered an average 38%-higher Ion at 100-nm Lc (Extended Data Fig. 6).",
+          "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "localization_precision": "TEXT_BLOCK",
+          "notation": [
+            {
+              "start_char": 42,
+              "end_char": 43,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                202.64210510253906,
+                369.8003234863281,
+                206.13323974609375,
+                380.106689453125
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 166,
+              "end_char": 167,
+              "raw": "c",
+              "display": "_c",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                125.92259979248047,
+                396.4136047363281,
+                128.43856811523438,
+                402.52191162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 173,
+              "end_char": 174,
+              "raw": "T",
+              "display": "_T",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                148.31500244140625,
+                396.4136047363281,
+                151.38624572753906,
+                402.52191162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 269,
+              "end_char": 270,
+              "raw": "c",
+              "display": "_c",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                257.3028869628906,
+                407.1636047363281,
+                259.87127685546875,
+                413.27191162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 285,
+              "end_char": 286,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                51.10789108276367,
+                412.8003234863281,
+                54.59902572631836,
+                423.106689453125
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 411,
+              "end_char": 412,
+              "raw": "T",
+              "display": "_T",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                273.3747863769531,
+                428.6636047363281,
+                276.5389099121094,
+                434.77191162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 439,
+              "end_char": 440,
+              "raw": "c",
+              "display": "_c",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                116.4397964477539,
+                439.4136047363281,
+                118.97419738769531,
+                445.52191162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 513,
+              "end_char": 514,
+              "raw": "²",
+              "display": "^2",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                132.0467987060547,
+                445.0074157714844,
+                134.75360107421875,
+                451.11572265625
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 611,
+              "end_char": 612,
+              "raw": "c",
+              "display": "_c",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                233.814697265625,
+                460.9136047363281,
+                236.3384552001953,
+                467.02191162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 683,
+              "end_char": 684,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                238.1407928466797,
+                466.5503234863281,
+                241.63192749023438,
+                476.856689453125
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 718,
+              "end_char": 719,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                110.19599914550781,
+                482.4136047363281,
+                112.87889862060547,
+                488.52191162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 1056,
+              "end_char": 1057,
+              "raw": "⁹",
+              "display": "^9",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                88.52629852294922,
+                531.0073852539062,
+                91.48234558105469,
+                537.11572265625
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 1099,
+              "end_char": 1100,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                248.56370544433594,
+                531.0504150390625,
+                252.05484008789062,
+                541.3568115234375
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 1147,
+              "end_char": 1149,
+              "raw": "on",
+              "display": "_on",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                160.06910705566406,
+                546.9136352539062,
+                165.89462280273438,
+                553.02197265625
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 1161,
+              "end_char": 1162,
+              "raw": "c",
+              "display": "_c",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                209.3737030029297,
+                546.9136352539062,
+                211.8592529296875,
+                553.02197265625
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            }
+          ],
+          "notation_issues": [],
+          "section_titles": []
+        }
+      ],
+      "previous_decision_id": "human-source-B-b-prediction-8535901b689d-1",
+      "previous_human_decision": "ACCEPT",
+      "comparison_status": "STALE_REQUIRES_CURRENT_REVIEW",
+      "material_changes": [
+        "source.typography_or_heading_metadata"
+      ],
+      "human_acceptance_inherited": false,
+      "current_human_decision": null,
+      "current_review_scope": "SOURCE_ATTRIBUTION"
+    },
+    {
+      "prediction_key": "d31983b4f2f28aeec1d7c41b87b1593fbd740f735c2af688fd87a85f2c22ec9d",
+      "node_id": "75b2999f-8043-5b16-9d31-d357ab7c6c07",
+      "node_version": 1,
+      "type": "RESULT",
+      "text": "The average Rc of the Sb \n(0112) contact was 209 ± 100 Ω μm, which was 3.47-times lower than \nthe Sb (0001) counterpart.",
+      "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "evidence_fingerprint": "6ef826150a6870d74f33599d538ebb61eb8d0002ec7f9bb99bf9dfa48f43dd8e",
+      "evaluation_snapshot_digest": "35ed5000e64ebe7436bf77a21756aa1aff923685761d363b499cfffe01208eac",
+      "source_snapshot": [
+        {
+          "id": "f6fc09dc-7fa5-503a-9d8c-cb3978e711ac",
+          "paper_id": "d3354b1e-cc8d-4d4e-a951-e7b8a8686567",
+          "span_id": "5f86214e-dd27-5701-b352-ff579deab53c",
+          "page_number": 5,
+          "start_char": 0,
+          "end_char": 1186,
+          "bbox": [
+            39.68223571777344,
+            369.8003234863281,
+            296.29644775390625,
+            553.02197265625
+          ],
+          "text": "To demonstrate the advantage of the Sb (0112) contact, we fabricated \ncontrol TLM devices using an Sb (0001) contact (Fig. 2b). Figure 3d,e \nshows the statistics of Rc and LT derived from 156 TLM devices (115 high \ntemperature and 41 ambient temperature). The average Rc of the Sb \n(0112) contact was 209 ± 100 Ω μm, which was 3.47-times lower than \nthe Sb (0001) counterpart. A similar trend was observed for LT. The \nhigh confidence of Rc was supported by the standard deviation σ and \ncorrelation coefficient R² from the fitting process as well as the TLM \nstructure extending to sub-100-nm channel length, Lc (Extended Data \nFig. 5). We note that the improvement using the Sb (0112) contact was \nnot due to the MoS2 quality, as supported by nearly the same average \nmobility for the two cases (Fig. 3f). In addition, variable-temperature \nmeasurements revealed a small but positive SBH of about 20 meV for \nthe Sb (0001) contact (Extended Data Fig. 4d–f), consistent with the \nrecent results from the Taiwan Semiconductor Manufacturing Com-\npany (TSMC)⁹. Owing to the improved contacts of Sb (0112), the FETs \ndelivered an average 38%-higher Ion at 100-nm Lc (Extended Data Fig. 6).",
+          "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "localization_precision": "TEXT_BLOCK",
+          "notation": [
+            {
+              "start_char": 42,
+              "end_char": 43,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                202.64210510253906,
+                369.8003234863281,
+                206.13323974609375,
+                380.106689453125
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 166,
+              "end_char": 167,
+              "raw": "c",
+              "display": "_c",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                125.92259979248047,
+                396.4136047363281,
+                128.43856811523438,
+                402.52191162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 173,
+              "end_char": 174,
+              "raw": "T",
+              "display": "_T",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                148.31500244140625,
+                396.4136047363281,
+                151.38624572753906,
+                402.52191162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 269,
+              "end_char": 270,
+              "raw": "c",
+              "display": "_c",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                257.3028869628906,
+                407.1636047363281,
+                259.87127685546875,
+                413.27191162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 285,
+              "end_char": 286,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                51.10789108276367,
+                412.8003234863281,
+                54.59902572631836,
+                423.106689453125
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 411,
+              "end_char": 412,
+              "raw": "T",
+              "display": "_T",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                273.3747863769531,
+                428.6636047363281,
+                276.5389099121094,
+                434.77191162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 439,
+              "end_char": 440,
+              "raw": "c",
+              "display": "_c",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                116.4397964477539,
+                439.4136047363281,
+                118.97419738769531,
+                445.52191162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 513,
+              "end_char": 514,
+              "raw": "²",
+              "display": "^2",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                132.0467987060547,
+                445.0074157714844,
+                134.75360107421875,
+                451.11572265625
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 611,
+              "end_char": 612,
+              "raw": "c",
+              "display": "_c",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                233.814697265625,
+                460.9136047363281,
+                236.3384552001953,
+                467.02191162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 683,
+              "end_char": 684,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                238.1407928466797,
+                466.5503234863281,
+                241.63192749023438,
+                476.856689453125
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 718,
+              "end_char": 719,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                110.19599914550781,
+                482.4136047363281,
+                112.87889862060547,
+                488.52191162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 1056,
+              "end_char": 1057,
+              "raw": "⁹",
+              "display": "^9",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                88.52629852294922,
+                531.0073852539062,
+                91.48234558105469,
+                537.11572265625
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 1099,
+              "end_char": 1100,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                248.56370544433594,
+                531.0504150390625,
+                252.05484008789062,
+                541.3568115234375
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 1147,
+              "end_char": 1149,
+              "raw": "on",
+              "display": "_on",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                160.06910705566406,
+                546.9136352539062,
+                165.89462280273438,
+                553.02197265625
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 1161,
+              "end_char": 1162,
+              "raw": "c",
+              "display": "_c",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                209.3737030029297,
+                546.9136352539062,
+                211.8592529296875,
+                553.02197265625
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            }
+          ],
+          "notation_issues": [],
+          "section_titles": []
+        }
+      ],
+      "previous_decision_id": "human-source-B-b-average-contact-1",
+      "previous_human_decision": "ACCEPT",
+      "comparison_status": "STALE_REQUIRES_CURRENT_REVIEW",
+      "material_changes": [
+        "source.typography_or_heading_metadata"
+      ],
+      "human_acceptance_inherited": false,
+      "current_human_decision": null,
+      "current_review_scope": "SOURCE_ATTRIBUTION"
+    },
+    {
+      "prediction_key": "c122b3c98f960ccc6cc6c4907dba1211ad96196e7fcb12b69074cc2b868fb7aa",
+      "node_id": "aee964f4-2f0d-5f31-8ccc-63dc9116faa0",
+      "node_version": 1,
+      "type": "RESULT",
+      "text": "No obvious degradation of Ion, threshold voltage \n(Vth) and subthreshold swing (SS) was observed during 24 h for the Sb \ncontact.",
+      "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "evidence_fingerprint": "6eddc7caff83d5153e9fb0e8cd8072dd1710bd00d21762b80a94986cc8550544",
+      "evaluation_snapshot_digest": "afd99accb41d4a405a6a8f41c5f09303263351d2e6cb9542d180a756fecdcb83",
+      "source_snapshot": [
+        {
+          "id": "527484f6-4f65-5d10-a795-61635cf4294c",
+          "paper_id": "d3354b1e-cc8d-4d4e-a951-e7b8a8686567",
+          "span_id": "40865e8c-2156-5bb0-b3f5-04f618e8a1dd",
+          "page_number": 5,
+          "start_char": 0,
+          "end_char": 824,
+          "bbox": [
+            39.68510055541992,
+            552.8456420898438,
+            296.334228515625,
+            681.276123046875
+          ],
+          "text": "Besides electrical performance, the stability of the contact is also \ncritical to applications. The stability of Bi is poor owing to its low melt-\ning point below 300 °C, which posts severe limits in back-end processes. \nIn contrast, the melting point of Sb is above 600 °C. To this end, we \nstudied the device stability at 125 °C (which is the highest standard for \nelectronic products³⁴) in a nitrogen environment as shown in Extended \nData Fig.  7. No obvious degradation of Ion, threshold voltage \n(Vth) and subthreshold swing (SS) was observed during 24 h for the Sb \ncontact. In contrast, the Ion of Bi-contact devices decreased by 41% \nunder the same conditions. The excellent stability of the Sb (0112) con-\ntact also ensures that the devices can work reliably in the high-current \nregime, as shown in the following.",
+          "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "localization_precision": "TEXT_BLOCK",
+          "notation": [
+            {
+              "start_char": 386,
+              "end_char": 388,
+              "raw": "³⁴",
+              "display": "^34",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                112.12000274658203,
+                606.25732421875,
+                117.71566772460938,
+                612.3656616210938
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 479,
+              "end_char": 481,
+              "raw": "on",
+              "display": "_on",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                208.98849487304688,
+                622.1636352539062,
+                215.27749633789062,
+                628.27197265625
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 504,
+              "end_char": 506,
+              "raw": "th",
+              "display": "_th",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                47.71220016479492,
+                632.9136352539062,
+                52.568153381347656,
+                639.02197265625
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 600,
+              "end_char": 602,
+              "raw": "on",
+              "display": "_on",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                136.7362060546875,
+                643.6636352539062,
+                142.88499450683594,
+                649.77197265625
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 707,
+              "end_char": 708,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                266.4389953613281,
+                649.30029296875,
+                269.9301452636719,
+                659.606689453125
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            }
+          ],
+          "notation_issues": [],
+          "section_titles": []
+        }
+      ],
+      "previous_decision_id": "human-source-B-b-stability-1",
+      "previous_human_decision": "REVISE",
+      "comparison_status": "STALE_REQUIRES_CURRENT_REVIEW",
+      "material_changes": [
+        "source.typography_or_heading_metadata"
+      ],
+      "human_acceptance_inherited": false,
+      "current_human_decision": null,
+      "current_review_scope": "SOURCE_ATTRIBUTION"
+    },
+    {
+      "prediction_key": "3eed8cbe5e1e2f83287ea33107b6547e145a931bed9a3fa7c28bce3e9bd7a570",
+      "node_id": "b77aeed7-428f-53bb-93aa-64b6261ac903",
+      "node_version": 1,
+      "type": "SIMULATION",
+      "text": "First-principles DFT calculations were performed by using the Vienna \nAb initio Simulation Package (VASP 5.4)⁴⁹ with the exchange-correlation \nfunctional based on Perdew–Burke–Ernzerhof ⁵⁰ generalized gradient \napproximation.",
+      "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "evidence_fingerprint": "05bcae03b99f93adfeb0d99c4bd417dbd682e4cb48819d0ff4d79bc879518f3a",
+      "evaluation_snapshot_digest": "227442a9863439719b7375751871ad7518c1096ee09f30b0e25e8b66a43b5538",
+      "source_snapshot": [
+        {
+          "id": "5a5cd2a7-9b46-5b80-9b1b-57d27614f360",
+          "paper_id": "d3354b1e-cc8d-4d4e-a951-e7b8a8686567",
+          "span_id": "10f8b106-ff6c-50d8-bd20-f1d95aa2a7f7",
+          "page_number": 7,
+          "start_char": 0,
+          "end_char": 1927,
+          "bbox": [
+            306.1416931152344,
+            143.06312561035156,
+            562.7979125976562,
+            444.776123046875
+          ],
+          "text": "DFT calculations\nFirst-principles DFT calculations were performed by using the Vienna \nAb initio Simulation Package (VASP 5.4)⁴⁹ with the exchange-correlation \nfunctional based on Perdew–Burke–Ernzerhof ⁵⁰ generalized gradient \napproximation. The projected augmented wave potentials was adopted \nto describe the interactions between valence electrons and ion cores⁵¹. \nThe Grimme’s DFT-D3 scheme was employed to include the vdW inter-\nactions⁵². A slab model stacked with monolayer TMDs and three-layer \nsemi-metal (Sb or Bi) (0001)/(0112) plane was used to simulate the \nMoS2–Sb contact. The supercells of the semi-metal (0001)/(0112) sur-\nfaces and TMDs were carefully built to ensure a lattice mismatch smaller \nthan 3%, where a vacuum space of >15 Å was added to separate images \nalong c direction of the supercells. All structures were fully relaxed until \nthe maximum force component acting on each atom was less than \n0.02 eV Å⁻¹ with an energy convergence criterion of 10⁻⁴ eV and an kinetic \nenergy cut-off of 400 eV. Considering the very large systems simulated \nin this work, a k-spacing of <0.04 Å⁻¹ was used for the structural relaxa-\ntion of metal (Sb (0001), Sb (0112), Bi(0001) and Bi (0112))–TMD (MoS2, \nMoSe2, WS2 and WSe2) contacts. For the static electronic structure cal-\nculations, the Brillouin zone integrations were sampled on a k-spacing \nof <0.01 Å⁻¹ for semi-metal–TMD contacts, respectively. The dipole \ncorrection along the c axis of supercell was considered in all DFT cal-\nculations as well. The electrostatic potential profiles of Sb (0112)–MoS2 \nand Sb (0001)–MoS2 contacts along the vertical direction were calcu-\nlated using Poisson’s equation. The real-space band diagrams and the \nLDDOSs of the device composed of monolayer MoS2 and double-ended \nSb (0112) electrodes without doping (zero bias) and with electron dop-\ning (similar to high gate bias) were simulated by using the DFT method.",
+          "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "localization_precision": "TEXT_BLOCK",
+          "notation": [
+            {
+              "start_char": 126,
+              "end_char": 128,
+              "raw": "⁴⁹",
+              "display": "^49",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                446.1684875488281,
+                165.5074005126953,
+                451.66986083984375,
+                171.61569213867188
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 203,
+              "end_char": 205,
+              "raw": "⁵⁰",
+              "display": "^50",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                477.6799011230469,
+                176.2574005126953,
+                483.425048828125,
+                182.36569213867188
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 364,
+              "end_char": 366,
+              "raw": "⁵¹",
+              "display": "^51",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                554.478271484375,
+                197.7574005126953,
+                559.0706787109375,
+                203.86569213867188
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 442,
+              "end_char": 444,
+              "raw": "⁵²",
+              "display": "^52",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                333.7373962402344,
+                219.2574005126953,
+                338.8952941894531,
+                225.36569213867188
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 536,
+              "end_char": 537,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                429.998779296875,
+                230.05038452148438,
+                433.48992919921875,
+                240.35675048828125
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 575,
+              "end_char": 576,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                323.08709716796875,
+                245.91371154785156,
+                325.7699890136719,
+                252.02200317382812
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 632,
+              "end_char": 633,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                534.4378662109375,
+                240.80038452148438,
+                537.9290161132812,
+                251.10675048828125
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 934,
+              "end_char": 936,
+              "raw": "⁻¹",
+              "display": "^−1",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                339.4949951171875,
+                294.5074157714844,
+                344.19085693359375,
+                300.61572265625
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 979,
+              "end_char": 981,
+              "raw": "⁻⁴",
+              "display": "^−4",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                495.135986328125,
+                294.5074157714844,
+                500.65771484375,
+                300.61572265625
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 1109,
+              "end_char": 1111,
+              "raw": "⁻¹",
+              "display": "^−1",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                431.8522033691406,
+                316.0074157714844,
+                436.69158935546875,
+                322.11572265625
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 1180,
+              "end_char": 1181,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                417.08197021484375,
+                326.8003234863281,
+                420.5731201171875,
+                337.106689453125
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 1204,
+              "end_char": 1205,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                499.6540832519531,
+                326.8003234863281,
+                503.1452331542969,
+                337.106689453125
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 1217,
+              "end_char": 1218,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                556.3875732421875,
+                331.9136047363281,
+                559.0367431640625,
+                338.02191162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 1225,
+              "end_char": 1226,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                327.4184875488281,
+                342.6636047363281,
+                330.09698486328125,
+                348.77191162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 1230,
+              "end_char": 1231,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                345.6051940917969,
+                342.6636047363281,
+                348.28369140625,
+                348.77191162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 1239,
+              "end_char": 1240,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                381.1722106933594,
+                342.6636047363281,
+                383.8507080078125,
+                348.77191162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 1375,
+              "end_char": 1377,
+              "raw": "⁻¹",
+              "display": "^−1",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                344.3169860839844,
+                359.0074157714844,
+                349.31488037109375,
+                365.11572265625
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 1570,
+              "end_char": 1571,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                526.5033569335938,
+                380.5503234863281,
+                529.9945068359375,
+                390.856689453125
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 1577,
+              "end_char": 1578,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                558.6130981445312,
+                385.6636047363281,
+                561.2599487304688,
+                391.77191162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 1597,
+              "end_char": 1598,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                379.7684020996094,
+                396.4136047363281,
+                382.4512939453125,
+                402.52191162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 1765,
+              "end_char": 1766,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                490.7508850097656,
+                417.9136047363281,
+                493.3872375488281,
+                424.02191162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 1791,
+              "end_char": 1792,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                328.0046691894531,
+                423.5503234863281,
+                331.4958190917969,
+                433.856689453125
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            }
+          ],
+          "notation_issues": [],
+          "section_titles": [
+            "DFT calculations"
+          ]
+        }
+      ],
+      "previous_decision_id": null,
+      "previous_human_decision": null,
+      "comparison_status": "NEW_UNREVIEWED",
+      "material_changes": [],
+      "human_acceptance_inherited": false,
+      "current_human_decision": null,
+      "current_review_scope": "SOURCE_ATTRIBUTION"
+    },
+    {
+      "prediction_key": "00762870e2755bed1d6be024b8508fd075e303ad84ab39075c2d65331e266c1b",
+      "node_id": "e190c413-524c-53bb-aa44-af6258372399",
+      "node_version": 1,
+      "type": "METHOD",
+      "text": "All structures were fully relaxed until \nthe maximum force component acting on each atom was less than \n0.02 eV Å⁻¹ with an energy convergence criterion of 10⁻⁴ eV and an kinetic \nenergy cut-off of 400 eV.",
+      "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "evidence_fingerprint": "2232c707657bb8f7a9473da3672d4bff2e8c47627658c6b37a532bd0c0231019",
+      "evaluation_snapshot_digest": "b36d0ea245c185c4142be15f13679969dcf00e81de517d5721858f50123ee2bc",
+      "source_snapshot": [
+        {
+          "id": "5a5cd2a7-9b46-5b80-9b1b-57d27614f360",
+          "paper_id": "d3354b1e-cc8d-4d4e-a951-e7b8a8686567",
+          "span_id": "10f8b106-ff6c-50d8-bd20-f1d95aa2a7f7",
+          "page_number": 7,
+          "start_char": 0,
+          "end_char": 1927,
+          "bbox": [
+            306.1416931152344,
+            143.06312561035156,
+            562.7979125976562,
+            444.776123046875
+          ],
+          "text": "DFT calculations\nFirst-principles DFT calculations were performed by using the Vienna \nAb initio Simulation Package (VASP 5.4)⁴⁹ with the exchange-correlation \nfunctional based on Perdew–Burke–Ernzerhof ⁵⁰ generalized gradient \napproximation. The projected augmented wave potentials was adopted \nto describe the interactions between valence electrons and ion cores⁵¹. \nThe Grimme’s DFT-D3 scheme was employed to include the vdW inter-\nactions⁵². A slab model stacked with monolayer TMDs and three-layer \nsemi-metal (Sb or Bi) (0001)/(0112) plane was used to simulate the \nMoS2–Sb contact. The supercells of the semi-metal (0001)/(0112) sur-\nfaces and TMDs were carefully built to ensure a lattice mismatch smaller \nthan 3%, where a vacuum space of >15 Å was added to separate images \nalong c direction of the supercells. All structures were fully relaxed until \nthe maximum force component acting on each atom was less than \n0.02 eV Å⁻¹ with an energy convergence criterion of 10⁻⁴ eV and an kinetic \nenergy cut-off of 400 eV. Considering the very large systems simulated \nin this work, a k-spacing of <0.04 Å⁻¹ was used for the structural relaxa-\ntion of metal (Sb (0001), Sb (0112), Bi(0001) and Bi (0112))–TMD (MoS2, \nMoSe2, WS2 and WSe2) contacts. For the static electronic structure cal-\nculations, the Brillouin zone integrations were sampled on a k-spacing \nof <0.01 Å⁻¹ for semi-metal–TMD contacts, respectively. The dipole \ncorrection along the c axis of supercell was considered in all DFT cal-\nculations as well. The electrostatic potential profiles of Sb (0112)–MoS2 \nand Sb (0001)–MoS2 contacts along the vertical direction were calcu-\nlated using Poisson’s equation. The real-space band diagrams and the \nLDDOSs of the device composed of monolayer MoS2 and double-ended \nSb (0112) electrodes without doping (zero bias) and with electron dop-\ning (similar to high gate bias) were simulated by using the DFT method.",
+          "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+          "localization_precision": "TEXT_BLOCK",
+          "notation": [
+            {
+              "start_char": 126,
+              "end_char": 128,
+              "raw": "⁴⁹",
+              "display": "^49",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                446.1684875488281,
+                165.5074005126953,
+                451.66986083984375,
+                171.61569213867188
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 203,
+              "end_char": 205,
+              "raw": "⁵⁰",
+              "display": "^50",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                477.6799011230469,
+                176.2574005126953,
+                483.425048828125,
+                182.36569213867188
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 364,
+              "end_char": 366,
+              "raw": "⁵¹",
+              "display": "^51",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                554.478271484375,
+                197.7574005126953,
+                559.0706787109375,
+                203.86569213867188
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 442,
+              "end_char": 444,
+              "raw": "⁵²",
+              "display": "^52",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                333.7373962402344,
+                219.2574005126953,
+                338.8952941894531,
+                225.36569213867188
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 536,
+              "end_char": 537,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                429.998779296875,
+                230.05038452148438,
+                433.48992919921875,
+                240.35675048828125
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 575,
+              "end_char": 576,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                323.08709716796875,
+                245.91371154785156,
+                325.7699890136719,
+                252.02200317382812
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 632,
+              "end_char": 633,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                534.4378662109375,
+                240.80038452148438,
+                537.9290161132812,
+                251.10675048828125
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 934,
+              "end_char": 936,
+              "raw": "⁻¹",
+              "display": "^−1",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                339.4949951171875,
+                294.5074157714844,
+                344.19085693359375,
+                300.61572265625
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 979,
+              "end_char": 981,
+              "raw": "⁻⁴",
+              "display": "^−4",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                495.135986328125,
+                294.5074157714844,
+                500.65771484375,
+                300.61572265625
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 1109,
+              "end_char": 1111,
+              "raw": "⁻¹",
+              "display": "^−1",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                431.8522033691406,
+                316.0074157714844,
+                436.69158935546875,
+                322.11572265625
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 1180,
+              "end_char": 1181,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                417.08197021484375,
+                326.8003234863281,
+                420.5731201171875,
+                337.106689453125
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 1204,
+              "end_char": 1205,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                499.6540832519531,
+                326.8003234863281,
+                503.1452331542969,
+                337.106689453125
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 1217,
+              "end_char": 1218,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                556.3875732421875,
+                331.9136047363281,
+                559.0367431640625,
+                338.02191162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 1225,
+              "end_char": 1226,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                327.4184875488281,
+                342.6636047363281,
+                330.09698486328125,
+                348.77191162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 1230,
+              "end_char": 1231,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                345.6051940917969,
+                342.6636047363281,
+                348.28369140625,
+                348.77191162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 1239,
+              "end_char": 1240,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                381.1722106933594,
+                342.6636047363281,
+                383.8507080078125,
+                348.77191162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 1375,
+              "end_char": 1377,
+              "raw": "⁻¹",
+              "display": "^−1",
+              "kind": "SUPERSCRIPT",
+              "bbox": [
+                344.3169860839844,
+                359.0074157714844,
+                349.31488037109375,
+                365.11572265625
+              ],
+              "basis": "PDF_SUPERSCRIPT_FLAG"
+            },
+            {
+              "start_char": 1570,
+              "end_char": 1571,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                526.5033569335938,
+                380.5503234863281,
+                529.9945068359375,
+                390.856689453125
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            },
+            {
+              "start_char": 1577,
+              "end_char": 1578,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                558.6130981445312,
+                385.6636047363281,
+                561.2599487304688,
+                391.77191162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 1597,
+              "end_char": 1598,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                379.7684020996094,
+                396.4136047363281,
+                382.4512939453125,
+                402.52191162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 1765,
+              "end_char": 1766,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                490.7508850097656,
+                417.9136047363281,
+                493.3872375488281,
+                424.02191162109375
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 1791,
+              "end_char": 1792,
+              "raw": "1",
+              "display": "1̅",
+              "kind": "OVERBAR",
+              "bbox": [
+                328.0046691894531,
+                423.5503234863281,
+                331.4958190917969,
+                433.856689453125
+              ],
+              "basis": "PDF_DRAWING_AND_GLYPH"
+            }
+          ],
+          "notation_issues": [],
+          "section_titles": [
+            "DFT calculations"
+          ]
+        }
+      ],
+      "previous_decision_id": "human-source-B-b-dft-convergence-1",
+      "previous_human_decision": "ACCEPT",
+      "comparison_status": "STALE_REQUIRES_CURRENT_REVIEW",
+      "material_changes": [
+        "source.typography_or_heading_metadata"
+      ],
+      "human_acceptance_inherited": false,
+      "current_human_decision": null,
+      "current_review_scope": "SOURCE_ATTRIBUTION"
+    }
+  ],
+  "removed_or_changed_predictions": [
+    {
+      "prediction_key": "48b848f51191d1e796ddf88bb9d0bdb7d482639b9ef68e5f4b6d79d6d523ca0a",
+      "previous_decision_id": "human-source-B-b-dft-method-1",
+      "previous_human_decision": "ACCEPT",
+      "source_preserved": true,
+      "status": "REMOVED_OR_CHANGED_TEXT_REQUIRES_RECONCILIATION"
+    }
+  ],
+  "parser_anomaly_reconciliation": [
+    {
+      "previous_decision_id": "human-source-B-b-parser-article-header-section-1",
+      "page": 3,
+      "text": "Article",
+      "current_source_roles": [
+        "header"
+      ],
+      "scientific_section_removed": true,
+      "human_decision_unchanged": true
+    },
+    {
+      "previous_decision_id": "human-source-B-b-parser-article-header-section-1",
+      "page": 3,
+      "text": "Article",
+      "current_source_roles": [
+        "header"
+      ],
+      "scientific_section_removed": true,
+      "human_decision_unchanged": true
+    },
+    {
+      "previous_decision_id": "human-source-B-b-parser-article-header-section-1",
+      "page": 5,
+      "text": "Article",
+      "current_source_roles": [
+        "header"
+      ],
+      "scientific_section_removed": true,
+      "human_decision_unchanged": true
+    },
+    {
+      "previous_decision_id": "human-source-B-b-parser-article-header-section-1",
+      "page": 9,
+      "text": "Article",
+      "current_source_roles": [
+        "header"
+      ],
+      "scientific_section_removed": true,
+      "human_decision_unchanged": true
+    },
+    {
+      "previous_decision_id": "human-source-B-b-parser-article-header-section-1",
+      "page": 11,
+      "text": "Article",
+      "current_source_roles": [
+        "header"
+      ],
+      "scientific_section_removed": true,
+      "human_decision_unchanged": true
+    },
+    {
+      "previous_decision_id": "human-source-B-b-parser-article-header-section-1",
+      "page": 13,
+      "text": "Article",
+      "current_source_roles": [
+        "header"
+      ],
+      "scientific_section_removed": true,
+      "human_decision_unchanged": true
+    },
+    {
+      "previous_decision_id": "human-source-B-b-parser-article-header-section-1",
+      "page": 15,
+      "text": "Article",
+      "current_source_roles": [
+        "header"
+      ],
+      "scientific_section_removed": true,
+      "human_decision_unchanged": true
+    },
+    {
+      "previous_decision_id": "human-source-B-b-parser-article-header-section-1",
+      "page": 17,
+      "text": "Article",
+      "current_source_roles": [
+        "header"
+      ],
+      "scientific_section_removed": true,
+      "human_decision_unchanged": true
+    },
+    {
+      "previous_decision_id": "human-source-B-b-parser-article-header-section-1",
+      "page": 19,
+      "text": "Article",
+      "current_source_roles": [
+        "header"
+      ],
+      "scientific_section_removed": true,
+      "human_decision_unchanged": true
+    }
+  ],
+  "unresolved_notation_spans": [
+    {
+      "span_id": "c7f1c91c-5f9f-527f-8cd7-b800999afd47",
+      "page": 1,
+      "bbox": [
+        125.19599914550781,
+        592.1370849609375,
+        294.445556640625,
+        615.3026733398438
+      ],
+      "issues": [
+        "Unresolved short mathematical rule; no symbol reconstruction inferred.",
+        "Unresolved short mathematical rule; no symbol reconstruction inferred."
+      ]
+    }
+  ],
+  "nodes": 74,
+  "edges": 73,
+  "integrity": {
+    "paper_id": "d3354b1e-cc8d-4d4e-a951-e7b8a8686567",
+    "issues": [],
+    "structurally_valid": true,
+    "scientific_validity": "NOT_ASSESSED"
+  },
+  "semantic_edges": 0,
+  "application_verification_records": 0,
+  "browser": {
+    "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+    "journeys": [
+      {
+        "gold_id": "b-central-result",
+        "page": 1,
+        "type": "RESULT",
+        "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+        "result": "PASS",
+        "notation_view": "NOT_REQUIRED"
+      },
+      {
+        "gold_id": "b-equation-1",
+        "page": 1,
+        "type": "EQUATION",
+        "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+        "result": "PASS",
+        "notation_view": "NOT_REQUIRED"
+      },
+      {
+        "gold_id": "b-figure-1",
+        "page": 2,
+        "type": "FIGURE",
+        "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+        "result": "PASS",
+        "notation_view": "PASS"
+      },
+      {
+        "gold_id": "b-figure-2",
+        "page": 2,
+        "type": "FIGURE",
+        "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+        "result": "PASS",
+        "notation_view": "PASS"
+      },
+      {
+        "gold_id": "b-figure-3",
+        "page": 3,
+        "type": "FIGURE",
+        "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+        "result": "PASS",
+        "notation_view": "PASS"
+      },
+      {
+        "gold_id": "b-contact-method",
+        "page": 1,
+        "type": "METHOD",
+        "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+        "result": "PASS",
+        "notation_view": "PASS"
+      },
+      {
+        "gold_id": "b-stability",
+        "page": 5,
+        "type": "RESULT",
+        "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+        "result": "PASS",
+        "notation_view": "PASS"
+      }
+    ],
+    "search": "PASS",
+    "integrity": "PASS",
+    "status": "PASS"
+  },
+  "public_browser": {
+    "status": "PASS",
+    "fixture": "public-jmlr-dropout",
+    "journeys": [
+      "upload",
+      "graph",
+      "inspector",
+      "evidence",
+      "original_pdf",
+      "highlight",
+      "reverse",
+      "refresh",
+      "search",
+      "learning_empty",
+      "themes",
+      "mobile"
+    ]
+  },
+  "scientific_validity": "NOT_ASSESSED",
+  "overall_reviewed_gate": "FAIL",
+  "gate_b": "NOT_STARTED",
+  "failure_basis": [
+    "Corrected production lacks attributable current human review/binding; no old ACCEPT was copied."
+  ],
+  "limitations": [
+    "Frozen model comparison precision counts unknown changed/new text-type keys incorrect.",
+    "This reconciliation does not establish human precision or accept scientific classifications.",
+    "Raw source strings/anchors stay literal; typography is a geometry-backed view, not reconstructed formula algebra.",
+    "Canonical existing application graphs were preserved; this report describes fresh isolated production only."
+  ]
+}

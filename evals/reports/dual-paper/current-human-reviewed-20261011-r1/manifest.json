@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-11T15:27:23.440564+00:00",
+  "evaluator_path": "E:\\PaperLearning\\evals\\reviews\\dual-paper\\evaluate_current_human_gate.py",
+  "evaluator_sha256": "0d21106e2387539358860754f97b76f36edcaff0f329adb0fea8fb84b00ebd97",
+  "current_review_audit_sha256": "9fc27225e92d9abac7c99c1b5f1183d12fcdacd213e8cf385e7acad66e3413de",
+  "historical_ledger_sha256": "4c9220d03943ddc25583270fd2c08a1f20aa0853c518860db7cef9c31f7e9d99",
+  "historical_snapshots_unchanged": 77,
+  "current_revision_manifest_sha256": "ab0c50765146b7322888a144f9f250ed1455c38b4784aa3ad5092ead0712061c",
+  "thresholds": {
+    "precision": 0.9,
+    "recall": 0.8,
+    "type_accuracy": 0.9,
+    "anchors": 1,
+    "pages": 1,
+    "figures": 1,
+    "equations": 1,
+    "quantities": 1,
+    "node_provenance": 1,
+    "edge_provenance": 1
+  },
+  "source_fidelity_sha256": "875139b3102faccd7e6b8fef9c7fc4778a3f9da19aa135ad5f0794a84d5317dd",
+  "papers": {
+    "A": {
+      "path": "E:\\PaperLearning\\evals\\reports\\dual-paper\\current-human-reviewed-20261011-r1\\paper-a.json",
+      "sha256": "ced666e7b01d9dd88b864731393ed53ffd9279262c29c5c8ce7c861bd55c3241",
+      "overall_reviewed_gate": "PASS"
+    },
+    "B": {
+      "path": "E:\\PaperLearning\\evals\\reports\\dual-paper\\current-human-reviewed-20261011-r1\\paper-b.json",
+      "sha256": "c708f3632e169dc51350fbcabd9c99b84df1c97c4493d350f6ec52d8f1655e0e",
+      "overall_reviewed_gate": "PASS"
+    }
+  },
+  "gate_b": "NOT_STARTED",
+  "application_reviews_created": 0,
+  "scientific_validity": "NOT_ASSESSED"
+}

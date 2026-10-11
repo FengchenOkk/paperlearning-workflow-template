@@ -62,6 +62,20 @@
           "const": "TEXT_BLOCK",
           "title": "Localization Precision",
           "type": "string"
+        },
+        "notation": {
+          "items": {
+            "$ref": "#/$defs/SourceNotation"
+          },
+          "title": "Notation",
+          "type": "array"
+        },
+        "notation_issues": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Notation Issues",
+          "type": "array"
         }
       },
       "required": [
@@ -1092,6 +1106,7 @@
         "ASSUMPTION",
         "APPROXIMATION",
         "METHOD",
+        "RELATIONSHIP_ANALYSIS",
         "ALGORITHM",
         "PROCESS",
         "DEVICE",
@@ -1374,6 +1389,80 @@
       "title": "SearchHit",
       "type": "object"
     },
+    "SourceNotation": {
+      "additionalProperties": false,
+      "properties": {
+        "start_char": {
+          "minimum": 0,
+          "title": "Start Char",
+          "type": "integer"
+        },
+        "end_char": {
+          "exclusiveMinimum": 0,
+          "title": "End Char",
+          "type": "integer"
+        },
+        "raw": {
+          "minLength": 1,
+          "title": "Raw",
+          "type": "string"
+        },
+        "display": {
+          "minLength": 1,
+          "title": "Display",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "SUBSCRIPT",
+            "SUPERSCRIPT",
+            "OVERBAR"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "bbox": {
+          "maxItems": 4,
+          "minItems": 4,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Bbox",
+          "type": "array"
+        },
+        "basis": {
+          "enum": [
+            "PDF_BASELINE_AND_SIZE",
+            "PDF_SUPERSCRIPT_FLAG",
+            "PDF_DRAWING_AND_GLYPH"
+          ],
+          "title": "Basis",
+          "type": "string"
+        }
+      },
+      "required": [
+        "start_char",
+        "end_char",
+        "raw",
+        "display",
+        "kind",
+        "bbox",
+        "basis"
+      ],
+      "title": "SourceNotation",
+      "type": "object"
+    },
     "Span": {
       "additionalProperties": false,
       "properties": {
@@ -1427,10 +1516,33 @@
         "kind": {
           "enum": [
             "paragraph",
-            "heading"
+            "heading",
+            "header",
+            "panel_label"
           ],
           "title": "Kind",
           "type": "string"
+        },
+        "notation": {
+          "items": {
+            "$ref": "#/$defs/SourceNotation"
+          },
+          "title": "Notation",
+          "type": "array"
+        },
+        "notation_issues": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Notation Issues",
+          "type": "array"
+        },
+        "section_titles": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Section Titles",
+          "type": "array"
         }
       },
       "required": [

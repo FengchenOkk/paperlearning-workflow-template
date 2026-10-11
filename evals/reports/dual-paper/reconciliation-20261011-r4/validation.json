@@ -1,0 +1,40 @@
+{
+  "backend_tests": {
+    "passed": 39,
+    "failed": 0,
+    "basetemp": "E:/PaperLearning/.runtime/gate-a-reconciliation-20261011/tests-03"
+  },
+  "reconciliation_guards": {
+    "passed": 7,
+    "failed": 0
+  },
+  "frontend_tests": {
+    "passed": 8,
+    "failed": 0
+  },
+  "ruff_lint_format": "PASS",
+  "strict_mypy": "PASS_20_MODULES",
+  "backend_frontend_contracts_and_types": "PASS",
+  "browser_public": "PASS_CURRENT",
+  "browser_dual_original_pdfs": "PASS_CURRENT",
+  "original_B_crops_visual_check": "PASS_THIRD_DIGIT_1_BAR_AND_ON_TH_SUBSCRIPTS",
+  "manifest_artifact_implementation_hashes": "PASS",
+  "original_pdf_frozen_input_hashes": "PASS",
+  "unchanged_historical_snapshots": 77,
+  "equivalence_proof_invariants": "PASS_35_PREDICTIONS_21_QUANTITIES_9_ANOMALY_INSTANCES",
+  "current_human_decisions_created": 0,
+  "application_verification_records_created": 0,
+  "scientific_validity": "NOT_ASSESSED",
+  "gate_b": "NOT_STARTED",
+  "resolved_validation_failures": [
+    "First added regression had a sentence below the existing extraction minimum; corrected fixture and reran all 39 tests.",
+    "Intermediate edge mapping used wrong SQL column names; corrected to source_node_id/target_node_id/relation_type and completed full mapping checks."
+  ],
+  "retained_intermediate_proposals": [
+    "reconciliation-20261011",
+    "reconciliation-20261011-final",
+    "reconciliation-20261011-r2 (incomplete)",
+    "reconciliation-20261011-r3 (incomplete)"
+  ],
+  "human_review_followup": "E0 finite equivalence proposal plus A1/A2a/A2b/A3/A4/B1/B2 actual decisions; no post-human acceptance run claimed"
+}

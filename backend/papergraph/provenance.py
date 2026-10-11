@@ -2,6 +2,7 @@ import hashlib
 import json
 import math
 
+from pydantic import ValidationError
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
@@ -18,6 +19,49 @@ from .models import (
     SpanRow,
     VerificationRow,
 )
+from .schemas import Anchor, SourceNotation
+
+
+def validated_notation(span: SpanRow) -> list[SourceNotation]:
+    try:
+        notes = [SourceNotation.model_validate(n) for n in span.notation]
+    except ValidationError as error:
+        raise Conflict("Invalid source notation metadata") from error
+    end = 0
+    for n in notes:
+        if (
+            not end <= n.start_char < n.end_char <= len(span.text)
+            or span.text[n.start_char : n.end_char] != n.raw
+            or not span.bbox[0] <= n.bbox[0] < n.bbox[2] <= span.bbox[2] + 0.01
+            or not span.bbox[1] <= n.bbox[1] < n.bbox[3] <= span.bbox[3] + 0.01
+        ):
+            raise Conflict("Source notation range/text/geometry does not match its span")
+        end = n.end_char
+    if any(not title.strip() or title not in span.text for title in span.section_titles):
+        raise Conflict("Body heading does not match its source block")
+    return notes
+
+
+def anchor_contract(session: Session, anchor: AnchorRow) -> Anchor:
+    span = session.get(SpanRow, anchor.span_id)
+    if span is None:
+        raise Conflict("Missing source span")
+    notes = [
+        n.model_copy(
+            update={
+                "start_char": n.start_char - anchor.start_char,
+                "end_char": n.end_char - anchor.start_char,
+            }
+        )
+        for n in validated_notation(span)
+        if anchor.start_char <= n.start_char and n.end_char <= anchor.end_char
+    ]
+    return Anchor.model_validate(anchor).model_copy(
+        update={
+            "notation": notes,
+            "notation_issues": span.notation_issues,
+        }
+    )
 
 
 def anchors_for(session: Session, paper: PaperRow, ids: list[str]) -> list[AnchorRow]:
@@ -43,6 +87,7 @@ def anchors_for(session: Session, paper: PaperRow, ids: list[str]) -> list[Ancho
             raise Conflict("Evidence text does not match its source range")
         if anchor.bbox != span.bbox or anchor.localization_precision != "TEXT_BLOCK":
             raise Conflict("Evidence coordinates do not match the source block")
+        validated_notation(span)
         width, height = (
             (page.height, page.width) if page.rotation in {90, 270} else (page.width, page.height)
         )
@@ -95,6 +140,13 @@ def fingerprint(session: Session, row: NodeRow | EdgeRow) -> str:
                 "page_geometry": [page.width, page.height, page.rotation],
             }
         )
+        if span is not None and (span.notation or span.notation_issues):
+            # Empty additive fields preserve historical fingerprints. New typography
+            # evidence changes the fingerprint and requires a fresh review.
+            source_records[-1]["notation"] = span.notation
+            source_records[-1]["notation_issues"] = span.notation_issues
+        if span is not None and span.section_titles:
+            source_records[-1]["section_titles"] = span.section_titles
     payload["anchors"] = source_records
     if isinstance(row, EdgeRow):
         endpoints = []

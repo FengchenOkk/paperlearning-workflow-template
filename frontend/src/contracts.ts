@@ -13,6 +13,20 @@ export type Bbox = [any, any, any, any];
 export type Text = string;
 export type SourceHash = string;
 export type LocalizationPrecision = "TEXT_BLOCK";
+export type StartChar1 = number;
+export type EndChar1 = number;
+export type Raw = string;
+export type Display = string;
+export type Kind = "SUBSCRIPT" | "SUPERSCRIPT" | "OVERBAR";
+/**
+ * @minItems 4
+ * @maxItems 4
+ */
+export type Bbox1 = [any, any, any, any];
+export type Basis =
+  "PDF_BASELINE_AND_SIZE" | "PDF_SUPERSCRIPT_FLAG" | "PDF_DRAWING_AND_GLYPH";
+export type Notation = SourceNotation[];
+export type NotationIssues = string[];
 export type SourceNodeId = string;
 export type TargetNodeId = string;
 export type Relation =
@@ -294,6 +308,7 @@ export type NodeType =
   | "ASSUMPTION"
   | "APPROXIMATION"
   | "METHOD"
+  | "RELATIONSHIP_ANALYSIS"
   | "ALGORITHM"
   | "PROCESS"
   | "DEVICE"
@@ -537,7 +552,7 @@ export type EpistemicStatus1 =
   | "NOT_SPECIFIED_IN_PAPER";
 export type UncertaintyReason = string;
 export type Confidence1 = number;
-export type Kind = "CLAIM";
+export type Kind1 = "CLAIM";
 export type NodeId = string;
 export type SourceAnchorId = string;
 export type ClaimType = string;
@@ -563,8 +578,11 @@ export type Text2 = string;
  * @minItems 4
  * @maxItems 4
  */
-export type Bbox1 = [any, any, any, any];
-export type Kind1 = "paragraph" | "heading";
+export type Bbox2 = [any, any, any, any];
+export type Kind2 = "paragraph" | "heading" | "header" | "panel_label";
+export type Notation1 = SourceNotation[];
+export type NotationIssues1 = string[];
+export type SectionTitles = string[];
 export type Spans = Span[];
 export type Pages = Page[];
 export type Id2 = string;
@@ -597,7 +615,7 @@ export type EpistemicStatus2 =
   | "NOT_SPECIFIED_IN_PAPER";
 export type ReviewScope = "SOURCE_ATTRIBUTION" | "SCIENTIFIC_VALIDITY";
 export type ReviewCurrent = boolean | null;
-export type Kind2 = "EQUATION";
+export type Kind3 = "EQUATION";
 export type NodeId1 = string;
 export type SourceAnchorId1 = string;
 export type OriginalExpression = string;
@@ -638,7 +656,7 @@ export type Confidence4 = number;
 export type Note = string;
 export type Evidence = EvidenceItem[];
 export type ScientificObject = Claim | Equation | Figure | null;
-export type Kind3 = "FIGURE";
+export type Kind4 = "FIGURE";
 export type NodeId2 = string;
 export type SourceAnchorId2 = string;
 export type FigureNumber = string | null;
@@ -692,7 +710,7 @@ export type NodeId3 = string | null;
 export type AnchorId1 = string;
 export type PageNumber2 = number;
 export type Text5 = string;
-export type Kind4 = string;
+export type Kind5 = string;
 export type Deduplicated = boolean;
 export type Decision = "VERIFIED" | "REJECTED" | "DISPUTED";
 export type Reviewer = string;
@@ -730,6 +748,7 @@ export interface PaperGraphContracts {
   ScientificStatement: ScientificStatement;
   ScientificSymbol: ScientificSymbol;
   SearchHit: SearchHit;
+  SourceNotation: SourceNotation;
   Span: Span;
   UploadResult: UploadResult;
   Verification: Verification;
@@ -746,6 +765,17 @@ export interface Anchor {
   text: Text;
   source_hash: SourceHash;
   localization_precision: LocalizationPrecision;
+  notation?: Notation;
+  notation_issues?: NotationIssues;
+}
+export interface SourceNotation {
+  start_char: StartChar1;
+  end_char: EndChar1;
+  raw: Raw;
+  display: Display;
+  kind: Kind;
+  bbox: Bbox1;
+  basis: Basis;
 }
 export interface CandidateEdge {
   source_node_id: SourceNodeId;
@@ -766,7 +796,7 @@ export interface CandidateNode {
   confidence?: Confidence1;
 }
 export interface Claim {
-  kind?: Kind;
+  kind?: Kind1;
   node_id: NodeId;
   source_anchor_id: SourceAnchorId;
   claim_type: ClaimType;
@@ -796,8 +826,11 @@ export interface Span {
   page_number: PageNumber1;
   reading_order: ReadingOrder;
   text: Text2;
-  bbox: Bbox1;
-  kind: Kind1;
+  bbox: Bbox2;
+  kind: Kind2;
+  notation?: Notation1;
+  notation_issues?: NotationIssues1;
+  section_titles?: SectionTitles;
 }
 export interface Edge {
   id: Id2;
@@ -819,7 +852,7 @@ export interface Edge {
   review_current?: ReviewCurrent;
 }
 export interface Equation {
-  kind?: Kind2;
+  kind?: Kind3;
   node_id: NodeId1;
   source_anchor_id: SourceAnchorId1;
   original_expression: OriginalExpression;
@@ -881,7 +914,7 @@ export interface EvidenceItem {
   anchor: Anchor;
 }
 export interface Figure {
-  kind?: Kind3;
+  kind?: Kind4;
   node_id: NodeId2;
   source_anchor_id: SourceAnchorId2;
   figure_number: FigureNumber;
@@ -941,7 +974,7 @@ export interface SearchHit {
   anchor_id: AnchorId1;
   page_number: PageNumber2;
   text: Text5;
-  kind: Kind4;
+  kind: Kind5;
 }
 export interface UploadResult {
   paper: Paper;

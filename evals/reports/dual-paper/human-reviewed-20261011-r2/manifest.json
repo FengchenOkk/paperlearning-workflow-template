@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "evaluated_at_utc": "2026-10-11T10:43:39.213212+00:00",
+  "evaluator_path": "E:\\PaperLearning\\evals\\reviews\\dual-paper\\reevaluate_human_source_gate.py",
+  "evaluator_sha256": "c3004e605949874e7745f202edd0b1aa341c1b133f3e2dbe9e91ef6ce7f375ea",
+  "human_decision_history_sha256": "daeff02aa4d6b27445e57b87f7963f1d075884e7e86b5b2f4d0426bd860df99e",
+  "readonly_snapshot_objects_checked": 77,
+  "thresholds": {
+    "precision": 0.9,
+    "recall": 0.8,
+    "type_accuracy": 0.9,
+    "anchors": 1,
+    "pages": 1,
+    "figures": 1,
+    "equations": 1,
+    "quantities": 1,
+    "node_provenance": 1,
+    "edge_provenance": 1
+  },
+  "papers": {
+    "A": {
+      "path": "E:\\PaperLearning\\evals\\reports\\dual-paper\\human-reviewed-20261011-r2\\paper-a.json",
+      "sha256": "54d8b0d98bb7fccdac836111d9c169dbeae7986f93183b60db6f96315bd4fec3",
+      "overall_reviewed_gate": "FAIL"
+    },
+    "B": {
+      "path": "E:\\PaperLearning\\evals\\reports\\dual-paper\\human-reviewed-20261011-r2\\paper-b.json",
+      "sha256": "ab844475eb4815c2e06dc17b9924da302d5845c0426dd1a85cf6a54a04b800bb",
+      "overall_reviewed_gate": "FAIL"
+    }
+  },
+  "gate_b": "NOT_STARTED",
+  "application_corrections_applied": false
+}

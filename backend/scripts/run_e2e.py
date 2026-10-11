@@ -1,5 +1,7 @@
 """Run the real public-PDF browser journey against fresh migrated storage."""
 
+import argparse
+import json
 import os
 import socket
 import subprocess
@@ -20,7 +22,7 @@ FIXTURE = ROOT / "evals" / "private" / "dropout.pdf"
 def run() -> None:
     if not FIXTURE.exists():
         raise RuntimeError("Download the public fixture with evals/download_fixture.py first")
-    RESULTS.mkdir(exist_ok=True)
+    RESULTS.mkdir(parents=True, exist_ok=True)
     with socket.socket() as probe:
         probe.bind(("127.0.0.1", 0))
         port = probe.getsockname()[1]
@@ -160,6 +162,31 @@ def run() -> None:
                     ), "Mobile layout overflows"
                     assert not errors, errors
                     browser.close()
+                    (RESULTS / "results.json").write_text(
+                        json.dumps(
+                            {
+                                "status": "PASS",
+                                "fixture": "public-jmlr-dropout",
+                                "journeys": [
+                                    "upload",
+                                    "graph",
+                                    "inspector",
+                                    "evidence",
+                                    "original_pdf",
+                                    "highlight",
+                                    "reverse",
+                                    "refresh",
+                                    "search",
+                                    "learning_empty",
+                                    "themes",
+                                    "mobile",
+                                ],
+                            },
+                            indent=2,
+                        )
+                        + "\n",
+                        encoding="utf-8",
+                    )
                     print(
                         "E2E passed: public PDF upload, candidate graph, evidence bbox, PDF page, reverse source selection, refresh, search, empty learning projection, themes and mobile."
                     )
@@ -173,4 +200,8 @@ def run() -> None:
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output-dir", type=Path, default=RESULTS)
+    args = parser.parse_args()
+    RESULTS = args.output_dir
     run()

@@ -1,0 +1,16 @@
+{
+  "scope": "A2a_GROUPING_REVISION_DRAFT_NOT_ACCEPTED",
+  "revision_sha256": "be0d460ed6ef98e6bdf92207b107eb2eb0d477af055278bcd7caa84d126fa283",
+  "review_card_sha256": "198ec428220b57ccb515c5eda90dd2c7d2cde539b73c241fbe688526a0e32859",
+  "implementation_sha256": {
+    "backend/papergraph/extraction.py": "e5c193238a76f2a2be99cb20cd31166587f1018af2489e32da81bc07d5f05ae8",
+    "backend/papergraph/models.py": "0391018dcad4de4dea08cc92bce60ea994ffdb3e43830380a69556525bbebe14",
+    "backend/papergraph/worker.py": "bdc98990bca12a8f7d67cde5fcc2084334657f835b5591e82b595144d8fe04c9",
+    "backend/scripts/run_source_gate_e2e.py": "3e5099d7679d2c3f17518b31e5d2df31cc2159b58595fa2641498a5d06778a48",
+    "backend/tests/test_production_corrections.py": "1f5eecbaaba6a75de82cd09ca1567dbf2f8ab8ec0e5aa5bb4106e04b28d1ad3e",
+    "frontend/src/App.tsx": "6055b0734908d99109c6f09e9f81261d570d9bade5e48629127f94535ef5653b",
+    "evals/reviews/dual-paper/apply_grouping_revision.py": "e548b95570ef7e5a8b7da7648b394228ddb929074163beb21f636fee39e82d92"
+  },
+  "historical_ledger_sha256": "4c9220d03943ddc25583270fd2c08a1f20aa0853c518860db7cef9c31f7e9d99",
+  "original_proposal_manifest_sha256": "67cbb9b9672921b8483bf6244600944dbf46982afcacab73fdabc2e439deadc1"
+}

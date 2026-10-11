@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { Anchor, Document } from './contracts';
+import { notationView } from './notation';
 
 export function displayedBox(
   box: number[],
@@ -146,6 +147,9 @@ export function SourcePanel({
               onClick={() => onSpan(span.anchor_id)}
             >
               {span.text}
+              {notationView(span.text, span.notation) !== span.text && (
+                <small>PDF notation: {notationView(span.text, span.notation)}</small>
+              )}
             </button>
           ))}
           {!page.spans.length && <p>No extractable text on this page. OCR is not configured.</p>}

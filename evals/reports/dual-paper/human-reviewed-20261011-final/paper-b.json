@@ -1,0 +1,518 @@
+{
+  "schema_version": 1,
+  "paper": "B",
+  "evaluated_at_utc": "2026-10-11T10:38:45.440213+00:00",
+  "scope": "FROZEN_SAMPLE_AND_DOCUMENTED_PARSER_ANOMALY",
+  "inputs": {
+    "gold_path": "E:\\PaperLearning\\evals\\gold\\paper-b\\gold.json",
+    "gold_sha256": "f1647451ea439c4b4b29b31f41bc1ca7a368ada89d40d74fceebf019c96cba63",
+    "source_sha256": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+    "prediction_review_path": "E:\\PaperLearning\\evals\\gold\\paper-b\\prediction-review.json",
+    "prediction_review_sha256": "ef1052cb0824aae7bdfce500ba4ea454f0bf72b991d9d9b30e02f98bccc9dc6b",
+    "production_report_path": "E:\\PaperLearning\\evals\\reports\\dual-paper\\current-b.json",
+    "production_report_sha256": "dc9efacddb2a6d9b7ea93833b0cab3b76ff6229a852c8638df120e7f0a7b1213"
+  },
+  "human_ledger_sha256_at_evaluation": "8ea61af5802fa9a8bd3df227756333eac8937bbb859351304d7887a6625c57e8",
+  "human_decision_history_sha256": "daeff02aa4d6b27445e57b87f7963f1d075884e7e86b5b2f4d0426bd860df99e",
+  "production_rerun_path": "E:\\PaperLearning\\evals\\reports\\dual-paper\\human-reviewed-20261011-final\\production-b.json",
+  "production_rerun_sha256": "4bebc9493e0f534405f597aaca1b9a1b7a1c84855036de02fe248009848d3b8f",
+  "isolated_runtime_report_path": "E:\\PaperLearning\\.runtime\\gate-a-human-20261011-1791714778399-absolute\\production-b.json",
+  "production_pipeline_modified": false,
+  "frozen_gold_modified": false,
+  "thresholds": {
+    "precision": 0.9,
+    "recall": 0.8,
+    "type_accuracy": 0.9,
+    "anchors": 1,
+    "pages": 1,
+    "figures": 1,
+    "equations": 1,
+    "quantities": 1,
+    "node_provenance": 1,
+    "edge_provenance": 1
+  },
+  "model_source_metrics": {
+    "precision": {
+      "passed": 18,
+      "total": 18,
+      "rate": 1.0
+    },
+    "recall": {
+      "passed": 16,
+      "total": 16,
+      "rate": 1.0
+    },
+    "type_accuracy": {
+      "passed": 16,
+      "total": 16,
+      "rate": 1.0
+    },
+    "anchors": {
+      "passed": 16,
+      "total": 16,
+      "rate": 1.0
+    },
+    "pages": {
+      "passed": 16,
+      "total": 16,
+      "rate": 1.0
+    },
+    "figures": {
+      "passed": 3,
+      "total": 3,
+      "rate": 1.0
+    },
+    "equations": {
+      "passed": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "quantities": {
+      "passed": 11,
+      "total": 11,
+      "rate": 1.0
+    },
+    "node_provenance": {
+      "passed": 60,
+      "total": 60,
+      "rate": 1.0
+    },
+    "edge_provenance": {
+      "passed": 59,
+      "total": 59,
+      "rate": 1.0
+    }
+  },
+  "model_metric_checks": {
+    "precision": true,
+    "recall": true,
+    "type_accuracy": true,
+    "anchors": true,
+    "pages": true,
+    "figures": true,
+    "equations": true,
+    "quantities": true,
+    "node_provenance": true,
+    "edge_provenance": true
+  },
+  "model_sampled_measurements_pass": true,
+  "human_source_review": "COMPLETE",
+  "effective_review_view_counts": {
+    "ACCEPT": 16,
+    "REVISE": 2,
+    "REJECT": 0
+  },
+  "original_production_decision_counts": {
+    "ACCEPT": 16,
+    "REVISE": 2,
+    "REJECT": 0
+  },
+  "explicit_original_production_acceptance_coverage": {
+    "accepted": 16,
+    "total": 18,
+    "is_protocol_precision": false
+  },
+  "quantity_review_counts": {
+    "ACCEPT": 11,
+    "REVISE": 0,
+    "REJECT": 0
+  },
+  "item_audit": [
+    {
+      "review_item_id": "b-problem",
+      "gold_item_id": "b-problem",
+      "prediction_key": "1d94749e59dcc1f2cc75f2678731e216b6fee23cd0bdbde0c16505ee50ccf2f8",
+      "production_decision_id": "human-source-B-b-problem-1",
+      "production_decision": "ACCEPT",
+      "current_review_view_decision_id": "human-source-B-b-problem-1",
+      "current_review_view_decision": "ACCEPT",
+      "current_review_target": "ORIGINAL_PRODUCTION",
+      "explanation_only": false,
+      "production_correction_required": false,
+      "correction_resolution": null,
+      "application_correction_applied": false
+    },
+    {
+      "review_item_id": "b-contact-method",
+      "gold_item_id": "b-contact-method",
+      "prediction_key": "736ff73f7f51505e00e0b893722f5266f0c4a54987c8847271117727291195b5",
+      "production_decision_id": "human-source-B-b-contact-method-1",
+      "production_decision": "REVISE",
+      "current_review_view_decision_id": "human-source-B-b-contact-method-1",
+      "current_review_view_decision": "REVISE",
+      "current_review_target": "ORIGINAL_PRODUCTION",
+      "explanation_only": false,
+      "production_correction_required": true,
+      "correction_resolution": {
+        "instruction_verbatim": "米勒指数应该是011(上有一横线)2，表示的方向",
+        "target_field": "text.crystallographic_index",
+        "original_notation": "(0112)",
+        "replacement_notation": "(011̅2)",
+        "replacement_notation_latex": "(01\\bar{1}2)",
+        "overbar_position": "third digit (the second 1)",
+        "replacement_text": "Here we push the electrical contact of monolayer molybdenum \ndisulfide close to the quantum limit by hybridization of energy bands with semi- \nmetallic antimony (011̅2) through strong van der Waals interactions.",
+        "user_semantic_note_verbatim": "表示的方向",
+        "semantic_note_status": "ATTRIBUTED_USER_NOTE",
+        "resolution_status": "EXPLICIT_CORRECTION_RECORDED",
+        "frozen_gold_modified": false
+      },
+      "application_correction_applied": false
+    },
+    {
+      "review_item_id": "b-central-result",
+      "gold_item_id": "b-central-result",
+      "prediction_key": "4afc27cb153df80c8b61f37a6e1422d03f01af8159e0495e9402f57355cd921c",
+      "production_decision_id": "human-source-B-b-central-result-1",
+      "production_decision": "ACCEPT",
+      "current_review_view_decision_id": "human-source-B-b-central-result-1",
+      "current_review_view_decision": "ACCEPT",
+      "current_review_target": "ORIGINAL_PRODUCTION",
+      "explanation_only": false,
+      "production_correction_required": false,
+      "correction_resolution": null,
+      "application_correction_applied": false
+    },
+    {
+      "review_item_id": "b-transistor-result",
+      "gold_item_id": "b-transistor-result",
+      "prediction_key": "0ce4a64ad391996efda2c4fa16b2656570bbfaf273078655f096a0a464643cbb",
+      "production_decision_id": "human-source-B-b-transistor-result-1",
+      "production_decision": "ACCEPT",
+      "current_review_view_decision_id": "human-source-B-b-transistor-result-1",
+      "current_review_view_decision": "ACCEPT",
+      "current_review_target": "ORIGINAL_PRODUCTION",
+      "explanation_only": false,
+      "production_correction_required": false,
+      "correction_resolution": null,
+      "application_correction_applied": false
+    },
+    {
+      "review_item_id": "b-ballistic-assumption",
+      "gold_item_id": "b-ballistic-assumption",
+      "prediction_key": "d2b3529cf9ffd7cc3b19585e9dac11558f07e2e022ded2aee6195f785e29ebd5",
+      "production_decision_id": "human-source-B-b-ballistic-assumption-1",
+      "production_decision": "ACCEPT",
+      "current_review_view_decision_id": "human-source-B-b-ballistic-assumption-1",
+      "current_review_view_decision": "ACCEPT",
+      "current_review_target": "ORIGINAL_PRODUCTION",
+      "explanation_only": false,
+      "production_correction_required": false,
+      "correction_resolution": null,
+      "application_correction_applied": false
+    },
+    {
+      "review_item_id": "b-symbol-definitions",
+      "gold_item_id": "b-symbol-definitions",
+      "prediction_key": "37ef6a8106f32214dc95cf8425126b3439b6e5b37f6217606e12f2b0e6229a63",
+      "production_decision_id": "human-source-B-b-symbol-definitions-1",
+      "production_decision": "ACCEPT",
+      "current_review_view_decision_id": "human-source-B-b-symbol-definitions-1",
+      "current_review_view_decision": "ACCEPT",
+      "current_review_target": "ORIGINAL_PRODUCTION",
+      "explanation_only": false,
+      "production_correction_required": false,
+      "correction_resolution": null,
+      "application_correction_applied": false
+    },
+    {
+      "review_item_id": "b-tlm-assumption",
+      "gold_item_id": "b-tlm-assumption",
+      "prediction_key": "c4e617ecca1d75c0968fee887baab86d37d059a6f9f69428dbca3a2c427e084b",
+      "production_decision_id": "human-source-B-b-tlm-assumption-1",
+      "production_decision": "ACCEPT",
+      "current_review_view_decision_id": "human-source-B-b-tlm-assumption-1",
+      "current_review_view_decision": "ACCEPT",
+      "current_review_target": "ORIGINAL_PRODUCTION",
+      "explanation_only": false,
+      "production_correction_required": false,
+      "correction_resolution": null,
+      "application_correction_applied": false
+    },
+    {
+      "review_item_id": "b-tlm-limitation",
+      "gold_item_id": "b-tlm-limitation",
+      "prediction_key": "f80f7f96f1fe5acf2793360c9daa6c477ce7e49f17b0c0f77e4a25eb9c0c92f2",
+      "production_decision_id": "human-source-B-b-tlm-limitation-1",
+      "production_decision": "ACCEPT",
+      "current_review_view_decision_id": "human-source-B-b-tlm-limitation-1",
+      "current_review_view_decision": "ACCEPT",
+      "current_review_target": "ORIGINAL_PRODUCTION",
+      "explanation_only": false,
+      "production_correction_required": false,
+      "correction_resolution": null,
+      "application_correction_applied": false
+    },
+    {
+      "review_item_id": "b-average-contact",
+      "gold_item_id": "b-average-contact",
+      "prediction_key": "d31983b4f2f28aeec1d7c41b87b1593fbd740f735c2af688fd87a85f2c22ec9d",
+      "production_decision_id": "human-source-B-b-average-contact-1",
+      "production_decision": "ACCEPT",
+      "current_review_view_decision_id": "human-source-B-b-average-contact-1",
+      "current_review_view_decision": "ACCEPT",
+      "current_review_target": "ORIGINAL_PRODUCTION",
+      "explanation_only": false,
+      "production_correction_required": false,
+      "correction_resolution": null,
+      "application_correction_applied": false
+    },
+    {
+      "review_item_id": "b-stability",
+      "gold_item_id": "b-stability",
+      "prediction_key": "c122b3c98f960ccc6cc6c4907dba1211ad96196e7fcb12b69074cc2b868fb7aa",
+      "production_decision_id": "human-source-B-b-stability-1",
+      "production_decision": "REVISE",
+      "current_review_view_decision_id": "human-source-B-b-stability-1",
+      "current_review_view_decision": "REVISE",
+      "current_review_target": "ORIGINAL_PRODUCTION",
+      "explanation_only": false,
+      "production_correction_required": true,
+      "correction_resolution": {
+        "instruction_verbatim": "一些公式标识需要注意下标，如Ion其中on是下标。",
+        "target_field": "text.symbol_subscripts",
+        "symbol_corrections": [
+          {
+            "original": "Ion",
+            "base": "I",
+            "subscript": "on",
+            "plain_display": "I_on",
+            "origin": "HUMAN_SOURCE_REVIEW",
+            "explicit_user_example": true
+          },
+          {
+            "original": "Vth",
+            "base": "V",
+            "subscript": "th",
+            "plain_display": "V_th",
+            "origin": "MODEL_SOURCE_REVIEW",
+            "explicit_user_example": false,
+            "source_note": "Companion notation correction checked in the original PDF."
+          }
+        ],
+        "replacement_plain_text": "No obvious degradation of I_on, threshold voltage \n(V_th) and subthreshold swing (SS) was observed during 24 h for the Sb \ncontact.",
+        "representation": "PLAIN_TEXT_WITH_EXPLICIT_SUBSCRIPT_METADATA",
+        "resolution_status": "EXPLICIT_CORRECTION_RECORDED",
+        "original_source_text_preserved": true,
+        "frozen_gold_modified": false
+      },
+      "application_correction_applied": false
+    },
+    {
+      "review_item_id": "b-dft-method",
+      "gold_item_id": "b-dft-method",
+      "prediction_key": "48b848f51191d1e796ddf88bb9d0bdb7d482639b9ef68e5f4b6d79d6d523ca0a",
+      "production_decision_id": "human-source-B-b-dft-method-1",
+      "production_decision": "ACCEPT",
+      "current_review_view_decision_id": "human-source-B-b-dft-method-1",
+      "current_review_view_decision": "ACCEPT",
+      "current_review_target": "ORIGINAL_PRODUCTION",
+      "explanation_only": false,
+      "production_correction_required": false,
+      "correction_resolution": null,
+      "application_correction_applied": false
+    },
+    {
+      "review_item_id": "b-dft-convergence",
+      "gold_item_id": "b-dft-convergence",
+      "prediction_key": "00762870e2755bed1d6be024b8508fd075e303ad84ab39075c2d65331e266c1b",
+      "production_decision_id": "human-source-B-b-dft-convergence-1",
+      "production_decision": "ACCEPT",
+      "current_review_view_decision_id": "human-source-B-b-dft-convergence-1",
+      "current_review_view_decision": "ACCEPT",
+      "current_review_target": "ORIGINAL_PRODUCTION",
+      "explanation_only": false,
+      "production_correction_required": false,
+      "correction_resolution": null,
+      "application_correction_applied": false
+    },
+    {
+      "review_item_id": "b-prediction-71a3da0b5bab",
+      "gold_item_id": null,
+      "prediction_key": "71a3da0b5babf24a8d2304e01a4933d00936107cc44513d63caf5db36c40a17f",
+      "production_decision_id": "human-source-B-b-prediction-71a3da0b5bab-1",
+      "production_decision": "ACCEPT",
+      "current_review_view_decision_id": "human-source-B-b-prediction-71a3da0b5bab-1",
+      "current_review_view_decision": "ACCEPT",
+      "current_review_target": "ORIGINAL_PRODUCTION",
+      "explanation_only": false,
+      "production_correction_required": false,
+      "correction_resolution": null,
+      "application_correction_applied": false
+    },
+    {
+      "review_item_id": "b-prediction-8535901b689d",
+      "gold_item_id": null,
+      "prediction_key": "8535901b689de325a4ac274faedb415cb62f5852feca24f34ca78c865ca6d45b",
+      "production_decision_id": "human-source-B-b-prediction-8535901b689d-1",
+      "production_decision": "ACCEPT",
+      "current_review_view_decision_id": "human-source-B-b-prediction-8535901b689d-1",
+      "current_review_view_decision": "ACCEPT",
+      "current_review_target": "ORIGINAL_PRODUCTION",
+      "explanation_only": false,
+      "production_correction_required": false,
+      "correction_resolution": null,
+      "application_correction_applied": false
+    },
+    {
+      "review_item_id": "b-figure-1",
+      "gold_item_id": "b-figure-1",
+      "prediction_key": "20dc584a26a792ec12e74d544fdfbd1fc2bc68a2a169f1b7066b3f0fb5fd1e52",
+      "production_decision_id": "human-source-B-b-figure-1-1",
+      "production_decision": "ACCEPT",
+      "current_review_view_decision_id": "human-source-B-b-figure-1-1",
+      "current_review_view_decision": "ACCEPT",
+      "current_review_target": "ORIGINAL_PRODUCTION",
+      "explanation_only": false,
+      "production_correction_required": false,
+      "correction_resolution": null,
+      "application_correction_applied": false
+    },
+    {
+      "review_item_id": "b-figure-2",
+      "gold_item_id": "b-figure-2",
+      "prediction_key": "99ec6ea9bc19bb2ed6f8c2c3cd50978e32d3e9f3d715c4b20cab570da96b46a1",
+      "production_decision_id": "human-source-B-b-figure-2-1",
+      "production_decision": "ACCEPT",
+      "current_review_view_decision_id": "human-source-B-b-figure-2-1",
+      "current_review_view_decision": "ACCEPT",
+      "current_review_target": "ORIGINAL_PRODUCTION",
+      "explanation_only": false,
+      "production_correction_required": false,
+      "correction_resolution": null,
+      "application_correction_applied": false
+    },
+    {
+      "review_item_id": "b-figure-3",
+      "gold_item_id": "b-figure-3",
+      "prediction_key": "d600f4651fabb7213681884178ab3d0cd02b56500383db884e910b0c15d5bd81",
+      "production_decision_id": "human-source-B-b-figure-3-1",
+      "production_decision": "ACCEPT",
+      "current_review_view_decision_id": "human-source-B-b-figure-3-1",
+      "current_review_view_decision": "ACCEPT",
+      "current_review_target": "ORIGINAL_PRODUCTION",
+      "explanation_only": false,
+      "production_correction_required": false,
+      "correction_resolution": null,
+      "application_correction_applied": false
+    },
+    {
+      "review_item_id": "b-equation-1",
+      "gold_item_id": "b-equation-1",
+      "prediction_key": "9d465db2812ceabe88ffd2bfab186ccadd72cdb3b10d3524325862245ba8189d",
+      "production_decision_id": "human-source-B-b-equation-1-1",
+      "production_decision": "ACCEPT",
+      "current_review_view_decision_id": "human-source-B-b-equation-1-1",
+      "current_review_view_decision": "ACCEPT",
+      "current_review_target": "ORIGINAL_PRODUCTION",
+      "explanation_only": false,
+      "production_correction_required": false,
+      "correction_resolution": null,
+      "application_correction_applied": false
+    }
+  ],
+  "unapplied_production_corrections": [
+    {
+      "review_item_id": "b-contact-method",
+      "gold_item_id": "b-contact-method",
+      "prediction_key": "736ff73f7f51505e00e0b893722f5266f0c4a54987c8847271117727291195b5",
+      "production_decision_id": "human-source-B-b-contact-method-1",
+      "production_decision": "REVISE",
+      "current_review_view_decision_id": "human-source-B-b-contact-method-1",
+      "current_review_view_decision": "REVISE",
+      "current_review_target": "ORIGINAL_PRODUCTION",
+      "explanation_only": false,
+      "production_correction_required": true,
+      "correction_resolution": {
+        "instruction_verbatim": "米勒指数应该是011(上有一横线)2，表示的方向",
+        "target_field": "text.crystallographic_index",
+        "original_notation": "(0112)",
+        "replacement_notation": "(011̅2)",
+        "replacement_notation_latex": "(01\\bar{1}2)",
+        "overbar_position": "third digit (the second 1)",
+        "replacement_text": "Here we push the electrical contact of monolayer molybdenum \ndisulfide close to the quantum limit by hybridization of energy bands with semi- \nmetallic antimony (011̅2) through strong van der Waals interactions.",
+        "user_semantic_note_verbatim": "表示的方向",
+        "semantic_note_status": "ATTRIBUTED_USER_NOTE",
+        "resolution_status": "EXPLICIT_CORRECTION_RECORDED",
+        "frozen_gold_modified": false
+      },
+      "application_correction_applied": false
+    },
+    {
+      "review_item_id": "b-stability",
+      "gold_item_id": "b-stability",
+      "prediction_key": "c122b3c98f960ccc6cc6c4907dba1211ad96196e7fcb12b69074cc2b868fb7aa",
+      "production_decision_id": "human-source-B-b-stability-1",
+      "production_decision": "REVISE",
+      "current_review_view_decision_id": "human-source-B-b-stability-1",
+      "current_review_view_decision": "REVISE",
+      "current_review_target": "ORIGINAL_PRODUCTION",
+      "explanation_only": false,
+      "production_correction_required": true,
+      "correction_resolution": {
+        "instruction_verbatim": "一些公式标识需要注意下标，如Ion其中on是下标。",
+        "target_field": "text.symbol_subscripts",
+        "symbol_corrections": [
+          {
+            "original": "Ion",
+            "base": "I",
+            "subscript": "on",
+            "plain_display": "I_on",
+            "origin": "HUMAN_SOURCE_REVIEW",
+            "explicit_user_example": true
+          },
+          {
+            "original": "Vth",
+            "base": "V",
+            "subscript": "th",
+            "plain_display": "V_th",
+            "origin": "MODEL_SOURCE_REVIEW",
+            "explicit_user_example": false,
+            "source_note": "Companion notation correction checked in the original PDF."
+          }
+        ],
+        "replacement_plain_text": "No obvious degradation of I_on, threshold voltage \n(V_th) and subthreshold swing (SS) was observed during 24 h for the Sb \ncontact.",
+        "representation": "PLAIN_TEXT_WITH_EXPLICIT_SUBSCRIPT_METADATA",
+        "resolution_status": "EXPLICIT_CORRECTION_RECORDED",
+        "original_source_text_preserved": true,
+        "frozen_gold_modified": false
+      },
+      "application_correction_applied": false
+    }
+  ],
+  "parser_anomaly_review": [
+    {
+      "review_item_id": "b-parser-article-header-section",
+      "decision_id": "human-source-B-b-parser-article-header-section-1",
+      "decision": "REVISE",
+      "human_correction": {
+        "verbatim": "左上角那个大的Article只是论文模板，与正文没有任何关系。论文的section设置应该取决于正文的标识",
+        "corrected_source_role": "Paper-template header, unrelated to the article body.",
+        "section_classification_correct": false,
+        "section_detection_basis": "Explicit section markers in the article body.",
+        "application_type": null,
+        "application_mapping_status": "REQUIRES_SOURCE_ROLE_MAPPING",
+        "note": "User source-role correction retained. No new enum, deletion, merge, parser mutation or automatic verification inferred."
+      },
+      "frozen_sample_scoring_affected": false,
+      "application_correction_applied": false
+    }
+  ],
+  "reviewed_source_audit_pass": false,
+  "overall_reviewed_gate": "FAIL",
+  "scientific_validity": "NOT_ASSESSED",
+  "gate_b": "NOT_STARTED",
+  "browser_journey": {
+    "status": "HISTORICAL_PASS_NOT_RERUN",
+    "reported_on": "2026-10-05",
+    "path": "evals/reports/dual-paper/browser.json"
+  },
+  "notes": [
+    "Frozen model source comparisons retain their original denominators and review origin.",
+    "Human review is complete; explicit production source/type corrections remain unapplied.",
+    "Explanation-only revisions are resolved without inventing production ACCEPT or extraction errors.",
+    "Accepted expanded method/visual equation review views are not production parser repairs.",
+    "Section anomalies are reported separately and do not alter frozen scientific windows.",
+    "No application DB review, VERIFIED record or scientific acceptance was created."
+  ],
+  "source_fidelity_failure_basis": "Frozen protocol: unresolved numeric/glyph ambiguity fails that gold item; b-contact-method overbar and b-stability subscripts remain uncorrected in production. 16/18 is explicit acceptance coverage, not an invented type-accuracy score."
+}

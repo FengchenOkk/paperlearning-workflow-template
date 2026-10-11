@@ -1,0 +1,717 @@
+{
+  "revision_id": "A2a-grouping-revision-20261011-1",
+  "created_at_utc": "2026-10-11T14:49:24.009291+00:00",
+  "requested_by_decision_id": "current-human-source-A-A2a-20261011-1",
+  "user_response_verbatim": "revise，进行分组边界，表征和制作进行分组",
+  "base_inputs": {
+    "A": {
+      "proposal_report_path": "E:\\PaperLearning\\evals\\reports\\dual-paper\\reconciliation-20261011-r4\\paper-a.json",
+      "proposal_report_sha256": "88a631b338155ccd93a25dc900ba5e7feaaa8f1a1296dd06ce7ac2ed3495f388",
+      "production_path": "E:\\PaperLearning\\.runtime\\gate-a-reconciliation-20261011\\final-a.json",
+      "production_sha256": "7a6c24c37228122e2330a95c5f109de8a194c2de71b3e4347fe5fb3c7308e909",
+      "database": "E:\\PaperLearning\\.runtime\\gate-a-reconciliation-20261011\\final-a-runtime\\graph.db",
+      "source_hash": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+      "gold_sha256": "b2cf5c09d52627a92ebdd17209ca9e51f3af85599896731336a4a00427ec0109",
+      "parser_version": "1.28.2+layout-v3-notation",
+      "pipeline_version": "source-graph-v5"
+    },
+    "B": {
+      "proposal_report_path": "E:\\PaperLearning\\evals\\reports\\dual-paper\\reconciliation-20261011-r4\\paper-b.json",
+      "proposal_report_sha256": "6fc32138a3957a2af246843e0ba097ee485d658c5ebfe538436423635c8e6881",
+      "production_path": "E:\\PaperLearning\\.runtime\\gate-a-reconciliation-20261011\\final-b.json",
+      "production_sha256": "c1b8c4e3f1278c78eddaff63efd3361a548a9399e08dd2b50a97cff97ad290b2",
+      "database": "E:\\PaperLearning\\.runtime\\gate-a-reconciliation-20261011\\final-b-runtime\\graph.db",
+      "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "gold_sha256": "f1647451ea439c4b4b29b31f41bc1ca7a368ada89d40d74fceebf019c96cba63",
+      "parser_version": "1.28.2+layout-v3-notation",
+      "pipeline_version": "source-graph-v5"
+    }
+  },
+  "revised_inputs": {
+    "A": {
+      "proposal_report_path": "E:\\PaperLearning\\evals\\reports\\dual-paper\\reconciliation-20261011-r4\\paper-a.json",
+      "proposal_report_sha256": "88a631b338155ccd93a25dc900ba5e7feaaa8f1a1296dd06ce7ac2ed3495f388",
+      "production_path": "E:\\PaperLearning\\.runtime\\gate-a-a2a-revision-20261011\\current-a.json",
+      "production_sha256": "fed3dcbdefc703c3c7081a6e8006024da972781d57dc75accf719617aa870df9",
+      "database": "E:\\PaperLearning\\.runtime\\gate-a-a2a-revision-20261011\\current-a-runtime\\graph.db",
+      "source_hash": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+      "gold_sha256": "b2cf5c09d52627a92ebdd17209ca9e51f3af85599896731336a4a00427ec0109",
+      "parser_version": "1.28.2+layout-v3-notation",
+      "pipeline_version": "source-graph-v6",
+      "revision_report_path": "E:\\PaperLearning\\evals\\reports\\dual-paper\\a2a-grouping-revision-20261011-r1\\revision.json"
+    },
+    "B": {
+      "proposal_report_path": "E:\\PaperLearning\\evals\\reports\\dual-paper\\reconciliation-20261011-r4\\paper-b.json",
+      "proposal_report_sha256": "6fc32138a3957a2af246843e0ba097ee485d658c5ebfe538436423635c8e6881",
+      "production_path": "E:\\PaperLearning\\.runtime\\gate-a-a2a-revision-20261011\\current-b.json",
+      "production_sha256": "b5f67f4d7e30b7518045acddbf30e807884d0a8dd29a512cac2f89ec574d7ce2",
+      "database": "E:\\PaperLearning\\.runtime\\gate-a-a2a-revision-20261011\\current-b-runtime\\graph.db",
+      "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+      "gold_sha256": "f1647451ea439c4b4b29b31f41bc1ca7a368ada89d40d74fceebf019c96cba63",
+      "parser_version": "1.28.2+layout-v3-notation",
+      "pipeline_version": "source-graph-v6",
+      "revision_report_path": "E:\\PaperLearning\\evals\\reports\\dual-paper\\a2a-grouping-revision-20261011-r1\\revision.json"
+    }
+  },
+  "changes": {
+    "A": {
+      "updated_processes": [
+        {
+          "node_id": "796f256a-90e7-5843-b1ef-f78416790de6",
+          "old_version": 1,
+          "new_version": 2
+        }
+      ],
+      "added_process_ids": [
+        "78898e15-8d75-58d4-b454-841e7caf1878",
+        "ab543609-3081-585f-80ce-82b0b5ab9398",
+        "6d241e34-de8f-5105-803a-b19e1ac284aa"
+      ],
+      "source_rows_preserved": true,
+      "unchanged_nodes_and_fingerprints": 55,
+      "existing_E0_bindings_preserved_without_rebinding": 17,
+      "new_window_prediction_keys": [
+        "1d23d2cdba2bd7be70fb6269beaea77d743fbf0137cb788daa24da55126381a3",
+        "c61e02888224db7fe089d3332d6707b418203138899a1554e78ae51016dddfe6"
+      ],
+      "removed_window_prediction_keys": [
+        "6c6cce386755367dcc7aecf9a7fc3a4d9b6070b495ab70f2f9af21565e0130d4"
+      ],
+      "fresh_upload_content_equivalent": true,
+      "metrics": {
+        "precision": {
+          "passed": 16,
+          "total": 22,
+          "rate": 0.7272727272727273
+        },
+        "recall": {
+          "passed": 16,
+          "total": 17,
+          "rate": 0.9411764705882353
+        },
+        "type_accuracy": {
+          "passed": 16,
+          "total": 16,
+          "rate": 1.0
+        },
+        "anchors": {
+          "passed": 16,
+          "total": 16,
+          "rate": 1.0
+        },
+        "pages": {
+          "passed": 16,
+          "total": 16,
+          "rate": 1.0
+        },
+        "figures": {
+          "passed": 3,
+          "total": 3,
+          "rate": 1.0
+        },
+        "equations": {
+          "passed": 0,
+          "total": 0,
+          "rate": null
+        },
+        "quantities": {
+          "passed": 10,
+          "total": 10,
+          "rate": 1.0
+        },
+        "node_provenance": {
+          "passed": 59,
+          "total": 59,
+          "rate": 1.0
+        },
+        "edge_provenance": {
+          "passed": 58,
+          "total": 58,
+          "rate": 1.0
+        }
+      },
+      "integrity": {
+        "paper_id": "1a86bcb9-fe7d-4ff8-af38-224dea0dcf5c",
+        "issues": [],
+        "structurally_valid": true,
+        "scientific_validity": "NOT_ASSESSED"
+      }
+    },
+    "B": {
+      "updated_processes": [],
+      "added_process_ids": [
+        "c15b5872-4433-5cc7-9bff-a4ff580dd320",
+        "75517e6e-0a4b-5267-92f4-187e93c5710a"
+      ],
+      "source_rows_preserved": true,
+      "unchanged_nodes_and_fingerprints": 76,
+      "existing_E0_bindings_preserved_without_rebinding": 18,
+      "new_window_prediction_keys": [],
+      "removed_window_prediction_keys": [],
+      "fresh_upload_content_equivalent": true,
+      "metrics": {
+        "precision": {
+          "passed": 17,
+          "total": 18,
+          "rate": 0.9444444444444444
+        },
+        "recall": {
+          "passed": 16,
+          "total": 16,
+          "rate": 1.0
+        },
+        "type_accuracy": {
+          "passed": 16,
+          "total": 16,
+          "rate": 1.0
+        },
+        "anchors": {
+          "passed": 16,
+          "total": 16,
+          "rate": 1.0
+        },
+        "pages": {
+          "passed": 16,
+          "total": 16,
+          "rate": 1.0
+        },
+        "figures": {
+          "passed": 3,
+          "total": 3,
+          "rate": 1.0
+        },
+        "equations": {
+          "passed": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "quantities": {
+          "passed": 11,
+          "total": 11,
+          "rate": 1.0
+        },
+        "node_provenance": {
+          "passed": 78,
+          "total": 78,
+          "rate": 1.0
+        },
+        "edge_provenance": {
+          "passed": 77,
+          "total": 77,
+          "rate": 1.0
+        }
+      },
+      "integrity": {
+        "paper_id": "04f3b46f-483d-4349-8404-5c4ef6718647",
+        "issues": [],
+        "structurally_valid": true,
+        "scientific_validity": "NOT_ASSESSED"
+      }
+    }
+  },
+  "A2a_review_groups": [
+    {
+      "role": "FABRICATION",
+      "node": {
+        "type": "PROCESS",
+        "layer": "SEMANTIC",
+        "label": "TMDs, graphene, and hBN ﬂakes were mechanically exfoliated onto SiO2/Si substrates. The HS stack comprising th…",
+        "text": "TMDs, graphene, and hBN ﬂakes were mechanically\nexfoliated onto SiO2/Si substrates.\nThe HS stack comprising\nthese exfoliated ﬂakes was fabricated using a dry-transfer\ntechnique facilitated by a polycarbonate (PC) stamp.\nSpeciﬁcally, ﬂakes were ﬁrst picked up at 120 °C using the\nPC polymer and subsequently transferred onto the target\nsubstrate at 200 °C.\nAfter transfer, the residual PC poly-\nmer was completely removed by immersing the samples\nin chloroform for 12 h.\nFor controlled oxidation of as-\nexfoliated WSe2 ﬂakes, UV-ozone treatment was per-\nformed at 50 °C for 30 min in the UV ozone cleaner\n(Samco UV-1), maintaining an oxygen ﬂow rate of\n1 L/min, ensuring effective conversion of WSe2 into TOS.",
+        "epistemic_status": "AI_INTERPRETATION",
+        "uncertainty_reason": "Source-excerpt compilation of fabrication/processing under a Methods heading. Characterization includes preparation of the stated measurement samples; Grouping is an extractor interpretation; no missing steps or execution order inferred.",
+        "id": "796f256a-90e7-5843-b1ef-f78416790de6",
+        "paper_id": "1a86bcb9-fe7d-4ff8-af38-224dea0dcf5c",
+        "confidence": 0.6,
+        "verification_status": "CANDIDATE",
+        "provenance": [
+          "ce800448-3107-5a24-94ac-94187a44d833",
+          "fe880ee9-81b8-51e4-8030-87dcfd598462"
+        ],
+        "created_by": "local-rule-extractor-v5",
+        "model": "none",
+        "prompt_version": "none",
+        "created_at": "2026-10-11T13:29:14.810307+00:00",
+        "updated_at": "2026-10-11T14:49:22.938832+00:00",
+        "version": 2,
+        "verification_scope": null
+      },
+      "source_anchors": [
+        {
+          "id": "ce800448-3107-5a24-94ac-94187a44d833",
+          "paper_id": "1a86bcb9-fe7d-4ff8-af38-224dea0dcf5c",
+          "span_id": "8afbd8f8-ffda-520e-bdca-fe357ac604c0",
+          "page_number": 8,
+          "start_char": 0,
+          "end_char": 272,
+          "bbox": [
+            56.692108154296875,
+            674.1483154296875,
+            290.5409851074219,
+            732.2403564453125
+          ],
+          "text": "TMDs, graphene, and hBN ﬂakes were mechanically\nexfoliated onto SiO2/Si substrates. The thickness of\nindividual ﬂakes was carefully veriﬁed via optical contrast\nusing an optical microscope. The HS stack comprising\nthese exfoliated ﬂakes was fabricated using a dry-transfer",
+          "source_hash": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+          "localization_precision": "TEXT_BLOCK",
+          "notation": [
+            {
+              "start_char": 67,
+              "end_char": 68,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                143.773193359375,
+                690.365478515625,
+                147.4344482421875,
+                697.268798828125
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            }
+          ],
+          "notation_issues": [],
+          "section_titles": []
+        },
+        {
+          "id": "fe880ee9-81b8-51e4-8030-87dcfd598462",
+          "paper_id": "1a86bcb9-fe7d-4ff8-af38-224dea0dcf5c",
+          "span_id": "eb04dcff-2dc1-5c33-bd30-ba60cd0ee94c",
+          "page_number": 8,
+          "start_char": 0,
+          "end_char": 1146,
+          "bbox": [
+            304.7235107421875,
+            88.87528228759766,
+            538.593017578125,
+            349.67596435546875
+          ],
+          "text": "technique facilitated by a polycarbonate (PC) stamp.\nSpeciﬁcally, ﬂakes were ﬁrst picked up at 120 °C using the\nPC polymer and subsequently transferred onto the target\nsubstrate at 200 °C. After transfer, the residual PC poly-\nmer was completely removed by immersing the samples\nin chloroform for 12 h. For controlled oxidation of as-\nexfoliated WSe2 ﬂakes, UV-ozone treatment was per-\nformed at 50 °C for 30 min in the UV ozone cleaner\n(Samco UV-1), maintaining an oxygen ﬂow rate of\n1 L/min, ensuring effective conversion of WSe2 into TOS.\nPL and Raman spectra were acquired at room tem-\nperature using a commercial Raman spectroscopy system\n(Nanobase XperRam-S567). A 532 nm continuous-wave\nlaser was employed as the excitation source, focused onto\nthe sample through a 100× objective lens. The resulting\nsignals were collected by the same objective lens and\nanalyzed using the built-in spectrometer. The laser power\nwas carefully controlled to avoid sample damage or\nheating effects during measurements. Spatially resolved\nPL mapping was performed to characterize the optical\nquality and homogeneity of the samples before and after\noxidation.",
+          "source_hash": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+          "localization_precision": "TEXT_BLOCK",
+          "notation": [
+            {
+              "start_char": 349,
+              "end_char": 350,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                368.843994140625,
+                164.3687744140625,
+                372.5052490234375,
+                171.27207946777344
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 530,
+              "end_char": 531,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                492.0943908691406,
+                200.19879150390625,
+                495.7556457519531,
+                207.1020965576172
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            }
+          ],
+          "notation_issues": [],
+          "section_titles": []
+        }
+      ],
+      "evidence_fingerprint": "e6551866a0b4a4b8def2ac816fae6fa7e9f1a9c9556b887e28513773ed693e25",
+      "prediction_key": "1d23d2cdba2bd7be70fb6269beaea77d743fbf0137cb788daa24da55126381a3",
+      "inside_frozen_precision_window": true,
+      "decision": null
+    },
+    {
+      "role": "OPTICAL_CHARACTERIZATION",
+      "node": {
+        "type": "PROCESS",
+        "layer": "SEMANTIC",
+        "label": "The thickness of individual ﬂakes was carefully veriﬁed via optical contrast using an optical microscope. PL a…",
+        "text": "The thickness of\nindividual ﬂakes was carefully veriﬁed via optical contrast\nusing an optical microscope.\nPL and Raman spectra were acquired at room tem-\nperature using a commercial Raman spectroscopy system\n(Nanobase XperRam-S567).\nA 532 nm continuous-wave\nlaser was employed as the excitation source, focused onto\nthe sample through a 100× objective lens.\nThe resulting\nsignals were collected by the same objective lens and\nanalyzed using the built-in spectrometer.\nThe laser power\nwas carefully controlled to avoid sample damage or\nheating effects during measurements.\nSpatially resolved\nPL mapping was performed to characterize the optical\nquality and homogeneity of the samples before and after\noxidation.",
+        "epistemic_status": "AI_INTERPRETATION",
+        "uncertainty_reason": "Source-excerpt compilation of characterization and measurement-sample preparation under a Methods heading. Characterization includes preparation of the stated measurement samples; Grouping is an extractor interpretation; no missing steps or execution order inferred.",
+        "id": "ab543609-3081-585f-80ce-82b0b5ab9398",
+        "paper_id": "1a86bcb9-fe7d-4ff8-af38-224dea0dcf5c",
+        "confidence": 0.6,
+        "verification_status": "CANDIDATE",
+        "provenance": [
+          "ce800448-3107-5a24-94ac-94187a44d833",
+          "fe880ee9-81b8-51e4-8030-87dcfd598462"
+        ],
+        "created_by": "local-rule-extractor-v5",
+        "model": "none",
+        "prompt_version": "none",
+        "created_at": "2026-10-11T14:49:22.941210+00:00",
+        "updated_at": "2026-10-11T14:49:22.941215+00:00",
+        "version": 1,
+        "verification_scope": null
+      },
+      "source_anchors": [
+        {
+          "id": "ce800448-3107-5a24-94ac-94187a44d833",
+          "paper_id": "1a86bcb9-fe7d-4ff8-af38-224dea0dcf5c",
+          "span_id": "8afbd8f8-ffda-520e-bdca-fe357ac604c0",
+          "page_number": 8,
+          "start_char": 0,
+          "end_char": 272,
+          "bbox": [
+            56.692108154296875,
+            674.1483154296875,
+            290.5409851074219,
+            732.2403564453125
+          ],
+          "text": "TMDs, graphene, and hBN ﬂakes were mechanically\nexfoliated onto SiO2/Si substrates. The thickness of\nindividual ﬂakes was carefully veriﬁed via optical contrast\nusing an optical microscope. The HS stack comprising\nthese exfoliated ﬂakes was fabricated using a dry-transfer",
+          "source_hash": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+          "localization_precision": "TEXT_BLOCK",
+          "notation": [
+            {
+              "start_char": 67,
+              "end_char": 68,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                143.773193359375,
+                690.365478515625,
+                147.4344482421875,
+                697.268798828125
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            }
+          ],
+          "notation_issues": [],
+          "section_titles": []
+        },
+        {
+          "id": "fe880ee9-81b8-51e4-8030-87dcfd598462",
+          "paper_id": "1a86bcb9-fe7d-4ff8-af38-224dea0dcf5c",
+          "span_id": "eb04dcff-2dc1-5c33-bd30-ba60cd0ee94c",
+          "page_number": 8,
+          "start_char": 0,
+          "end_char": 1146,
+          "bbox": [
+            304.7235107421875,
+            88.87528228759766,
+            538.593017578125,
+            349.67596435546875
+          ],
+          "text": "technique facilitated by a polycarbonate (PC) stamp.\nSpeciﬁcally, ﬂakes were ﬁrst picked up at 120 °C using the\nPC polymer and subsequently transferred onto the target\nsubstrate at 200 °C. After transfer, the residual PC poly-\nmer was completely removed by immersing the samples\nin chloroform for 12 h. For controlled oxidation of as-\nexfoliated WSe2 ﬂakes, UV-ozone treatment was per-\nformed at 50 °C for 30 min in the UV ozone cleaner\n(Samco UV-1), maintaining an oxygen ﬂow rate of\n1 L/min, ensuring effective conversion of WSe2 into TOS.\nPL and Raman spectra were acquired at room tem-\nperature using a commercial Raman spectroscopy system\n(Nanobase XperRam-S567). A 532 nm continuous-wave\nlaser was employed as the excitation source, focused onto\nthe sample through a 100× objective lens. The resulting\nsignals were collected by the same objective lens and\nanalyzed using the built-in spectrometer. The laser power\nwas carefully controlled to avoid sample damage or\nheating effects during measurements. Spatially resolved\nPL mapping was performed to characterize the optical\nquality and homogeneity of the samples before and after\noxidation.",
+          "source_hash": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+          "localization_precision": "TEXT_BLOCK",
+          "notation": [
+            {
+              "start_char": 349,
+              "end_char": 350,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                368.843994140625,
+                164.3687744140625,
+                372.5052490234375,
+                171.27207946777344
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            },
+            {
+              "start_char": 530,
+              "end_char": 531,
+              "raw": "2",
+              "display": "_2",
+              "kind": "SUBSCRIPT",
+              "bbox": [
+                492.0943908691406,
+                200.19879150390625,
+                495.7556457519531,
+                207.1020965576172
+              ],
+              "basis": "PDF_BASELINE_AND_SIZE"
+            }
+          ],
+          "notation_issues": [],
+          "section_titles": []
+        }
+      ],
+      "evidence_fingerprint": "e25cb361da8b26a32aa9d1a79992928986f93ef9b274089125f4735a582a9a25",
+      "prediction_key": "c61e02888224db7fe089d3332d6707b418203138899a1554e78ae51016dddfe6",
+      "inside_frozen_precision_window": true,
+      "decision": null
+    },
+    {
+      "role": "ELECTRICAL_CHARACTERIZATION_AND_SAMPLE_PREPARATION",
+      "node": {
+        "type": "PROCESS",
+        "layer": "SEMANTIC",
+        "label": "The sheet resistance of pristine graphene and TOS- doped graphene samples was characterized using a source-mea…",
+        "text": "The sheet resistance of pristine graphene and TOS-\ndoped graphene samples was characterized using a\nsource-measure unit (SMU, Keithley 2634B).\nElectrical\ncontacts were fabricated onto the samples using standard\nlithographic and metal deposition techniques, enabling\nprecise voltage biasing and current measurement.\nThe\nsheet resistance and corresponding charge neutral point\nshifts were determined by systematically sweeping the\napplied gate voltage while measuring the current-voltage\ncharacteristics, conﬁrming the doping level and electrical\nquality of the graphene-based electrodes.",
+        "epistemic_status": "AI_INTERPRETATION",
+        "uncertainty_reason": "Source-excerpt compilation of characterization and measurement-sample preparation under a Methods heading. Characterization includes preparation of the stated measurement samples; Grouping is an extractor interpretation; no missing steps or execution order inferred.",
+        "id": "6d241e34-de8f-5105-803a-b19e1ac284aa",
+        "paper_id": "1a86bcb9-fe7d-4ff8-af38-224dea0dcf5c",
+        "confidence": 0.6,
+        "verification_status": "CANDIDATE",
+        "provenance": [
+          "36f5fa38-19d3-5f4c-a51c-09a43e63d6a0"
+        ],
+        "created_by": "local-rule-extractor-v5",
+        "model": "none",
+        "prompt_version": "none",
+        "created_at": "2026-10-11T14:49:22.942278+00:00",
+        "updated_at": "2026-10-11T14:49:22.942281+00:00",
+        "version": 1,
+        "verification_scope": null
+      },
+      "source_anchors": [
+        {
+          "id": "36f5fa38-19d3-5f4c-a51c-09a43e63d6a0",
+          "paper_id": "1a86bcb9-fe7d-4ff8-af38-224dea0dcf5c",
+          "span_id": "8002fd82-1f6f-5caa-b8b1-cad43f93dfc0",
+          "page_number": 8,
+          "start_char": 0,
+          "end_char": 586,
+          "bbox": [
+            304.7234802246094,
+            351.87469482421875,
+            538.5851440429688,
+            481.2027282714844
+          ],
+          "text": "The sheet resistance of pristine graphene and TOS-\ndoped graphene samples was characterized using a\nsource-measure unit (SMU, Keithley 2634B). Electrical\ncontacts were fabricated onto the samples using standard\nlithographic and metal deposition techniques, enabling\nprecise voltage biasing and current measurement. The\nsheet resistance and corresponding charge neutral point\nshifts were determined by systematically sweeping the\napplied gate voltage while measuring the current-voltage\ncharacteristics, conﬁrming the doping level and electrical\nquality of the graphene-based electrodes.",
+          "source_hash": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+          "localization_precision": "TEXT_BLOCK",
+          "notation": [],
+          "notation_issues": [],
+          "section_titles": []
+        }
+      ],
+      "evidence_fingerprint": "1b134ec8d1219e32bc9a2529cce04a96016ee53b8590204cb40c269516d3865b",
+      "prediction_key": null,
+      "inside_frozen_precision_window": false,
+      "decision": null
+    }
+  ],
+  "human_decision": null,
+  "scientific_validity": "NOT_ASSESSED",
+  "application_reviews_created": 0,
+  "canonical_graph_modified": false,
+  "historical_ledger_sha256": "4c9220d03943ddc25583270fd2c08a1f20aa0853c518860db7cef9c31f7e9d99",
+  "validation": {
+    "backend_tests": {
+      "passed": 40
+    },
+    "frontend_tests": {
+      "passed": 8
+    },
+    "ruff": "PASS",
+    "mypy": "PASS",
+    "browser": [
+      {
+        "source_hash": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+        "journeys": [
+          {
+            "gold_id": "a-central-result",
+            "page": 1,
+            "type": "RESULT",
+            "source_hash": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+            "result": "PASS",
+            "notation_view": "NOT_REQUIRED"
+          },
+          {
+            "gold_id": "a-figure-1",
+            "page": 3,
+            "type": "FIGURE",
+            "source_hash": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+            "result": "PASS",
+            "notation_view": "PASS"
+          },
+          {
+            "gold_id": "a-figure-3",
+            "page": 5,
+            "type": "FIGURE",
+            "source_hash": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+            "result": "PASS",
+            "notation_view": "PASS"
+          },
+          {
+            "gold_id": "a-figure-4",
+            "page": 6,
+            "type": "FIGURE",
+            "source_hash": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+            "result": "PASS",
+            "notation_view": "PASS"
+          },
+          {
+            "gold_id": "process:d69a4aa1-e750-579e-903a-5376f6280b8c",
+            "page": 8,
+            "type": "PROCESS",
+            "source_hash": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+            "result": "PASS",
+            "notation_view": "NOT_REQUIRED"
+          },
+          {
+            "gold_id": "process:247e47f9-7809-5b0f-9d01-c1fa725f3151",
+            "page": 8,
+            "type": "PROCESS",
+            "source_hash": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+            "result": "PASS",
+            "notation_view": "NOT_REQUIRED"
+          },
+          {
+            "gold_id": "process:16463c5d-2ec4-5945-9f0f-e2277eac90d7",
+            "page": 8,
+            "type": "PROCESS",
+            "source_hash": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+            "result": "PASS",
+            "notation_view": "NOT_REQUIRED"
+          },
+          {
+            "gold_id": "process:fbbaec44-ec2d-541a-8a06-280101cb6541",
+            "page": 8,
+            "type": "PROCESS",
+            "source_hash": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+            "result": "PASS",
+            "notation_view": "NOT_REQUIRED"
+          },
+          {
+            "gold_id": "process:d1f8c21c-a257-5e8a-911e-5a2ff6b53064",
+            "page": 8,
+            "type": "PROCESS",
+            "source_hash": "30afba934882b658b4ca20f1fecd116bc40f9c5f4c083c837c4d188ff4805a9e",
+            "result": "PASS",
+            "notation_view": "NOT_REQUIRED"
+          }
+        ],
+        "search": "PASS",
+        "integrity": "PASS",
+        "status": "PASS"
+      },
+      {
+        "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+        "journeys": [
+          {
+            "gold_id": "b-central-result",
+            "page": 1,
+            "type": "RESULT",
+            "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+            "result": "PASS",
+            "notation_view": "NOT_REQUIRED"
+          },
+          {
+            "gold_id": "b-equation-1",
+            "page": 1,
+            "type": "EQUATION",
+            "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+            "result": "PASS",
+            "notation_view": "NOT_REQUIRED"
+          },
+          {
+            "gold_id": "b-figure-1",
+            "page": 2,
+            "type": "FIGURE",
+            "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+            "result": "PASS",
+            "notation_view": "PASS"
+          },
+          {
+            "gold_id": "b-figure-2",
+            "page": 2,
+            "type": "FIGURE",
+            "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+            "result": "PASS",
+            "notation_view": "PASS"
+          },
+          {
+            "gold_id": "b-figure-3",
+            "page": 3,
+            "type": "FIGURE",
+            "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+            "result": "PASS",
+            "notation_view": "PASS"
+          },
+          {
+            "gold_id": "b-contact-method",
+            "page": 1,
+            "type": "METHOD",
+            "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+            "result": "PASS",
+            "notation_view": "PASS"
+          },
+          {
+            "gold_id": "b-stability",
+            "page": 5,
+            "type": "RESULT",
+            "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+            "result": "PASS",
+            "notation_view": "PASS"
+          },
+          {
+            "gold_id": "process:4c7092b8-95c4-5f87-95f5-19086cf1b4ed",
+            "page": 7,
+            "type": "PROCESS",
+            "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+            "result": "PASS",
+            "notation_view": "NOT_REQUIRED"
+          },
+          {
+            "gold_id": "process:2314a61f-7cbd-532e-8c5e-715aed7a476a",
+            "page": 7,
+            "type": "PROCESS",
+            "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+            "result": "PASS",
+            "notation_view": "NOT_REQUIRED"
+          },
+          {
+            "gold_id": "process:e38715c5-894c-5866-9230-975a7669d4e4",
+            "page": 7,
+            "type": "PROCESS",
+            "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+            "result": "PASS",
+            "notation_view": "NOT_REQUIRED"
+          },
+          {
+            "gold_id": "process:202845dc-41b7-521a-9ae6-8c874ced5c11",
+            "page": 7,
+            "type": "PROCESS",
+            "source_hash": "4e09fdba4af8799d7868b2cdeee8ecea5224f452a3a1702dc00cabcd86183ddd",
+            "result": "PASS",
+            "notation_view": "NOT_REQUIRED"
+          }
+        ],
+        "search": "PASS",
+        "integrity": "PASS",
+        "status": "PASS"
+      }
+    ],
+    "public_browser": {
+      "status": "PASS",
+      "fixture": "public-jmlr-dropout",
+      "journeys": [
+        "upload",
+        "graph",
+        "inspector",
+        "evidence",
+        "original_pdf",
+        "highlight",
+        "reverse",
+        "refresh",
+        "search",
+        "learning_empty",
+        "themes",
+        "mobile"
+      ]
+    },
+    "reconciliation_guards": {
+      "passed": 7
+    }
+  },
+  "limitations": [
+    "Incremental evaluation DB copies retain unchanged scientific-object identities and generators; new/changed PROCESS use v5 extractor.",
+    "Fresh upload references are independently generated v6 graphs with different UUIDs; they are not human-reviewed.",
+    "All additional objects outside the three displayed A2a groups remain unreviewed.",
+    "No precision credit is created by a grouping repair; current human evaluation waits for explicit decisions."
+  ]
+}

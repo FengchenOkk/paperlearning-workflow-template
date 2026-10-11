@@ -19,10 +19,10 @@ from .models import (
     timestamp,
 )
 from .ontology import EpistemicStatus, NodeType, Relation, ReviewScope, VerificationStatus
+from .provenance import anchor_contract as anchor_contract
 from .provenance import anchors_for as anchors_for
 from .provenance import current_review, fingerprint
 from .schemas import (
-    Anchor,
     CandidateEdge,
     CandidateNode,
     Edge,
@@ -122,7 +122,7 @@ def evidence_bundle(session: Session, node_id: str) -> EvidenceBundle:
                 confidence=evidence.confidence,
                 verification_status=VerificationStatus(evidence.verification_status),
                 note=evidence.note,
-                anchor=Anchor.model_validate(anchor),
+                anchor=anchor_contract(session, anchor),
             )
         )
     return EvidenceBundle(

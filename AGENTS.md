@@ -2,6 +2,8 @@
 
 The current product direction is defined by `docs/architecture/SYSTEM.md`, `docs/IMPLEMENTATION_STATUS.md` and the scientific ontology/provenance documents. For application engineering, work in `backend/`, `frontend/`, `packages/`, `evals/`, `infra/` and `docs/`. The canonical application graph is in the database; UI and exports read that model. Do not import the legacy file workflow into the application runtime or treat co-occurrence as scientific dependence.
 
+For continuation in a new conversation, read `docs/CODEX_HANDOFF.md` for the dated project state, Gate A audit and next milestone; recheck its referenced files and hashes before proceeding.
+
 Preserve user research, untracked files, original PDFs, `.env` and local profiles. Never transmit private papers merely because a credential exists. Every paper-derived scientific object needs validated provenance. Extraction produces candidates; VERIFIED requires an explicit attributable review with current hash/version and an audit record. Distinguish source wording, author assertions, external knowledge, AI interpretation, derivation and unknowns. Do not invent science, citations, source locations, progress or acceptance records.
 
 Run relevant backend/frontend checks and the real public-PDF browser journey for source/evidence interaction changes. Keep implementation status honest; the first slice is not the whole research-grade platform. Use no subagent orchestration for routine application implementation. Do not infer a research project merely to modify application code.

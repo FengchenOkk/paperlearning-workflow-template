@@ -1,0 +1,172 @@
+{
+  "scope": "TECHNICAL_RECONCILIATION_PROPOSALS_BEFORE_CURRENT_HUMAN_DECISIONS",
+  "human_ledger_sha256": "4c9220d03943ddc25583270fd2c08a1f20aa0853c518860db7cef9c31f7e9d99",
+  "human_decision_history_sha256": "daeff02aa4d6b27445e57b87f7963f1d075884e7e86b5b2f4d0426bd860df99e",
+  "unchanged_historical_snapshots_checked": 77,
+  "thresholds": {
+    "precision": 0.9,
+    "recall": 0.8,
+    "type_accuracy": 0.9,
+    "anchors": 1,
+    "pages": 1,
+    "figures": 1,
+    "equations": 1,
+    "quantities": 1,
+    "node_provenance": 1,
+    "edge_provenance": 1
+  },
+  "papers": {
+    "A": {
+      "mapping_counts": {
+        "NONMATERIAL_METADATA_CHANGE": 29,
+        "NEW_CANDIDATE": 26,
+        "MATERIAL_CONTENT_OR_TYPE_CHANGE": 1,
+        "REMOVED_CANDIDATE": 3
+      },
+      "prediction_mapping_counts": {
+        "NONMATERIAL_METADATA_CHANGE": 17,
+        "MATERIAL_CONTENT_OR_TYPE_CHANGE": 1,
+        "NEW_CANDIDATE": 3
+      },
+      "frozen_model_metrics": {
+        "precision": {
+          "passed": 16,
+          "total": 21,
+          "rate": 0.7619047619047619
+        },
+        "recall": {
+          "passed": 16,
+          "total": 17,
+          "rate": 0.9411764705882353
+        },
+        "type_accuracy": {
+          "passed": 16,
+          "total": 16,
+          "rate": 1.0
+        },
+        "anchors": {
+          "passed": 16,
+          "total": 16,
+          "rate": 1.0
+        },
+        "pages": {
+          "passed": 16,
+          "total": 16,
+          "rate": 1.0
+        },
+        "figures": {
+          "passed": 3,
+          "total": 3,
+          "rate": 1.0
+        },
+        "equations": {
+          "passed": 0,
+          "total": 0,
+          "rate": null
+        },
+        "quantities": {
+          "passed": 10,
+          "total": 10,
+          "rate": 1.0
+        },
+        "node_provenance": {
+          "passed": 56,
+          "total": 56,
+          "rate": 1.0
+        },
+        "edge_provenance": {
+          "passed": 55,
+          "total": 55,
+          "rate": 1.0
+        }
+      },
+      "overall_reviewed_gate": "FAIL",
+      "gold_misses": [
+        {
+          "gold_id": "a-limitation",
+          "expected_type": "LIMITATION",
+          "node_id": null,
+          "actual_type": null,
+          "same_type": false,
+          "correct_source": false,
+          "number_correct": true,
+          "quantities": []
+        }
+      ]
+    },
+    "B": {
+      "mapping_counts": {
+        "NEW_CANDIDATE": 32,
+        "NONMATERIAL_METADATA_CHANGE": 44,
+        "REMOVED_CANDIDATE": 16
+      },
+      "prediction_mapping_counts": {
+        "NONMATERIAL_METADATA_CHANGE": 18
+      },
+      "frozen_model_metrics": {
+        "precision": {
+          "passed": 17,
+          "total": 18,
+          "rate": 0.9444444444444444
+        },
+        "recall": {
+          "passed": 16,
+          "total": 16,
+          "rate": 1.0
+        },
+        "type_accuracy": {
+          "passed": 16,
+          "total": 16,
+          "rate": 1.0
+        },
+        "anchors": {
+          "passed": 16,
+          "total": 16,
+          "rate": 1.0
+        },
+        "pages": {
+          "passed": 16,
+          "total": 16,
+          "rate": 1.0
+        },
+        "figures": {
+          "passed": 3,
+          "total": 3,
+          "rate": 1.0
+        },
+        "equations": {
+          "passed": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "quantities": {
+          "passed": 11,
+          "total": 11,
+          "rate": 1.0
+        },
+        "node_provenance": {
+          "passed": 76,
+          "total": 76,
+          "rate": 1.0
+        },
+        "edge_provenance": {
+          "passed": 75,
+          "total": 75,
+          "rate": 1.0
+        }
+      },
+      "overall_reviewed_gate": "FAIL",
+      "gold_misses": []
+    }
+  },
+  "human_decisions_created": 0,
+  "application_reviews_created": 0,
+  "scientific_validity": "NOT_ASSESSED",
+  "gate_b": "NOT_STARTED",
+  "artifacts": {
+    "paper-a.json": "b8da727a03276a0ca8fa857e1b141b2d0b8891fb9c64ac53c54bbac4f0bf35b6",
+    "paper-b.json": "19474ec0b48d4fb0a204c135bbcde319b7b3a3916f9961f8e144b324558be45c",
+    "production-a.json": "7a6c24c37228122e2330a95c5f109de8a194c2de71b3e4347fe5fb3c7308e909",
+    "production-b.json": "c1b8c4e3f1278c78eddaff63efd3361a548a9399e08dd2b50a97cff97ad290b2"
+  }
+}

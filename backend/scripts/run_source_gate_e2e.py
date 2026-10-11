@@ -14,6 +14,8 @@ from pathlib import Path
 import httpx
 from playwright.sync_api import expect, sync_playwright
 
+from papergraph.notation import notation_text
+from papergraph.schemas import SourceNotation
 from scripts.evaluate_source_gate import compact
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -104,11 +106,37 @@ def run(pdfs: list[Path], golds: list[Path]) -> None:
                             ).json()
                         assert paper["source_hash"] == gold["source_hash"]
                         expect(page.get_by_test_id("graph-canvas")).to_be_visible(timeout=60000)
+                        page.get_by_label("Graph depth").select_option("300")
                         checked = []
                         targets = [x for x in gold["items"] if x["type"] in {"FIGURE", "EQUATION"}]
                         targets.insert(0, next(x for x in gold["items"] if x["type"] == "RESULT"))
+                        targets.extend(
+                            x
+                            for x in gold["items"]
+                            if x["id"] in {"b-contact-method", "b-stability"}
+                        )
+                        # Exercise actual production compilations as well as frozen
+                        # gold. These assertions do not create an adjudication.
+                        for process_node in graph["nodes"]:
+                            if process_node["type"] == "PROCESS":
+                                process_bundle = httpx.get(
+                                    f"{base}/api/nodes/{process_node['id']}/evidence"
+                                ).json()
+                                targets.append(
+                                    {
+                                        "id": "process:" + process_node["id"],
+                                        "type": "PROCESS",
+                                        "components": [{"text": process_node["text"]}],
+                                        "page": process_bundle["evidence"][0]["anchor"][
+                                            "page_number"
+                                        ],
+                                    }
+                                )
                         inspector = page.get_by_role("complementary", name="Scientific inspector")
                         for item in targets:
+                            # Reload intentionally restores the default bounded
+                            # overview. Expand again for each later PROCESS target.
+                            page.get_by_label("Graph depth").select_option("300")
                             node = next(
                                 n
                                 for n in graph["nodes"]
@@ -148,6 +176,28 @@ def run(pdfs: list[Path], golds: list[Path]) -> None:
                             )
                             bundle = httpx.get(f"{base}/api/nodes/{node['id']}/evidence").json()
                             anchor = bundle["evidence"][0]["anchor"]
+                            offset = anchor["text"].find(node["text"])
+                            notes = [
+                                SourceNotation.model_validate(n).model_copy(
+                                    update={
+                                        "start_char": n["start_char"] - offset,
+                                        "end_char": n["end_char"] - offset,
+                                    }
+                                )
+                                for n in anchor["notation"]
+                                if offset >= 0
+                                and offset <= n["start_char"]
+                                and n["end_char"] <= offset + len(node["text"])
+                            ]
+                            displayed = notation_text(node["text"], notes)
+                            if displayed != node["text"]:
+                                expect(inspector.get_by_test_id("notation-view")).to_have_text(
+                                    displayed
+                                )
+                            if item["id"] == "b-contact-method":
+                                assert "(011̅2)" in displayed and "2̅" not in displayed
+                            if item["id"] == "b-stability":
+                                assert "I_on" in displayed and "V_th" in displayed
                             assert (
                                 anchor["source_hash"] == gold["source_hash"]
                                 and anchor["page_number"] == item["page"]
@@ -168,6 +218,26 @@ def run(pdfs: list[Path], golds: list[Path]) -> None:
                             expect(inspector.locator(".node-text")).to_have_text(node["text"])
                             expect(page.get_by_label("PDF page")).to_have_value(str(item["page"]))
                             expect(highlight).to_be_visible()
+                            if node["type"] == "PROCESS":
+                                assert node["epistemic_status"] == "AI_INTERPRETATION"
+                                for evidence_index, source in enumerate(bundle["evidence"]):
+                                    current_anchor = source["anchor"]
+                                    assert current_anchor["source_hash"] == gold["source_hash"]
+                                    inspector.locator("button.evidence").nth(evidence_index).click()
+                                    expect(page.get_by_label("PDF page")).to_have_value(
+                                        str(current_anchor["page_number"])
+                                    )
+                                    expect(highlight).to_be_visible()
+                                    page.get_by_alt_text(
+                                        f"Original PDF page {current_anchor['page_number']}"
+                                    ).wait_for(state="visible")
+                                    page.locator(".source-span.active").click()
+                                    expect(inspector.locator(".node-text")).to_have_text(
+                                        node["text"]
+                                    )
+                                page.reload()
+                                expect(inspector.locator(".node-text")).to_have_text(node["text"])
+                                expect(highlight).to_be_visible()
                             checked.append(
                                 {
                                     "gold_id": item["id"],
@@ -175,6 +245,9 @@ def run(pdfs: list[Path], golds: list[Path]) -> None:
                                     "type": item["type"],
                                     "source_hash": anchor["source_hash"],
                                     "result": "PASS",
+                                    "notation_view": "PASS"
+                                    if displayed != node["text"]
+                                    else "NOT_REQUIRED",
                                 }
                             )
                         # Multiple terms in different positions; actual source fallback is acceptable.
@@ -238,7 +311,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--pdf-a", type=Path, required=True)
     parser.add_argument("--pdf-b", type=Path, required=True)
+    parser.add_argument("--output-dir", type=Path, default=RESULTS)
     args = parser.parse_args()
+    RESULTS = args.output_dir
     run(
         [args.pdf_a, args.pdf_b],
         [ROOT / "evals/gold/paper-a/gold.json", ROOT / "evals/gold/paper-b/gold.json"],

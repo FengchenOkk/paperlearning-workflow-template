@@ -4,6 +4,12 @@ import re
 
 FIGURE = re.compile(r"(?i)^(?:(?:extended data|supplementary)\s+)?fig(?:ure)?\.?\s*(S?\d+)\b")
 EQUATION = re.compile(r"\(((?:0|[1-9]\d*)[a-z]?)\)")
+BODY_SECTION = re.compile(
+    r"(?i)^(?:\d+[. ]+)?(?:introduction|(?:materials and |experimental )?methods|results(?: and discussion)?|discussion|conclusions?|references|acknowledg(?:e)?ments|data availability|code availability)$"
+)
+TEMPLATE_HEADER = re.compile(
+    r"(?i)^(?:research |original |review )?(?:article|letter|communication|review)$"
+)
 
 
 def figure_number(text: str) -> str | None:
